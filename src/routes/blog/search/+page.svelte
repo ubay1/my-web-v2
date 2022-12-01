@@ -1,8 +1,8 @@
 <script>
 	// @ts-nocheck
 
-	import Search from '~icons/ri/search-2-line';
-	import Close from '~icons/ri/close-fill';
+	import Search from '~icons/octicon/search-24';
+	import Close from '~icons/octicon/x-16';
 	import List from '$lib/components/organisms/blog/List.svelte';
 
 	let search = null;
