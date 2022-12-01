@@ -3,7 +3,7 @@
 
 	import Search from '~icons/ri/search-2-line';
 	import Close from '~icons/ri/close-fill';
-	import BlogPreview from '@/lib/components/BlogPreview.svelte';
+	import List from '$lib/components/organisms/blog/List.svelte';
 
 	let search = null;
 
@@ -89,7 +89,7 @@
 			{:else}
 				<div class="max-w-4xl m-auto bg-white shadow-md dark:bg-slate-800">
 					{#each items as post}
-						<BlogPreview
+						<List
 							slug={post.path}
 							title={post.meta.title}
 							description={post.meta.description}
