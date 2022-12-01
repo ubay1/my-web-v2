@@ -1,7 +1,5 @@
 <script>
 	// @ts-nocheck
-
-	import { clickOutside } from '$lib/utils/clickOutside';
 	import { createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();
@@ -32,10 +30,8 @@
 		: 'hidden'}"
 />
 <div
-	use:clickOutside
-	on:click_outside={closeSidebar}
 	aria-label="btn-icon-menu"
-	class="text-white top-0 w-full h-full fixed z-100 ease-in duration-150 dark:bg-githubDark-1 {showAnotherMenu
+	class="bg-white top-0 w-full h-full fixed z-100 ease-in duration-150 dark:bg-githubDark-1 {showAnotherMenu
 		? 'translate-x-0'
 		: '-translate-x-full'}"
 >
@@ -44,14 +40,14 @@
 		class="fixed cursor-pointer right-4 top-4 rounded-md flex justify-center items-center h-8 w-8 border-none bg-red-5"
 		on:click={closeSidebar}
 	>
-		<div class="i-octicon-x-16 text-xl dark:text-white" />
+		<div class="i-octicon-x-16 text-xl text-white" />
 	</button>
 	{#if showAnotherMenu}
 		<div class="mt-20">
 			{#each listTab as tab}
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<div
-					class="text-githubDark-2 flex items-center gap-1 p-4 cursor-pointer hover:bg-gray-2 hover:bg-opacity-4 w-full {tab.id ===
+					class="text-black flex items-center gap-1 p-4 cursor-pointer hover:bg-gray-6 dark:hover:bg-gray-7 hover:bg-opacity-4 w-full dark:text-githubDark-2 {tab.id ===
 					tabActive
 						? 'font-semibold border-b-2 border-orange-5'
 						: ''}"
