@@ -1,5 +1,4 @@
 <script>
-	import Seo from '$lib/components/Seo.svelte';
 	import SMA from '$lib/assets/images/smk.webp';
 	import Unpam from '$lib/assets/images/unpam.webp';
 	import Html from '$lib/assets/images/html.webp';
@@ -11,7 +10,6 @@
 	import Cert2 from '$lib/assets/images/cert-2.webp';
 	import Cert3 from '$lib/assets/images/cert-3.webp';
 	import Cert4 from '$lib/assets/images/cert-4.webp';
-	import { browser } from '$app/environment';
 
 	let achievements = [
 		{ id: 1, img: Cert1 },
@@ -46,7 +44,6 @@
 	<link rel="preload" as="image" type="image/webp" href={Cert4} />
 </svelte:head>
 
-<Seo title="Ubay Dillah" metadescription="Catatan" />
 <div class="flex justify-start items-start gap-6 mt-4 px-4 lt-md:flex-col">
 	<div class="w-30% flex flex-col justify-center lt-md:w-100% lt-md:items-center">
 		<img
@@ -59,12 +56,12 @@
 			<div class="text-2xl font-semibold">Ubay Dillah</div>
 			<div class="flex items-center text-sm gap-1">
 				<div class="i-octicon-location " />
-				<div>DTO Kemenkes</div>
+				<div>Tangsel / Bekasi</div>
 			</div>
 		</div>
 		<div class="w-full mt-2 mb-3 h-2 border-b border-gray-3 dark:border-gray-7" />
 		<div class="font-semibold dark:text-white">Pencapaian</div>
-		<div class="flex gap-2 mb-4 w-full overflow-y-auto lt-md:w-full">
+		<div class="flex gap-2 mb-2 w-full overflow-y-auto lt-md:w-full">
 			{#each achievements as item}
 				<img
 					src={item.img}
@@ -109,7 +106,7 @@
 			</div>
 		</div>
 
-		<div class="mt-4 mb-4">
+		<div class="mt-2 mb-4">
 			<p>Keahlian</p>
 			<div
 				class="grid grid-cols-2 border border-gray-3  rounded-lg p-4  dark:border-gray-7 lt-md:grid-cols-1"

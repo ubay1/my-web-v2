@@ -3,6 +3,7 @@
 	import '$lib/assets/css/global.css';
 	import Header from '$lib/components/Header.svelte';
 	import { browser } from '$app/environment';
+	import Seo from '$lib/components/Seo.svelte';
 
 	let isDark = browser ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
 
@@ -21,10 +22,7 @@
 
 <svelte:head>
 	<script>
-		if (
-			localStorage.theme === 'dark' ||
-			(!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
-		) {
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			// console.log(window.matchMedia('(prefers-color-scheme: dark)').matches);
 			document.documentElement.classList.add('dark');
 		} else {
@@ -33,6 +31,7 @@
 	</script>
 </svelte:head>
 
+<Seo title="Ubay Dillah" metadescription="Catatan" />
 <main>
 	<Header />
 	<slot />

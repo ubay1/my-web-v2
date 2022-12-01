@@ -1,27 +1,22 @@
 <script>
 	// @ts-nocheck
 	import { createEventDispatcher } from 'svelte';
-
+	import { page } from '$app/stores';
+	import { listTab } from '$lib/utils/constants';
+	import { goto } from '$app/navigation';
 	const dispatch = createEventDispatcher();
 
-	let listTab = [
-		{ id: 1, label: 'Overview', url: '/', icon: 'i-octicon-person-16' },
-		{ id: 2, label: 'Blogs', url: '/blog', icon: 'i-octicon-book-24' },
-		{ id: 3, label: 'Projects', url: '/project', icon: 'i-octicon-repo-16' }
-	];
-
 	export let showAnotherMenu = false;
-	export let tabActive = 1;
-
-	// $: console.log(tabActive);
+	let tabActive = 1;
 
 	function closeSidebar() {
 		dispatch('close_sidebar', true);
 	}
-
-	// function changeMenu(val) {
-	// 	dispatch('change_menu', val);
-	// }
+	function changePage(id, url) {
+		tabActive = id;
+		goto(url);
+		dispatch('close_sidebar', true);
+	}
 </script>
 
 <div
@@ -47,11 +42,11 @@
 			{#each listTab as tab}
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<div
-					class="text-black flex items-center gap-1 p-4 cursor-pointer w-full hover:bg-gray-7 hover:bg-opacity-8 dark:hover:bg-gray-2 dark:hover:bg-opacity-8 dark:text-githubDark-2 {tab.id ===
-					tabActive
+					class="text-black flex items-center gap-1 p-4 cursor-pointer w-full hover:bg-gray-7 hover:bg-opacity-8 dark:hover:bg-gray-2 dark:hover:bg-opacity-8 dark:text-githubDark-2 {tab.url ===
+					$page.url.pathname
 						? 'font-semibold border-b-2 border-orange-5'
 						: ''}"
-					on:click={() => (tabActive = tab.id)}
+					on:click={() => changePage(tab.id, tab.url)}
 				>
 					<div class="mr-1 text-lg {tab.icon}" />
 					<div>{tab.label}</div>
