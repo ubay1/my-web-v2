@@ -3,8 +3,6 @@
 	import List from '$lib/components/organisms/blog/List.svelte';
 
 	export let data;
-
-	console.log(data);
 </script>
 
 <div class="max-w-4xl m-auto">
