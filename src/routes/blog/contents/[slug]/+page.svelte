@@ -7,31 +7,14 @@
 	export let data;
 </script>
 
-<svelte:head>
-	<title>{data.title}</title>
-	<meta name="description" content={data.description} />
-	<meta property="og:title" content={data.title} />
-	<meta property="og:description" content={data.description} />
-	<meta property="og:url" content="https://catatan-kajian.vercel.app" />
-	<meta property="og:image:secure" content="https://catatan-kajian.vercel.app/meta-img.jpeg" />
-	<meta property="og:image:width" content="800" />
-	<meta property="og:image:height" content="450" />
-	<meta property="og:image:type" content="image/jpeg" />
-	<meta property="og:type" content="article" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content={data.title} />
-	<meta name="twitter:description" content={data.description} />
-	<meta name="twitter:image" content="https://catatan-kajian.vercel.app/meta-img.jpeg" />
-</svelte:head>
-
 <div class="px-0 max-w-4xl m-auto h-56 md:h-72 relative">
 	<img
 		src={data.imagePath}
-		class="w-full h-full object-cover object-left-top dark:brightness-50"
+		class="w-full h-full aspect-video object-contain bg-gray-2 brightness-30 lt-md:object-cover"
 		alt=""
 	/>
 	<div class="absolute top-0 flex justify-center items-center h-full w-full">
-		<h1 class="text-3xl z-40 line-clamp-2 font-bold text-white text-center">
+		<h1 class="text-3xl z-40 line-clamp-2 font-bold text-center text-white">
 			{data.title}
 		</h1>
 	</div>

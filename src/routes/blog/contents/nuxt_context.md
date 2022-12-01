@@ -5,7 +5,6 @@ imagePath: https://miro.medium.com/max/824/1*C1rcqGPCgGKwfo4B9lb17Q.png
 imageAlt: img-nuxt
 date: 2022-12-02
 tags:
-  - javascript
   - nuxtjs
 ---
 

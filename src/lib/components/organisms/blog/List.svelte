@@ -2,7 +2,8 @@
 	// @ts-nocheck
 
 	import { formatDate } from '$lib/utils/format';
-	export let slug, title, description, date, tags;
+	export let slug, title, description, date;
+	export let tags;
 	// export let image, imageAlt;
 </script>
 
@@ -21,22 +22,24 @@
 			</div>
 			<div class="text-xs text-black mt-0 dark:text-white">{formatDate(date)}</div>
 			<div
-				class="mt-2 text-black text-base line-clamp-3 dark:text-white {!description
+				class="mt-2 text-black text-base line-clamp-2 dark:text-white {!description
 					? 'hidden'
-					: 'block'}"
+					: ''}"
 			>
 				{description}
 			</div>
 			<div class="pt-4 line-clamp-2">
-				{#each tags as tag (tag)}
-					<div
-						class="inline-block mr-2 tracking-wide text-xs text-black font-semibold bg-githubDark-1  rounded-md p-1 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-gray-6"
-					>
-						<a href="/blog/tags/{tag}" class="decoration-none text-white ">
-							#{tag}
-						</a>
-					</div>
-				{/each}
+				{#if tags && tags.length > 0}
+					{#each tags as tag (tag)}
+						<div
+							class="inline-block mr-2 tracking-wide text-xs text-black font-semibold bg-githubDark-1  rounded-md p-1 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-gray-6"
+						>
+							<a href="/blog/tags/{tag}" class="decoration-none text-white ">
+								#{tag}
+							</a>
+						</div>
+					{/each}
+				{/if}
 			</div>
 		</div>
 	</a>
