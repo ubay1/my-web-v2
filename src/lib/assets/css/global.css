@@ -9,3 +9,19 @@ body {
 html.dark {
 	background-color: #22272e;
 }
+
+#nprogress .bar {
+	background: #0969da !important;
+	height: 5px !important;
+}
+
+#nprogress .peg {
+	/* box-shadow: 0 0 10px #fff, 0 0 5px #fff; */
+	box-shadow: unset !important;
+}
+
+#nprogress > .spinner .spinner-icon {
+	/* border-top-color: #ffbb00;
+	border-left-color: #ffbb00; */
+	display: none;
+}

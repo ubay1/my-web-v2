@@ -1,9 +1,28 @@
 <script>
+	// @ts-nocheck
+
 	import 'uno.css';
 	import '$lib/assets/css/global.css';
+	import { navigating } from '$app/stores';
+	import NProgress, { remove } from 'nprogress';
+	import 'nprogress/nprogress.css';
 	import Header from '$lib/components/Header.svelte';
 	import { browser } from '$app/environment';
 	import Seo from '$lib/components/Seo.svelte';
+
+	NProgress.configure({
+		// Full list: https://github.com/rstacruz/nprogress#configuration
+		minimum: 0.16
+	});
+
+	$: {
+		if ($navigating) {
+			NProgress.start();
+		}
+		if (!$navigating) {
+			NProgress.done();
+		}
+	}
 
 	let isDark = browser ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
 
