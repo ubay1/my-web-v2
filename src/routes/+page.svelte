@@ -1,0 +1,137 @@
+<script>
+	import Seo from '$lib/components/Seo.svelte';
+	import SMA from '$lib/assets/images/smk.webp';
+	import Unpam from '$lib/assets/images/unpam.webp';
+	import Html from '$lib/assets/images/html.webp';
+	import Css from '$lib/assets/images/css.webp';
+	import Vue from '$lib/assets/images/vue.webp';
+	import Svelte from '$lib/assets/images/svelte.webp';
+	import React from '$lib/assets/images/react.webp';
+	import Cert1 from '$lib/assets/images/cert-1.webp';
+	import Cert2 from '$lib/assets/images/cert-2.webp';
+	import Cert3 from '$lib/assets/images/cert-3.webp';
+	import Cert4 from '$lib/assets/images/cert-4.webp';
+	import { browser } from '$app/environment';
+
+	let achievements = [
+		{ id: 1, img: Cert1 },
+		{ id: 2, img: Cert2 },
+		{ id: 3, img: Cert3 },
+		{ id: 4, img: Cert4 }
+	];
+
+	let listRiwayatPendidikan = [
+		{ img: SMA, nama: 'SMK-TI PGRI 11 SERPONG', jurusan: 'Animasi', lulus: '2011 - 2014' },
+		{
+			img: Unpam,
+			nama: 'Universitas Pamulang',
+			jurusan: 'Teknik Informatika',
+			lulus: '2014 - 2019'
+		}
+	];
+
+	let listKeahlian = [
+		{ img: Html, nama: 'HTML', star: '⭐⭐⭐⭐⭐' },
+		{ img: Css, nama: 'CSS', star: '⭐⭐⭐⭐⭐' },
+		{ img: Vue, nama: 'VueJS', star: '⭐⭐⭐⭐⭐' },
+		{ img: Svelte, nama: 'Svelte', star: '⭐⭐⭐⭐' },
+		{ img: React, nama: 'React', star: '⭐⭐⭐' }
+	];
+</script>
+
+<svelte:head>
+	<link rel="preload" as="image" type="image/webp" href={Cert1} />
+	<link rel="preload" as="image" type="image/webp" href={Cert2} />
+	<link rel="preload" as="image" type="image/webp" href={Cert3} />
+	<link rel="preload" as="image" type="image/webp" href={Cert4} />
+</svelte:head>
+
+<Seo title="Ubay Dillah" metadescription="Catatan" />
+<div class="flex justify-start items-start gap-6 mt-4 px-4 lt-md:flex-col">
+	<div class="w-30% flex flex-col justify-center lt-md:w-100% lt-md:items-center">
+		<img
+			src="/profil.webp"
+			alt="profil"
+			class="w-full bg-gray-3 rounded-full border-gray-7 object-contain aspect-square dark:border-b dark:bg-gray-7 dark:border-gray-7 lt-md:w-50%"
+		/>
+
+		<div class="mt-4 flex flex-col gap-2 dark:text-white ">
+			<div class="text-2xl font-semibold">Ubay Dillah</div>
+			<div class="flex items-center text-sm gap-1">
+				<div class="i-octicon-location " />
+				<div>DTO Kemenkes</div>
+			</div>
+		</div>
+		<div class="w-full mt-2 mb-3 h-2 border-b border-gray-3 dark:border-gray-7" />
+		<div class="font-semibold dark:text-white">Pencapaian</div>
+		<div class="flex gap-2 mb-4 w-full overflow-y-auto lt-md:w-full">
+			{#each achievements as item}
+				<img
+					src={item.img}
+					alt="img-achievment-{item.id}"
+					class="w-80% h-full mt-4 bg-gray-3 aspect-ratio-8/6 shadow mb-4 dark:bg-gray-7 lt-md:w-50%"
+				/>
+			{/each}
+		</div>
+	</div>
+
+	<div class="w-full flex flex-col dark:text-white ">
+		<div class="border border-gray-3 rounded-lg p-4 dark:border-gray-7">
+			<p class="text-2xl text-center">Hi, Saya Ubay 👋</p>
+			<p class="leading-6">
+				Saya seorang ayah yang dikaruniai 2 orang anak. saya seorang yang sangat tertarik dengan
+				hal-hal baru dalam teknologi web. saat ini saya bekerja sebagai frontend developer di sebuah
+				pemerintahan yang bergerak dibidang kesehatan.
+			</p>
+		</div>
+
+		<div class="mt-4 mb-2">
+			<p>Riwayat Pendidikan</p>
+			<div class="grid grid-cols-2 gap-4 lt-md:flex lt-md:flex-col">
+				{#each listRiwayatPendidikan as item}
+					<div class="border border-gray-3 rounded-lg p-4  dark:border-gray-7">
+						<div class="flex items-center justify-start gap-4">
+							<img
+								src={item.img}
+								alt="img-{item.nama}"
+								class="aspect-square object-contain"
+								width="80"
+								height="80"
+							/>
+							<div class="leading-6">
+								<div class="text-lg font-semibold">{item.nama}</div>
+								<div>{item.jurusan}</div>
+								<div>{item.lulus}</div>
+							</div>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+
+		<div class="mt-4 mb-4">
+			<p>Keahlian</p>
+			<div
+				class="grid grid-cols-2 border border-gray-3  rounded-lg p-4  dark:border-gray-7 lt-md:grid-cols-1"
+			>
+				{#each listKeahlian as item}
+					<div class="flex items-center justify-start gap-4 mb-4">
+						<img
+							src={item.img}
+							alt="img-{item.nama}"
+							class="aspect-square object-contain"
+							width="70"
+							height="70"
+						/>
+						<div class="leading-6">
+							<div class="text-lg font-semibold">{item.nama}</div>
+							<div>{item.star}</div>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+	</div>
+</div>
+
+<style></style>
