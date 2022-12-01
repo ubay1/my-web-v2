@@ -34,7 +34,7 @@
 			{#each listTab as tab}
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<div
-					class="text-gray-7 flex items-center gap-1 p-4 cursor-pointer hover:bg-gray-2 hover:bg-opacity-4 dark:text-githubDark-2 {tab.id ===
+					class="text-gray-7 flex items-center gap-1 p-4 cursor-pointer hover:bg-gray-7 hover:bg-opacity-8 dark:hover:bg-gray-2 dark:hover:bg-opacity-8 dark:text-githubDark-2 {tab.id ===
 					tabActive
 						? 'font-semibold border-b-2 border-orange-5'
 						: ''}"
