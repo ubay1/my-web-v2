@@ -1,27 +1,32 @@
 <script>
-	import SMA from '$lib/assets/images/smk.webp';
-	import Unpam from '$lib/assets/images/unpam.webp';
-	import Html from '$lib/assets/images/html.webp';
-	import Css from '$lib/assets/images/css.webp';
-	import Vue from '$lib/assets/images/vue.webp';
-	import Svelte from '$lib/assets/images/svelte.webp';
-	import React from '$lib/assets/images/react.webp';
-	import Cert1 from '$lib/assets/images/cert-1.webp';
-	import Cert2 from '$lib/assets/images/cert-2.webp';
-	import Cert3 from '$lib/assets/images/cert-3.webp';
-	import Cert4 from '$lib/assets/images/cert-4.webp';
+	// import SMA from '/images/smk.webp';
+	// import Unpam from '/images/unpam.webp';
+	// import Html from '/images/html.webp';
+	// import Css from '/images/css.webp';
+	// import Vue from '/images/vue.webp';
+	// import Svelte from '/images/svelte.webp';
+	// import React from '/images/react.webp';
+	// import Cert1 from '/images/cert-1.webp';
+	// import Cert2 from '/images/cert-2.webp';
+	// import Cert3 from '/images/cert-3.webp';
+	// import Cert4 from '/images/cert-4.webp';
 
 	let achievements = [
-		{ id: 1, img: Cert1 },
-		{ id: 2, img: Cert2 },
-		{ id: 3, img: Cert3 },
-		{ id: 4, img: Cert4 }
+		{ id: 1, img: '/images/cert-1.webp' },
+		{ id: 2, img: '/images/cert-2.webp' },
+		{ id: 3, img: '/images/cert-3.webp' },
+		{ id: 4, img: '/images/cert-4.webp' }
 	];
 
 	let listRiwayatPendidikan = [
-		{ img: SMA, nama: 'SMK-TI PGRI 11 SERPONG', jurusan: 'Animasi', lulus: '2011 - 2014' },
 		{
-			img: Unpam,
+			img: '/images/smk.webp',
+			nama: 'SMK-TI PGRI 11 SERPONG',
+			jurusan: 'Animasi',
+			lulus: '2011 - 2014'
+		},
+		{
+			img: '/images/unpam.webp',
 			nama: 'Universitas Pamulang',
 			jurusan: 'Teknik Informatika',
 			lulus: '2014 - 2019'
@@ -29,19 +34,26 @@
 	];
 
 	let listKeahlian = [
-		{ img: Html, nama: 'HTML', star: '⭐⭐⭐⭐⭐' },
-		{ img: Css, nama: 'CSS', star: '⭐⭐⭐⭐⭐' },
-		{ img: Vue, nama: 'VueJS', star: '⭐⭐⭐⭐⭐' },
-		{ img: Svelte, nama: 'Svelte', star: '⭐⭐⭐⭐' },
-		{ img: React, nama: 'React', star: '⭐⭐⭐' }
+		{ img: '/images/html.webp', nama: 'HTML', star: '⭐⭐⭐⭐⭐' },
+		{ img: '/images/css.webp', nama: 'CSS', star: '⭐⭐⭐⭐⭐' },
+		{ img: '/images/vue.webp', nama: 'VueJS', star: '⭐⭐⭐⭐⭐' },
+		{ img: '/images/svelte.webp', nama: 'Svelte', star: '⭐⭐⭐⭐' },
+		{ img: '/images/react.webp', nama: 'React', star: '⭐⭐⭐' }
 	];
 </script>
 
 <svelte:head>
-	<link rel="preload" as="image" type="image/webp" href={Cert1} />
-	<link rel="preload" as="image" type="image/webp" href={Cert2} />
-	<link rel="preload" as="image" type="image/webp" href={Cert3} />
-	<link rel="preload" as="image" type="image/webp" href={Cert4} />
+	<link rel="preload" as="image" href="/images/smk.webp" />
+	<link rel="preload" as="image" href="/images/unpam.webp" />
+	<link rel="preload" as="image" href="/images/html.webp" />
+	<link rel="preload" as="image" href="/images/css.webp" />
+	<link rel="preload" as="image" href="/images/vue.webp" />
+	<link rel="preload" as="image" href="/images/svelte.webp" />
+	<link rel="preload" as="image" href="/images/react.webp" />
+	<link rel="preload" as="image" href="/images/cert-1.webp" />
+	<link rel="preload" as="image" href="/images/cert-2.webp" />
+	<link rel="preload" as="image" href="/images/cert-3.webp" />
+	<link rel="preload" as="image" href="/images/cert-4.webp" />
 </svelte:head>
 
 <div class="flex justify-start items-start gap-6 mt-4 px-4 lt-md:flex-col">
@@ -49,7 +61,7 @@
 		<img
 			src="/profil.webp"
 			alt="profil"
-			class="w-full bg-gray-3 rounded-full border-gray-7 object-contain aspect-square dark:border-b dark:bg-gray-7 dark:border-gray-7 lt-md:w-50%"
+			class="w-full pointer-events-none bg-gray-3 rounded-full border-gray-7 object-cover aspect-square dark:border-b dark:bg-gray-7 dark:border-gray-7 lt-md:w-50%"
 		/>
 
 		<div class="mt-4 flex flex-col gap-2 dark:text-white ">
@@ -66,7 +78,7 @@
 				<img
 					src={item.img}
 					alt="img-achievment-{item.id}"
-					class="w-80% h-full mt-4 bg-gray-3 aspect-ratio-8/6 shadow mb-4 dark:bg-gray-7 lt-md:w-50%"
+					class="w-80% pointer-events-none h-full mt-4 bg-gray-3 aspect-ratio-8/6 shadow mb-4 dark:bg-gray-7 lt-md:w-50%"
 				/>
 			{/each}
 		</div>
@@ -91,7 +103,7 @@
 							<img
 								src={item.img}
 								alt="img-{item.nama}"
-								class="aspect-square object-contain"
+								class="aspect-square pointer-events-none object-contain"
 								width="80"
 								height="80"
 							/>
@@ -116,7 +128,7 @@
 						<img
 							src={item.img}
 							alt="img-{item.nama}"
-							class="aspect-square object-contain"
+							class="aspect-square pointer-events-none object-contain"
 							width="70"
 							height="70"
 						/>

@@ -38,19 +38,20 @@
 		<div class="i-octicon-x-16 text-xl text-white" />
 	</button>
 	{#if showAnotherMenu}
-		<div class="mt-20">
+		<div data-sveltekit-prefetch class="mt-20">
 			{#each listTab as tab}
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
-				<div
-					class="text-black flex items-center gap-1 p-4 cursor-pointer w-full hover:bg-gray-7 hover:bg-opacity-8 dark:hover:bg-gray-2 dark:hover:bg-opacity-8 dark:text-githubDark-2 {tab.url ===
+				<a
+					class="text-black flex items-center gap-1 p-4 cursor-pointer w-full hover:bg-gray-7 hover:bg-opacity-8 decoration-none dark:hover:bg-gray-2 dark:hover:bg-opacity-8 dark:text-githubDark-2 {tab.url ===
 					$page.url.pathname
 						? 'font-semibold border-b-2 border-orange-5'
 						: ''}"
-					on:click={() => changePage(tab.id, tab.url)}
+					href={tab.url}
+					on:click|preventDefault={() => changePage(tab.id, tab.url)}
 				>
 					<div class="mr-1 text-lg {tab.icon}" />
 					<div>{tab.label}</div>
-				</div>
+				</a>
 			{/each}
 		</div>
 	{/if}

@@ -3,7 +3,7 @@ import {
 	// presetAttributify,
 	presetWind,
 	presetMini,
-	// presetIcons,
+	presetIcons,
 	presetTypography,
 	presetUno
 	// presetWebFonts,
@@ -24,11 +24,11 @@ export default defineConfig({
 		presetMini({
 			dark: 'class'
 		}),
-		presetTypography()
+		presetTypography(),
 		// presetAttributify(),
-		// presetIcons({
-		// 	warn: true
-		// }),
+		presetIcons({
+			warn: true
+		})
 		// presetWebFonts({
 		// provider: 'google',
 		// fonts: {

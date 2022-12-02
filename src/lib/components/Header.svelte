@@ -2,8 +2,14 @@
 	// @ts-nocheck
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import { listTab } from '$lib/utils/constants';
+	// import { listTab } from '$lib/utils/constants';
 	import SidebarSmallScreen from './SidebarSmallScreen.svelte';
+
+	export let listTab = [
+		{ id: 1, label: 'Profil', url: '/', icon: 'i-octicon-person-16' },
+		{ id: 2, label: 'Blogs', url: '/blog', icon: 'i-octicon-book-16' },
+		{ id: 3, label: 'Projects', url: '/project', icon: 'i-octicon-repo-16' }
+	];
 
 	let tabActive = 1;
 
@@ -11,9 +17,8 @@
 
 	let showAnotherMenu = false;
 
-	function changePage(tabId, tabUrl) {
+	function changeTabActive(tabId) {
 		tabActive = tabId;
-		goto(tabUrl);
 	}
 </script>
 
@@ -32,20 +37,21 @@
 			</button>
 		</div>
 	{:else}
-		<div class="flex justify-center items-center">
+		<div data-sveltekit-prefetch class="flex justify-center items-center">
 			{#each listTab as tab}
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
-				<div
-					class="text-gray-7 flex items-center gap-1 p-4 cursor-pointer hover:bg-gray-7 hover:bg-opacity-8 dark:hover:bg-gray-2 dark:hover:bg-opacity-8 dark:text-githubDark-2 {tab.url.split(
+				<a
+					class="text-gray-7 flex items-center gap-1 p-4 cursor-pointer hover:bg-gray-7 hover:bg-opacity-8 decoration-none dark:hover:bg-gray-2 dark:hover:bg-opacity-8 dark:text-githubDark-2 {tab.url.split(
 						'/'
 					)[1] === $page.url.pathname.split('/')[1]
 						? 'font-semibold border-b-2 border-orange-5'
 						: ''}"
-					on:click={() => changePage(tab.id, tab.url)}
+					href={tab.url}
+					on:click={() => changeTabActive(tab.id)}
 				>
 					<div class="mr-1 text-lg {tab.icon}" />
 					<div>{tab.label}</div>
-				</div>
+				</a>
 			{/each}
 		</div>
 	{/if}
