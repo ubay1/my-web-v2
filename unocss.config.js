@@ -3,12 +3,12 @@ import {
 	// presetAttributify,
 	presetWind,
 	presetMini,
-	presetIcons,
+	// presetIcons,
 	presetTypography,
-	presetUno,
-	presetWebFonts,
-	transformerDirectives,
-	transformerVariantGroup
+	presetUno
+	// presetWebFonts,
+	// transformerDirectives,
+	// transformerVariantGroup
 } from 'unocss';
 
 export default defineConfig({
@@ -21,23 +21,22 @@ export default defineConfig({
 	presets: [
 		presetUno(),
 		presetWind(),
-		// presetAttributify(),
-		presetIcons({
-			warn: true
-		}),
 		presetMini({
 			dark: 'class'
 		}),
-		presetTypography(),
-		presetWebFonts({
-			provider: 'google',
-			fonts: {
-				// these will extend the default theme
-				default: 'Roboto'
-			}
-		})
+		presetTypography()
+		// presetAttributify(),
+		// presetIcons({
+		// 	warn: true
+		// }),
+		// presetWebFonts({
+		// provider: 'google',
+		// fonts: {
+		// 	default: 'Roboto'
+		// }
+		// })
 	],
-	transformers: [transformerDirectives(), transformerVariantGroup()],
+	// transformers: [transformerDirectives(), transformerVariantGroup()],
 	safelist: 'prose prose-sm m-auto text-left'.split(' '),
 	rules: [
 		['w-fill', { width: '-webkit-fill-available' }],
