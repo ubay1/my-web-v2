@@ -22,7 +22,7 @@
 </div>
 
 <div
-	class="p-2 max-w-4xl m-auto prose prose-hr:mt-4 prose-hr:mb-4 prose-h2:mb-2 prose-h2:mt-4 prose-ol:mt-0 prose-a:text-black prose-p:my-0 dark:bg-githubDark-1 dark:prose-h2:text-white dark:text-white dark:prose-blockquote:text-white  dark:prose-ol:text-white dark:prose-p:text-white dark:prose-a:text-white"
+	class="p-2 max-w-4xl m-auto prose prose-hr:mt-4 prose-hr:mb-4 prose-h2:mb-2 prose-h2:mt-2 prose-ol:mt-0 prose-a:text-black prose-p:my-0 dark:bg-githubDark-1 dark:prose-h2:text-white dark:text-white dark:prose-blockquote:text-white  dark:prose-ol:text-white dark:prose-p:text-white dark:prose-a:text-white"
 >
 	<svelte:component this={data.content} />
 </div>
