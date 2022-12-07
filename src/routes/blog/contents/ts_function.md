@@ -1,7 +1,7 @@
 ---
 title: Function pada Typescript
 description: Belajar function yang ada pada typescript
-imagePath: https://fedojo.com/wp-content/uploads/2019/05/typescript.png
+imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
 imageAlt: img-ts
 date: 2022-12-02
 tags:

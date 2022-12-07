@@ -3,6 +3,7 @@
 
 	import 'uno.css';
 	import '$lib/assets/css/global.css';
+	import '$lib/assets/css/prism.css';
 	import { navigating } from '$app/stores';
 	import NProgress, { remove } from 'nprogress';
 	import 'nprogress/nprogress.css';

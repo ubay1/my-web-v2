@@ -1,16 +1,4 @@
 <script>
-	// import SMA from '/images/smk.webp';
-	// import Unpam from '/images/unpam.webp';
-	// import Html from '/images/html.webp';
-	// import Css from '/images/css.webp';
-	// import Vue from '/images/vue.webp';
-	// import Svelte from '/images/svelte.webp';
-	// import React from '/images/react.webp';
-	// import Cert1 from '/images/cert-1.webp';
-	// import Cert2 from '/images/cert-2.webp';
-	// import Cert3 from '/images/cert-3.webp';
-	// import Cert4 from '/images/cert-4.webp';
-
 	let achievements = [
 		{ id: 1, img: '/images/cert-1.webp' },
 		{ id: 2, img: '/images/cert-2.webp' },
