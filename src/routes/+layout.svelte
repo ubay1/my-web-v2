@@ -10,6 +10,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import { browser } from '$app/environment';
 	import Seo from '$lib/components/Seo.svelte';
+	import LightBulb from '~icons/octicon/light-bulb-16';
 
 	NProgress.configure({
 		// Full list: https://github.com/rstacruz/nprogress#configuration
@@ -60,11 +61,7 @@
 		class="bg-yellow-4 rounded-full h-12 w-12 flex justify-center items-center border-none fixed bottom-5 right-10 cursor-pointer hover:bg-yellow-3 dark:hover:bg-gray-6 dark:bg-gray-7 lt-md:right-5"
 		on:click={() => toggleDark()}
 	>
-		{#if isDark}
-			<div class="i-octicon-moon-16 text-2xl dark:text-white" />
-		{:else}
-			<div class="i-octicon-sun-16 text-2xl dark:text-white" />
-		{/if}
+		<LightBulb class="text-2xl dark:text-white" />
 	</button>
 </main>
 
