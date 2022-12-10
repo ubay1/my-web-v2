@@ -13,7 +13,7 @@ Generics bisa dibilang mirip **any**, bedanya kalo kita pake any **TSC** nggak b
 Kalo kita pake editor yang mendukung Intellisense ini juga nggak jalan karena kurang info.
 <br><br>
 
-# Tanpa generic
+## Tanpa generic
 
 ```ts
 function add(val: any) {
@@ -28,7 +28,7 @@ console.log(b.length); // 1
 
 <br>
 
-# Dengan generic
+## Dengan generic
 
 ```ts
 function add<T>(val: T) {
@@ -42,7 +42,7 @@ console.log(b.length); // 1
 
 <br>
 
-# Bekerja dengan Generic variable
+## Bekerja dengan Generic variable
 
 ```ts
 // tanpa nilai balik
@@ -79,7 +79,7 @@ console.log(aab); // 4
 
 <br>
 
-# Class dengan Generic Type
+## Class dengan Generic Type
 
 ```ts
 class testClass<T> {

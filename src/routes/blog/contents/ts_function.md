@@ -13,7 +13,7 @@ Generics bisa dibilang mirip any, bedanya kalo kita pake any **TSC** nggak bisa 
 Kalo kita pake editor yang mendukung Intellisense ini juga nggak jalan karena kurang info.
 <br><br>
 
-# Named Function
+## Named Function
 
 ```ts
 function add(a: number, b: number) {
@@ -24,7 +24,7 @@ console.log(add(12, 12)); // 24
 
 <br>
 
-# Anonymous Function
+## Anonymous Function
 
 ```ts
 let myAdd = function (x: number, y: number): number {
@@ -35,7 +35,7 @@ console.log(myAdd(12, 12)); // 24
 
 <br>
 
-# Function tanpa nilai balik
+## Function tanpa nilai balik
 
 dengan **: void** kita bisa memberikan **console.log**
 
@@ -48,7 +48,7 @@ myAdd(12, 12); // 24
 
 <br>
 
-# Function dengan Rest Parameter
+## Function dengan Rest Parameter
 
 ```ts
 function buildName(...restOfName: any[]) {
