@@ -106,12 +106,19 @@
 				{/each}
 			</div>
 			<div class="text-black flex flex-col p-4">
-				<div class="text-center font-bold mb-2 flex items-center justify-center gap-2">
-					{item.label}
+				<div class="text-center font-bold mb-2">
 					{#if item.url}
-						<a href={item.url} target="_blank" rel="noreferrer" class="text-lg">
-							<div class="i-octicon-link-external-16" />
+						<a
+							href={item.url}
+							target="_blank"
+							rel="noreferrer"
+							class="flex items-center justify-center gap-2 decoration-none text-black"
+						>
+							<span>{item.label}</span>
+							<div class="i-octicon-link-external-16 text-lg " />
 						</a>
+					{:else}
+						{item.label}
 					{/if}
 				</div>
 				<div class="text-center">
