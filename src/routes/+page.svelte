@@ -68,7 +68,9 @@
 						<img
 							src={item.img}
 							alt="img-achievment-{item.id}"
-							class="w-100% pointer-events-none h-full my-4 bg-gray-3 aspect-ratio-8/6 shadow dark:bg-gray-7"
+							width="169"
+							height="127"
+							class="pointer-events-none my-4 bg-gray-3 aspect-ratio-auto shadow dark:bg-gray-7"
 						/>
 					</div>
 				{/each}
