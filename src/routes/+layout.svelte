@@ -53,7 +53,7 @@
 </svelte:head>
 
 <Seo title="Ubay Dillah" metadescription="Catatan" />
-<main>
+<main class="overflow-hidden">
 	<Header />
 	<slot />
 	<button

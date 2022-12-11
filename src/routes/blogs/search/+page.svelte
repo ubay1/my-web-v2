@@ -13,7 +13,7 @@
 	const filterArtikel = async () => {
 		isLoading = true;
 		try {
-			const res = await fetch('/api/blog', {
+			const res = await fetch('/api/blogs', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'

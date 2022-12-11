@@ -54,31 +54,40 @@
 
 		<div class="mt-4 flex flex-col gap-2 dark:text-white ">
 			<div class="text-2xl font-semibold">Ubay Dillah</div>
-			<div class="flex items-center text-sm gap-1">
+			<div class="flex items-center lt-md:justify-center text-sm gap-1">
 				<div class="i-octicon-location " />
-				<div>Tangsel / Bekasi</div>
+				<div>Bekasi</div>
 			</div>
 		</div>
 		<div class="w-full mt-2 mb-3 h-2 border-b border-gray-3 dark:border-gray-7" />
 		<div class="font-semibold dark:text-white">Pencapaian</div>
-		<div class="flex gap-2 mb-2 w-full overflow-y-auto lt-md:w-full">
-			{#each achievements as item}
-				<img
-					src={item.img}
-					alt="img-achievment-{item.id}"
-					class="w-80% pointer-events-none h-full mt-4 bg-gray-3 aspect-ratio-8/6 shadow mb-4 dark:bg-gray-7 lt-md:w-50%"
-				/>
-			{/each}
+		<div class="overflow-x-auto w-full">
+			<div class="flex gap-2 mb-2 w-[700px]">
+				{#each achievements as item}
+					<div class="w-[20em] h-full lt-md:w-[20em]">
+						<img
+							src={item.img}
+							alt="img-achievment-{item.id}"
+							class="w-100% pointer-events-none h-full my-4 bg-gray-3 aspect-ratio-8/6 shadow dark:bg-gray-7"
+						/>
+					</div>
+				{/each}
+			</div>
 		</div>
 	</div>
 
 	<div class="w-full flex flex-col dark:text-white ">
 		<div class="border border-gray-3 rounded-lg p-4 dark:border-gray-7">
 			<p class="text-2xl text-center">Hi, Saya Ubay 👋</p>
-			<p class="leading-6">
-				Saya seorang ayah yang dikaruniai 2 orang anak. saya seorang yang sangat tertarik dengan
-				hal-hal baru dalam teknologi web. saat ini saya bekerja sebagai frontend developer di sebuah
-				pemerintahan yang bergerak dibidang kesehatan.
+			<p class="leading-6 indent-5 text-justify">
+				Saya seorang ayah dari 2 orang anak. saya seorang yang sangat tertarik dengan hal-hal baru
+				dalam teknologi web. saat ini saya bekerja sebagai frontend developer di
+				<a
+					href="https://dto.kemkes.go.id"
+					class="text-orange-6 dark:text-orange-4 font-bold decoration-none border-x-none border-t-none border-b-1 border-dashed"
+				>
+					DTO Kemenkes
+				</a>
 			</p>
 		</div>
 

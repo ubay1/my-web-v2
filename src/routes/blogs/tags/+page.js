@@ -1,6 +1,6 @@
 // @ts-nocheck
 export const load = async ({ fetch }) => {
-	const response = await fetch(`/api/blog/tag`);
+	const response = await fetch(`/api/blogs/tag`);
 	const posts = await response.json();
 
 	let tagsSet = new Set();

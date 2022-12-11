@@ -4,7 +4,7 @@
 export const fetchAllBlog = async () => {
 	const PER_PAGE = 10;
 
-	const allPostFiles = import.meta.glob('/src/routes/blog/contents/*.md');
+	const allPostFiles = import.meta.glob('/src/routes/blogs/contents/*.md');
 	const iterablePostFiles = Object.entries(allPostFiles);
 
 	return await Promise.all(
@@ -22,7 +22,7 @@ export const fetchAllBlog = async () => {
 
 export const fetchBlogWithFilter = async (search, page) => {
 	const searchs = (search && search.toLowerCase()) || search;
-	const allPostFiles = import.meta.glob('/src/routes/blog/contents/*.md');
+	const allPostFiles = import.meta.glob('/src/routes/blogs/contents/*.md');
 	const iterablePostFiles = Object.entries(allPostFiles);
 
 	const allPosts = await Promise.all(
@@ -52,7 +52,7 @@ export const fetchBlogWithFilter = async (search, page) => {
 };
 
 export const fetchBlogWithTags = async () => {
-	const allPostFiles = import.meta.glob('/src/routes/blog/contents/*.md');
+	const allPostFiles = import.meta.glob('/src/routes/blogs/contents/*.md');
 	const iterablePostFiles = Object.entries(allPostFiles);
 
 	return await Promise.all(
@@ -69,7 +69,7 @@ export const fetchBlogWithTags = async () => {
 };
 
 export const fetchBlogForSitemap = async () => {
-	const allPostFiles = import.meta.glob('/src/routes/blog/contents/*.md');
+	const allPostFiles = import.meta.glob('/src/routes/blogs/contents/*.md');
 	const iterablePostFiles = Object.entries(allPostFiles);
 
 	const posts = await Promise.all(

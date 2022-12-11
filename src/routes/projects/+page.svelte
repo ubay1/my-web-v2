@@ -6,7 +6,7 @@
 			classes: 'img-horizontal-asik',
 			img: ['/images/asik.webp'],
 			stack: ['VueJS 2', 'Tailwind'],
-			project: 'Kementrian Kesehatan',
+			project: 'Kementerian Kesehatan',
 			url: null
 		},
 		{
@@ -15,7 +15,7 @@
 			classes: 'img-vertical',
 			img: ['/images/ehac.webp', '/images/ehac1.webp', 'images/myehac.webp'],
 			stack: ['NuxtJS', 'Vuetify'],
-			project: 'Kementrian Kesehatan',
+			project: 'Kementerian Kesehatan',
 			url: null
 		},
 		{
@@ -24,7 +24,7 @@
 			classes: 'img-vertical',
 			img: ['/images/vue3-movie.webp'],
 			stack: ['VueJS 3', 'Tailwind'],
-			project: 'Self Project',
+			project: 'Proyek Pribadi',
 			url: 'https://vue3-movie.vercel.app'
 		},
 		{
@@ -33,7 +33,7 @@
 			classes: 'img-vertical',
 			img: ['/images/catatan-kajian.webp'],
 			stack: ['SvelteKit', 'Tailwind'],
-			project: 'Self Project',
+			project: 'Proyek Pribadi',
 			url: 'https://catatan-kajian.vercel.app'
 		},
 		{
@@ -42,7 +42,7 @@
 			classes: 'img-horizontal-blibli',
 			img: ['/images/blibli.webp'],
 			stack: ['SvelteKit', 'Tailwind'],
-			project: 'Self Project',
+			project: 'Proyek Pribadi',
 			url: 'https://learn-svelte-sveltekit.vercel.app/project/blibli-clone'
 		},
 		{
@@ -60,7 +60,7 @@
 			classes: 'img-horizontal-carigawe',
 			img: ['/images/carigawe2.webp'],
 			stack: ['ReactJS', 'Typescript', 'Sequelize', 'SocketIO', 'ExpressJS', 'MaterialUI'],
-			project: 'Self Project',
+			project: 'Proyek Pribadi',
 			url: null
 		},
 		{
@@ -69,7 +69,7 @@
 			classes: 'img-vertical',
 			img: ['/images/catatanuang2.webp'],
 			stack: ['React Native', 'Typescript', 'Realm'],
-			project: 'Self Project',
+			project: 'Proyek Pribadi',
 			url: null
 		},
 		{
@@ -86,7 +86,7 @@
 
 <div class=" columns-1 sm:columns-2 md:columns-3 gap-4 p-4 mb-4">
 	{#each listProject as item}
-		<div class="break-inside-avoid mb-4 bg-gray-1 shadow-md rounded-md dark:bg-white">
+		<div class="break-inside-avoid mb-4 bg-neutral-1 shadow-md rounded-md dark:bg-white">
 			<div
 				class="rounded-t-md shadow-lg  relative justify-center flex flex-row flex-wrap gap-2 overflow-hidden"
 			>
@@ -101,7 +101,7 @@
 					<img
 						src={img}
 						alt="img-{item.label}"
-						class="{item.vertical ? 'h-56' : 'h-52'} z-10 w-auto object-contain {item.classes}"
+						class="{item.vertical ? 'h-56' : 'h-52'} p-2 z-10 w-auto object-contain {item.classes}"
 					/>
 				{/each}
 			</div>
