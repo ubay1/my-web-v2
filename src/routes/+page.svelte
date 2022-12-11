@@ -84,7 +84,7 @@
 				dalam teknologi web. saat ini saya bekerja sebagai frontend developer di
 				<a
 					href="https://dto.kemkes.go.id"
-					class="text-orange-6 dark:text-orange-4 font-bold decoration-none border-x-none border-t-none border-b-1 border-dashed"
+					class="text-orange-7 dark:text-orange-4 font-bold decoration-none border-x-none border-t-none border-b-1 border-dashed"
 				>
 					DTO Kemenkes
 				</a>
