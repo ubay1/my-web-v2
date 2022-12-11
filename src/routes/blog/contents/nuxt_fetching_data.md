@@ -8,7 +8,7 @@ tags:
   - nuxtjs
 ---
 
-# Fetch Hook
+## Fetch Hook
 
 fetch adalah hook yang dipanggil selama rendering sisi server setelah instance komponen dibuat, dan pada klien saat menavigasi. Fetch hook harus mengembalikan sebuah promise (baik secara eksplisit, atau implisit menggunakan **async await**). <br><br>
 
@@ -68,7 +68,7 @@ export default {
 
 <br>
 
-# Fetch dimethod
+## Fetch dimethod
 
 kita bisa gunakan **$fetch** pada button, <br>
 
@@ -98,11 +98,11 @@ fetch memiliki opsi, diantaranya **fetchOnServer** dan **fetchDelay**: <br>
 1. **fetchOnServer** : defaultnya **true**, jika diubah ke **false** maka akan melakukan fetch melalui sisi klien. <br>
 2. **fetchDelay** : tipenya **integer**, menampilkan data dengan delay sesuai yang kita inputkan. <br><br>
 
-# Caching
+## Caching
 
 kita dapat gunakan **keep-alive** pada component **Nuxt** dan **nuxt-child** to menyimpan hasil **fetch** pada halaman yang telah dikunjungi. keep-alive bisa dikombinasikan dengan lifecycle **activated**. <br><br>
 
-# Activated Hook
+## Activated Hook
 
 Hook activated Vue digunakan di sini dengan keep-live untuk mengambil kembali data.
 
@@ -125,7 +125,7 @@ export default {
 
 <br>
 
-# asyncData
+## asyncData
 
 Tidak seperti fetch, asyncData tidak dapat mengakses instance komponen **this**. Sebaliknya, ia menerima **context** sebagai **parameternya**. pada asyncData kita tidak bisa mengirim data hasil fetching ke **data()**, tapi kita langsung bisa menggunakannya pada html. lihat contoh berikut ini. <br>
 

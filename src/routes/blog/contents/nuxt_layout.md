@@ -10,7 +10,7 @@ tags:
 
 Layout sangat membantu saat Anda ingin mengubah tampilan dan nuansa aplikasi Nuxt.js. Misalnya Anda ingin menyertakan sidebar atau memiliki layout yang berbeda untuk seluler dan desktop <br><br>
 
-# Custom Layout
+## Custom Layout
 
 kita dapat membuat layout sendiri pada folder **layouts** <br><br>
 

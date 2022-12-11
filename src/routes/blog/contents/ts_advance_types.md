@@ -61,7 +61,7 @@ console.log(testIndexSignature);
 
 1. Record type
    - Kita juga dapat menggunakan Record Type untuk membuat object dengan dynamic properties.
-   - Record<tipe, return type>
+   - `Record<tipe, return type>`
    - tipe disini adalah jenis properti yang akan kita buat. namun lebih sering yang digunakan adalah string.
    - return type disini adalah type balikannya kita bisa tentukan sendiri, bisa string, number, ataupun interface.
 

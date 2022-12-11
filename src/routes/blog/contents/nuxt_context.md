@@ -8,77 +8,75 @@ tags:
   - nuxtjs
 ---
 
-# CONTEXT
-
 jika kita masukan parameter **context**, kita bisa akses semua daftar yang tersedia. <br><br>
 
-# #app
+## app
 
 - **tipe:** ada di route vue instance
 - **tersedia:** tersedia di klien & server
 - **deskripsi:** Akar dari instansi Vue yang mencakup semua plugin. Misalnya, ketika menggunakan axios, Kita dapat mengakses $axios melalui context.app.$axios. <br><br>
 
-# #isClient
+## isClient
 
 - **tipe:** tipenya Boolean
 - **tersedia:** tersedia di klien & server
 - **deskripsi:** Boolean yang memberitahu bahwa render dilakukan di sisi-klien.<br><br>
 
-# #isServer
+## isServer
 
 - **tipe:** tipenya Boolean
 - **tersedia:** tersedia di klien & server
 - **deskripsi:** Boolean yang memberitahu bahwa render dilakukan di sisi-server.<br><br>
 
-# #isStatic
+## isStatic
 
 - **tipe:** tipenya Boolean
 - **tersedia:** tersedia di klien & server
 - **deskripsi:** Boolean yang memberitahu bahwa Anda sedang di dalam aplikasi yang dihasilkan (generated app) (melalui nuxt generate).<br><br>
 
-# #isDev
+## isDev
 
 - **tipe:** tipenya Boolean
 - **tersedia:** tersedia di klien & server
 - **deskripsi:** Boolean yang memberitahu bahwa Anda sedang berada di dalam mode pengembangan (dev), dapat berguna untuk menyimpan (cache) beberapa data pada mode produksi.<br><br>
 
-# #isHMR
+## isHMR
 
 - **tipe:** tipenya Boolean
 - **tersedia:** tersedia di klien & server
 - **deskripsi:** Boolean yang memberitahu bahwa metode/middleware dipanggil dari "webpack hot module replacement" (hanya pada sisi-klien dalam mode pengembangan (dev)).<br><br>
 
-# #route
+## route
 
 - **tipe:** ada di Rute Vue Router
 - **tersedia:** tersedia di klien & server
 - **deskripsi:** Instansi rute Vue Router.<br><br>
 
-# #store
+## store
 
 - **tipe:** ada di Vuex store
 - **tersedia:** tersedia di klien & server
 - **deskripsi:** Instansi Vuex Store. Tersedia hanya jika vuex store telah diatur.<br><br>
 
-# #env
+## env
 
 - **tipe:** tipenya object
 - **tersedia:** tersedia di klien & server
 - **deskripsi:** Environment variables yang diatur di nuxt.config.js, lihat env api.<br><br>
 
-# #params
+## params
 
 - **tipe:** tipenya object
 - **tersedia:** tersedia di klien & server
 - **deskripsi:** Alias dari route.params.<br><br>
 
-# #query
+## query
 
 - **tipe:** tipenya object
 - **tersedia:** tersedia di klien & server
 - **deskripsi:** Alias dari route.query.<br><br>
 
-# #error
+## error
 
 - **tipe:** tipenya Function
 - **tersedia:** tersedia di klien & server
@@ -86,11 +84,11 @@ jika kita masukan parameter **context**, kita bisa akses semua daftar yang terse
 
 yang lainnya. <br>
 
-# #req, res, redirect, nuxtState, beforeNuxtRender(fn)
+## req, res, redirect, nuxtState, beforeNuxtRender(fn)
 
 <br><br>
 
-# HELPER $nuxt
+## HELPER $nuxt
 
 1. check koneksi internet: bisa gunakan **$nuxt.isOffline** dan **$nuxt.isOnline**, mengembalikan **boolean** true / false. <br><br>
 

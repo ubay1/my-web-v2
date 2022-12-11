@@ -48,6 +48,9 @@ export default defineConfig({
 				1: '#22272e',
 				2: '#adbac7'
 			}
+		},
+		boxShadow: {
+			insetBs: 'inset 0 -1px 1px rgba(33, 71, 41, 0.15),0 0.25rem 1.5rem rgba(255, 255, 255, 0.75)'
 		}
 	}
 });

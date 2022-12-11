@@ -58,7 +58,7 @@
 	<slot />
 	<button
 		aria-label="btn-toggle-theme"
-		class="bg-yellow-4 rounded-full h-12 w-12 flex justify-center items-center border-none fixed bottom-5 right-10 cursor-pointer hover:bg-yellow-3 dark:hover:bg-gray-6 dark:bg-gray-7 lt-md:right-5"
+		class="bg-yellow-4 z-100 rounded-full h-12 w-12 flex justify-center items-center border-none fixed bottom-5 right-10 cursor-pointer hover:bg-yellow-3 dark:hover:bg-gray-6 dark:bg-gray-7 lt-md:right-5"
 		on:click={() => toggleDark()}
 	>
 		<LightBulb class="text-2xl dark:text-white" />
