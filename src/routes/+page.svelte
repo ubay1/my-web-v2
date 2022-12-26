@@ -1,9 +1,11 @@
 <script>
+	import { page } from '$app/stores';
 	let achievements = [
 		{ id: 1, img: '/images/cert-1.webp' },
 		{ id: 2, img: '/images/cert-2.webp' },
 		{ id: 3, img: '/images/cert-3.webp' },
-		{ id: 4, img: '/images/cert-4.webp' }
+		{ id: 4, img: '/images/cert-4.webp' },
+		{ id: 5, img: '/images/cert-5.webp' }
 	];
 
 	let listRiwayatPendidikan = [
@@ -42,6 +44,7 @@
 	<link rel="preload" as="image" href="/images/cert-2.webp" />
 	<link rel="preload" as="image" href="/images/cert-3.webp" />
 	<link rel="preload" as="image" href="/images/cert-4.webp" />
+	<link rel="preload" as="image" href="/images/cert-5.webp" />
 </svelte:head>
 
 <div class="flex justify-start items-start gap-6 mt-4 px-4 lt-md:flex-col">
@@ -64,13 +67,18 @@
 		<div class="overflow-x-auto w-full">
 			<div class="flex gap-2 mb-2 w-[700px]">
 				{#each achievements as item}
-					<div class="w-[20em] h-full lt-md:w-[20em]">
+					<a
+						href={$page.url.origin + item.img}
+						class="w-[20em] h-full lt-md:w-[20em] cursor-pointer"
+						target="_blank"
+						rel="noreferrer"
+					>
 						<img
 							src={item.img}
 							alt="img-achievment-{item.id}"
 							class="w-100% pointer-events-none h-full my-4 bg-gray-3 aspect-ratio-8/6 object-cover shadow dark:bg-gray-7"
 						/>
-					</div>
+					</a>
 				{/each}
 			</div>
 		</div>
