@@ -15,6 +15,7 @@
 	"devDependencies": {
 		"@iconify-json/octicon": "^1.1.23",
 		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-vercel": "^1.0.0",
 		"@sveltejs/kit": "next",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
