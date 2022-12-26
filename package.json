@@ -20,6 +20,7 @@
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"install-peers": "^1.0.4",
 		"mdsvex": "^0.10.6",
 		"nprogress": "^0.2.0",
 		"prettier": "^2.8.0",
