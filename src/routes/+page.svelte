@@ -33,6 +33,7 @@
 </script>
 
 <svelte:head>
+	<link rel="preload" as="image" href="/images/profil.webp" />
 	<link rel="preload" as="image" href="/images/smk.webp" />
 	<link rel="preload" as="image" href="/images/unpam.webp" />
 	<link rel="preload" as="image" href="/images/html.webp" />
@@ -50,7 +51,7 @@
 <div class="flex justify-start items-start gap-6 mt-4 px-4 lt-md:flex-col">
 	<div class="w-30% flex flex-col justify-center lt-md:w-100% lt-md:items-center">
 		<img
-			src="/profil.webp"
+			src="/images/profil.webp"
 			alt="profil"
 			class="w-full pointer-events-none bg-gray-3 rounded-full border-gray-7 object-cover aspect-square dark:border-b dark:bg-gray-7 dark:border-gray-7 lt-md:w-50%"
 		/>
