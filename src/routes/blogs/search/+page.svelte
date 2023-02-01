@@ -1,8 +1,5 @@
 <script>
 	// @ts-nocheck
-
-	import Search from '~icons/octicon/search-24';
-	import Close from '~icons/octicon/x-16';
 	import List from '$lib/components/organisms/blog/List.svelte';
 
 	let search = null;
@@ -60,8 +57,8 @@
 				class="w-14 rounded-md flex justify-center p-2 absolute top-1 right-1 "
 				on:click={() => resetArtikel()}
 			>
-				<Close
-					class="w-6 h-6 rounded-md absolute top-2 right-16 text-red-500 bg-red-100 {search
+				<div
+					class="i-octicon-x-16 w-6 h-6 rounded-md absolute top-2 right-16 text-red-500 bg-red-100 {search
 						? 'flex'
 						: 'hidden'}"
 				/>
@@ -71,7 +68,7 @@
 				class="w-14 rounded-md flex justify-center p-2 bg-sky-900 absolute top-1 right-1"
 				on:click={() => filterArtikel()}
 			>
-				<Search class="w-6 h-6 text-white" />
+				<div class="i-octicon-search-24 w-6 h-6 text-white" />
 			</button>
 		</div>
 
