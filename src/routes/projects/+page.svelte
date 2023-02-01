@@ -5,7 +5,7 @@
 			vertical: false,
 			classes: 'img-horizontal-blibli',
 			img: ['/images/sveltekit-movie.webp'],
-			stack: ['SvelteKit', 'UnoCSS'],
+			stack: ['SvelteKit', 'Typescript', 'UnoCSS'],
 			project: 'Proyek Pribadi',
 			url: 'https://movie-kit.vercel.app'
 		},
