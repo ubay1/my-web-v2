@@ -1,6 +1,15 @@
 <script>
 	const listProject = [
 		{
+			label: 'Movie Kit',
+			vertical: false,
+			classes: 'img-horizontal-blibli',
+			img: ['/images/sveltekit-movie.webp'],
+			stack: ['SvelteKit', 'UnoCSS'],
+			project: 'Proyek Pribadi',
+			url: 'https://movie-kit.vercel.app'
+		},
+		{
 			label: 'Asik Dashboard',
 			vertical: false,
 			classes: 'img-horizontal-asik',

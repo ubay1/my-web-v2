@@ -5,7 +5,8 @@
 		{ id: 2, img: '/images/cert-2.webp' },
 		{ id: 3, img: '/images/cert-3.webp' },
 		{ id: 4, img: '/images/cert-4.webp' },
-		{ id: 5, img: '/images/cert-5.webp' }
+		{ id: 5, img: '/images/cert-5.webp' },
+		{ id: 6, img: '/images/cert-6.webp' }
 	];
 
 	let listRiwayatPendidikan = [
@@ -26,9 +27,10 @@
 	let listKeahlian = [
 		{ img: '/images/html.webp', nama: 'HTML', star: '⭐⭐⭐⭐⭐' },
 		{ img: '/images/css.webp', nama: 'CSS', star: '⭐⭐⭐⭐⭐' },
-		{ img: '/images/vue.webp', nama: 'VueJS', star: '⭐⭐⭐⭐⭐' },
+		{ img: '/images/vue.webp', nama: 'Vue', star: '⭐⭐⭐⭐⭐' },
 		{ img: '/images/svelte.webp', nama: 'Svelte', star: '⭐⭐⭐⭐' },
-		{ img: '/images/react.webp', nama: 'React', star: '⭐⭐⭐' }
+		{ img: '/images/react.webp', nama: 'React', star: '⭐⭐⭐' },
+		{ img: '/images/ts.webp', nama: 'Typescript', star: '⭐⭐⭐' }
 	];
 </script>
 
@@ -46,6 +48,7 @@
 	<link rel="preload" as="image" href="/images/cert-3.webp" />
 	<link rel="preload" as="image" href="/images/cert-4.webp" />
 	<link rel="preload" as="image" href="/images/cert-5.webp" />
+	<link rel="preload" as="image" href="/images/cert-6.webp" />
 </svelte:head>
 
 <div class="flex justify-start items-start gap-6 mt-4 px-4 lt-md:flex-col">

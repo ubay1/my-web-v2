@@ -29,7 +29,6 @@
 		"svelte-preprocess": "^4.10.7",
 		"typescript": "^4.9.3",
 		"unocss": "^0.47.2",
-		"unplugin-icons": "^0.14.14",
 		"vite": "^4.0.0",
 		"vite-plugin-compression": "^0.5.1",
 		"vitest": "^0.25.3"
