@@ -28,12 +28,12 @@
 </script>
 
 <div class="mt-2 mb-4">
-	<p>Sering digunakan</p>
+	<p>Sedang digunakan</p>
 	<div
-		class="grid grid-cols-2 gap-4 border border-gray-3  rounded-lg p-4  dark:border-gray-7 lt-xs:grid-cols-1"
+		class="flex flex-wrap justify-center items-center gap-6 border border-gray-3  rounded-lg p-4  dark:border-gray-7"
 	>
 		{#each oftenUsed as item}
-			<div class="flex items-center justify-start gap-4 mb-4">
+			<div class="flex flex-col items-center justify-start gap-4 mb-4">
 				<img
 					src={item.img}
 					alt="img-{item.name}"
@@ -41,9 +41,9 @@
 					width="70"
 					height="70"
 				/>
-				<div class="leading-6 w-full">
+				<div class="leading-6">
 					<div class="text-lg font-semibold">{item.name}</div>
-					<div>{item.rate}</div>
+					<!-- <div>{item.rate}</div> -->
 				</div>
 			</div>
 		{/each}
