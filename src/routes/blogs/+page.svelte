@@ -1,8 +1,8 @@
-<script>
-	// @ts-nocheck
+<script lang="ts">
+	import type { PageData } from './$types';
 	import List from '$lib/components/organisms/blog/List.svelte';
 
-	export let data;
+	export let data: PageData;
 </script>
 
 <div class="max-w-4xl m-auto">

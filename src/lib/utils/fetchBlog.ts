@@ -1,16 +1,11 @@
-/* eslint-disable no-unused-vars */
-// @ts-nocheck
-
 export const fetchAllBlog = async () => {
-	const PER_PAGE = 10;
-
 	const allPostFiles = import.meta.glob('/src/routes/blogs/contents/*.md');
 	const iterablePostFiles = Object.entries(allPostFiles);
 
 	return await Promise.all(
 		iterablePostFiles.map(async ([path, dataFile]) => {
-			const { metadata } = await dataFile(); // isi dari file path
-			const postPath = path.slice(11, -3); // /blog/tayamum
+			const { metadata }: any = await dataFile(); // isi dari file path
+			const postPath: string = path.slice(11, -3); // /blog/tayamum
 
 			return {
 				meta: metadata,
@@ -20,15 +15,15 @@ export const fetchAllBlog = async () => {
 	);
 };
 
-export const fetchBlogWithFilter = async (search, page) => {
+export const fetchBlogWithFilter = async (search: string, page: number) => {
 	const searchs = (search && search.toLowerCase()) || search;
 	const allPostFiles = import.meta.glob('/src/routes/blogs/contents/*.md');
 	const iterablePostFiles = Object.entries(allPostFiles);
 
 	const allPosts = await Promise.all(
 		iterablePostFiles.map(async ([path, dataFile]) => {
-			const { metadata } = await dataFile();
-			const postPath = path.slice(11, -3);
+			const { metadata }: any = await dataFile();
+			const postPath: string = path.slice(11, -3);
 
 			return {
 				meta: metadata,
@@ -37,7 +32,7 @@ export const fetchBlogWithFilter = async (search, page) => {
 		})
 	);
 
-	const tempPosts = [];
+	const tempPosts: any[] = [];
 	allPosts.forEach((item) => {
 		if (![null, '', undefined].includes(searchs)) {
 			if (item.meta.title.toLowerCase().search(searchs) !== -1) {
@@ -57,8 +52,8 @@ export const fetchBlogWithTags = async () => {
 
 	return await Promise.all(
 		iterablePostFiles.map(async ([path, dataFile]) => {
-			const { metadata } = await dataFile();
-			const postPath = path.slice(11, -3);
+			const { metadata }: any = await dataFile();
+			const postPath: string = path.slice(11, -3);
 
 			return {
 				meta: metadata,
@@ -74,8 +69,8 @@ export const fetchBlogForSitemap = async () => {
 
 	const posts = await Promise.all(
 		iterablePostFiles.map(async ([path, dataFile]) => {
-			const { metadata } = await dataFile();
-			const postPath = path.slice(11, -3);
+			const { metadata }: any = await dataFile();
+			const postPath: string = path.slice(11, -3);
 
 			return {
 				meta: metadata,

@@ -1,13 +1,15 @@
-// @ts-nocheck
-export const load = async ({ fetch }) => {
+import type { IFetchBlog } from '$lib/types/fetchBlog';
+import type { PageLoad } from './$types';
+
+export const load = (async ({ fetch }) => {
 	const response = await fetch(`/api/blogs/tag`);
 	const posts = await response.json();
 
 	let tagsSet = new Set();
-	posts.forEach((post) => {
+	posts.forEach((post: IFetchBlog) => {
 		if (post.meta.tags) {
 			const tagsArray = post.meta.tags;
-			tagsArray.forEach((tag) => {
+			tagsArray.forEach((tag: string) => {
 				tagsSet.add(tag);
 			});
 		}
@@ -18,4 +20,4 @@ export const load = async ({ fetch }) => {
 	return {
 		allTags
 	};
-};
+}) satisfies PageLoad;
