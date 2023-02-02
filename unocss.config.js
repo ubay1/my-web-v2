@@ -51,6 +51,14 @@ export default defineConfig({
 		},
 		boxShadow: {
 			insetBs: 'inset 0 -1px 1px rgba(33, 71, 41, 0.15),0 0.25rem 1.5rem rgba(255, 255, 255, 0.75)'
+		},
+		breakpoints: {
+			xxs: '320px',
+			xs: '480px',
+			sm: '640px',
+			md: '768px',
+			lg: '1024px',
+			xl: '1280px'
 		}
 	}
 });
