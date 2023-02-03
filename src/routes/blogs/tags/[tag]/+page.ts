@@ -6,7 +6,8 @@ export const load = (async ({ fetch, params }) => {
 	const response = await fetch(`/api/blogs/tag`);
 	const allPosts = await response.json();
 
-	const posts = allPosts.filter((post: IFetchBlog) => post.meta.tags.includes(tag));
+	const posts: IFetchBlog[] = allPosts.filter((post: IFetchBlog) => post.meta.tags.includes(tag));
+	// console.log(posts);
 
 	return {
 		tag,

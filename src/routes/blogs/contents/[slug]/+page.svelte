@@ -1,10 +1,8 @@
-<script>
-	// @ts-nocheck
-
-	import { page } from '$app/stores';
+<script lang="ts">
 	import '$lib/assets/css/prism.css';
 	import { formatDate } from '$lib/utils/format';
-	export let data;
+	import type { PageData } from './$types';
+	export let data: PageData;
 </script>
 
 <div class="p-2 bg-white max-w-4xl m-auto h-56 md:h-72 relative dark:bg-githubDark-1 lt-lg:p-0">

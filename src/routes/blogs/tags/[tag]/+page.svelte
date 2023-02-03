@@ -1,8 +1,8 @@
-<script>
-	// @ts-nocheck
-
+<script lang="ts">
 	import List from '$lib/components/organisms/blog/List.svelte';
-	export let data;
+	import type { PageData } from './$types';
+
+	export let data: PageData;
 
 	const getFormattedTag = () =>
 		data.tag.replace(/\w\S*/g, (w) => w.replace(/^\w/, (c) => c.toUpperCase()));
@@ -18,10 +18,11 @@
 	{#if data.posts.length}
 		{#each data.posts as post}
 			<List
-				slug={post.path}
+				slug={post?.path ?? ''}
 				title={post.meta.title}
 				description={post.meta.description}
 				date={post.meta.date}
+				tags={post.meta.tags}
 			/>
 		{/each}
 	{:else}

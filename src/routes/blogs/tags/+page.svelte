@@ -1,21 +1,16 @@
-<script>
-	// @ts-nocheck
+<script lang="ts">
+	import type { PageData } from './$types';
 
-	// import LargeHeader from '$lib/components/LargeHeader.svelte'
-	export let data;
+	export let data: PageData;
 </script>
 
-<!-- <LargeHeader text="All Tags" /> -->
-
-<ul>
+<div data-sveltekit-preload-data class="list-none p-0 m-4 flex gap-4 flex-wrap">
 	{#each data.allTags as tag}
-		<li>
-			<a
-				href="/blog/tags/{tag}"
-				class="uppercase tracking-wide text-sm text-indigo-500 dark:text-sky-300 font-semibold"
-			>
-				{tag}
-			</a>
-		</li>
+		<a
+			href="/blogs/tags/{tag}"
+			class="uppercase tracking-wide text-sm font-semibold decoration-none leading-6 dark:text-white dark:bg-slate-700 mb-4 p-2 dark:hover:bg-gray-6"
+		>
+			#{tag}
+		</a>
 	{/each}
-</ul>
+</div>

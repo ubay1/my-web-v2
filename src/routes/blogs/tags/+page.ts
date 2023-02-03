@@ -18,6 +18,6 @@ export const load = (async ({ fetch }) => {
 	const allTags = Array.from(tagsSet);
 
 	return {
-		allTags
+		allTags: allTags
 	};
 }) satisfies PageLoad;

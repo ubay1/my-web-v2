@@ -38,7 +38,7 @@
 		<div class="i-octicon-x-16 text-xl text-white" />
 	</button>
 	{#if showAnotherMenu}
-		<div data-sveltekit-prefetch class="mt-20">
+		<div data-sveltekit-preload-data class="mt-20">
 			{#each listTab as tab}
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<a

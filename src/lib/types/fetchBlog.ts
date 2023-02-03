@@ -1,4 +1,5 @@
 export interface IFetchBlog {
+	path?: string;
 	meta: {
 		title: string;
 		description: string;

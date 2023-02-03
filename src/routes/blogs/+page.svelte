@@ -8,7 +8,7 @@
 <div class="max-w-4xl m-auto">
 	{#each data.posts as item}
 		<List
-			slug={item.path}
+			slug={item?.path ?? ''}
 			title={item.meta.title}
 			description={item.meta.description}
 			date={item.meta.date}

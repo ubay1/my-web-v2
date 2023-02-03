@@ -1,8 +1,5 @@
-<script>
-	// @ts-nocheck
-	import { goto } from '$app/navigation';
+<script lang="ts">
 	import { page } from '$app/stores';
-	// import { listTab } from '$lib/utils/constants';
 	import SidebarSmallScreen from './SidebarSmallScreen.svelte';
 
 	export let listTab = [
@@ -11,13 +8,13 @@
 		{ id: 3, label: 'Proyek', url: '/projects', icon: 'i-octicon-repo-16' }
 	];
 
-	let tabActive = 1;
+	let tabActive: number = 1;
 
 	$: innerWidth = 1280;
 
-	let showAnotherMenu = false;
+	let showAnotherMenu: boolean = false;
 
-	function changeTabActive(tabId) {
+	function changeTabActive(tabId: number) {
 		tabActive = tabId;
 	}
 </script>
@@ -37,9 +34,8 @@
 			</button>
 		</div>
 	{:else}
-		<div data-sveltekit-prefetch class="flex justify-center items-center">
+		<div data-sveltekit-preload-data class="flex justify-center items-center">
 			{#each listTab as tab}
-				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<a
 					class="text-gray-7 flex items-center gap-1 p-4 cursor-pointer hover:bg-gray-7 hover:bg-opacity-8 decoration-none dark:hover:bg-gray-2 dark:hover:bg-opacity-8 dark:text-githubDark-2 {tab.url.split(
 						'/'

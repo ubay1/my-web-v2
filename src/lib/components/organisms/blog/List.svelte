@@ -1,18 +1,15 @@
-<script>
-	// @ts-nocheck
-
+<script lang="ts">
 	import { formatDate } from '$lib/utils/format';
-	export let slug, title, description, date;
-	export let tags;
-	// export let image, imageAlt;
+
+	export let slug: string;
+	export let title: string;
+	export let description: string;
+	export let date: string;
+	export let tags: string[];
 </script>
 
-<svelte:head>
-	<!-- <link rel="preload" as="image" href={image} /> -->
-</svelte:head>
-
 <div
-	data-sveltekit-prefetch
+	data-sveltekit-preload-data
 	class="cursor-pointer px-0 hover:bg-gray-7 hover:bg-opacity-8 dark:hover:bg-gray-2 dark:hover:bg-opacity-8 border-b border-gray-3 dark:border-gray-6"
 >
 	<a class="cursor-pointer decoration-none" href={slug}>
@@ -34,7 +31,7 @@
 						<div
 							class="inline-block mr-2 tracking-wide text-xs text-black font-semibold bg-githubDark-1  rounded-md p-1 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-gray-6"
 						>
-							<a href="/blog/tags/{tag}" class="decoration-none text-white ">
+							<a href="/blogs/tags/{tag}" class="decoration-none text-white ">
 								#{tag}
 							</a>
 						</div>

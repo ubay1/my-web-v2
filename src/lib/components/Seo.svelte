@@ -1,12 +1,11 @@
-<script>
-	// @ts-nocheck
+<script lang="ts">
 	import { page } from '$app/stores';
 
 	const fav = '/favicon.ico';
 
-	export let metadescription;
-	export let title;
-	export let image = {
+	export let metadescription: string;
+	export let title: string;
+	export let image: { url: string; alt: string } = {
 		url: '/meta-image.png',
 		alt: 'Catatanku'
 	};
