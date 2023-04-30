@@ -20,7 +20,7 @@
 </script>
 
 <div
-	class="bg-black opacity-60 w-full h-full fixed z-100 top-0 <md:hidden {showAnotherMenu
+	class="bg-black opacity-60 w-full h-full fixed z-100 top-0 lt-md:hidden {showAnotherMenu
 		? 'block'
 		: 'hidden'}"
 />

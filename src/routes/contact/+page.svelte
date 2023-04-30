@@ -42,7 +42,7 @@
 </script>
 
 <form class="p-4 mt-5 flex justify-center items-center" on:submit={sendMail}>
-	<div class="w-4/5 sm:w-3/4 md:w-2/3 lg:w-40% rounded-md flex flex-col justify-center">
+	<div class="w-full sm:w-3/4 md:w-2/3 lg:w-40% rounded-md flex flex-col justify-center">
 		<div class="text-white text-lg text-center font-bold mb-8">
 			Jika ada info lowongan kerja, Freelance, dll. <br /> bisa kirim pesan disini.
 		</div>

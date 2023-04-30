@@ -11,7 +11,7 @@
 
 	let tabActive: number = 1;
 
-	$: innerWidth = 1280;
+	$: innerWidth = 480;
 
 	let showAnotherMenu: boolean = false;
 
@@ -25,37 +25,32 @@
 <div
 	class="bg-white border-b border-gray-3 dark:bg-githubDark-1 dark:border-gray-7 sticky top-0 z-100"
 >
-	{#if innerWidth < 480}
-		<div class="flex items-center px-3 py-4">
-			<button
-				class="bg-transparent border-none cursor-pointer"
-				on:click={() => (showAnotherMenu = !showAnotherMenu)}
+	<div class="flex items-center px-3 py-4 md:hidden">
+		<button
+			class="bg-transparent border-none cursor-pointer"
+			on:click={() => (showAnotherMenu = !showAnotherMenu)}
+		>
+			<div class="i-octicon-three-bars-16 text-2xl dark:text-white" />
+		</button>
+	</div>
+	<div data-sveltekit-preload-data class="flex justify-center items-center lt-md:hidden">
+		{#each listTab as tab}
+			<a
+				class="text-gray-7 flex items-center gap-1 p-4 cursor-pointer hover:bg-gray-7 hover:bg-opacity-8 decoration-none dark:hover:bg-gray-2 dark:hover:bg-opacity-8 dark:text-githubDark-2 {tab.url.split(
+					'/'
+				)[1] === $page.url.pathname.split('/')[1]
+					? 'font-semibold border-b-2 border-orange-5'
+					: ''}"
+				href={tab.url}
+				on:click={() => changeTabActive(tab.id)}
 			>
-				<div class="i-octicon-three-bars-16 text-2xl dark:text-white" />
-			</button>
-		</div>
-	{:else}
-		<div data-sveltekit-preload-data class="flex justify-center items-center">
-			{#each listTab as tab}
-				<a
-					class="text-gray-7 flex items-center gap-1 p-4 cursor-pointer hover:bg-gray-7 hover:bg-opacity-8 decoration-none dark:hover:bg-gray-2 dark:hover:bg-opacity-8 dark:text-githubDark-2 {tab.url.split(
-						'/'
-					)[1] === $page.url.pathname.split('/')[1]
-						? 'font-semibold border-b-2 border-orange-5'
-						: ''}"
-					href={tab.url}
-					on:click={() => changeTabActive(tab.id)}
-				>
-					<div class="mr-1 text-lg {tab.icon}" />
-					<div>{tab.label}</div>
-				</a>
-			{/each}
-		</div>
-	{/if}
+				<div class="mr-1 text-lg {tab.icon}" />
+				<div>{tab.label}</div>
+			</a>
+		{/each}
+	</div>
 </div>
 
-{#if innerWidth < 480}
-	<SidebarSmallScreen {showAnotherMenu} on:close_sidebar={() => (showAnotherMenu = false)} />
-{/if}
+<SidebarSmallScreen {showAnotherMenu} on:close_sidebar={() => (showAnotherMenu = false)} />
 
 <style></style>
