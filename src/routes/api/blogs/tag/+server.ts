@@ -1,4 +1,4 @@
-import type { IFetchBlog } from '$lib/types/fetchBlog';
+import type { IFetchBlog } from "$lib/types/IFetchBlog";
 import { fetchBlogWithTags } from '$lib/utils/fetchBlog';
 import { json } from '@sveltejs/kit';
 

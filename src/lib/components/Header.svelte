@@ -5,7 +5,8 @@
 	export let listTab = [
 		{ id: 1, label: 'Profil', url: '/', icon: 'i-octicon-person-16' },
 		{ id: 2, label: 'Blog', url: '/blogs', icon: 'i-octicon-book-16' },
-		{ id: 3, label: 'Proyek', url: '/projects', icon: 'i-octicon-repo-16' }
+		{ id: 3, label: 'Proyek', url: '/projects', icon: 'i-octicon-repo-16' },
+		{ id: 4, label: 'Kontak', url: '/contact', icon: 'i-octicon-mail-16' }
 	];
 
 	let tabActive: number = 1;
@@ -24,7 +25,7 @@
 <div
 	class="bg-white border-b border-gray-3 dark:bg-githubDark-1 dark:border-gray-7 sticky top-0 z-100"
 >
-	{#if innerWidth < 360}
+	{#if innerWidth < 480}
 		<div class="flex items-center px-3 py-4">
 			<button
 				class="bg-transparent border-none cursor-pointer"
@@ -53,7 +54,7 @@
 	{/if}
 </div>
 
-{#if innerWidth < 360}
+{#if innerWidth < 480}
 	<SidebarSmallScreen {showAnotherMenu} on:close_sidebar={() => (showAnotherMenu = false)} />
 {/if}
 

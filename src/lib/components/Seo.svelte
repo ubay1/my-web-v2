@@ -1,34 +1,32 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-
-	const fav = '/favicon.ico';
-
-	export let metadescription: string;
-	export let title: string;
-	export let image: { url: string; alt: string } = {
-		url: '/meta-image.png',
-		alt: 'Catatanku'
-	};
-	export let url = $page.url.href;
+	const fav = '/meta-image.png';
+	export let templateTitle: string = 'Ubay Dillah';
+	export let title: string = '';
+	export let url: string = 'https://asik-sveltekit.vercel.app';
 	export let favicon = fav;
+	export let description: string = 'Terima jasa pembuatan website, dan freelance.';
 </script>
 
 <svelte:head>
-	<title>{title}</title>
+	<title>{templateTitle}{title}</title>
 	<link rel="icon" href={favicon} />
-	<meta name="description" content={metadescription} />
+	<meta name="description" content={description} />
 	<meta
 		name="robots"
 		content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
 	/>
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content={title} />
-	<meta name="twitter:description" content={metadescription} />
+	<meta name="twitter:title" content={templateTitle + title} />
+	<meta name="twitter:description" content={description} />
 	<meta name="twitter:url" content={url} />
-	<meta name="twitter:image" content={image.url} />
-	<meta name="twitter:image:alt" content={image.alt} />
-	<meta property="og:title" content={title} />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="twitter:image" content={url + '/icons/icon-144x144.png'} />
+	<meta property="og:title" content={templateTitle + title} />
 	<meta property="og:url" content={url} />
-	<meta property="og:description" content={metadescription} />
-	<meta property="og:image" content={image.url} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content={url + '/icons/icon-144x144.png'} />
+	<meta property="og:image:secure" content={url + '/icons/icon-144x144.png'} />
+	<meta property="og:image:width" content="800" />
+	<meta property="og:image:height" content="450" />
+	<meta property="og:url" content={url} />
+	<meta property="og:type" content="article" />
 </svelte:head>

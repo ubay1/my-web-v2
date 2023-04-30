@@ -1,4 +1,4 @@
-import type { IFetchBlog } from '$lib/types/fetchBlog';
+import type { IFetchBlog } from "$lib/types/IFetchBlog";
 import type { PageLoad } from './$types';
 
 export const load = (async ({ fetch }) => {

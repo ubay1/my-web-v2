@@ -93,7 +93,7 @@
 	];
 </script>
 
-<div class=" columns-1 sm:columns-2 md:columns-3 gap-4 p-4 mb-4">
+<div class="columns-1 sm:columns-2 md:columns-3 gap-4 p-4 mb-4">
 	{#each listProject as item}
 		<div class="break-inside-avoid mb-4 bg-neutral-1 shadow-md rounded-md dark:bg-white">
 			<div
