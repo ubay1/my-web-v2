@@ -16,7 +16,7 @@ Nuxt menyediakan beberapa lapisan komponen untuk mengimplementasikan antarmuka p
 ### #Components
 
 Sebagian besar komponen adalah bagian antarmuka pengguna yang dapat digunakan kembali, seperti tombol dan menu. Di Nuxt, Kita dapat membuat komponen ini di direktori **components/**, dan komponen ini akan tersedia secara otomatis di seluruh aplikasi kita tanpa harus mengimpornya.
-kerennya di nuxt3. misal kita taruh componentnya di dalam folder. misal didalam folder **components/test/anu.vue**. jika kita gunakan komponen itu namanya akan menjadi **test-anu**. defaultnya components berjalan di server & client.
+kerennya di nuxt3. misal kita taruh componentnya di dalam folder. misal didalam folder **components/test/anu.vue**. jika kita gunakan komponen itu namanya akan menjadi **test-anu**.
 
 #### # Custom directories
 
