@@ -5,8 +5,8 @@
 	import { navigating } from '$app/stores';
 	import NProgress, { remove } from 'nprogress';
 	import 'nprogress/nprogress.css';
-	import Header from '$lib/components/Header.svelte';
-	import Seo from '$lib/components/Seo.svelte';
+	import Header from '$lib/components/common/Header.svelte';
+	import Seo from '$lib/components/common/Seo.svelte';
 
 	NProgress.configure({
 		// Full list: https://github.com/rstacruz/nprogress#configuration

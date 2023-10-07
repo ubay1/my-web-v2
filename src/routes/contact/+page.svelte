@@ -1,7 +1,5 @@
 <script lang="ts">
-	import DefaultToast from '$lib/components/atoms/DefaultToast.svelte';
-
-	// import ContactEmail from '$lib/components/ContactEmail.svelte';
+	import DefaultToast from '$lib/components/common/DefaultToast.svelte';
 
 	let isLoading: boolean = false;
 	let form: { email: string; fullname: string; content: string } = {

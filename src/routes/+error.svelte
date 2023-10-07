@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	// import ImageNotFound from '$lib/assets/images/404.webp';
 	// import ImageInternalError from '$lib/assets/images/500.webp';
-	import Seo from '$lib/components/Seo.svelte';
+	import Seo from '$lib/components/common/Seo.svelte';
 </script>
 
 <Seo templateTitle="" title={$page.status + ' - ' + $page.error?.message} />

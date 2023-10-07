@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import SidebarSmallScreen from './SidebarSmallScreen.svelte';
+	import SidebarSmallScreen from '$lib/components/common/SidebarSmallScreen.svelte';
 
 	export let listTab = [
 		{ id: 1, label: 'Profil', url: '/', icon: 'i-octicon-person-16' },

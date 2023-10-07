@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Seo from '$lib/components/Seo.svelte';
-	import Education from '$lib/components/molecules/home/Education.svelte';
-	import Greeting from '$lib/components/molecules/home/Greeting.svelte';
-	import Profil from '$lib/components/molecules/home/Profil.svelte';
-	import Skills from '$lib/components/molecules/home/Skills.svelte';
+	import Seo from '$lib/components/common/Seo.svelte';
+	import Education from '$lib/components/home/Education.svelte';
+	import Greeting from '$lib/components/home/Greeting.svelte';
+	import Profil from '$lib/components/home/Profil.svelte';
+	import Skills from '$lib/components/home/Skills.svelte';
 </script>
 
 <Seo />
