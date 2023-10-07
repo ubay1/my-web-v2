@@ -23,7 +23,7 @@
 <svelte:window bind:innerWidth />
 
 <div
-	class="bg-white border-b border-gray-3 dark:bg-githubDark-1 dark:border-gray-7 sticky top-0 z-100"
+	class="bg-white border-b border-b-solid border-gray-3 dark:bg-githubDark-1 dark:border-gray-7 sticky top-0 z-100"
 >
 	<div class="flex items-center px-3 py-4 md:hidden">
 		<button
@@ -39,7 +39,7 @@
 				class="text-gray-7 flex items-center gap-1 p-4 cursor-pointer hover:bg-gray-7 hover:bg-opacity-8 decoration-none dark:hover:bg-gray-2 dark:hover:bg-opacity-8 dark:text-githubDark-2 {tab.url.split(
 					'/'
 				)[1] === $page.url.pathname.split('/')[1]
-					? 'font-semibold border-b-2 border-orange-5'
+					? 'font-semibold border-b-2 border-b-solid border-orange-5'
 					: ''}"
 				href={tab.url}
 				on:click={() => changeTabActive(tab.id)}

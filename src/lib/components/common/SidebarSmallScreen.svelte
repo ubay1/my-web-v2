@@ -44,7 +44,7 @@
 				<a
 					class="text-black flex items-center gap-1 p-4 cursor-pointer w-full hover:bg-gray-7 hover:bg-opacity-8 decoration-none dark:hover:bg-gray-2 dark:hover:bg-opacity-8 dark:text-githubDark-2 {tab.url ===
 					$page.url.pathname
-						? 'font-semibold border-b-2 border-orange-5'
+						? 'font-semibold border-b-2 border-b-solid border-orange-5'
 						: ''}"
 					href={tab.url}
 					on:click|preventDefault={() => changePage(tab.id, tab.url)}
