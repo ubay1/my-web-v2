@@ -9,10 +9,10 @@ async function getMock1() {
 }
 
 async function getMock2() {
-	const res = await fetch(`https://dummyjson.com/posts?limit=${5}`);
+	const res = await fetch(`https://dummyjson.com/comments`);
 	const postData = await res.json();
 	await setTimeout(3000);
-	return postData.posts;
+	return postData.comments;
 }
 
 export const load: PageServerLoad = async () => {
@@ -21,12 +21,5 @@ export const load: PageServerLoad = async () => {
 			one: getMock1(),
 			two: getMock2()
 		}
-		// streamed: {
-		// 	three: new Promise((resolve) => {
-		// 		setTimeout(() => {
-		// 			resolve(3);
-		// 		}, 1000);
-		// 	})
-		// }
 	};
 };
