@@ -27,6 +27,7 @@
 >
 	<div class="flex items-center px-3 py-4 md:hidden">
 		<button
+			aria-label="btn-menu-sm-screen"
 			class="bg-transparent border-none cursor-pointer"
 			on:click={() => (showAnotherMenu = !showAnotherMenu)}
 		>
