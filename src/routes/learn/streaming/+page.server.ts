@@ -1,4 +1,4 @@
-import type { PageServerLoad } from './$types';
+import type { PageServerLoad } from '../$types';
 import { setTimeout } from 'timers/promises';
 
 async function getMock1() {

@@ -8,7 +8,10 @@ tags:
   - sveltekit
 ---
 
-promise pada tingkat teratas dari objek yang dikembalikan akan ditunggu, sehingga memudahkan untuk mengembalikan banyak promise tanpa membuat waterfall. Ketika menggunakan beban server, nested promises akan dialirkan ke browser ketika selesai. Hal ini berguna jika Anda memiliki data yang lambat dan tidak penting, karena Anda dapat mulai merender halaman sebelum semua data tersedia:
+jika kita menggunakan SSR biasanya ketika pindah ke halaman lain yang melakukan fetching API itu lama,karena kita menunggu semua halaman selesai melakukan fetching. <br>
+jika dengan streaming kita bisa masuk ke halaman yang dituju tanpa menunggu fetching selesai.
+
+untuk jelasnya bisa lihat code dibawah ini.
 
 ```ts
 src / routes / +page.server.ts;
@@ -22,18 +25,24 @@ interface IResponse {
 	title: string;
 	userId: number;
 }
-export const load: PageServerLoad = ({ fetch }) => {
-	async function getData() {
-		const res = await fetch('/login');
-		const data: IResponse[] = await res.json();
-		await setTimeout(1000);
-		return data;
-	}
+async function getData() {
+	const res = await fetch('https://dummyjson.com/comments');
+	const json = await res.json();
+	await setTimeout(100);
+	return json.comments;
+}
+async function getMock2() {
+	const res = await fetch(`https://dummyjson.com/comments`);
+	const postData = await res.json();
+	await setTimeout(3000);
+	return postData.comments;
+}
 
+export const load: PageServerLoad = async () => {
 	return {
-		// notLazy: getData()
-		lazy: {
-			dataPost: getData()
+		one: getMock1(),
+		streamed: {
+			two: getMock2()
 		}
 	};
 };
@@ -49,8 +58,7 @@ src / routes / +page.server.ts;
 </script>
 
 <div class="flex flex-col gap-4 my-4">
-	{#await data.lazy.dataPost}
-		<!-- {#await data.notLazy} -->
+	{#await data.streamed.two}
 		{#each Array(10) as _}
 			<div class="px-4">
 				<div class="shimmer h-10 w-full" />

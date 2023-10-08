@@ -10,7 +10,7 @@
 
 <div
 	data-sveltekit-preload-data
-	class="cursor-pointer px-0 hover:bg-gray-7 hover:bg-opacity-8 dark:hover:bg-gray-2 dark:hover:bg-opacity-8 border-b border-gray-3 dark:border-gray-6"
+	class="cursor-pointer px-0 hover:bg-gray-7 hover:bg-opacity-8 dark:hover:bg-gray-2 dark:hover:bg-opacity-8 border-b border-b-solid border-gray-3 dark:border-gray-6"
 >
 	<a class="cursor-pointer decoration-none" href={slug}>
 		<div class="p-4 relative">
@@ -29,9 +29,9 @@
 				{#if tags && tags.length > 0}
 					{#each tags as tag (tag)}
 						<div
-							class="inline-block mr-2 tracking-wide text-xs text-black font-semibold bg-githubDark-1  rounded-md p-1 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-gray-6"
+							class="inline-block mr-2 tracking-wide text-xs text-black font-semibold bg-githubDark-1 rounded-md p-1 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-gray-6"
 						>
-							<a href="/blogs/tags/{tag}" class="decoration-none text-white ">
+							<a href="/blogs/tags/{tag}" class="decoration-none text-white">
 								#{tag}
 							</a>
 						</div>
