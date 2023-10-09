@@ -4,8 +4,9 @@
 
 	export let data: PageData;
 
-	function rerunLoadFunction() {
+	async function rerunLoadFunction() {
 		invalidate('generate-image');
+		// invalidate((url) => url.href.includes('image'));
 		// invalidateAll();
 	}
 </script>

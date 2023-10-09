@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const fetchAllBlog = async () => {
 	const allPostFiles = import.meta.glob('/src/routes/blogs/contents/*.md');
 	const iterablePostFiles = Object.entries(allPostFiles);
@@ -15,7 +16,7 @@ export const fetchAllBlog = async () => {
 	);
 };
 
-export const fetchBlogWithFilter = async (search: string, page: number) => {
+export const fetchBlogWithFilter = async (search: string) => {
 	const searchs = (search && search.toLowerCase()) || search;
 	const allPostFiles = import.meta.glob('/src/routes/blogs/contents/*.md');
 	const iterablePostFiles = Object.entries(allPostFiles);

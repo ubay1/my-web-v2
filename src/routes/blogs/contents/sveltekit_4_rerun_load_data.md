@@ -8,14 +8,55 @@ tags:
   - sveltekit
 ---
 
-sveltekit punya fitur keren lagi, yaitu rerun load funcrtion yang ada di <b>+page.ts/+page.server.ts/+layout.ts/+layout.server.ts</b>.
+sveltekit punya fitur keren lagi, yaitu rerun load function yang ada di <b>+page.ts/+page.server.ts</b>.
 
-fitur ini
+contoh:
+
+<blockquote>
+kita memiliki list data yang bisa dihapus, dan edit. jika tanpa menggunakan fitur ini ketika kita hapus/edit data kita harus melakukan hit ulang ke api untuk mendapatkan data terbaru. <br> namun dengan fitur ini ketika kita melakukan aksi hapus/edit kita cukup memanggil ulang function load() yang ada di +page.server/+page.ts.
+</blockquote>
 
 ```ts
 src / routes / +page.server.ts;
+
+import type { PageServerLoad } from './$types';
+import { setTimeout } from 'timers/promises';
+
+export const load: PageServerLoad = async ({ fetch, depends }) => {
+	// rerun fetch  ketika `invalidate('generate-image')` dipanggil pada file +page.svelte
+	depends('generate-image');
+	async function rerun() {
+		const response = await fetch('/api/learn/generate-image', { method: 'GET' });
+		await setTimeout(10);
+		return await response.json();
+	}
+
+	return {
+		streamed: {
+			image: rerun()
+		}
+	};
+};
 ```
 
-```tsx
-src / routes / +page.server.ts;
+```svelte
+<script lang="ts">
+	import { invalidate, invalidateAll } from '$app/navigation';
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+
+	async function rerunLoadFunction() {
+		invalidate('generate-image');
+		// invalidate((url) => url.href.includes('generate-image'));
+		// invalidateAll();
+	}
+</script>
+
+<button
+	class="bg-white text-black p-2 border-0 cursor-pointer hover:bg-gray-2"
+	on:click={rerunLoadFunction}
+>
+	Delete Image
+</button>
 ```

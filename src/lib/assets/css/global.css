@@ -30,3 +30,9 @@ textarea {
 	font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
 		Arial, sans-serif;
 }
+
+blockquote {
+	border-left: 4px solid orangered !important;
+	font-style: normal !important;
+	line-height: 1.6;
+}

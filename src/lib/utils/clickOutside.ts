@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /** Dispatch event on click outside of node */
 export function clickOutside(node: CustomEventInit<unknown> | any) {
 	const handleClick = (event: Event) => {
