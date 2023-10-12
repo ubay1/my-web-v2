@@ -5,8 +5,8 @@ import {
 	presetMini,
 	presetIcons,
 	presetTypography,
-	presetUno
-	// presetWebFonts,
+	presetUno,
+	presetWebFonts
 	// transformerDirectives,
 	// transformerVariantGroup
 } from 'unocss';
@@ -15,7 +15,11 @@ export default defineConfig({
 	shortcuts: [
 		[
 			'form-input',
-			'bg-gray-2 font-standar px-3 rounded-md h-10 w-fill text-sm border-none focus:outline-stone-3'
+			'bg-white px-3 rounded-md h-10 w-fill text-sm border-none focus:outline-orange-5'
+		],
+		[
+			'btn-primary',
+			'bg-orange-5 p-2 rounded-lg border-none text-white cursor-pointer hover:bg-orange-6 disabled:opacity-25 disabled:cursor-not-allowed'
 		]
 	],
 	presets: [
@@ -28,13 +32,13 @@ export default defineConfig({
 		// presetAttributify(),
 		presetIcons({
 			warn: true
+		}),
+		presetWebFonts({
+			provider: 'google',
+			fonts: {
+				default: 'Poppins:300, 600'
+			}
 		})
-		// presetWebFonts({
-		// provider: 'google',
-		// fonts: {
-		// 	default: 'Roboto'
-		// }
-		// })
 	],
 	// transformers: [transformerDirectives(), transformerVariantGroup()],
 	safelist: 'prose prose-sm m-auto text-left'.split(' '),

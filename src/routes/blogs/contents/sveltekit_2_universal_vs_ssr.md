@@ -19,14 +19,14 @@ Secara konseptual, keduanya adalah hal yang sama, tetapi ada beberapa perbedaan 
 
 Fungsi pemuatan server selalu berjalan di server.
 
-Secara default, fungsi pemuatan universal berjalan di server selama SSR saat pengguna pertama kali mengunjungi halaman Anda. Fungsi-fungsi ini kemudian akan berjalan lagi selama hidrasi, menggunakan kembali respons apa pun dari permintaan pengambilan. Semua pemanggilan fungsi pemuatan universal selanjutnya terjadi di browser. Anda dapat menyesuaikan perilaku melalui opsi halaman. Jika Anda menonaktifkan rendering sisi server, Anda akan mendapatkan SPA dan fungsi pemuatan universal yang selalu berjalan di klien.
+Secara default, fungsi pemuatan universal berjalan di server selama SSR saat pengguna pertama kali mengunjungi halaman kita. Fungsi-fungsi ini kemudian akan berjalan lagi selama hidrasi, menggunakan kembali respons apa pun dari permintaan pengambilan. Semua pemanggilan fungsi pemuatan universal selanjutnya terjadi di browser. kita dapat menyesuaikan perilaku melalui opsi halaman. Jika kita menonaktifkan rendering sisi server, kita akan mendapatkan SPA dan fungsi pemuatan universal yang selalu berjalan di klien.
 
-Fungsi pemuatan dipanggil pada saat runtime, kecuali jika Anda melakukan prerender halaman - dalam hal ini, fungsi ini dipanggil pada saat build.
+Fungsi pemuatan dipanggil pada saat runtime, kecuali jika kita melakukan prerender halaman - dalam hal ini, fungsi ini dipanggil pada saat build.
 
 ### Kapan menggunakan universal dan Kapan menggunakan server ?
 
-Fungsi pemuatan server sangat berguna ketika Anda perlu mengakses data secara langsung dari basis data atau sistem berkas, atau perlu menggunakan variabel lingkungan privat.
+Fungsi pemuatan server sangat berguna ketika kita perlu mengakses data secara langsung dari basis data atau sistem berkas, atau perlu menggunakan variabel lingkungan privat.
 
-Fungsi pemuatan universal berguna ketika Anda perlu mengambil data dari API eksternal dan tidak memerlukan kredensial pribadi, karena SvelteKit dapat memperoleh data secara langsung dari API daripada melalui server Anda. Mereka juga berguna ketika Anda perlu mengembalikan sesuatu yang tidak dapat diserialisasikan, seperti konstruktor komponen Svelte.
+Fungsi pemuatan universal berguna ketika kita perlu mengambil data dari API eksternal dan tidak memerlukan kredensial pribadi, karena SvelteKit dapat memperoleh data secara langsung dari API daripada melalui server kita. Mereka juga berguna ketika kita perlu mengembalikan sesuatu yang tidak dapat diserialisasikan, seperti konstruktor komponen Svelte.
 
-Dalam kasus yang jarang terjadi, Anda mungkin perlu menggunakan keduanya secara bersamaan - misalnya, Anda mungkin perlu mengembalikan sebuah instance dari kelas kustom yang diinisialisasi dengan data dari server Anda.
+Dalam kasus yang jarang terjadi, kita mungkin perlu menggunakan keduanya secara bersamaan - misalnya, kita mungkin perlu mengembalikan sebuah instance dari kelas kustom yang diinisialisasi dengan data dari server kita.

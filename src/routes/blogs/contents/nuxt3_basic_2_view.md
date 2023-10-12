@@ -1,7 +1,7 @@
 ---
 title: NUXT 3 basic - views (components, layouts)
 description:
-imagePath: https://nuxt.com/assets/design-kit/logo/icon-green.png
+imagePath: https://img-c.udemycdn.com/course/750x422/4395942_c476_2.jpg
 imageAlt: nuxt3
 date: 2023-05-25 10:55:00
 tags:
@@ -11,7 +11,7 @@ tags:
 
 ## View
 
-Nuxt menyediakan beberapa lapisan komponen untuk mengimplementasikan antarmuka pengguna aplikasi Anda.
+Nuxt menyediakan beberapa lapisan komponen untuk mengimplementasikan antarmuka pengguna aplikasi kita.
 
 ### #Components
 

@@ -10,7 +10,7 @@
 
 <div class="flex justify-start items-start gap-6 mt-4 px-4 lt-md:flex-col">
 	<Profil />
-	<div class="w-full flex flex-col dark:text-white ">
+	<div class="w-full flex flex-col dark:text-white">
 		<Greeting />
 		<Education />
 		<Skills />

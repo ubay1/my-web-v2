@@ -115,7 +115,7 @@ console.log(resultTestLiteral);
 
 ## type alias
 
-- Tipe alias dapat digunakan untuk "membuat" tipe Anda sendiri. Anda tidak terbatas untuk menyimpan tipe union.
+- Tipe alias dapat digunakan untuk "membuat" tipe kita sendiri. kita tidak terbatas untuk menyimpan tipe union.
 
 ```ts
 type testalias1 = 'Samsung' | 'Xiaomi' | 'Sony';

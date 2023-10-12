@@ -16,7 +16,7 @@ tags:
 
 ### +page.svelte
 
-Komponen +page.svelte mendefinisikan halaman aplikasi Anda. Secara default, halaman dirender di server (SSR) untuk permintaan awal dan di peramban (CSR) untuk navigasi selanjutnya.
+Komponen +page.svelte mendefinisikan halaman aplikasi kita. Secara default, halaman dirender di server (SSR) untuk permintaan awal dan di peramban (CSR) untuk navigasi selanjutnya.
 
 ```svelte
 src/routes/+page.svelte
@@ -70,7 +70,7 @@ Fungsi ini berjalan bersama **+page.svelte**, yang berarti fungsi ini berjalan d
 
 ### +page.server.ts
 
-Jika fungsi pemuatan Anda hanya dapat berjalan di server, contohnya jika fungsi tersebut perlu mengambil data dari database atau Anda perlu mengakses variabel lingkungan privat seperti kunci API - maka Anda dapat mengganti nama **+page.ts** menjadi **+page.server.ts** dan mengubah tipe **PageLoad** menjadi **PageServerLoad**.
+Jika fungsi pemuatan kita hanya dapat berjalan di server, contohnya jika fungsi tersebut perlu mengambil data dari database atau kita perlu mengakses variabel lingkungan privat seperti kunci API - maka kita dapat mengganti nama **+page.ts** menjadi **+page.server.ts** dan mengubah tipe **PageLoad** menjadi **PageServerLoad**.
 
 ```tsx
 import { error } from '@sveltejs/kit';
@@ -93,7 +93,7 @@ Seperti +page.ts, +page.server.ts dapat mengekspor opsi halaman - prerender, ssr
 
 ### +error.svelte
 
-Jika terjadi kesalahan selama pemuatan, SvelteKit akan merender halaman kesalahan default. Anda dapat menyesuaikan halaman kesalahan ini pada basis per rute dengan menambahkan file **+error.svelte**:
+Jika terjadi kesalahan selama pemuatan, SvelteKit akan merender halaman kesalahan default. kita dapat menyesuaikan halaman kesalahan ini pada basis per rute dengan menambahkan file **+error.svelte**:
 
 ```tsx
 src/routes/blog/[slug]/+error.svelte
@@ -127,7 +127,7 @@ src/routes/+layout.svelte
 
 ### +layout.ts / +layout.server.ts
 
-Sama seperti +page.svelte yang memuat data dari +page.js, komponen +layout.svelte Anda dapat memperoleh data dari fungsi muat di +layout.js.
+Sama seperti +page.svelte yang memuat data dari +page.js, komponen +layout.svelte kita dapat memperoleh data dari fungsi muat di +layout.js.
 
 ```tsx
 src / routes / settings / +layout.ts;
@@ -161,7 +161,7 @@ src/routes/+page.svelte
 
 ### +server.ts
 
-Selain halaman, Anda dapat menentukan rute dengan berkas **+server.js** (kadang-kadang disebut sebagai 'rute API' atau 'titik akhir'), yang memberi Anda kendali penuh atas respons. File **+server.js** Anda mengekspor fungsi-fungsi yang sesuai dengan kata kerja HTTP seperti GET, POST, PATCH, PUT, DELETE, OPTIONS, dan HEAD yang membutuhkan **RequestEvent** dan mengembalikan objek Response.
+Selain halaman, kita dapat menentukan rute dengan berkas **+server.js** (kadang-kadang disebut sebagai 'rute API' atau 'titik akhir'), yang memberi kita kendali penuh atas respons. File **+server.js** kita mengekspor fungsi-fungsi yang sesuai dengan kata kerja HTTP seperti GET, POST, PATCH, PUT, DELETE, OPTIONS, dan HEAD yang membutuhkan **RequestEvent** dan mengembalikan objek Response.
 
 File **+server.js** dapat ditempatkan di direktori yang sama dengan file +page, yang memungkinkan rute yang sama untuk menjadi halaman atau titik akhir API. contoh:
 

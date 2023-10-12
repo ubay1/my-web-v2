@@ -1,7 +1,7 @@
 ---
 title: NUXT 3 basic - routing (dynamic route, catch all route, nested route, route parameter)
 description:
-imagePath: https://nuxt.com/assets/design-kit/logo/icon-green.png
+imagePath: https://img-c.udemycdn.com/course/750x422/4395942_c476_2.jpg
 imageAlt: nuxt3
 date: 2023-05-26 08:30:00
 tags:
@@ -73,7 +73,7 @@ kita bisa akses seperti ini:
 
 ### Catch-All Route
 
-Jika Anda memerlukan rute penampung-semua, Anda membuatnya dengan menggunakan file bernama seperti **[...slug].vue**. Ini akan cocok dengan semua rute di bawah jalur itu. kita bisa membuat route seperti ini.
+Jika kita memerlukan rute penampung-semua, kita membuatnya dengan menggunakan file bernama seperti **[...slug].vue**. Ini akan cocok dengan semua rute di bawah jalur itu. kita bisa membuat route seperti ini.
 
 ```js
 -| pages/

@@ -26,7 +26,7 @@
 	<p>Riwayat Pendidikan</p>
 	<div class="grid grid-cols-2 gap-4 lt-md:flex lt-md:flex-col">
 		{#each listEducation as item}
-			<div class="border border-gray-3 rounded-lg p-4  dark:border-gray-7">
+			<div class="border border-gray-3 rounded-lg p-4 dark:border-gray-7">
 				<div class="flex items-center justify-start gap-4">
 					<img
 						src={item.img}

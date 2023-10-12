@@ -97,13 +97,13 @@
 	{#each listProject as item}
 		<div class="break-inside-avoid mb-4 bg-neutral-1 shadow-md rounded-md dark:bg-white">
 			<div
-				class="rounded-t-md shadow-lg  relative justify-center flex flex-row flex-wrap gap-2 overflow-hidden"
+				class="rounded-t-md shadow-lg relative justify-center flex flex-row flex-wrap gap-2 overflow-hidden"
 			>
 				<div
 					style="background: url({item.img[0]});"
 					class="bg-blur rounded-t-md absolute top-0 h-full w-full"
 				/>
-				<div class="absolute z-20 top-0 right-0 text-sm font-bold p-1 rounded-lb-md bg-orange-4 ">
+				<div class="absolute z-20 top-0 right-0 text-sm font-bold p-1 rounded-lb-md bg-orange-4">
 					{item.project}
 				</div>
 				{#each item.img as img, idx}
@@ -124,7 +124,7 @@
 							class="flex items-center justify-center gap-2 decoration-none text-black"
 						>
 							<span>{item.label}</span>
-							<div class="i-octicon-link-external-16 text-lg " />
+							<div class="i-octicon-link-external-16 text-lg" />
 						</a>
 					{:else}
 						{item.label}

@@ -30,7 +30,7 @@
 <div class="mt-2 mb-4">
 	<p>Sedang digunakan</p>
 	<div
-		class="flex flex-wrap justify-center items-center gap-6 border border-gray-3  rounded-lg p-4  dark:border-gray-7"
+		class="flex flex-wrap justify-center items-center gap-6 border border-gray-3 rounded-lg p-4 dark:border-gray-7"
 	>
 		{#each oftenUsed as item}
 			<div class="flex flex-col items-center justify-start gap-4 mb-4">
@@ -53,7 +53,7 @@
 <div class="mt-2 mb-4">
 	<p>Pernah digunakan</p>
 	<div
-		class="flex flex-wrap justify-center items-center gap-6 border border-gray-3  rounded-lg p-4  dark:border-gray-7"
+		class="flex flex-wrap justify-center items-center gap-6 border border-gray-3 rounded-lg p-4 dark:border-gray-7"
 	>
 		{#each everUsed as item}
 			<div class="flex flex-col items-center justify-start mb-4">
