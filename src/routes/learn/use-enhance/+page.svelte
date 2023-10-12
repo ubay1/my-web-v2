@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import type { SubmitFunction } from '@sveltejs/kit';
-	import type { PageData, ActionData } from './$types';
+	import type { ActionData } from './$types';
 
 	export let form: ActionData;
-	export let data: PageData;
 
 	const submitTest: SubmitFunction = ({
 		formElement,
@@ -14,13 +13,14 @@
 		submitter,
 		controller
 	}) => {
-		// `formElement` is this `<form>` element
-		// `formData` is its `FormData` object that's about to be submitted
-		// `action` is the URL to which the form is posted
-		// calling `cancel()` will prevent the submission
-		// `submitter` is the `HTMLElement` that caused the form to be submitted
+		/**
+		 * `formElement` is this `<form>` element
+		 * `formData` is its `FormData` object that's about to be submitted
+		 * `action` is the URL to which the form is posted
+		 *  calling `cancel()` will prevent the submission
+		 * `submitter` is the `HTMLElement` that caused the form to be submitted
+		 */
 		const { username } = Object.fromEntries(formData);
-		// console.log(Object.fromEntries(formData));
 
 		if (username !== 'aa') {
 			alert('gagal');

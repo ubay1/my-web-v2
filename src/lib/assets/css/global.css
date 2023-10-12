@@ -36,3 +36,7 @@ blockquote {
 	font-style: normal !important;
 	line-height: 1.6;
 }
+
+pre[class*='language-'] {
+	padding-top: 70px !important;
+}

@@ -17,7 +17,7 @@ kita memiliki list data yang bisa dihapus, dan edit. jika tanpa menggunakan fitu
 </blockquote>
 
 ```ts
-src / routes / +page.server.ts;
+'src/routes/+page.server.ts;';
 
 import type { PageServerLoad } from './$types';
 import { setTimeout } from 'timers/promises';
