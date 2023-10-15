@@ -5,16 +5,16 @@
 			vertical: false,
 			classes: 'img-horizontal-blibli',
 			img: ['/images/sveltekit-movie.webp'],
-			stack: ['SvelteKit', 'Typescript', 'UnoCSS'],
+			stack: ['SvelteKit', 'Typescript', 'UnoCss'],
 			project: 'Proyek Pribadi',
 			url: 'https://movie-kit.vercel.app'
 		},
 		{
-			label: 'Asik Dashboard',
+			label: 'Dashboard Aplikasi Sehat Indinesiaku',
 			vertical: false,
 			classes: 'img-horizontal-asik',
 			img: ['/images/asik.webp'],
-			stack: ['VueJS 2', 'Tailwind'],
+			stack: ['Nuxt 3', 'Pinia', 'Typescript', 'UnoCss'],
 			project: 'Kementerian Kesehatan',
 			url: null
 		},
@@ -23,7 +23,7 @@
 			vertical: true,
 			classes: 'img-vertical',
 			img: ['/images/ehac.webp', '/images/ehac1.webp', 'images/myehac.webp'],
-			stack: ['NuxtJS', 'Vuetify'],
+			stack: ['Nuxt 2', 'Vuetify'],
 			project: 'Kementerian Kesehatan',
 			url: null
 		},
@@ -59,7 +59,7 @@
 			vertical: true,
 			classes: 'img-horizontal',
 			img: ['/images/gwc2.webp'],
-			stack: ['NuxtJS', 'Typescript', 'Vuetify', 'Google Maps'],
+			stack: ['Nuxt 2', 'Typescript', 'Vuetify', 'Google Maps'],
 			project: 'Goiot',
 			url: null
 		},
