@@ -18,7 +18,7 @@ Saat menggunakan form, JavaScript sisi klien bersifat <b>opsional</b>, namun kit
 ```tsx
 'src/routes/+page.server.ts;';
 
-import type { Actions } from '../$types';
+import type { Actions } from './$types';
 
 export const actions: Actions = {
 	default: async ({ request }) => {
@@ -66,7 +66,7 @@ tidak hanya default, kita juga dapat memberikan nama apapun pada action kita. mi
 ```ts
 'src/routes/+page.server.ts;';
 
-import type { Actions } from '../$types';
+import type { Actions } from './$types';
 
 export const actions: Actions = {
 	login: async ({ request }) => {

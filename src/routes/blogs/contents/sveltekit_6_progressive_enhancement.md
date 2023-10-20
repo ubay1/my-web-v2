@@ -18,7 +18,7 @@ dengan <b>use:enhance</b> semua sudah dihandle. dibawah ini saya custom use:enha
 ```ts
 'src/routes/+page.server.ts;';
 
-import type { Actions } from '../$types';
+import type { Actions } from './$types';
 
 export const actions: Actions = {
 	login: async ({ request }) => {
