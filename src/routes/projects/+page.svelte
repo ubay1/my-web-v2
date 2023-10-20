@@ -1,6 +1,15 @@
 <script>
 	const listProject = [
 		{
+			label: 'ASIK Enkrip Dekrip',
+			vertical: false,
+			classes: 'img-horizontal-blibli',
+			img: ['/images/web-internal-asik.webp'],
+			stack: ['SvelteKit', 'Typescript', 'Skeleton UI', 'Tailwind'],
+			project: 'Web Internal Tim ASIK',
+			url: null
+		},
+		{
 			label: 'Movie Kit',
 			vertical: false,
 			classes: 'img-horizontal-blibli',
