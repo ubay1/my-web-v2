@@ -12,7 +12,7 @@ tags:
 
 'Hooks' adalah fungsi-fungsi di seluruh aplikasi yang Anda deklarasikan yang akan dipanggil oleh SvelteKit sebagai respons terhadap kejadian-kejadian tertentu, yang memberikan Anda kontrol yang baik terhadap perilaku framework.
 
-Kode dalam modul-modul ini akan berjalan ketika aplikasi dijalankan, sehingga berguna untuk menginisialisasi klien basis data, Content Security Policy, dan lainnya.
+Kode dalam modul-modul ini akan berjalan ketika aplikasi dijalankan, sehingga berguna untuk menginisialisasi klien basis data, security, authorization dan lainnya.
 
 ### handle
 
@@ -36,37 +36,50 @@ dengan sequence kita bisa membuat lebih dari 1 function di hooks.
 ```tsx
 import { sequence } from '@sveltejs/kit/hooks';
 
-async function first({ event, resolve }) {
-	console.log('first pre-processing');
-	const result = await resolve(event, {
-		transformPageChunk: ({ html }) => {
-			// transforms are applied in reverse order
-			console.log('first transform');
-			return html;
-		},
-		preload: () => {
-			// this one wins as it's the first defined in the chain
-			console.log('first preload');
-		}
-	});
-	console.log('first post-processing');
-	return result;
-}
+export const handleSecurity: Handle = (async ({ event, resolve }) => {
+	const securityHeaders = {
+		'Content-Security-Policy':
+			"img-src 'self' data:; font-src https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrFJA.ttf; object-src 'none';",
+		// 'Cross-Origin-Embedder-Policy': 'require-corp',
+		'Cross-Origin-Opener-Policy': 'same-origin',
+		'Cross-Origin-Resource-Policy': 'same-origin',
+		'Origin-Agent-Cluster': '?1',
+		'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+		'Referrer-Policy': 'no-referrer',
+		'Strict-Transport-Security': 'max-age=15552000; includeSubDomains',
+		'X-Content-Type-Options': 'nosniff',
+		'X-DNS-Prefetch-Control': 'off',
+		'X-Download-Options': 'noopen',
+		'X-Frame-Options': 'SAMEORIGIN',
+		'X-Permitted-Cross-Domain-Policies': 'none',
+		'X-XSS-Protection': '0'
+	};
 
-async function second({ event, resolve }) {
-	console.log('second pre-processing');
-	const result = await resolve(event, {
-		transformPageChunk: ({ html }) => {
-			return html;
-		},
-		preload: () => {
-			console.log('second preload');
-		},
-		filterSerializedResponseHeaders: () => {
-			console.log('second filterSerializedResponseHeaders');
+	const response = await resolve(event);
+	Object.entries(securityHeaders).forEach(([header, value]) => response.headers.set(header, value));
+
+	return response;
+}) satisfies Handle;
+
+export const handleRoutes: Handle = (async ({ event, resolve }) => {
+	event.locals.user = authenticateUser(event);
+
+	if (event.url.pathname.startsWith('/dashboard')) {
+		if (!event.locals.user) {
+			throw redirect(302, '/login');
 		}
-	});
-	return result;
-}
-export const handle = sequence(first, second);
+		// jika token ada dan first_login true
+		else if (
+			event.locals.user &&
+			event.locals.user.token &&
+			event.locals.user.firstLogin === 'true'
+		) {
+			throw redirect(302, '/change-password');
+		}
+	}
+
+	return await resolve(event);
+}) satisfies Handle;
+
+export const handle = sequence(handleSecurity, handleRoutes);
 ```
