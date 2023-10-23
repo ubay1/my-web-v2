@@ -62,20 +62,27 @@ export const handleSecurity: Handle = (async ({ event, resolve }) => {
 }) satisfies Handle;
 
 export const handleRoutes: Handle = (async ({ event, resolve }) => {
-	event.locals.user = authenticateUser(event);
+	event.locals.token_skd = authenticateUser(event);
 
-	if (event.url.pathname.startsWith('/dashboard')) {
-		if (!event.locals.user) {
-			throw redirect(302, '/login');
-		}
-		// jika token ada dan first_login true
-		else if (
-			event.locals.user &&
-			event.locals.user.token &&
-			event.locals.user.firstLogin === 'true'
-		) {
-			throw redirect(302, '/change-password');
-		}
+	if (event.url.pathname.startsWith('/dashboard') && !event.locals.token_skd) {
+		return new Response(null, {
+			status: 302,
+			headers: {
+				location: '/login'
+			}
+		});
+	}
+
+	if (
+		(event.url.pathname.startsWith('/login') || event.url.pathname.startsWith('/register')) &&
+		event.locals.token_skd
+	) {
+		return new Response(null, {
+			status: 302,
+			headers: {
+				location: '/dashboard'
+			}
+		});
 	}
 
 	return await resolve(event);
