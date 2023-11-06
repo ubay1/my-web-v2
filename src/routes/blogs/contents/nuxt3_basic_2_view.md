@@ -23,7 +23,7 @@ kerennya di nuxt3. misal kita taruh componentnya di dalam folder. misal didalam 
 kita juga bisa membuat custom directories. <br/>
 pertama kita buat komponen **components/posyandu-bayi/main.vue**
 
-```vue
+```vue title="components/posyandu-bayi/main.vue"
 <template>
 	<div>ini posyandu bayi</div>
 </template>
@@ -32,7 +32,7 @@ pertama kita buat komponen **components/posyandu-bayi/main.vue**
 
 pada **nuxt.config.ts** kita bisa tambahkan ini:
 
-```ts
+```ts title="nuxt.config.ts"
 export default defineNuxtConfig({
 	components: [{ path: '~/components/posyandu-bayi', prefix: 'PosBayi' }, '~/components']
 });
@@ -92,7 +92,7 @@ kita juga bisa menggunakan **fallbackTag** untuk menunggu component selesai dire
 
 komponen akan dirender hanya pada sisi klien, Kita dapat menambahkan akhiran **.client** pada komponen kita.
 
-```js
+```md
 | components/
 --| Comments.client.vue
 ```
@@ -104,7 +104,7 @@ kita bisa kombinasikan dengan ClientOnly dan **fallbackTag**
 dengan menggunakan server component, kita dapat mengecilkan bundle size.
 untuk menggunakan server component kita harus menambahkan ini pada file **nuxt.config.ts**.
 
-```js
+```ts title="nuxt.config.ts"
 export default defineNuxtConfig({
 	experimental: {
 		componentIslands: true

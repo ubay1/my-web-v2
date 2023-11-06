@@ -14,9 +14,7 @@ Jika kita terbiasa membuat aplikasi khusus klien, manajemen status dalam aplikas
 
 Untuk alasan yang sama, fungsi pemuatan kita harus murni, tidak ada efek samping (kecuali mungkin sesekali console.log(...)). Sebagai contoh, kita mungkin tergoda untuk menyimpan data ke sebuah store di dalam fungsi load agar kita dapat menggunakan nilai store tersebut di dalam komponen kita:
 
-```ts
-'src/routes/+page.server.ts;';
-
+```ts title="src/routes/+page.server.ts"
 import { user } from '$lib/user';
 import type { PageLoad } from './$types';
 
@@ -37,16 +35,12 @@ Jika kita tidak menggunakan SSR, maka tidak ada risiko secara tidak sengaja meng
 
 kita mungkin bertanya-tanya bagaimana kita dapat menggunakan <b>$page.data</b> dan <b>$app/stores</b> jika kita tidak dapat menggunakan <b>$app/stores</b> kita sendiri. Jawabannya adalah gunakan <b>Context</b>. stores dilampirkan di layout lalu simpan data ke setContext, dan ketika kita subscribe, kita mengambilnya dengan getContext. berikut contohnya:
 
-```tsx
-'src/routes/(state)/store.ts';
-
+```ts title="src/routes/(state)/store.ts"
 import { writable } from 'svelte/store';
 export const quotes = writable();
 ```
 
-```tsx
-'src/routes/(state)/+layout.server.ts;';
-
+```ts title="src/routes/(state)/+layout.server.ts"
 import type { LayoutServerLoad } from './$types';
 
 export const load: LayoutServerLoad = async ({ fetch }) => {
@@ -57,25 +51,15 @@ export const load: LayoutServerLoad = async ({ fetch }) => {
 };
 ```
 
-```tsx
-'src/routes/(state)/+layout.svelte;'
-
+```svelte title="src/routes/(state)/+layout.svelte"
 <script lang="ts">
-	import { setContext, getContext } from 'svelte';
-	import type { LayoutData } from './$types';
-	import { quotes } from './store';
-
-	export let data: LayoutData;
-
-	$: quotes.set(data.quotes);
+	import {(setContext, getContext)} from 'svelte'; import type {LayoutData} from './$types'; import{' '}
+	{quotes} from './store'; export let data: LayoutData; $: quotes.set(data.quotes);
 	setContext('quotes', quotes);
-</script>;
-
+</script>
 ```
 
-```tsx
-'src/routes/(state)/+page.svelte'
-
+```svelte title="src/routes/(state)/+page.svelte"
 <script lang="ts">
 	import { getContext } from 'svelte';
 

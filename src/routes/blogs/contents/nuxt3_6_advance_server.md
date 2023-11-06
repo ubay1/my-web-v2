@@ -15,10 +15,12 @@ tags:
 
 kita bisa membuat api sendiri dengan folder **api** ini. misal disini kita buat 1 buat api yang akan mengget data dari url **jsonplaceholder** :
 
-```ts
+```ts title="~/server/api/hello.get.ts"
 export default defineEventHandler(async (event) => {
 	try {
-		const data = await $fetch('https://jsonplaceholder.typicode.com/posts');
+		const data = await $fetch('https://jsonplaceholder.typicode.com/posts', {
+			method: 'GET'
+		});
 		return data;
 	} catch (error) {
 		return error;
@@ -28,7 +30,7 @@ export default defineEventHandler(async (event) => {
 
 kita dapat mengaksesnya seperti ini:
 
-```vue
+```vue title="pages/index.vue"
 <script setup>
 const res = await $fetch('/api/hello');
 console.log(res);
@@ -97,7 +99,7 @@ contoh:
 
 kita buat file **api/hello.ts**.
 
-```ts
+```ts title="~/server/api/hello.ts"
 export default defineEventHandler(async (event) => {
 	try {
 		const data = await $fetch('https://jsonplaceholder.typicode.com/posts');
@@ -113,7 +115,7 @@ export default defineEventHandler(async (event) => {
 
 kita tambahkan utils dulu, dan kita buat list errornya. kita buat dengan nama **~/utils/errorMessageHandling.ts**:
 
-```ts
+```ts title="~/utils/errorMessageHandling.ts"
 export default (codeParam: number) => {
 	const listError = [
 		{ code: 404, message: 'data/page tidak dikethaui' },

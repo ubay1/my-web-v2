@@ -32,11 +32,73 @@ textarea {
 }
 
 blockquote {
-	border-left: 4px solid orangered !important;
+	border-left: 6px solid #f97315 !important;
 	font-style: normal !important;
 	line-height: 1.6;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #454a53;
 }
 
-pre[class*='language-'] {
-	padding-top: 70px !important;
+pre {
+	padding: 0 !important;
+	position: relative !important;
+}
+pre[data-code-title]:before {
+	overflow: hidden;
+	color: rgb(255 255 255 1);
+	background: #000000;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	font-family: 'Poppins', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, sans-serif;
+	line-height: 1.5rem;
+	min-height: calc(3rem + 1px);
+	content: attr(data-code-title);
+	display: flex;
+	align-items: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-bottom: 1px solid #393939;
+}
+
+pre > code {
+	word-wrap: break-word !important;
+	background-color: rgb(16 21 30) !important;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border: 0;
+	border-radius: initial;
+	display: flex;
+	flex-direction: column;
+	line-height: inherit;
+	margin: 0;
+	/* width: -moz-max-content;
+	width: max-content; */
+	min-width: 100%;
+	max-width: auto;
+	overflow: visible;
+}
+
+code[data-line-numbers] > span[data-line-number]::before {
+	/* Insert the line number data attribute before the line */
+	content: attr(data-line-number);
+	/* Other styling */
+	display: inline-block;
+	width: 1rem;
+	margin-right: 1rem;
+	margin-left: 1rem;
+	text-align: right;
+	color: gray;
+}
+
+pre > code > span {
+	padding-left: 10px;
+	padding-right: 10px;
+	text-wrap: wrap !important;
+}
+
+pre > code > span[data-highlighted] {
+	background: #272e42;
+	width: 100%;
 }

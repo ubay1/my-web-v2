@@ -8,7 +8,7 @@ tags:
   - sveltekit
 ---
 
-```ts
+```md
 my-project/
 ├ src/
 │ ├ lib/

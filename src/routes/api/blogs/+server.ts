@@ -15,7 +15,7 @@ export const GET: RequestHandler = async () => {
 
 export const POST: RequestHandler = async (event) => {
 	const valueSearch = await event.request.json();
-	const filterPosts = await fetchBlogWithFilter(valueSearch, 1);
+	const filterPosts = await fetchBlogWithFilter(valueSearch);
 
 	const sortedPosts = filterPosts.sort((a: IFetchBlog, b: IFetchBlog) => {
 		return new Date(b.meta.date).valueOf() - new Date(a.meta.date).valueOf();

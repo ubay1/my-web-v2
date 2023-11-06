@@ -17,7 +17,7 @@ Salah satu fitur inti dari Nuxt adalah router sistem file. Setiap file Vue di da
 
 untuk navigasi antar page, kita bisa menggunakan **NuxtLink** / **nuxt-link**, contoh:
 
-```js
+```vue
 <template>
 	<header>
 		<nav>
@@ -42,7 +42,7 @@ untuk navigasi antar page, kita bisa menggunakan **NuxtLink** / **nuxt-link**, c
 Jika kita menempatkan apa pun di dalam tanda kurung siku, itu akan diubah menjadi parameter rute dinamis. kita dapat mencampur dan mencocokkan beberapa parameter dan bahkan teks non-dinamis dalam nama file atau direktori.
 contoh:
 
-```js
+```md
 -| pages/
 ---| index.vue
 ---| users-[group]/
@@ -51,13 +51,13 @@ contoh:
 
 [group] diatasa kita bisa isi apapun sesuka kita. kita dapat membuat seperti ini:
 
-```js
+```vue
 <nuxt-link to="/users-test/2"/> User test </nuxt-link>
 ```
 
 Jika kita ingin parameter bersifat opsional, kita harus mengapitnya dalam tanda kurung siku ganda - misalnya, ~/pages/[[id]]/index.vue atau ~/pages-[group]/[[id]].vue
 
-```js
+```md
 -| pages/
 ---| index.vue
 ---| users-[group]/
@@ -66,7 +66,7 @@ Jika kita ingin parameter bersifat opsional, kita harus mengapitnya dalam tanda 
 
 kita bisa akses seperti ini:
 
-```js
+```vue
 <nuxt-link to="/users-test/2"/> User test </nuxt-link>
 <nuxt-link to="/users-test"/> User test </nuxt-link>
 ```
@@ -75,7 +75,7 @@ kita bisa akses seperti ini:
 
 Jika kita memerlukan rute penampung-semua, kita membuatnya dengan menggunakan file bernama seperti **[...slug].vue**. Ini akan cocok dengan semua rute di bawah jalur itu. kita bisa membuat route seperti ini.
 
-```js
+```md
 -| pages/
 ---| index.vue
 ---| users/
@@ -84,13 +84,13 @@ Jika kita memerlukan rute penampung-semua, kita membuatnya dengan menggunakan fi
 
 kita bisa membiuat navigasi seperti ini:
 
-```js
+```vue
 <nuxt-link to="/users/ubay/delonge"/> User test </nuxt-link>
 ```
 
 ### Nested Routes
 
-```js
+```md
 -| pages/
 ---| index.vue
 ---| ilp/
@@ -102,8 +102,7 @@ kita bisa membiuat navigasi seperti ini:
 
 kita bisa membuat child route, dengan menggunakan **NuxtPage**.
 
-```vue
-<!-- balita.vue -->
+```vue title="balita.vue"
 <template>
 	<div>
 		<h1>I am the parent view</h1>
@@ -114,8 +113,7 @@ kita bisa membuat child route, dengan menggunakan **NuxtPage**.
 <script setup></script>
 ```
 
-```vue
-<!-- balita/index.vue -->
+```vue title="balita/index.vue"
 <template>
 	<div class="mt-10">
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, sed deleniti laudantium

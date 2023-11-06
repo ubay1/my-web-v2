@@ -15,9 +15,7 @@ Pada bagian sebelumnya, kita telah membuat aksi /login yang bekerja tanpa JavaSc
 biasanya kita jika bermain dengan form kita selalu menggunakan <b>e.preventDefault()</b>.
 dengan <b>use:enhance</b> semua sudah dihandle. dibawah ini saya custom use:enhance dengan menambahkan <b>SubmitFunction</b> agar lebih rapih dan nyaman digunakan :
 
-```ts
-'src/routes/+page.server.ts;';
-
+```ts title="src/routes/+page.server.ts"
 import type { Actions } from './$types';
 
 export const actions: Actions = {
@@ -36,7 +34,7 @@ export const actions: Actions = {
 };
 ```
 
-```svelte
+```svelte title="src/routes/+page.svelte"
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import type { SubmitFunction } from '@sveltejs/kit';

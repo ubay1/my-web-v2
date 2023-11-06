@@ -20,6 +20,10 @@ export default defineConfig({
 		[
 			'btn-primary',
 			'bg-orange-5 p-2 rounded-lg border-none text-white cursor-pointer hover:bg-orange-6 disabled:opacity-25 disabled:cursor-not-allowed'
+		],
+		[
+			'btn-copy',
+			'bg-gray-7 p-2 rounded-lg border-none text-white cursor-pointer hover:bg-gray-8 disabled:opacity-25 disabled:cursor-not-allowed'
 		]
 	],
 	presets: [

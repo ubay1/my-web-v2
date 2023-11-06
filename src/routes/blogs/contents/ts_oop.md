@@ -158,25 +158,25 @@ console.log(manusia4.alamat + ' - ' + manusia4.pasangan);
 - sedangkan jika dengan static, kita langsung akses nama classnya dan nama property/methodnya.
 
 ```ts
-  class Manusia5 {
-  private static \_nama: string = "rich";
-  public static \_umur: number = 35;
+class Manusia5 {
+	private static _nama: string = 'rich';
+	public static _umur: number = 35;
 
-  get nama(): string {
-  return Manusia5.\_nama;
-  }
-  set nama(val: string) {
-  Manusia5.\_nama = val;
-  }
+	get nama(): string {
+		return Manusia5._nama;
+	}
+	set nama(val: string) {
+		Manusia5._nama = val;
+	}
 
-  static getProfil(): string {
-  return `nama = ${this._nama}, umur = ${this._umur}`;
-  }
-  }
+	static getProfil(): string {
+		return `nama = ${this._nama}, umur = ${this._umur}`;
+	}
+}
 
 const manusia5 = new Manusia5();
-manusia5.nama = "harris";
-Manusia5.\_umur = 39;
+manusia5.nama = 'harris';
+Manusia5._umur = 39;
 console.log(Manusia5.getProfil());
 ```
 

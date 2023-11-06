@@ -45,16 +45,14 @@ src/routes/
 
 contoh isi dari +error.svelte
 
-```tsx
+```svelte title="src/routes/+page.svelte"
 <script lang="ts">
 	import { page } from '$app/stores';
 </script>
 
 <div>{$page.status}</div>
 <div>
-{
-	$page.status === 404 ? 'Maaf, Halaman yang anda minta tidak ditemukan.' : $page.error?.message
-}
+	{$page.status === 404 ? 'Maaf, Halaman yang anda minta tidak ditemukan.' : $page.error?.message}
 </div>
 
 <button on:click={() => (window.location.href = '/')}> Kembali </button>

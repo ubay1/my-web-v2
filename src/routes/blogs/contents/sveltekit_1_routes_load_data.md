@@ -18,39 +18,34 @@ tags:
 
 Komponen +page.svelte mendefinisikan halaman aplikasi kita. Secara default, halaman dirender di server (SSR) untuk permintaan awal dan di peramban (CSR) untuk navigasi selanjutnya.
 
-```svelte
-src/routes/+page.svelte
-
+```svelte title="src/routes/+page.svelte"
 <h1>Hello and welcome to my site!</h1>
 <a href="/about">About my site</a>
 ```
 
-```svelte
-src/routes/about/+page.svelte
-
+```svelte title="src/routes/about/+page.svelte"
 <h1>About this site</h1>
 <p>TODO...</p>
 <a href="/">Home</a>
 ```
 
-```tsx
-src/routes/about/[slug]/+page.svelte
-
+```svelte title="src/routes/about/[slug]/+page.svelte"
 <script lang="ts">
 	import type { PageData } from './$types';
-
 	export let data: PageData;
 </script>
 
-<h1>{data.title}</h1>
-<div>{@html data.content}</div>
+<div>
+	<div>{data.title}</div>
+	<div>{@html data.content}</div>
+</div>
 ```
 
 ### +page.ts
 
 Sering kali, sebuah halaman perlu memuat beberapa data sebelum dapat dirender. Untuk itu, kita menambahkan modul +page.ts/+page.server.ts yang mengekspor fungsi pemuatan:
 
-```tsx
+```ts title="+page.ts/+page.server.ts"
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
@@ -72,7 +67,7 @@ Fungsi ini berjalan bersama **+page.svelte**, yang berarti fungsi ini berjalan d
 
 Jika fungsi pemuatan kita hanya dapat berjalan di server, contohnya jika fungsi tersebut perlu mengambil data dari database atau kita perlu mengakses variabel lingkungan privat seperti kunci API - maka kita dapat mengganti nama **+page.ts** menjadi **+page.server.ts** dan mengubah tipe **PageLoad** menjadi **PageServerLoad**.
 
-```tsx
+```ts title="+page.server.ts"
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
@@ -95,11 +90,9 @@ Seperti +page.ts, +page.server.ts dapat mengekspor opsi halaman - prerender, ssr
 
 Jika terjadi kesalahan selama pemuatan, SvelteKit akan merender halaman kesalahan default. kita dapat menyesuaikan halaman kesalahan ini pada basis per rute dengan menambahkan file **+error.svelte**:
 
-```tsx
-src/routes/blog/[slug]/+error.svelte
-
+```svelte title="src/routes/blog/[slug]/+error.svelte"
 <script lang="ts">
-  import { page } from '$app/stores';
+	import { page } from '$app/stores';
 </script>
 
 <h1>{$page.status}: {$page.error.message}</h1>
@@ -114,24 +107,20 @@ Namun di banyak aplikasi, ada beberapa elemen yang harus terlihat di setiap hala
 contoh:
 Untuk membuat tata letak yang berlaku untuk setiap halaman, buatlah sebuah file bernama **src/routes/+layout.svelte**. kita dapat menambahkan markah, gaya, dan perilaku apa pun yang kita inginkan. Satu-satunya persyaratan adalah komponen harus menyertakan **slot** untuk konten halaman. Sebagai contoh:
 
-```tsx
-src/routes/+layout.svelte
-
+```svelte title="src/routes/+layout.svelte"
 <nav>
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/settings">Settings</a>
+	<a href="/">Home</a>
+	<a href="/about">About</a>
+	<a href="/settings">Settings</a>
 </nav>
-<slot></slot>
+<slot />
 ```
 
 ### +layout.ts / +layout.server.ts
 
 Sama seperti +page.svelte yang memuat data dari +page.js, komponen +layout.svelte kita dapat memperoleh data dari fungsi muat di +layout.js.
 
-```tsx
-src / routes / settings / +layout.ts;
-
+```ts title="src/routes/settings/+layout.ts"
 import type { LayoutLoad } from './$types';
 export const load: LayoutLoad = () => {
 	return {
@@ -147,15 +136,13 @@ Jika +layout.js mengekspor opsi halaman - prerender, ssr, dan csr - opsi-opsi te
 
 Data yang dikembalikan dari fungsi +layout.ts juga tersedia untuk semua halaman turunannya:
 
-```tsx
-src/routes/+page.svelte
-
+```svelte title="src/routes/+page.svelte"
 <script lang="ts">
-  import type { PageData } from './$types';
+	import type { PageData } from './$types';
 
-  export let data: PageData;
+	export let data: PageData;
 
-  console.log(data.sections); // [{ slug: 'profile', title: 'Profile' }, ...]
+	console.log(data.sections); // [{ slug: 'profile', title: 'Profile' }, ...]
 </script>
 ```
 
@@ -165,9 +152,7 @@ Selain halaman, kita dapat menentukan rute dengan berkas **+server.js** (kadang-
 
 File **+server.js** dapat ditempatkan di direktori yang sama dengan file +page, yang memungkinkan rute yang sama untuk menjadi halaman atau titik akhir API. contoh:
 
-```tsx
-src / routes / +server.ts;
-
+```ts title="src/routes/+server.ts"
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
@@ -184,9 +169,7 @@ export const GET: RequestHandler = async () => {
 };
 ```
 
-```tsx
-src / routes / +page.ts;
-
+```ts title="src/routes/+page.ts"
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ fetch }) => {
@@ -205,15 +188,12 @@ export const load: PageLoad = async ({ fetch }) => {
 };
 ```
 
-```tsx
-src/routes/+page.svelte
-
+```svelte title="src/routes/+page.svelte"
 <script lang="ts">
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 </script>
-
 
 <div class="flex flex-col gap-4 my-4">
 	{#each data.data as item}
@@ -226,9 +206,7 @@ src/routes/+page.svelte
 
 kirim data dari +layout.ts/+layout.server.ts
 
-```tsx
-src / routes / +layout.ts;
-
+```ts title="src/routes/+layout.ts"
 import type { LayoutLoad } from './$types';
 
 export const load: LayoutLoad = () => {
@@ -239,9 +217,7 @@ export const load: LayoutLoad = () => {
 ambil data dari +layout.ts/+layout.server.ts
 bisa pada +page.ts/+page.server.ts/+layout.ts/+layout.server.ts
 
-```tsx
-src / routes / aa / +layout.ts;
-
+```ts title="src/routes/aa/+layout.ts"
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ parent }) => {
@@ -250,7 +226,7 @@ export const load: PageServerLoad = async ({ parent }) => {
 };
 ```
 
-```svelte
+```svelte title="src/routes/aa/+page.svelte"
 <script lang="ts">
 	import type { PageData } from './$types';
 	export let data: PageData;

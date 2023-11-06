@@ -36,7 +36,7 @@ runtimeConfig: {
 hasil nya akan keluar ini jika kita beri log:
 
 ```ts
-{                                                                                                      06:46:35
+{
   app: { baseURL: '/', buildAssetsDir: '/_nuxt/', cdnURL: '' },
   nitro: {
     routeRules: {
@@ -61,7 +61,7 @@ NUXT_PUBLIC_API_BASES = anonymous_client;
 maka jika kita cek log lagi, hasilnya
 
 ```ts
-{                                                                                                      06:46:35
+{
   app: { baseURL: '/', buildAssetsDir: '/_nuxt/', cdnURL: '' },
   nitro: {
     routeRules: {

@@ -18,7 +18,7 @@ Kode dalam modul-modul ini akan berjalan ketika aplikasi dijalankan, sehingga be
 
 Fungsi ini berjalan setiap kali server SvelteKit menerima permintaan - apakah itu terjadi saat aplikasi berjalan, atau selama prerendering - dan menentukan responsnya. Fungsi ini menerima objek yang mewakili permintaan dan sebuah fungsi yang disebut <b>resolve</b>, yang merender rute dan menghasilkan Response. Hal ini memungkinkan Anda untuk memodifikasi header atau badan respons, atau mem-bypass SvelteKit sepenuhnya (untuk mengimplementasikan rute secara terprogram). contoh dibawahini:
 
-```tsx
+```ts title="hooks-handle"
 import type { Handle } from '@sveltejs/kit';
 export const handle: Handle = async ({ event, resolve }) => {
 	if (event.url.pathname.startsWith('/custom')) {
@@ -33,7 +33,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 dengan sequence kita bisa membuat lebih dari 1 function di hooks.
 
-```tsx
+```ts title="hooks-sequence"
 import { sequence } from '@sveltejs/kit/hooks';
 
 export const handleSecurity: Handle = (async ({ event, resolve }) => {

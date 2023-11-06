@@ -15,9 +15,7 @@ menggunakan elemen form.
 
 Saat menggunakan form, JavaScript sisi klien bersifat <b>opsional</b>, namun kita dapat dengan mudah meningkatkan interaksi formulir kita dengan JavaScript untuk memberikan pengalaman pengguna yang terbaik.
 
-```tsx
-'src/routes/+page.server.ts;';
-
+```ts title="src/routes/+page.server.ts"
 import type { Actions } from './$types';
 
 export const actions: Actions = {
@@ -36,16 +34,13 @@ export const actions: Actions = {
 };
 ```
 
-```tsx
-src / routes / +page.svelte;
-
+```svelte title="src/routes/+page.svelte"
 <script lang="ts">
 	import type { PageData, ActionData } from './$types';
 
 	export let form: ActionData;
 	export let data: PageData;
 </script>
-
 
 <form method="post">
 	<input type="text" name="username" id="username" placeholder="username" />
@@ -63,9 +58,7 @@ src / routes / +page.svelte;
 
 tidak hanya default, kita juga dapat memberikan nama apapun pada action kita. misal kita ingin memberi nama action kita login, maka pada form kita tambahkan <b>action="?/login"</b>. kita juga dapat memberikan nama action lebih dari 1.
 
-```ts
-'src/routes/+page.server.ts;';
-
+```ts title="src/routes/+page.server.ts"
 import type { Actions } from './$types';
 
 export const actions: Actions = {
@@ -84,7 +77,7 @@ export const actions: Actions = {
 };
 ```
 
-```svelte
+```svelte title="src/routes/+page.svelte"
 <script lang="ts">
 	import type { PageData, ActionData } from './$types';
 
