@@ -1,5 +1,5 @@
 ---
-title: Sveltekit rerun load function dengan invalidate/invalidateAll & depends
+title: Sveltekit -  rerun load function dengan invalidate/invalidateAll & depends
 description:
 imagePath: https://i.pinimg.com/originals/d2/e8/34/d2e8346922934ea035cf7c5a8b477ad8.jpg
 imageAlt: sveltekit

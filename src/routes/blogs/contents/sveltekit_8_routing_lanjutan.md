@@ -1,5 +1,5 @@
 ---
-title: Sveltekit routing lanjutan (rest parameter, advance layout (group, +page@.svelte, +page@{nama_group}.svelte, +layout@.svelte))
+title: Sveltekit -  routing lanjutan (rest parameter, advance layout (group, +page@.svelte, +page@{nama_group}.svelte, +layout@.svelte))
 description:
 imagePath: https://i.pinimg.com/originals/d2/e8/34/d2e8346922934ea035cf7c5a8b477ad8.jpg
 imageAlt: sveltekit

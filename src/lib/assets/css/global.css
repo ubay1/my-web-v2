@@ -40,6 +40,13 @@ blockquote {
 	background-color: #454a53;
 }
 
+kbd {
+	background-color: #f97315 !important;
+	/* box-shadow: 0px 2px 5px black; */
+	font-size: medium !important;
+	/* border: unset !important; */
+}
+
 pre {
 	padding: 0 !important;
 	position: relative !important;
