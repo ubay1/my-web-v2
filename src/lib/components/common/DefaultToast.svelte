@@ -32,10 +32,13 @@
 			ref_wrapper_toast.classList.remove('show');
 			onCLose();
 		}, 3000);
+
+		// return () => {}; // fungsi ini sama dengan onDestroy
 	});
 
 	onDestroy(() => {
 		console.log('onDestory toast run');
+		clearTimeout(ref_wrapper_toast);
 	});
 </script>
 
