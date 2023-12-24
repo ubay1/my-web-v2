@@ -1,9 +1,26 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import '$lib/assets/css/prism.css';
 	import CopyCode from '$lib/components/blog/CopyCode.svelte';
 	import { formatDate } from '$lib/utils/format';
+	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
 	export let data: PageData;
+
+	onMount(() => {
+		// memberikan spasi pada code
+		const elem: any = document.querySelectorAll('span');
+		let divv = document.createElement('br');
+		divv.className = 'my-4';
+
+		for (const v of elem) {
+			const span: any = v as HTMLPreElement;
+
+			if (span?.childNodes.length === 0) {
+				span.className = 'my-2';
+			}
+		}
+	});
 </script>
 
 <div class="p-0 bg-white max-w-4xl m-auto h-56 md:h-72 relative dark:bg-githubDark-1 lt-lg:p-0">
