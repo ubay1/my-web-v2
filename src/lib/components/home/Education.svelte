@@ -3,21 +3,19 @@
 		img: string;
 		name: string;
 		major: string;
-		graduated: string;
+		graduated?: string | undefined;
 	}
 
 	let listEducation: IEducation[] = [
 		{
 			img: '/images/smk.webp',
 			name: 'SMK-TI PGRI 11 SERPONG',
-			major: 'Animasi',
-			graduated: '2011 - 2014'
+			major: 'Animasi'
 		},
 		{
 			img: '/images/unpam.webp',
 			name: 'Universitas Pamulang',
-			major: 'Teknik Informatika',
-			graduated: '2014 - 2019'
+			major: 'Teknik Informatika'
 		}
 	];
 </script>
@@ -38,7 +36,7 @@
 					<div class="leading-6">
 						<div class="text-lg font-semibold">{item.name}</div>
 						<div>{item.major}</div>
-						<div>{item.graduated}</div>
+						<!-- <div>{item.graduated}</div> -->
 					</div>
 				</div>
 			</div>
