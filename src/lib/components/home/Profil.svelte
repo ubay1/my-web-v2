@@ -7,12 +7,12 @@
 	}
 
 	let achievements: IAchievments[] = [
-		{ id: 1, img: '/images/cert-1.webp' },
-		{ id: 2, img: '/images/cert-2.webp' },
-		{ id: 3, img: '/images/cert-3.webp' },
-		{ id: 4, img: '/images/cert-4.webp' },
-		{ id: 5, img: '/images/cert-5.webp' },
-		{ id: 6, img: '/images/cert-6.webp' }
+		{ id: 1, img: '/images/cert1.webp' },
+		{ id: 2, img: '/images/cert2.webp' },
+		{ id: 3, img: '/images/cert3.webp' },
+		{ id: 4, img: '/images/cert4.webp' },
+		{ id: 5, img: '/images/cert5.webp' },
+		{ id: 6, img: '/images/cert6.webp' }
 	];
 </script>
 
