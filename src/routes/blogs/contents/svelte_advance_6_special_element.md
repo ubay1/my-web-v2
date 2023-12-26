@@ -58,7 +58,7 @@ dalam contoh ini kita akan menggunakannya untuk tujuan yang berbeda yaitu memuat
 Elemen svelte:fragment memungkinkan kita menempatkan konten dalam slot bernama tanpa membungkusnya dalam elemen DOM kontainer.
 
 <blockquote>
-	check tutorial disini:
+	check contohnya disini:
 	<a href="https://svelte.dev/repl/fabe237032aa4bdb9745d7749678c2fc?version=4.2.8" target="_blank">svelte:fragment</a>
 </blockquote>
 

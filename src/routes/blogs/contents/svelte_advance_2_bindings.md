@@ -78,7 +78,7 @@ Setiap elemen tingkat blok memiliki binding clientWidth, clientHeight, offsetWid
 ```
 
 <blockquote>
-	check tutorial disini:
+	check contohnya disini:
 	<a href="https://svelte.dev/repl/d4963b75bfd44f9a93af6caba5b0b522?version=4.2.8" target="_blank">
 		bind dimensions
 	</a>
@@ -112,7 +112,7 @@ Untuk dapat mengakses dan memanipulasi input, kita memerlukan referensi untuk it
 ```
 
 <blockquote>
-	check tutorial disini:
+	check contohnya disini:
 	<a href="https://svelte.dev/repl/c4db9246720146ab8acae3dac395f175?version=4.2.8" target="_blank">
 		bind:this
 	</a>
@@ -141,7 +141,7 @@ Untuk dapat mengakses dan memanipulasi input, kita memerlukan referensi untuk it
 ```
 
 <blockquote>
-	check tutorial disini:
+	check contohnya disini:
 	<a href="https://svelte.dev/repl/a01535b02b49447dbf18c617893173af?version=4.2.8" target="_blank">
 		bind:this dengan bind:value
 	</a>
@@ -219,6 +219,6 @@ ketika user klik button yang tersedia, nilai tersebut disimpan di state <kbd>exp
 ```
 
 <blockquote>
-	check tutorial disini:
+	check contohnya disini:
 	<a href="https://svelte.dev/repl/9bcac1904af1441a86e25d1a67dba3f1?version=4.2.8" target="_blank"> Component Bindings </a>
 </blockquote>

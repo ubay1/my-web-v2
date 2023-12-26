@@ -13,7 +13,7 @@ tags:
 Sebuah komponen dapat mengubah jenisnya dengan svelte:component. Pada contoh ini, kita ingin menampilkan RedThing.svelte jika warnanya merah, GreenThing.svelte jika warnanya hijau, dan seterusnya. Kita bisa melakukan ini dengan urutan blok if... <br>
 
 <blockquote>
-	check tutorial disini:
+	check contohnya disini:
 	<a href="https://svelte.dev/repl/2714c6d6108247488a46d22ea25b0eae?version=4.2.8" target="_blank">svelte:component</a>
 </blockquote>
 
@@ -78,7 +78,7 @@ Sama seperti svelte:component, kita tidak selalu tahu sebelumnya jenis elemen DO
 Nilai ini dapat berupa string apa pun. jika nilai yang dipilih tidak masuk kedalam tag html, maka tidak ada elemen yang dirender.
 
 <blockquote>
-	check tutorial disini:
+	check contohnya disini:
 	<a href="https://svelte.dev/repl/9ea35778dd17493ca8537bfe4b187019?version=4.2.8" target="_blank">svelte:element</a>
 </blockquote>
 
@@ -106,7 +106,7 @@ Kita dapat menambahkan event listener ke elemen DOM mana pun, kita dapat menamba
 kita juga dapat menambahkan binding ke svelte:window, berikut ini contohnya:
 
 <blockquote>
-	check tutorial disini:
+	check contohnya disini:
 	<a href="https://svelte.dev/repl/07afb90d630b40fe8223770de010240c?version=4.2.8" target="_blank">svelte:window</a>
 </blockquote>
 
@@ -178,7 +178,7 @@ Mirip dengan svelte:window, elemen svelte:body memungkinkan kita untuk mendengar
 Tambahkan penangan mouseenter dan mouseleave ini ke tag svelte:body dan arahkan kursor ke body.
 
 <blockquote>
-	check tutorial disini:
+	check contohnya disini:
 	<a href="https://svelte.dev/repl/485da56a12a24d15828331875408a8fe?version=4.2.8" target="_blank">svelte:body</a>
 </blockquote>
 

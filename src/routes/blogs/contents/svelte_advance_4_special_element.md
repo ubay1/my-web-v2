@@ -13,7 +13,7 @@ tags:
 svelte:self, memungkinkan sebuah komponen untuk berisi dirinya sendiri secara rekursif. contohnya kita dapat menggunakan element ini untuk membuat sebuah menu yang bercabang cabang. <br>
 
 <blockquote>
-	check tutorial disini:
+	check contohnya disini:
 	<a href="https://svelte.dev/repl/d4f62ea3e4d04824bc33fff0057c6880?version=4.2.8" target="_blank">svelte:self</a>
 </blockquote>
 
