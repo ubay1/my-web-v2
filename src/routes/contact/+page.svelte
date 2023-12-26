@@ -72,7 +72,7 @@
 			id="content"
 			bind:value={form.content}
 			required
-			placeholder="contoh: bang bikinin saya web dong, pake kopi aja ya bayarnya .."
+			placeholder="Masukan isi pesan"
 			class="p-2 mb-4 bg-white border-none outline-solid rounded w-fill h-20 outline-white"
 		/>
 
