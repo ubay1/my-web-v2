@@ -1,7 +1,7 @@
 ---
 title: React Basic - (markup <></>, props, children/slot)
 description:
-imagePath: https://crowdbotics.ghost.io/content/images/2019/06/React-Event-Listeners.png
+imagePath: https://wallpapercave.com/wp/wp4924054.jpg
 imageAlt: react
 date: 2023-11-01 09:00
 tags:
@@ -65,25 +65,33 @@ export default function Reactbasic() {
 jika dibanding vue dan svelte, gw lebih nyaman props dari vue dan svelte. tapi gapapa namanya juga belajar gaada yang salah. hehe
 
 ```tsx title="App.tsx"
+import { FC } from 'react';
+
 interface IAvatar {
 	name: string;
 	imageId: string;
+}
+
+interface IProps {
+	person: IAvatar;
 }
 
 function getImageUrl(person: IAvatar, size = 's') {
 	return 'https://i.imgur.com/' + person.imageId + size + '.jpg';
 }
 
-function Avatar(props: { person: IAvatar; size: number }) {
+const Avatar: FC<IProps> = ({ person }) => {
 	return (
 		<img
-			src={getImageUrl(props.person)}
-			alt={props.person.name}
-			width={props.size}
-			height={props.size}
+			src={getImageUrl(person)}
+			alt={person.name}
+			width={0}
+			height={0}
+			className="w-full h-full"
 		/>
 	);
-}
+};
+
 export default function Profile() {
 	return <Avatar person={{ name: 'Lin Lanying', imageId: '1bX5QH6' }} size={100} />;
 }

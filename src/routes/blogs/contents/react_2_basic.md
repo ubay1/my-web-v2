@@ -1,7 +1,7 @@
 ---
 title: React Basic - (if else statement, operator ternary, operator &&)
 description:
-imagePath: https://crowdbotics.ghost.io/content/images/2019/06/React-Event-Listeners.png
+imagePath: https://wallpapercave.com/wp/wp4924054.jpg
 imageAlt: react
 date: 2023-11-02 09:00
 tags:
