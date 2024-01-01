@@ -1,5 +1,5 @@
 ---
-title: React Basic - Events, Passing event as props  Event modifier
+title: React - Events, Passing event as props,  Event modifier, Emit
 description:
 imagePath: https://wallpapercave.com/wp/wp4924054.jpg
 imageAlt: react
@@ -112,6 +112,42 @@ export default function EventModifier() {
 					Upload Image
 				</button>
 			</div>
+		</>
+	);
+}
+```
+
+## Emit
+
+```tsx title="emit to parent component"
+import { FC, useState } from 'react';
+
+const AnswerButton: FC<{ onYes: Function; onNo: Function }> = ({ onYes, onNo }) => {
+	return (
+		<>
+			<button onClick={() => onYes()}>YES</button>
+
+			<button onClick={() => onNo()}>NO</button>
+		</>
+	);
+};
+
+export default function EmitToParent() {
+	const [isHappy, setIsHappy] = useState(true);
+
+	function onAnswerNo() {
+		setIsHappy(false);
+	}
+
+	function onAnswerYes() {
+		setIsHappy(true);
+	}
+
+	return (
+		<>
+			<p>Are you happy?</p>
+			<AnswerButton onYes={onAnswerYes} onNo={onAnswerNo} />
+			<p style={{ fontSize: 50 }}>{isHappy ? '😀' : '😥'}</p>
 		</>
 	);
 }

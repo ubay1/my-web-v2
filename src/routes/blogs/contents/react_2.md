@@ -1,5 +1,5 @@
 ---
-title: React Basic - (if else statement, operator ternary, operator &&)
+title: React - (if else statement, operator ternary, operator &&)
 description:
 imagePath: https://wallpapercave.com/wp/wp4924054.jpg
 imageAlt: react

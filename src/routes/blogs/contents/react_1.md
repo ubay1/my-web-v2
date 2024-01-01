@@ -1,5 +1,5 @@
 ---
-title: React Basic - (markup <></>, props, children/slot)
+title: React - (Markup <></>, Props, Children atau Slot, Dom Ref)
 description:
 imagePath: https://wallpapercave.com/wp/wp4924054.jpg
 imageAlt: react
@@ -119,6 +119,30 @@ export default function Profile() {
 				}}
 			/>
 		</Card>
+	);
+}
+```
+
+## Dom Ref
+
+kalau di vue kita menggunakan ref(), kalau di svelte kita menggunakan bind:this,
+di react menggunakan useRef()
+
+```tsx
+import { useRef } from 'react';
+
+export default function DomRef() {
+	const inputElement: any = useRef(null);
+
+	const focusForm = () => inputElement?.current?.focus();
+
+	return (
+		<div className="bg-red-300 p-2 w-1/2">
+			<button className="bg-gray-400 hover:bg-gray-500 p-1 mb-2" onClick={focusForm}>
+				Focus Form
+			</button>
+			<input type="text" ref={inputElement} className="text-black px-1" />
+		</div>
 	);
 }
 ```
