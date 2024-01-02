@@ -2,9 +2,10 @@
 	const fav = '/meta-image.png';
 	export let templateTitle: string = 'Ubay Dillah';
 	export let title: string = '';
-	export let url: string = 'https://asik-sveltekit.vercel.app';
+	export let url: string = 'https://ubay182.vercel.app';
 	export let favicon = fav;
-	export let description: string = 'Terima jasa pembuatan website, dan freelance.';
+	export let description: string =
+		'Web pribadi yang berisi catatan hasil eksplorasi dan projek yang telah dikerjakan';
 </script>
 
 <svelte:head>
