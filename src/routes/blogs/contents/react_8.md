@@ -63,7 +63,6 @@ const ReactMemo = () => {
 export default ReactMemo;
 ```
 
-kita bisa lihat pada function <kbd>NoMemoizedComponent</kbd>, <kbd>NoMemoizedComponent2</kbd>. <br/><br/>
 react.memo tidak akan bekerja pada 2 hal ini:
 
 1. nilai props yang berubah-ubah. sesuai dengan penjelasan diatas. <br/>
