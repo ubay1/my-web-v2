@@ -1,72 +1,156 @@
 ---
-title: React - React memo
+title: React - useReducer
 description:
 imagePath: https://wallpapercave.com/wp/wp4924054.jpg
 imageAlt: react
-date: 2023-11-12 09:00
+date: 2023-11-13 09:00
 tags:
   - react
 ---
 
-# React memo
+# useReducer
 
-Penggunaan React.memo sangat berguna untuk komponen yang menerima props statis atau jarang berubah, sehingga dapat mengurangi overhead dari proses rendering komponen yang sebenarnya tidak memerlukan perubahan yang signifikan. lihat contoh dibawah ini.
+useReducer digunakan untuk mengelola state yang lebih kompleks. Fungsi ini menerima reducer dan initialState, dan mengembalikan state saat ini beserta dispatch function untuk memicu perubahan pada state berdasarkan action yang didefinisikan.
 
-```tsx title="contoh penggunaan react memo"
-import { FC, memo, useState } from 'react';
+```tsx title="contoh useReducer pada object"
+import React, { ChangeEvent, useReducer } from 'react';
 
-// Komponen fungsional yang di-memoisasi menggunakan React.memo
-const NoMemoizedComponent: FC<{ name: string }> = memo(({ name }) => {
-	console.log('Rendering No Memoized Component...');
-	return <div>Hello, {name}! from no memoize component</div>;
-});
-NoMemoizedComponent.displayName = 'NoMemoizedComponent';
+// Inisialisasi state awal
+const initialState = {
+	name: '',
+	email: '',
+	message: ''
+};
 
-const NoMemoizedComponent2 = memo(() => {
-	console.log('Rendering No Memoized Component 2...');
-	return <div>Hello, from no memoize component and no props</div>;
-});
-NoMemoizedComponent2.displayName = 'NoMemoizedComponent2';
-
-const MemoizedComponent: FC<{ name: string }> = memo(({ name }) => {
-	console.log('Rendering Memoized Component...');
-	return <div>Hello, {name}! from memoize component</div>;
-});
-MemoizedComponent.displayName = 'MemoizedComponent';
+type ACTION_TYPE = 'SET_FIELD' | 'RESET';
+// Reducer untuk mengelola perubahan state berdasarkan action
+const formReducer = (state: any, action: { type: ACTION_TYPE; field?: any; value?: string }) => {
+	switch (action.type) {
+		case 'SET_FIELD':
+			return { ...state, [action.field]: action.value };
+		case 'RESET':
+			return initialState;
+		default:
+			return state;
+	}
+};
 
 // Komponen utama
-const ReactMemo = () => {
-	const [count, setCount] = useState(0);
-	const [nameStatis, setNameStatis] = useState('ubay');
+const UseReducer = () => {
+	const [formData, dispatch] = useReducer(formReducer, initialState);
 
-	const handleClick = () => {
-		setCount((prevCount) => prevCount + 1);
+	const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		const { name, value } = event.target;
+		dispatch({ type: 'SET_FIELD', field: name, value });
 	};
 
-	const NoMemoizedComponent3 = memo(() => {
-		console.log('Rendering No Memoized Component 3...');
-		return <div>{`Hello ${nameStatis}, from no memoize component and no props`}</div>;
-	});
-	NoMemoizedComponent3.displayName = 'NoMemoizedComponent3';
+	const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		console.log('Form submitted with data:', formData);
+		// Lakukan sesuatu dengan data form, misalnya kirim ke backend
+		dispatch({ type: 'RESET' }); // Reset form setelah submit
+	};
+
+	return (
+		<form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+			<input
+				className="text-black px-1"
+				type="text"
+				name="name"
+				value={formData.name}
+				onChange={handleChange}
+				placeholder="Name"
+			/>
+			<input
+				className="text-black px-1"
+				type="email"
+				name="email"
+				value={formData.email}
+				onChange={handleChange}
+				placeholder="Email"
+			/>
+			<textarea
+				name="message"
+				className="text-black px-1"
+				value={formData.message}
+				onChange={handleChange}
+				placeholder="Message"
+			/>
+			<button type="submit">Submit</button>
+		</form>
+	);
+};
+
+export default UseReducer;
+```
+
+```tsx title="contoh useReducer pada array"
+import React, { useReducer } from 'react';
+
+const initialState = {
+	items: []
+};
+
+type ACTION_TYPE = 'ADD_ITEM' | 'REMOVE_ITEM' | 'CLEAR_ITEMS';
+const reducer = (state: { items: any[] }, action: { type: ACTION_TYPE; payload?: string }) => {
+	switch (action.type) {
+		case 'ADD_ITEM':
+			return {
+				items: [...state.items, action.payload]
+			};
+		case 'REMOVE_ITEM':
+			return {
+				items: state.items.filter((_: any, index: any) => index !== action.payload)
+			};
+		case 'CLEAR_ITEMS':
+			return {
+				items: []
+			};
+		default:
+			return state;
+	}
+};
+
+const UseReducer = () => {
+	const [state, dispatch] = useReducer(reducer, initialState);
+
+	const addItem = (item: any) => {
+		dispatch({ type: 'ADD_ITEM', payload: item });
+	};
+
+	const removeItem = (index: any) => {
+		dispatch({ type: 'REMOVE_ITEM', payload: index });
+	};
+
+	const clearItems = () => {
+		dispatch({ type: 'CLEAR_ITEMS' });
+	};
 
 	return (
 		<div>
-			<MemoizedComponent name={`User ${nameStatis}`} />
-			<NoMemoizedComponent name={`User ${count}`} />
-			<NoMemoizedComponent2 />
-			<NoMemoizedComponent3 />
-			<button onClick={handleClick}>Increase Count</button>
+			<h2>Shopping List</h2>
+			<ul>
+				{state.items.map((item: any, index: number) => (
+					<li key={index}>
+						{item} <button onClick={() => removeItem(index)}>Remove</button>
+					</li>
+				))}
+			</ul>
+			<input
+				type="text"
+				placeholder="Add item..."
+				className="text-black px-1"
+				onKeyDown={(e) => {
+					if (e.key === 'Enter') {
+						addItem(e.currentTarget.value);
+						e.currentTarget.value = '';
+					}
+				}}
+			/>
+			<button onClick={clearItems}>Clear All</button>
 		</div>
 	);
 };
 
-export default ReactMemo;
+export default UseReducer;
 ```
-
-react.memo tidak akan bekerja pada 2 hal ini:
-
-1. nilai props yang berubah-ubah. sesuai dengan penjelasan diatas. <br/>
-   kita bisa lihat pada function <kbd>NoMemoizedComponent</kbd> kita memberikan props name dengan type string. lalu props yang kita kirim yaitu nilai state count yang berubah-ubah ketika kita klik button.
-
-2. function yang ada didalam function utama. <br/>
-   kita bisa lihat pada function <kbd>NoMemoizedComponent3</kbd>
