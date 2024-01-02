@@ -10,13 +10,13 @@ tags:
 
 ## Hooks
 
-'Hooks' adalah fungsi-fungsi di seluruh aplikasi yang Anda deklarasikan yang akan dipanggil oleh SvelteKit sebagai respons terhadap kejadian-kejadian tertentu, yang memberikan Anda kontrol yang baik terhadap perilaku framework.
+'Hooks' adalah fungsi-fungsi di seluruh aplikasi yang kita deklarasikan yang akan dipanggil oleh SvelteKit sebagai respons terhadap kejadian-kejadian tertentu, yang memberikan kita kontrol yang baik terhadap perilaku framework.
 
 Kode dalam modul-modul ini akan berjalan ketika aplikasi dijalankan, sehingga berguna untuk menginisialisasi klien basis data, security, authorization dan lainnya.
 
 ### handle
 
-Fungsi ini berjalan setiap kali server SvelteKit menerima permintaan - apakah itu terjadi saat aplikasi berjalan, atau selama prerendering - dan menentukan responsnya. Fungsi ini menerima objek yang mewakili permintaan dan sebuah fungsi yang disebut <b>resolve</b>, yang merender rute dan menghasilkan Response. Hal ini memungkinkan Anda untuk memodifikasi header atau badan respons, atau mem-bypass SvelteKit sepenuhnya (untuk mengimplementasikan rute secara terprogram). contoh dibawahini:
+Fungsi ini berjalan setiap kali server SvelteKit menerima permintaan - apakah itu terjadi saat aplikasi berjalan, atau selama prerendering - dan menentukan responsnya. Fungsi ini menerima objek yang mewakili permintaan dan sebuah fungsi yang disebut <b>resolve</b>, yang merender rute dan menghasilkan Response. Hal ini memungkinkan kita untuk memodifikasi header atau badan respons, atau mem-bypass SvelteKit sepenuhnya (untuk mengimplementasikan rute secara terprogram). contoh dibawahini:
 
 ```ts title="hooks-handle"
 import type { Handle } from '@sveltejs/kit';

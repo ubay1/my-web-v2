@@ -110,7 +110,7 @@ kita juga dapat menambahkan binding ke svelte:window, berikut ini contohnya:
 	<a href="https://svelte.dev/repl/07afb90d630b40fe8223770de010240c?version=4.2.8" target="_blank">svelte:window</a>
 </blockquote>
 
-Daftar properti yang dapat Anda ikat adalah sebagai berikut:
+Daftar properti yang dapat kita ikat adalah sebagai berikut:
 
 <blockquote>
 <ul>
