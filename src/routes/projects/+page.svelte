@@ -113,13 +113,14 @@
 				<div class="absolute z-20 top-0 right-0 text-sm font-bold p-1 rounded-lb-md bg-orange-4">
 					{item.project}
 				</div>
-				<ImageLoader
-					src={item.img}
-					alt="img-{item.label}"
-					classes="{item.vertical ? 'h-56' : 'h-52'} p-2 z-10 w-auto object-contain {item.class}"
-					width="14rem"
-					height="14rem"
-				/>
+
+				<div class="h-56 flex justify-center w-full">
+					<ImageLoader
+						src={item.img}
+						alt="img-{item.label}"
+						classes="h-56 z-10 w-auto object-contain {item.class}"
+					/>
+				</div>
 			</div>
 			<div class="text-black flex flex-col p-4">
 				<div class="text-center font-bold mb-2">
