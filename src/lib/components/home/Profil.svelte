@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import ImageLoader from '../common/image/ImageLoader.svelte';
 
 	interface IAchievments {
 		id: number;
@@ -41,10 +42,12 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					<img
+					<ImageLoader
 						src={item.img}
 						alt="img-achievment-{item.id}"
-						class="w-100% pointer-events-none h-full my-4 bg-gray-3 aspect-ratio-8/6 object-cover shadow dark:bg-gray-7"
+						classes="w-100% pointer-events-none h-full my-4 bg-gray-3 aspect-ratio-8/6 object-cover shadow dark:bg-gray-7"
+						width="auto"
+						height="auto"
 					/>
 				</a>
 			{/each}

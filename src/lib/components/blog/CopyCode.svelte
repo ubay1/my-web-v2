@@ -17,6 +17,7 @@
 			title.className = 'ml-4 text-sm';
 
 			let copyButton = document.createElement('button');
+			copyButton.ariaLabel = 'icon-copy';
 			copyButton.className = 'h-10 w-10 mr-4 flex items-center justify-center btn-copy text-white';
 			copyButton.innerHTML = `<div class='i-octicon-copy-16'></div>`;
 

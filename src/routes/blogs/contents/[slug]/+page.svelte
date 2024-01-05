@@ -5,6 +5,7 @@
 	import { formatDate } from '$lib/utils/format';
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
+	import ImageLoader from '$lib/components/common/image/ImageLoader.svelte';
 	export let data: PageData;
 
 	onMount(() => {
@@ -24,7 +25,12 @@
 </script>
 
 <div class="p-0 bg-white max-w-4xl m-auto h-56 md:h-72 relative dark:bg-githubDark-1 lt-lg:p-0">
-	<img src={data.imagePath} class="w-full h-full aspect-video object-cover brightness-30" alt="" />
+	<ImageLoader
+		src={data.imagePath}
+		classes="w-full h-full aspect-video object-cover brightness-30"
+		alt="img-banner"
+		classIntersect="h-56 md:h-72"
+	/>
 	<div class="absolute top-0 flex justify-center items-center h-full w-full">
 		<h1 class="text-3xl z-40 line-clamp-2 font-bold text-center text-white">
 			{data.title}

@@ -1,10 +1,12 @@
 <script>
+	import ImageLoader from '$lib/components/common/image/ImageLoader.svelte';
+
 	const listProject = [
 		{
 			label: 'ASIK Enkrip Dekrip',
 			vertical: false,
-			classes: 'img-horizontal-blibli',
-			img: ['/images/web-internal-asik.webp'],
+			class: 'img-horizontal-blibli',
+			img: '/images/web-internal-asik.webp',
 			stack: ['SvelteKit', 'Typescript', 'Skeleton UI', 'Tailwind'],
 			project: 'Web Internal Tim ASIK',
 			url: null
@@ -12,8 +14,8 @@
 		{
 			label: 'Movie Kit',
 			vertical: false,
-			classes: 'img-horizontal-blibli',
-			img: ['/images/sveltekit-movie.webp'],
+			class: 'img-horizontal-blibli',
+			img: '/images/sveltekit-movie.webp',
 			stack: ['SvelteKit', 'Typescript', 'UnoCss'],
 			project: 'Proyek Pribadi',
 			url: 'https://movie-kit.vercel.app'
@@ -21,8 +23,8 @@
 		{
 			label: 'Dashboard Aplikasi Sehat Indinesiaku',
 			vertical: false,
-			classes: 'img-horizontal-asik',
-			img: ['/images/asik.webp'],
+			class: 'img-horizontal-asik',
+			img: '/images/asik.webp',
 			stack: ['Nuxt 3', 'Pinia', 'Typescript', 'UnoCss'],
 			project: 'Kementerian Kesehatan',
 			url: null
@@ -30,8 +32,8 @@
 		{
 			label: 'eHAC Peduli Lindungi',
 			vertical: true,
-			classes: 'img-vertical',
-			img: ['/images/ehac.webp', '/images/ehac1.webp', 'images/myehac.webp'],
+			class: 'img-vertical',
+			img: 'images/myehac.webp',
 			stack: ['Nuxt 2', 'Vuetify'],
 			project: 'Kementerian Kesehatan',
 			url: null
@@ -39,8 +41,8 @@
 		{
 			label: 'Vue3 Movie',
 			vertical: true,
-			classes: 'img-vertical',
-			img: ['/images/vue3-movie.webp'],
+			class: 'img-vertical',
+			img: '/images/vue3-movie.webp',
 			stack: ['VueJS 3', 'Tailwind'],
 			project: 'Proyek Pribadi',
 			url: 'https://vue3-movie.vercel.app'
@@ -48,8 +50,8 @@
 		{
 			label: 'Catatan Kajian',
 			vertical: true,
-			classes: 'img-vertical',
-			img: ['/images/catatan-kajian.webp'],
+			class: 'img-vertical',
+			img: '/images/catatan-kajian.webp',
 			stack: ['SvelteKit', 'Tailwind'],
 			project: 'Proyek Pribadi',
 			url: 'https://catatan-kajian.vercel.app'
@@ -57,8 +59,8 @@
 		{
 			label: 'BliBli Clone',
 			vertical: false,
-			classes: 'img-horizontal-blibli',
-			img: ['/images/blibli.webp'],
+			class: 'img-horizontal-blibli',
+			img: '/images/blibli.webp',
 			stack: ['SvelteKit', 'Tailwind'],
 			project: 'Proyek Pribadi',
 			url: 'https://learn-svelte-sveltekit.vercel.app/project/blibli-clone'
@@ -66,8 +68,8 @@
 		{
 			label: 'Global Wakaf Corporation',
 			vertical: true,
-			classes: 'img-horizontal',
-			img: ['/images/gwc2.webp'],
+			class: 'img-horizontal',
+			img: '/images/gwc2.webp',
 			stack: ['Nuxt 2', 'Typescript', 'Vuetify', 'Google Maps'],
 			project: 'Goiot',
 			url: null
@@ -75,8 +77,8 @@
 		{
 			label: 'Cari Gawe',
 			vertical: false,
-			classes: 'img-horizontal-carigawe',
-			img: ['/images/carigawe2.webp'],
+			class: 'img-horizontal-carigawe',
+			img: '/images/carigawe2.webp',
 			stack: ['ReactJS', 'Typescript', 'Sequelize', 'SocketIO', 'ExpressJS', 'MaterialUI'],
 			project: 'Proyek Pribadi',
 			url: null
@@ -84,8 +86,8 @@
 		{
 			label: 'Catatan Uangku',
 			vertical: true,
-			classes: 'img-vertical',
-			img: ['/images/catatanuang2.webp'],
+			class: 'img-vertical',
+			img: '/images/catatanuang2.webp',
 			stack: ['React Native', 'Typescript', 'Realm'],
 			project: 'Proyek Pribadi',
 			url: null
@@ -93,8 +95,8 @@
 		{
 			label: 'Homi Smarthome',
 			vertical: false,
-			classes: 'img-horizontal-homi',
-			img: ['/images/homi2.webp'],
+			class: 'img-horizontal-homi',
+			img: '/images/homi2.webp',
 			stack: ['React Native ', 'Typescript', 'MQTT'],
 			project: 'Goiot',
 			url: null
@@ -102,26 +104,22 @@
 	];
 </script>
 
-<div class="columns-1 sm:columns-2 md:columns-3 gap-4 p-4 mb-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 mb-4">
 	{#each listProject as item}
-		<div class="break-inside-avoid mb-4 bg-neutral-1 shadow-md rounded-md dark:bg-white">
+		<div class="mb-4 bg-neutral-1 shadow-md rounded-md dark:bg-white">
 			<div
 				class="rounded-t-md shadow-lg relative justify-center flex flex-row flex-wrap gap-2 overflow-hidden"
 			>
-				<div
-					style="background: url({item.img[0]});"
-					class="bg-blur rounded-t-md absolute top-0 h-full w-full"
-				/>
 				<div class="absolute z-20 top-0 right-0 text-sm font-bold p-1 rounded-lb-md bg-orange-4">
 					{item.project}
 				</div>
-				{#each item.img as img, idx}
-					<img
-						src={img}
-						alt="img-{item.label}"
-						class="{item.vertical ? 'h-56' : 'h-52'} p-2 z-10 w-auto object-contain {item.classes}"
-					/>
-				{/each}
+				<ImageLoader
+					src={item.img}
+					alt="img-{item.label}"
+					classes="{item.vertical ? 'h-56' : 'h-52'} p-2 z-10 w-auto object-contain {item.class}"
+					width="14rem"
+					height="14rem"
+				/>
 			</div>
 			<div class="text-black flex flex-col p-4">
 				<div class="text-center font-bold mb-2">
@@ -147,7 +145,7 @@
 	{/each}
 </div>
 
-<style>
+<!-- <style>
 	.bg-blur {
 		transform: scale(1.2);
 		transition: all 0.3s ease-in-out 0s;
@@ -185,4 +183,4 @@
 			height: calc(40vw - 20px);
 		}
 	}
-</style>
+</style> -->

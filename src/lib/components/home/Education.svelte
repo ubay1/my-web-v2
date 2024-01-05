@@ -1,4 +1,6 @@
 <script lang="ts">
+	import ImageLoader from '../common/image/ImageLoader.svelte';
+
 	interface IEducation {
 		img: string;
 		name: string;
@@ -26,10 +28,10 @@
 		{#each listEducation as item}
 			<div class="border border-gray-3 border-solid rounded-lg p-4 dark:border-gray-7">
 				<div class="flex items-center justify-start gap-4">
-					<img
+					<ImageLoader
 						src={item.img}
 						alt="img-{item.name}"
-						class="aspect-square pointer-events-none object-contain"
+						classes="aspect-square pointer-events-none object-contain"
 						width="80"
 						height="80"
 					/>

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import ImageLoader from '../common/image/ImageLoader.svelte';
+
 	interface IListSkill {
 		img: string;
 		name: string;
@@ -34,10 +36,10 @@
 	>
 		{#each oftenUsed as item}
 			<div class="flex flex-col items-center justify-start gap-4 mb-4">
-				<img
+				<ImageLoader
 					src={item.img}
 					alt="img-{item.name}"
-					class="aspect-square pointer-events-none object-contain"
+					classes="aspect-square pointer-events-none object-contain"
 					width="70"
 					height="70"
 				/>
@@ -57,10 +59,10 @@
 	>
 		{#each everUsed as item}
 			<div class="flex flex-col items-center justify-start mb-4">
-				<img
+				<ImageLoader
 					src={item.img}
 					alt="img-{item.name}"
-					class="aspect-square pointer-events-none object-contain"
+					classes="aspect-square pointer-events-none object-contain"
 					width="70"
 					height="70"
 				/>
