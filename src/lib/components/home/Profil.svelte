@@ -41,13 +41,12 @@
 					class="w-[20em] h-full lt-md:w-[20em] cursor-pointer"
 					target="_blank"
 					rel="noreferrer"
+					aria-label="pencapaian"
 				>
 					<ImageLoader
 						src={item.img}
 						alt="img-achievment-{item.id}"
 						classes="w-100% pointer-events-none h-full my-4 bg-gray-3 aspect-ratio-8/6 object-cover shadow dark:bg-gray-7"
-						width="auto"
-						height="auto"
 					/>
 				</a>
 			{/each}
