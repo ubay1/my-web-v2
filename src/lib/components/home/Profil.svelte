@@ -17,7 +17,7 @@
 	];
 </script>
 
-<div class="w-30% flex flex-col justify-center lt-md:w-100% lt-md:items-center">
+<div class="w-30% flex flex-col justify-center lt-md:w-full lt-md:items-center">
 	<img
 		src="/images/profil.webp"
 		alt="profil"
@@ -46,7 +46,7 @@
 					<ImageLoader
 						src={item.img}
 						alt="img-achievment-{item.id}"
-						classes="w-100% pointer-events-none h-full my-4 bg-gray-3 aspect-ratio-8/6 object-cover shadow dark:bg-gray-7"
+						classes="w-full pointer-events-none h-full my-4 bg-gray-3 aspect-ratio-8/6 object-cover shadow dark:bg-gray-7"
 					/>
 				</a>
 			{/each}

@@ -28,13 +28,13 @@
 		{#each listEducation as item}
 			<div class="border border-gray-3 border-solid rounded-lg p-4 dark:border-gray-7">
 				<div class="flex items-center justify-start gap-4">
-					<ImageLoader
-						src={item.img}
-						alt="img-{item.name}"
-						classes="aspect-square pointer-events-none object-contain"
-						width="80"
-						height="80"
-					/>
+					<div class="w-[100px] h-[100px] flex justify-center items-center">
+						<ImageLoader
+							src={item.img}
+							alt="img-{item.name}"
+							classes="aspect-square pointer-events-none object-contain w-full h-full"
+						/>
+					</div>
 					<div class="leading-6">
 						<div class="text-lg font-semibold">{item.name}</div>
 						<div>{item.major}</div>

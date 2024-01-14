@@ -36,13 +36,13 @@
 	>
 		{#each oftenUsed as item}
 			<div class="flex flex-col items-center justify-start gap-4 mb-4">
-				<ImageLoader
-					src={item.img}
-					alt="img-{item.name}"
-					classes="aspect-square pointer-events-none object-contain"
-					width="70"
-					height="70"
-				/>
+				<div class="w-[70px] h-[70px] flex justify-center items-center">
+					<ImageLoader
+						src={item.img}
+						alt="img-{item.name}"
+						classes="aspect-square pointer-events-none object-contain w-full h-full"
+					/>
+				</div>
 				<div class="leading-6">
 					<div class="text-lg font-semibold">{item.name}</div>
 					<!-- <div>{item.rate}</div> -->
@@ -59,13 +59,13 @@
 	>
 		{#each everUsed as item}
 			<div class="flex flex-col items-center justify-start mb-4">
-				<ImageLoader
-					src={item.img}
-					alt="img-{item.name}"
-					classes="aspect-square pointer-events-none object-contain"
-					width="70"
-					height="70"
-				/>
+				<div class="w-[70px] h-[70px] flex justify-center items-center">
+					<ImageLoader
+						src={item.img}
+						alt="img-{item.name}"
+						classes="aspect-square pointer-events-none object-contain w-full h-full"
+					/>
+				</div>
 				<div class="leading-6">
 					<div class="text-lg font-semibold">{item.name}</div>
 				</div>
