@@ -33,7 +33,7 @@
 			label: 'eHAC Peduli Lindungi',
 			vertical: true,
 			class: 'img-vertical',
-			img: 'images/myehac.webp',
+			img: '/images/myehac.webp',
 			stack: ['Nuxt 2', 'Vuetify'],
 			project: 'Kementerian Kesehatan',
 			url: null
