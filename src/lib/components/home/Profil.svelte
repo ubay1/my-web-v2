@@ -21,7 +21,7 @@
 	<img
 		src="/images/profil.webp"
 		alt="profil"
-		class="w-full pointer-events-none bg-gray-3 rounded-full border-gray-7 object-cover aspect-square dark:border-b dark:bg-gray-7 dark:border-gray-7 lt-md:w-50%"
+		class="w-4/5 m-auto pointer-events-none bg-gray-3 rounded-full border-gray-7 object-cover aspect-square dark:border-b dark:bg-gray-7 dark:border-gray-7 lt-md:w-50%"
 	/>
 
 	<div class="mt-4 flex flex-col gap-2 dark:text-white">
