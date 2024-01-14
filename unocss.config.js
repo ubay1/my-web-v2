@@ -40,7 +40,7 @@ export default defineConfig({
 		presetWebFonts({
 			provider: 'google',
 			fonts: {
-				default: 'Poppins:300, 600'
+				default: 'Rubik:300, 600'
 			}
 		})
 	],
