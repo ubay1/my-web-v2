@@ -5,6 +5,27 @@
 	import { TanpaSingleton, Profile } from '$lib/pattern/singleton';
 	import type { KatalogAdapter } from '$lib/pattern/adapter';
 	import { BookKatalogAdapter, MovieKatalogAdapter, Book, Movie } from '$lib/pattern/adapter';
+	// import { FakeRepository } from '$lib/pattern/repository';
+
+	// let form = {
+	// 	title: '',
+	// 	body: '',
+	// 	userId: 0
+	// };
+
+	// const fakeRepo = new FakeRepository();
+
+	// async function createData() {
+	// 	const res = await fakeRepo.create(form);
+	// 	console.log(res);
+	// }
+	// async function readData() {
+	// 	const res = await fakeRepo.read();
+
+	// 	console.log(res);
+	// }
+
+	// readData();
 
 	// const logistic = new LogisticDelivery();
 	// logistic.create({ type: 'delivery_by_land', qty: 100 });
@@ -44,20 +65,51 @@
 	// 	console.log('Singleton failed');
 	// }
 
-	const listKatalog: KatalogAdapter[] = [];
-	listKatalog.push(new BookKatalogAdapter(new Book('pemrograman javascript', 'anonymous')));
-	listKatalog.push(new BookKatalogAdapter(new Book('pemrograman typescript', 'anonymous')));
+	// const listKatalog: KatalogAdapter[] = [];
+	// listKatalog.push(new BookKatalogAdapter(new Book('pemrograman javascript', 'anonymous')));
+	// listKatalog.push(new BookKatalogAdapter(new Book('pemrograman typescript', 'anonymous')));
 
-	listKatalog.push(new MovieKatalogAdapter(new Movie('belajar web laravel', 'wakwaw', 120)));
-	listKatalog.push(new MovieKatalogAdapter(new Movie('belajar web ruby on rails', 'wakwaw', 90)));
+	// listKatalog.push(new MovieKatalogAdapter(new Movie('belajar web laravel', 'wakwaw', 120)));
+	// listKatalog.push(new MovieKatalogAdapter(new Movie('belajar web ruby on rails', 'wakwaw', 90)));
 
-	listKatalog.forEach((item) => {
-		console.log(item.getTitleAndAuthor());
-	});
+	// listKatalog.forEach((item) => {
+	// 	console.log(item.getTitleAndAuthor());
+	// });
 </script>
 
 <div class="text-white h-screen flex flex-col justify-center items-center">
 	<div class="text-4xl font-bold">Design pattern</div>
+
+	<!-- <div class="flex flex-col">
+		<form method="POST" on:submit|preventDefault={() => createData()}>
+			<input
+				type="text"
+				name="title"
+				id="title"
+				placeholder="masukan title"
+				class="form-input"
+				bind:value={form.title}
+			/>
+			<input
+				type="text"
+				name="body"
+				id="body"
+				placeholder="masukan body"
+				class="form-input"
+				bind:value={form.body}
+			/>
+			<input
+				type="number"
+				name="userId"
+				id="userId"
+				placeholder="masukan userId"
+				class="form-input"
+				bind:value={form.userId}
+			/>
+
+			<button type="submit" class="btn-primary">Simpan data</button>
+		</form>
+	</div> -->
 </div>
 
 <style></style>
