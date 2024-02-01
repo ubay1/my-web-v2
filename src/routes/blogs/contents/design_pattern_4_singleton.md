@@ -3,7 +3,7 @@ title: Design Pattern Creational - Singleton
 description: ''
 imagePath: https://refactoring.guru/images/patterns/content/builder/builder-en-2x.png
 imageAlt: img-design-pattern
-date: 2023-12-11
+date: 2023-12-13
 tags:
   - design pattern
   - typescript

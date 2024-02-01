@@ -3,7 +3,7 @@ title: Design Pattern Creational - Repository
 description: ''
 imagePath: https://refactoring.guru/images/patterns/content/builder/builder-en-2x.png
 imageAlt: img-design-pattern
-date: 2023-12-11
+date: 2023-12-15
 tags:
   - design pattern
   - typescript
