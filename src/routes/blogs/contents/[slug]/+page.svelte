@@ -1,12 +1,50 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import '$lib/assets/css/prism.css';
-	import CopyCode from '$lib/components/blog/CopyCode.svelte';
 	import { formatDate } from '$lib/utils/format';
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
 	import ImageLoader from '$lib/components/common/image/ImageLoader.svelte';
+	import { afterNavigate } from '$app/navigation';
 	export let data: PageData;
+
+	afterNavigate(() => {
+		for (let node of document.querySelectorAll('pre')) {
+			const text = node.innerText;
+
+			let divHeader = document.createElement('div');
+			divHeader.className = 'bg-black h-15 absolute top-0 w-full flex items-center justify-between';
+
+			const dataTitle = node.getAttribute('data-code-title');
+			let title = document.createElement('div');
+			title.innerText = dataTitle as string;
+			title.className = 'ml-4 text-sm';
+
+			let copyButton = document.createElement('button');
+			copyButton.ariaLabel = 'icon-copy';
+			copyButton.className = 'h-10 w-10 mr-4 flex items-center justify-center btn-copy text-white';
+			copyButton.innerHTML = `<div class='i-octicon-copy-16'></div>`;
+
+			copyButton.addEventListener('click', () => {
+				navigator.clipboard.writeText(text);
+
+				copyButton.disabled = true;
+				copyButton.className =
+					'h-10 w-10 mr-4 flex items-center justify-center btn-copy text-white p-1 disabled:bg-orange-5 disabled:opacity-100';
+				copyButton.innerHTML = `<div class='i-octicon-check-24 p-1'></div>`;
+
+				setTimeout(function () {
+					copyButton.className =
+						'h-10 w-10 mr-4 flex items-center justify-center btn-copy text-white';
+					copyButton.disabled = false;
+					copyButton.innerHTML = `<div class='i-octicon-copy-16'></div>`;
+				}, 2000);
+			});
+
+			node.appendChild(divHeader);
+			divHeader.appendChild(title);
+			divHeader.appendChild(copyButton);
+		}
+	});
 
 	onMount(() => {
 		// memberikan spasi pada code
@@ -43,10 +81,8 @@
 	</div>
 </div>
 
-<CopyCode>
-	<div
-		class="p-2 max-w-4xl m-auto prose prose-hr:mt-4 prose-hr:mb-4 prose-h2:mb-2 prose-h2:mt-2 prose-ol:mt-0 prose-a:text-black prose-p:my-0 dark:bg-githubDark-1 dark:prose-h2:text-white dark:text-white dark:prose-blockquote:text-white dark:prose-ol:text-white dark:prose-p:text-white dark:prose-a:text-white"
-	>
-		<svelte:component this={data.content} />
-	</div>
-</CopyCode>
+<div
+	class="p-2 max-w-4xl m-auto prose prose-hr:mt-4 prose-hr:mb-4 prose-h2:mb-2 prose-h2:mt-2 prose-ol:mt-0 prose-a:text-black prose-p:my-0 dark:bg-githubDark-1 dark:prose-h2:text-white dark:text-white dark:prose-blockquote:text-white dark:prose-ol:text-white dark:prose-p:text-white dark:prose-a:text-white"
+>
+	<svelte:component this={data.content} />
+</div>
