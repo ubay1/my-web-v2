@@ -1,7 +1,7 @@
 ---
 title: Design Pattern Creational - Prototype
 description: ''
-imagePath: https://refactoring.guru/images/patterns/content/builder/builder-en-2x.png
+imagePath: https://refactoring.guru/images/patterns/content/prototype/prototype-2x.png
 imageAlt: img-design-pattern
 date: 2023-12-12
 tags:

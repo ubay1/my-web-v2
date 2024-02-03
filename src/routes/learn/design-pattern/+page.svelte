@@ -5,7 +5,24 @@
 	import { TanpaSingleton, Profile } from '$lib/pattern/singleton';
 	import type { KatalogAdapter } from '$lib/pattern/adapter';
 	import { BookKatalogAdapter, MovieKatalogAdapter, Book, Movie } from '$lib/pattern/adapter';
-	// import { FakeRepository } from '$lib/pattern/repository';
+	import { FakeRepository } from '$lib/pattern/repository';
+	import { Operations } from '$lib/pattern/facade';
+	import {
+		UserImpl,
+		ProductImpl,
+		UserDeleteCommand,
+		ProductDeleteCommand
+	} from '$lib/pattern/command';
+
+	const userId: number = 1;
+	new UserDeleteCommand(new UserImpl()).execute(userId);
+	new ProductDeleteCommand(new ProductImpl()).execute(userId);
+
+	// const opr1 = new Operations(10, 30);
+	// console.log('penjumlahan = ', opr1.summarization());
+	// console.log('pengurangan = ', opr1.reduction());
+	// console.log('perkalian = ', opr1.multiplication());
+	// console.log('pembagian = ', opr1.division());
 
 	// let form = {
 	// 	title: '',
