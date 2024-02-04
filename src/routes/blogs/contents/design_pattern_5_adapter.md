@@ -115,3 +115,5 @@ listKatalog.forEach((item) => {
 	console.log(item.getTitleAndAuthor());
 });
 ```
+
+jika kita ingin menambah catalog lagi misal sayuran, baju, celana, dll. kita tidak usah repot-repot menambahkan pengecekan pada saat looping data. karna sudah dihandle oleh adapter.
