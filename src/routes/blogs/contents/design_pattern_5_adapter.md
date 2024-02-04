@@ -13,7 +13,7 @@ Adapter adalah desain pattern yang memungkinkan komunikasi antara dua interface 
 
 Adapter Ini bertujuan untuk mentransform class-class yang berbeda" sesuai dengan standard yang kita perlukan.
 
-contoh kasus dibawah ini adalah toko online, dimana kita ingin menampilkan seluruh produk yang berbeda-beda dalam 1 katalog/wishlist. dan yang ditampilkan hanya nama produk dan author nya.
+contoh kasus dibawah ini adalah toko online, dimana kita ingin menampilkan seluruh produk yang berbeda-beda dalam 1 katalog/wishlist. dan misal yang ingin ditampilkan hanya nama produk dan author nya.
 
 ```ts title="adapter.ts"
 export class Book {
@@ -51,49 +51,67 @@ listKatalog.forEach((item) => {
 });
 ```
 
-dari contoh diatas, jika tanpa adapter kita harus melakukan pengecekan satu satu untuk menampilkan data yang diperlukan. ini akan jadi masalah jika kita memiliki banyak class yang berbeda-beda jenis. maka dari itu pattern adapter ini berguna.
+dari contoh diatas, jika tanpa menggunakan pattern adapter kita harus melakukan pengecekan satu satu untuk menampilkan data yang diperlukan. ini akan jadi masalah jika kita memiliki banyak class yang berbeda-beda jenis. maka dari itu pattern adapter ini berguna.
 
 contoh dengan adapter.
 
-```ts title="singleton.ts"
-export class Profile {
-	private static instance: Profile;
-	private firstName: string = '';
-	private lastName: string = '';
+```ts title="adapter.ts"
+export interface KatalogAdapter {
+	getTitleAndAuthor(): string;
+}
 
-	public static getInstance(): Profile {
-		// jika belum pernah di instansiasi, buat object baru dari class Profile
-		if (!Profile.instance) {
-			Profile.instance = new Profile();
-		}
+export class BookKatalogAdapter {
+	private book: Book;
 
-		// jika sudah pernah, langsung balikan saja
-		return Profile.instance;
+	constructor(book: Book) {
+		this.book = book;
 	}
 
-	public getFullName(): string {
-		// akses db, select user * from ..
-		this.firstName = 'ubay';
-		this.lastName = 'dillah';
+	getTitleAndAuthor(): string {
+		return this.book.title + ' by ' + this.book.author;
+	}
+}
 
-		return `nama saya adalah ${this.firstName} ${this.lastName}`;
+export class Book {
+	constructor(public title: string, public author: string) {}
+
+	public getBook(): string {
+		return `buku ${this.title}, dibuat oleh ${this.author}`;
+	}
+}
+
+export class MovieKatalogAdapter {
+	private movie: Movie;
+
+	constructor(movie: Movie) {
+		this.movie = movie;
+	}
+
+	getTitleAndAuthor(): string {
+		return this.movie.title + ' by ' + this.movie.author;
+	}
+}
+export class Movie {
+	constructor(public title: string, public author: string, public duration: number) {}
+
+	public getMovie(): string {
+		return `film ${this.title}, dibuat oleh ${this.author} dalam durasi ${this.duration} menit`;
 	}
 }
 ```
 
 ```ts title="index.ts"
-import { TanpaSingleton } from '$lib/pattern/singleton';
+import type { KatalogAdapter } from '$lib/pattern/adapter';
+import { BookKatalogAdapter, MovieKatalogAdapter, Book, Movie } from '$lib/pattern/adapter';
 
-const s1 = Profile.getInstance();
-console.log(s1.getFullName());
+const listKatalog: KatalogAdapter[] = [];
+listKatalog.push(new BookKatalogAdapter(new Book('pemrograman javascript', 'anonymous')));
+listKatalog.push(new BookKatalogAdapter(new Book('pemrograman typescript', 'anonymous')));
 
-const s2 = Profile.getInstance();
-console.log(s2.getFullName());
+listKatalog.push(new MovieKatalogAdapter(new Movie('belajar web laravel', 'wakwaw', 120)));
+listKatalog.push(new MovieKatalogAdapter(new Movie('belajar web ruby on rails', 'wakwaw', 90)));
 
-// jika variabel s1 dan s2 bernilai true, itu berarti menggunakan object yang sama
-if (s1 === s2) {
-	console.log('Singleton works');
-} else {
-	console.log('Singleton failed');
-}
+listKatalog.forEach((item) => {
+	console.log(item.getTitleAndAuthor());
+});
 ```
