@@ -206,7 +206,7 @@ const msg2 = () => {
 };
 
 /* akan tercetak
- ** lurks
+ * lurks
  */
 msg2();
 ```
