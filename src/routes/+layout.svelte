@@ -1,7 +1,9 @@
 <script lang="ts">
 	import 'uno.css';
 	import '$lib/assets/css/global.css';
-	import '$lib/assets/css/prism.css';
+	// import '$lib/assets/css/prism.css';
+	import '$lib/assets/css/rich-two-slash.css';
+	// import '$lib/assets/css/classic-two-slash.css';
 	import { navigating } from '$app/stores';
 	import NProgress from 'nprogress';
 	import 'nprogress/nprogress.css';

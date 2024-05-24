@@ -3,7 +3,7 @@ title: OOP pada Typescript
 description: Belajar OOP yang ada pada typescript
 imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
 imageAlt: img-ts
-date: 2022-12-02
+date: 2022-12-03 07:10
 tags:
   - typescript
 ---
@@ -17,7 +17,7 @@ yang harus kita ketahui dari class:
 - cosntructor, constructor ini adalah method yang selalu dipanggil pertama ketika sebuah object dibuat.
 - method, method ini mirip seperti function, tapi tanpa kalimat **function**.
 
-```ts
+```ts twoslash
 class Manusia {
 	nama: string = ''; // property
 	umur: number = 0;
@@ -41,7 +41,7 @@ console.log(manusia.getManusia());
 
 ## constructor shorthand
 
-```ts
+```ts twoslash
 class Manusia1 {
 	constructor(public nama: string, public umur: number) {
 		this.getManusia();
@@ -62,7 +62,7 @@ console.log(manusia1.getManusia());
 - protected bisa diakses oleh parent dan turunannya.
 - public bisa diakses dimana saja.
 
-```ts
+```ts twoslash
 class Manusia2 {
 	private anak: string[] = [];
 
@@ -88,7 +88,7 @@ console.log(manusia2.getManusia());
 
 ## inheritance, super constructor, method overriding
 
-```ts
+```ts twoslash
 class Manusia3 {
 	private anak: string[] = [];
 
@@ -125,7 +125,7 @@ console.log(manusia3a.getManusia());
 - dipakai untuk mengisi dan mengambil nilai property.
 - cara ini bisa digunakan jika ingin mangakses property yang private/protected.
 
-```ts
+```ts twoslash
 class Manusia4 {
 	private _alamat: string = '';
 	private _pasangan: string = '';
@@ -157,7 +157,7 @@ console.log(manusia4.alamat + ' - ' + manusia4.pasangan);
 - dengan property biasa jika kita ingin mengambil data dari property maka kita harus buat objek dan mengintance classnya terlebih dahulu.
 - sedangkan jika dengan static, kita langsung akses nama classnya dan nama property/methodnya.
 
-```ts
+```ts twoslash
 class Manusia5 {
 	private static _nama: string = 'rich';
 	public static _umur: number = 35;
@@ -186,7 +186,7 @@ console.log(Manusia5.getProfil());
 - wajib mempunyai setidaknya 1 abstract method.
 - bagi class turunannya wajib membuat 1 method dengan nama yang sama seperti abstract method pada parentnya.
 
-```ts
+```ts twoslash
 abstract class Manusia6 {
 	constructor(protected nama: string, protected umur: number) {}
 
@@ -229,7 +229,7 @@ manusia6b.bekerja();
 
 - ketika kita membuat constructor menjadi private, maka kita hanya bisa mengaksesnya didalam class itu saja.
 
-```ts
+```ts twoslash
 class SingletonPattern {
 	private static instance: SingletonPattern;
 	private constructor(public nama: string) {}
@@ -262,7 +262,7 @@ console.log(manusia7.nama);
   | implements               |    ✅     |  ✅  |
   | extend                   |    ✅     |  ❌  |
 
-```ts
+```ts twoslash
 interface IKulit {
 	readonly warna: string;
 	cek(): void;
@@ -287,7 +287,7 @@ persons.cek();
 
 - optional parameter di tandai dengan (?) didepan nama property.
 
-```ts
+```ts twoslash
 interface IHewan {
 	warna?: string;
 }

@@ -3,7 +3,7 @@ title: Advances types pada Typescript
 description: Belajar advance types yang ada pada typescript
 imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
 imageAlt: img-ts
-date: 2022-12-02
+date: 2022-12-04 07:00
 tags:
   - typescript
 ---
@@ -12,7 +12,7 @@ tags:
 
 - intersection type mirip seperti extends pada interface. kita bisa menggabungkan 2 type/lebih menjadi 1.
 
-```ts
+```ts twoslash
 type User1 = {
 	name: string;
 };
@@ -33,7 +33,7 @@ console.log(el);
 - Misalnya, jika kita menggunakan document.getElementById, TypeScript hanya mengetahui bahwa ini akan mengembalikan semacam HTMLElement, tetapi kita mungkin tahu bahwa laman kita akan selalu memiliki HTMLElement / elemen lainnya dengan ID tertentu.
 - Dalam situasi ini, kita bisa menggunakan assertion tipe untuk menentukan tipe yang lebih spesifik.
 
-```ts
+```ts twoslash
 if (typeof document !== 'undefined') {
 	const paragraf = document.getElementById('test') as HTMLElement;
 	paragraf.innerHTML = 'hi wakwaw';
@@ -47,7 +47,7 @@ Ada saatnya kita tidak dapat mengetahui karakteristik property dari object yang 
 1. index type signature
    hanya bisa 'string', 'number', 'symbol', atau literal type.
 
-```ts
+```ts twoslash
 type IndexSignature = {
 	[prop: string]: string;
 };
@@ -65,7 +65,7 @@ console.log(testIndexSignature);
    - tipe disini adalah jenis properti yang akan kita buat. namun lebih sering yang digunakan adalah string.
    - return type disini adalah type balikannya kita bisa tentukan sendiri, bisa string, number, ataupun interface.
 
-```ts
+```ts twoslash
 const agent: Record<string, string> = {};
 agent.name = 'Gun';
 agent.age = '30';
@@ -89,7 +89,7 @@ console.log(cats.boris);
 
 - Operator Optional Chaining memungkinkan kita untuk mengakses properti nested obyek, tanpa perlu mengecek apakah obyek parent-nya ada. Jadi, daripada mengembalikan sebuah error, ?. akan mengembalikan undefined jika obyek parentnya null atau undefined.
 
-```ts
+```ts twoslash
 interface IUserInfo {
 	firstName: string;
 	lastName: string;

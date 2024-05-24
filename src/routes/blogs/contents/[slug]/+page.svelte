@@ -48,17 +48,18 @@
 
 	onMount(() => {
 		// memberikan spasi pada code
-		const elem: any = document.querySelectorAll('span');
-		let divv = document.createElement('br');
-		divv.className = 'my-4';
+		const elem: any = document.querySelectorAll('pre.shiki');
 
 		for (const v of elem) {
 			const span: any = v as HTMLPreElement;
 
-			if (span?.childNodes.length === 0) {
-				span.className = 'my-2';
+			if (span?.childNodes.length > 0) {
+				span.classList.add('relative');
 			}
 		}
+
+		let divv = document.createElement('br');
+		divv.className = 'my-4';
 	});
 </script>
 
