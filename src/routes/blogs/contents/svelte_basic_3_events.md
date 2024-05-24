@@ -14,7 +14,8 @@ event element dengan menggunakan `on:` <br/>
 
 kode dibawah ini akan melakukan event DOM saat mouse digerakan di dalam kotak merah.
 
-```svelte title="DOM Events"
+```svelte
+<!-- @filename: DOM Events -->
 <script lang="ts">
 	let m = { x: 0, y: 0 };
 
@@ -48,7 +49,8 @@ kode dibawah ini akan melakukan event DOM saat mouse digerakan di dalam kotak me
 1. preventDefault <br/>
    <kbd>preventDefault</kbd> untuk mencegah perilaku default dari browser, seperti mencegah formulir dikirim, dan mencegah browser untuk melakukan drag & drop
 
-   ```svelte title="Event Modifier - preventDefault"
+   ```svelte
+   <!-- @filename: Event Modifier - preventDefault -->
    <script>
    	function onClick(event) {}
    </script>
@@ -60,7 +62,8 @@ kode dibawah ini akan melakukan event DOM saat mouse digerakan di dalam kotak me
    <kbd>stopPropagation</kbd> membantu kita untuk berhenti menjangkau event ke elemen berikutnya.
    jika stopPropagation dihapus, ketika klik inner div maka outer div juga ikut terender
 
-   ```svelte title="Event Modifier - stopPropagation"
+   ```svelte
+   <!-- @filename: Event Modifier - stopPropagation -->
    <button on:click={() => console.log('Outer div')}>
    	<h1>Outer div</h1>
    	<button on:click|stopPropagation={() => console.log('inner div')}>
@@ -72,7 +75,8 @@ kode dibawah ini akan melakukan event DOM saat mouse digerakan di dalam kotak me
 3. once <br/>
    <kbd> once </kbd> membantu kita untuk memicu event hanya satu kali.
 
-   ```svelte title="Event Modifier - once"
+   ```svelte
+   <!-- @filename: Event Modifier - once -->
    <script>
    	function handleClick() {
    		alert('You can see me once');
@@ -92,7 +96,8 @@ kode dibawah ini akan melakukan event DOM saat mouse digerakan di dalam kotak me
 
 mengirim event dari komponen child ke parent.
 
-```svelte title="Component.svelte - child"
+```svelte
+<!-- @filename: Component.svelte - child -->
 <script>
 	import { createEventDispatcher } from 'svelte';
 
@@ -108,7 +113,8 @@ mengirim event dari komponen child ke parent.
 <button on:click={sayHello}> Test </button>
 ```
 
-```svelte title="App.svelte - parent"
+```svelte
+<!-- @filename: App.svelte - parent -->
 <script>
 	import ComponentEvent from './lib/ComponentEvent.svelte';
 

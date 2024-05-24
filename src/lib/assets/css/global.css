@@ -1,24 +1,79 @@
-/* 'Poppins',  */
-html,
-body {
-	margin: 0;
-	padding: 0;
-	font-family: 'Rubik', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		'Helvetica Neue', Arial, sans-serif;
-}
-
 html.dark {
 	background-color: #22272e;
 }
 
+html,
+body {
+	font-family: Rubik, sans-serif !important;
+	margin: 0;
+}
+
+html.dark .shiki,
+html.dark .shiki span {
+	color: var(--shiki-dark) !important;
+	/* background-color: var(--shiki-dark-bg) !important; */
+}
+
+html.dark pre.shiki {
+	box-shadow: unset;
+}
+pre.shiki {
+	box-shadow: 0px 1px 2px darkgrey;
+	/* overflow: hidden; */
+}
+/* pre.shiki code { */
+/* white-space: pre-wrap; */
+/* } */
+
+code {
+	counter-reset: step;
+	counter-increment: step 0;
+}
+
+.twoslash-popup-container {
+	border: 1px solid #47494c !important;
+	border-radius: 0px !important;
+}
+code.twoslash-popup-code,
+.twoslash-popup-docs {
+	background-color: #191818 !important;
+}
+
+.twoslash-popup-docs-tags,
+.twoslash-popup-docs-tag-name {
+	margin-right: unset !important;
+}
+
+code .line::before {
+	content: counter(step);
+	counter-increment: step;
+	width: 1rem;
+	margin-right: 1.5rem;
+	display: inline-block;
+	text-align: right;
+	color: rgba(115, 138, 148, 0.4);
+}
+code .line.highlighted {
+	background-color: #65758529 !important;
+	transition: background-color 0.5s;
+	margin: 0 -24px;
+	padding: 0 24px;
+	width: calc(100% + 48px);
+	display: inline-block;
+}
+
+#nprogress {
+	position: relative;
+	z-index: 9999999;
+}
+
 #nprogress .bar {
-	background: #f97316 !important;
+	background: #ffa01a !important;
 	height: 5px !important;
 }
 
 #nprogress .peg {
-	/* box-shadow: 0 0 10px #fff, 0 0 5px #fff; */
-	box-shadow: unset !important;
+	box-shadow: none !important;
 }
 
 #nprogress > .spinner .spinner-icon {
@@ -47,49 +102,6 @@ kbd {
 	/* box-shadow: 0px 2px 5px black; */
 	font-size: medium !important;
 	/* border: unset !important; */
-}
-
-pre {
-	padding: 0 !important;
-	position: relative !important;
-	font-family: 'Poppins', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		'Helvetica Neue', Arial, sans-serif;
-}
-
-pre > code {
-	background-color: rgb(16 21 30) !important;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border: 0;
-	border-radius: initial;
-	display: flex;
-	flex-direction: column;
-	line-height: inherit;
-	margin: 0;
-	min-width: 100%;
-	max-width: auto;
-	overflow: auto;
-	padding-top: 70px;
-}
-
-code[data-line-numbers] > span[data-line-number]::before {
-	content: attr(data-line-number);
-	display: inline-block;
-	width: 1rem;
-	margin-right: 1rem;
-	margin-left: 1rem;
-	text-align: right;
-	color: gray;
-}
-
-pre > code > span {
-	padding-left: 10px;
-	padding-right: 10px;
-}
-
-pre > code > span[data-highlighted] {
-	background: #272e42;
-	width: 100%;
 }
 
 /* shimmer */

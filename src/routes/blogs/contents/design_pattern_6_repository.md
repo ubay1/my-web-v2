@@ -15,7 +15,9 @@ pattern ini berguna untuk mengumpulkan semua operasi ke database di satu tempat.
 
 berikut ini contohnya
 
-```ts title="repository.ts"
+```ts
+// @noErrors
+// @filename: repository.ts
 interface IPost {
 	title: string;
 	body: string;
@@ -67,7 +69,9 @@ export class FakeRepository {
 }
 ```
 
-```ts title="index.ts"
+```ts
+// @noErrors
+// @filename: index.ts
 import { FakeRepository } from '$lib/pattern/repository';
 
 const fakeRepo = new FakeRepository();

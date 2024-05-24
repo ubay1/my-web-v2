@@ -10,7 +10,9 @@ tags:
 
 ## Render list data dengan map()
 
-```tsx title="render list data dengan map()"
+```tsx
+// @noErrors
+// render list data dengan map()
 const peoples = [
 	'Creola Katherine Johnson: mathematician',
 	'Mario José Molina-Pasquel Henríquez: chemist',
@@ -33,7 +35,9 @@ export default function App() {
 
 ## Filter data dengan filter()
 
-```tsx title="Filter data dengan filter()"
+```tsx
+// @noErrors
+// Filter data dengan filter()
 const peoples2 = [
 	{
 		id: 0,

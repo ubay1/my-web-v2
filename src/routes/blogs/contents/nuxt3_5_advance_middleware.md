@@ -19,7 +19,9 @@ Ada tiga jenis route middleware:
 
 Contoh middleware auth yang melindungi halaman /dashboard:
 
-```ts title="middleware/auth.ts"
+```ts
+// @noErrors
+// @filename: middleware/auth.ts
 export default defineNuxtRouteMiddleware((to, from) => {
 	// isAuthenticated() is an example method verifying if a user is authenticated
 	if (isAuthenticated() === false) {
@@ -28,7 +30,8 @@ export default defineNuxtRouteMiddleware((to, from) => {
 });
 ```
 
-```vue title="pages/dashboard.vue"
+```vue
+<!-- @filename: pages/dashboard.vue -->
 <script setup>
 definePageMeta({
 	middleware: 'auth'

@@ -3,7 +3,7 @@ title: Sveltekit -  hooks
 description:
 imagePath: https://miro.medium.com/v2/resize:fit:1400/1*G9fzmaoymDGy7scbkgpC7A.png
 imageAlt: sveltekit
-date: 2023-08-22 08:00
+date: 2023-08-24 08:00
 tags:
   - sveltekit
 ---
@@ -17,9 +17,13 @@ Kode dalam modul-modul ini akan berjalan ketika aplikasi dijalankan, sehingga be
 ### handle
 
 Fungsi ini berjalan setiap kali server SvelteKit menerima permintaan - apakah itu terjadi saat aplikasi berjalan, atau selama prerendering - dan menentukan responsnya. Fungsi ini menerima objek yang mewakili permintaan dan sebuah fungsi yang disebut <b>resolve</b>, yang merender rute dan menghasilkan Response. Hal ini memungkinkan kita untuk memodifikasi header atau badan respons, atau mem-bypass SvelteKit sepenuhnya (untuk mengimplementasikan rute secara terprogram). contoh dibawahini:
+<br>
 
-```ts title="hooks-handle"
+hooks-handle:
+
+```ts
 import type { Handle } from '@sveltejs/kit';
+
 export const handle: Handle = async ({ event, resolve }) => {
 	if (event.url.pathname.startsWith('/custom')) {
 		return new Response('custom response');
@@ -31,9 +35,13 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 ### sequence
 
-dengan sequence kita bisa membuat lebih dari 1 function di hooks.
+dengan sequence kita bisa membuat lebih dari 1 function di hooks. <br>
+abaikan aja errornya, ini kena sama twoslash hehe. <br>
 
-```ts title="hooks-sequence"
+hooks-sequence:
+
+```ts
+// @errors: 2307 2304 7031
 import { sequence } from '@sveltejs/kit/hooks';
 
 export const handleSecurity: Handle = (async ({ event, resolve }) => {

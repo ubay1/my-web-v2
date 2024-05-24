@@ -12,7 +12,8 @@ tags:
 
 ## If Blocks
 
-```svelte title="if block"
+```svelte
+<!-- @filename: if block -->
 <script>
 	let count = 0;
 
@@ -37,7 +38,8 @@ tags:
 
 ## Each Blocks
 
-```svelte title="each blocks"
+```svelte
+<!-- @filename: each blocks -->
 <script lang="ts">
 	const colors: string[] = ['red', 'orange', 'teal', 'green', 'blue', 'indigo', 'violet'];
 	let selected: string = colors[0];
@@ -70,7 +72,8 @@ tags:
 </style>
 ```
 
-```svelte title="key each blocks - App.svelte"
+```svelte
+<!-- @filename: key each blocks - App.svelte -->
 <script lang="ts">
 	import Thing from './Thing.svelte';
 
@@ -94,7 +97,8 @@ tags:
 {/each}
 ```
 
-```svelte title="key each blocks - Things.svelte"
+```svelte
+<!-- @filename: key each blocks - Things.svelte -->
 <script>
 	const emojis = {
 		apple: '🍎',
@@ -116,7 +120,8 @@ tags:
 
 Sebagian besar aplikasi web harus berurusan dengan data asinkron pada suatu saat. Svelte memudahkan untuk menunggu nilai promise secara langsung.
 
-```svelte title="App.svelte"
+```svelte
+<!-- @filename: App.svelte -->
 <script lang="ts">
 	import { getRandomNumber } from './api.ts';
 

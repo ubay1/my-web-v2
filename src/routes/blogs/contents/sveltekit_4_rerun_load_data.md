@@ -16,7 +16,9 @@ contoh:
 kita memiliki list data yang bisa dihapus, dan edit. jika tanpa menggunakan fitur ini ketika kita hapus/edit data kita harus melakukan hit ulang ke api untuk mendapatkan data terbaru. <br> namun dengan fitur ini ketika kita melakukan aksi hapus/edit kita cukup memanggil ulang function load() yang ada di +page.server/+page.ts.
 </blockquote>
 
-```ts title="src/routes/+page.server.ts"
+```ts
+// @filename: src/routes/+page.server.ts
+// @noErrors
 import type { PageServerLoad } from './$types';
 import { setTimeout } from 'timers/promises';
 
@@ -37,7 +39,8 @@ export const load: PageServerLoad = async ({ fetch, depends }) => {
 };
 ```
 
-```svelte title="src/routes/+page.svelte"
+```svelte
+<!-- @filename: src/routes/+page.svelte -->
 <script lang="ts">
 	import { invalidate, invalidateAll } from '$app/navigation';
 	import type { PageData } from './$types';

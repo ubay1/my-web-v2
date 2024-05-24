@@ -13,7 +13,9 @@ jika dengan streaming kita bisa masuk ke halaman yang dituju tanpa menunggu fetc
 
 untuk jelasnya bisa lihat code dibawah ini.
 
-```ts title="src/routes/+page.server.ts"
+```ts
+// @filename: src/routes/+page.server.ts
+// @noErrors
 import type { PageServerLoad } from './$types';
 import { setTimeout } from 'timers/promises';
 
@@ -46,7 +48,8 @@ export const load: PageServerLoad = async () => {
 };
 ```
 
-```svelte title="src/routes/+page.svelte"
+```svelte
+<!-- @filename: src/routes/+page.svelte -->
 <script lang="ts">
 	import type { PageData } from './$types';
 

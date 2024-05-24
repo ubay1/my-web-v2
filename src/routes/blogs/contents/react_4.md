@@ -10,7 +10,9 @@ tags:
 
 ## Event handlers
 
-```tsx title="event click dengan function"
+```tsx
+// @noErrors
+// event click dengan function
 export default function App() {
 	const [count, setCount] = useState(0);
 
@@ -27,7 +29,9 @@ export default function App() {
 }
 ```
 
-```tsx title="event click inline"
+```tsx
+// @noErrors
+// event click inline
 function Button(props: { message: string; children: any }) {
 	return (
 		<button className="mt-4" onClick={() => alert(props.message)}>
@@ -44,6 +48,7 @@ export default function App() {
 ## Passing event handler sebagai props
 
 ```tsx
+// @noErrors
 function Button(props: { onClick: any; children: any }) {
 	return <button onClick={props.onClick}>{props.children}</button>;
 }
@@ -67,7 +72,9 @@ export default App() {
 
 Contoh tanpa modifier, id parent akan ikut ke render.
 
-```tsx title="contoh tanpa modifier"
+```tsx
+// @noErrors
+// contoh tanpa modifier
 export default function EventModifier() {
 	return (
 		<>
@@ -85,7 +92,9 @@ export default function EventModifier() {
 }
 ```
 
-```tsx title="contoh dengan modifier stopPropagation()"
+```tsx
+// @noErrors
+// contoh dengan modifier stopPropagation()
 export default function EventModifier() {
 	return (
 		<>
@@ -119,7 +128,9 @@ export default function EventModifier() {
 
 ## Emit
 
-```tsx title="emit to parent component"
+```tsx
+// @noErrors
+// emit to parent component
 import { FC, useState } from 'react';
 
 const AnswerButton: FC<{ onYes: Function; onNo: Function }> = ({ onYes, onNo }) => {

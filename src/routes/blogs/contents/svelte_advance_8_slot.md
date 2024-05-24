@@ -14,7 +14,8 @@ seperti halnya elemen yang dapat memiliki anak.
 
 begitu juga dengan komponen. Namun, sebelum sebuah komponen dapat menerima anak, komponen harus tahu di mana harus meletakkannya. Kita melakukan ini dengan elemen <kbd>slot</kbd>.
 
-```svelte title="App.svelte"
+```svelte
+<!-- @filename: App.svelte -->
 <script>
 	import Card from './Card.svelte';
 </script>
@@ -25,7 +26,8 @@ begitu juga dengan komponen. Namun, sebelum sebuah komponen dapat menerima anak,
 </Card>
 ```
 
-```svelte title="Card.svelte"
+```svelte
+<!-- @filename: Card.svelte -->
 <script>
 </script>
 
@@ -36,7 +38,8 @@ begitu juga dengan komponen. Namun, sebelum sebuah komponen dapat menerima anak,
 
 ## slot name
 
-```svelte title="App.svelte"
+```svelte
+<!-- @filename: App.svelte -->
 <script>
 	import Card from './Card.svelte';
 </script>
@@ -60,7 +63,8 @@ begitu juga dengan komponen. Namun, sebelum sebuah komponen dapat menerima anak,
 </main>
 ```
 
-```svelte title="Card.svelte"
+```svelte
+<!-- @filename: Card.svelte -->
 <div>
 	<header>
 		<slot name="telephone" />
@@ -79,7 +83,8 @@ begitu juga dengan komponen. Namun, sebelum sebuah komponen dapat menerima anak,
 
 Sebuah komponen dapat menentukan fallback untuk setiap slot yang kosong, dengan meletakkan konten di dalam elemen slot:
 
-```svelte title="Card.svelte" {3,7,12,17}
+```svelte
+<!-- @filename: Card.svelte" {3,7,12,17 -->
 <div class="card">
 	<header>
 		<slot name="telephone">
@@ -117,9 +122,10 @@ bisa juga let:data atau lainnya sesuka hati
 
 lihat kode dibawah ini:
 
-```svelte showLineNumbers title="App.svelte" {9,10}
+```svelte
+<!-- @filename: App.svelte  -->
 <script>
-	import FancyList from './FancyList.svelte';
+	import FancyList from './FancyList.svelte'; // [!code highlight]
 
 	const items = [
 		{ label: 'a', value: 'a1' },
@@ -133,7 +139,8 @@ lihat kode dibawah ini:
 </FancyList>
 ```
 
-```svelte title="FancyList.svelte"
+```svelte
+<!-- @filename: FancyList.svelte -->
 <script>
 	export let items;
 </script>
@@ -172,7 +179,8 @@ berikut ini contoh tanpa name slot. <kbd>let:</kbd> nya diletakan dikomponen Fan
 </FancyList>
 ```
 
-```svelte title="FancyList.svelte"
+```svelte
+<!-- @filename: FancyList.svelte -->
 <script>
 	export let items;
 </script>

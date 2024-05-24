@@ -10,7 +10,8 @@ tags:
 
 ## bind:value
 
-```svelte title="bind:value - Text Inputs/Textarea Inputs"
+```svelte
+<!-- @filename: bind:value - Text Inputs/Textarea Inputs -->
 <script>
 	let name = 'world';
 </script>
@@ -20,7 +21,8 @@ tags:
 <h1>Hello {name}!</h1>
 ```
 
-```svelte title="bind:value - Numeric Inputs"
+```svelte
+<!-- @filename: bind:value - Numeric Inputs -->
 <script>
 	let a = 1;
 	let b = 2;
@@ -39,7 +41,8 @@ tags:
 <p>{a} + {b} = {a + b}</p>
 ```
 
-```svelte title="bind:value - Select"
+```svelte
+<!-- @filename: bind:value - Select -->
 <script>
 	let questions = [
 		{ id: 1, text: `kamu sekolah dimana ?` },
@@ -79,7 +82,8 @@ tags:
 
 ## bind:checked
 
-```svelte title="checkbox"
+```svelte
+<!-- @filename: checkbox -->
 <script>
 	let yes = false;
 </script>
@@ -100,7 +104,8 @@ tags:
 
 ## bind:group
 
-```svelte title="radio button"
+```svelte
+<!-- @filename: radio button -->
 <script>
 	let tortilla = 'Plain';
 </script>
@@ -112,7 +117,8 @@ tags:
 <div>{tortilla}</div>
 ```
 
-```svelte title="checkbox"
+```svelte
+<!-- @filename: checkbox -->
 <script>
 	let fillings = [];
 </script>

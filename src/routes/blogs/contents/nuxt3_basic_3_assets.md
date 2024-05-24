@@ -22,7 +22,8 @@ kita bisa mendapatkan file di direktori **public/** dari kode aplikasi kita atau
 
 contoh kita memiliki file image di folder **public/img/nuxt.png**, kita bisa mengaksesnya seperti ini :
 
-```vue title="public/"
+```vue
+<!-- @filename: public/ -->
 <template>
 	<img src="/img/nuxt.png" alt="Discover Nuxt 3" />
 </template>
@@ -32,7 +33,8 @@ contoh kita memiliki file image di folder **public/img/nuxt.png**, kita bisa men
 
 kita bisa mendapatkan file di direktori **assets/** dengan cara mengakses langsung ke folder assets **~/assets**. contoh:
 
-```vue title="assets/"
+```vue
+<!-- @filename: assets/ -->
 <template>
 	<img src="~/assets/img/nuxt.png" alt="Discover Nuxt 3" />
 </template>

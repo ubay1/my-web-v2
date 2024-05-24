@@ -15,6 +15,7 @@ Rules of JSX:
 1. Return single root element
 
 ```tsx
+// @noErrors
 export default function App(){
   return {
     <div>
@@ -28,6 +29,7 @@ export default function App(){
 atau bisa juga gunakan `<> </>`
 
 ```tsx
+// @noErrors
 export default function App(){
   return {
     <>
@@ -45,6 +47,7 @@ untuk tag yang explicit contohnya seperti ini <kbd>`<img />`</kbd>
 ## Menampilkan data dengan curly braces `{ }` & `{{ }}`
 
 ```tsx
+// @noErrors
 const name = 'ubay';
 
 export default function Reactbasic() {
@@ -53,6 +56,7 @@ export default function Reactbasic() {
 ```
 
 ```tsx
+// @noErrors
 const name = 'ubay';
 
 export default function Reactbasic() {
@@ -64,7 +68,9 @@ export default function Reactbasic() {
 
 jika dibanding vue dan svelte, gw lebih nyaman props dari vue dan svelte. tapi gapapa namanya juga belajar gaada yang salah. hehe
 
-```tsx title="App.tsx"
+```tsx
+// @noErrors
+// App.tsx
 import { FC } from 'react';
 
 interface IAvatar {
@@ -101,7 +107,9 @@ export default function Profile() {
 
 mirip slotnya vue/svelte
 
-```tsx title="App.tsx"
+```tsx
+// @noErrors
+// App.tsx
 import Avatar from './Avatar.tsx';
 
 function Card({ children }) {
@@ -129,6 +137,7 @@ kalau di vue kita menggunakan ref(), kalau di svelte kita menggunakan bind:this,
 di react menggunakan useRef()
 
 ```tsx
+// @noErrors
 import { useRef } from 'react';
 
 export default function DomRef() {

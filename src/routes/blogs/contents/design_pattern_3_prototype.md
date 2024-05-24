@@ -13,7 +13,9 @@ tags:
 pattern ini berguna jika kita ingin mengcopy object dari class yang sudah ada
 </blockquote>
 
-```ts title="prototype.ts"
+```ts
+// @noErrors
+// @filename: prototype.ts
 export class Car {
 	public merk: string;
 	public color: string;
@@ -30,7 +32,9 @@ export class Car {
 }
 ```
 
-```ts title="index.ts"
+```ts
+// @noErrors
+// @filename: index.ts
 import { Car } from '$lib/pattern/prototype';
 
 const car1 = new Car('Honda brio', 'white');

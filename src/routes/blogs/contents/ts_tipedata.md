@@ -3,14 +3,14 @@ title: Tipe data pada Typescript
 description: Belajar tipe data yang ada pada typescript
 imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
 imageAlt: img-ts
-date: 2022-12-02
+date: 2022-12-02 07:00
 tags:
   - typescript
 ---
 
 ## number, string, boolean types
 
-```ts
+```ts twoslash
 function basicType1(num1: number, str1: string, bool1: boolean) {
 	const data = {
 		num1,
@@ -26,7 +26,7 @@ console.log('type number,string, boolean = ', result1);
 
 ## object types
 
-```ts
+```ts twoslash
 const testObjectType: { name: string; age: number } = {
 	name: 'khansa',
 	age: 8
@@ -39,7 +39,7 @@ console.log('type object = ', testObjectType);
 
 ## array types
 
-```ts
+```ts twoslash
 const arrayType: string[] = ['a', 'b'];
 console.log('type array = ', arrayType);
 ```
@@ -49,7 +49,8 @@ console.log('type array = ', arrayType);
 - tuples types mirip seperti union types namun bekerja di array.
 - kita bisa memasukan data yang sesuai dengan type tuples yang kita berikan, namun jika kita masukan suatu nilai namun dengan tipe yang tidak ada di tuples maka akan menampilkan error.
 
-```ts
+```ts twoslash
+// @errors: 2345
 const arrayTuplesType: [number, string] = [1, 'b'];
 arrayTuplesType.push(1);
 arrayTuplesType.push(true); // error
@@ -62,7 +63,7 @@ console.log('type array = ', arrayTuplesType);
 - default nilai awal pada enum yaitu 0 dan enum menganut auto increment pada number.
 - contoh dibawah jika kita eksekusi maka a=0, b=3, c=5
 
-```ts
+```ts twoslash
 // numeric enum
 enum testEnumNumber {
 	a, // 0
@@ -78,7 +79,7 @@ enum testEnumGabungan {
 	sasuke = 'Chidori'
 }
 
-console.log('type enum = ', testEnumGabungan.a);
+console.log('type enum = ', testEnumGabungan.a); // 0
 ```
 
 ## any Types
@@ -91,7 +92,7 @@ console.log('type enum = ', testEnumGabungan.a);
 
 - union type kegunannya untuk kita memasukan lebih dari 1 type.
 
-```ts
+```ts twoslash
 const testUnion = (a: number, b: number | string) => {
 	console.log(a, b);
 };
@@ -103,7 +104,7 @@ testUnion(12, 'aa');
 - kegunaan literal types adalah memberikan exact value atau nilai yang pasti atau nilai yang sudah kita definisikan sebelumnya. Artinya, jika parameter atau nilai balikan dari sebuah function tidak ada di salah satu nilai yang sudah kita definisikan sebelumnya, maka akan terjadi error.
 - ada tiga jenis Literal Types di Typescript. Di antaranya adalah String, Numeric, Boolean.
 
-```ts
+```ts twoslash
 type testLiteral1 = 'Samsung' | 'Xiaomi' | 'Sony'; // type alias
 
 function testLiteral(phone: testLiteral1, price: number): string {
@@ -117,7 +118,7 @@ console.log(resultTestLiteral);
 
 - Tipe alias dapat digunakan untuk "membuat" tipe kita sendiri. kita tidak terbatas untuk menyimpan tipe union.
 
-```ts
+```ts twoslash
 type testalias1 = 'Samsung' | 'Xiaomi' | 'Sony';
 type testalias2 = { name: string; desc: string };
 
@@ -133,7 +134,7 @@ testAliasProfil({ name: 'test alias', desc: 'wow ini toh type alias' });
 - sedangkan a mengembalikan tipe number.
 - jika kita memberikan tipe void, artinya tidak mengembalikan apa-apa pada function tersebut.
 
-```ts
+```ts twoslash
 function testReturnType(a: number): string {
 	return a.toString();
 }
@@ -143,7 +144,7 @@ console.log('test return types/void = ', resReturnType);
 
 ## membuat Function sebagai types dan memberikan callback
 
-```ts
+```ts twoslash
 function testFunctionAsTypes1(n1: number, n2: number) {
 	return n1 + n2;
 }
@@ -153,14 +154,14 @@ function testFunctionAsTypes2(n1: number): void {
 let testFunctionAsTypes3: (n1: number, n2: number) => number;
 testFunctionAsTypes3 = testFunctionAsTypes1;
 testFunctionAsTypes3 = testFunctionAsTypes3;
-console.log(testFunctionAsTypes3(2, 4));
+console.log(testFunctionAsTypes3(2, 4)); // Result = 6
 ```
 
 ## unknown type
 
 - unknown type mirip seperti any namun lebih baik.
 
-```ts
+```ts twoslash
 // contoh:
 let testUnknownType1: unknown;
 let testUnknownType2: string;
@@ -171,7 +172,11 @@ testUnknownType1 = '109';
 
 dibawah ini error karena type unknown tidak dapat ditetapkan untuk tipe string.
 
-```ts
+```ts twoslash
+// @errors: 2322
+let testUnknownType1: unknown;
+let testUnknownType2: string;
+
 testUnknownType2 = testUnknownType1; // error
 
 // untuk memperbaikinya kita bisa memeriksanya dengan typeof
@@ -189,7 +194,7 @@ if (typeof testUnknownType1 === 'string') {
 
   1. loop tanpa akhir, contohnya dibawah ini:
 
-  ```ts
+  ```ts twoslash
   const sing = function (): never {
   	while (true) {
   		console.log('Never gonna give you up');
@@ -202,41 +207,29 @@ if (typeof testUnknownType1 === 'string') {
   };
   ```
 
-  1. Fungsi yang melempar kesalahan, contohnya dibawah ini.
+````
 
-  ```ts
-  function generateError(msg: string, code: number): never {
-  	throw { msg, code };
-  }
+1. Fungsi yang melempar kesalahan, contohnya dibawah ini.
 
-  try {
-  	const resError = generateError('Error bro', 500);
-  	console.log('error = ', resError);
-  } catch (error) {
-  	console.log('errors = ', error);
-  }
-  ```
+```ts twoslash
+function generateError(msg: string, code: number): never {
+	throw { msg, code };
+}
+
+try {
+	const resError = generateError('Error bro', 500);
+	console.log('error = ', resError);
+} catch (error) {
+	console.log('errors = ', error);
+}
+```
 
 ## assertion Type
 
 Type Assertion berguna untuk kita membuat sebuah variabel namun tidak langsung kita masukan nilainya atau dalam artian kita hanya membuat kerangkanya saja.
 type Assesrtion menggunakan syntax **as**
 
-contoh tanpa assertion:
-
-```ts
-interface Foo {
-	bar: number;
-	bas: string;
-}
-// jika tanpa assertion kita wajib memasukan
-// properti yang ada pada interface.
-const foo: Foo = {};
-```
-
-contoh dengan assertion:
-
-```ts
+```ts twoslash
 interface Foo {
 	bar: number;
 	bas: string;
@@ -248,3 +241,4 @@ foo.bar = 1;
 foo.bas = 'hi';
 console.log(foo);
 ```
+````

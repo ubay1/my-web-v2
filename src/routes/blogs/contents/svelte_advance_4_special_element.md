@@ -17,7 +17,8 @@ svelte:self, memungkinkan sebuah komponen untuk berisi dirinya sendiri secara re
 	<a href="https://svelte.dev/repl/d4f62ea3e4d04824bc33fff0057c6880?version=4.2.8" target="_blank">svelte:self</a>
 </blockquote>
 
-```svelte title="Sidebar.svelte"
+```svelte
+<!-- @filename: Sidebar.sv -->
 <script lang="ts">
 	import Menu from './Menu.svelte';
 
@@ -61,7 +62,8 @@ svelte:self, memungkinkan sebuah komponen untuk berisi dirinya sendiri secara re
 </div>
 ```
 
-```svelte title="Menu.svelte"  {31}
+```svelte
+<!-- @filename: Menu.svelte"  -->
 <script>
 	import { slide } from 'svelte/transition';
 	import { menu } from './menu.js';
@@ -115,7 +117,8 @@ svelte:self, memungkinkan sebuah komponen untuk berisi dirinya sendiri secara re
 </style>
 ```
 
-```js title="~/stores/menu.js"
+```js
+// @filename: ~/stores/menu.js
 import { writable } from 'svelte/store';
 
 function createMenu() {

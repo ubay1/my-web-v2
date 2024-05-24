@@ -17,7 +17,8 @@ Sebuah komponen dapat mengubah jenisnya dengan svelte:component. Pada contoh ini
 	<a href="https://svelte.dev/repl/2714c6d6108247488a46d22ea25b0eae?version=4.2.8" target="_blank">svelte:component</a>
 </blockquote>
 
-```svelte title="App.svelte"
+```svelte
+<!-- @filename: App.svelte -->
 <script>
 	import RedThing from './RedThing.svelte';
 	import GreenThing from './GreenThing.svelte';
@@ -41,7 +42,8 @@ Sebuah komponen dapat mengubah jenisnya dengan svelte:component. Pada contoh ini
 <svelte:component this={selected.component} />
 ```
 
-```svelte title="RedThing.svelte"
+```svelte
+<!-- @filename: RedThing.svelte -->
 <p>Red thing</p>
 
 <style>
@@ -51,7 +53,8 @@ Sebuah komponen dapat mengubah jenisnya dengan svelte:component. Pada contoh ini
 </style>
 ```
 
-```svelte title="BlueThing.svelte"
+```svelte
+<!-- @filename: BlueThing.svelte -->
 <p>Blue thing</p>
 
 <style>
@@ -61,7 +64,8 @@ Sebuah komponen dapat mengubah jenisnya dengan svelte:component. Pada contoh ini
 </style>
 ```
 
-```svelte title="GreenThing.svelte"
+```svelte
+<!-- @filename: GreenThing.svelte -->
 <p>Green thing</p>
 
 <style>
@@ -82,7 +86,8 @@ Nilai ini dapat berupa string apa pun. jika nilai yang dipilih tidak masuk kedal
 	<a href="https://svelte.dev/repl/9ea35778dd17493ca8537bfe4b187019?version=4.2.8" target="_blank">svelte:element</a>
 </blockquote>
 
-```svelte title="App.svelte"
+```svelte
+<!-- @filename: App.svelte -->
 <script>
 	const options = ['h1', 'h2', 'h3', 'p', 'marquee'];
 	let selected = options[0];
@@ -127,7 +132,8 @@ Semua kecuali scrollX dan scrollY adalah readonly.
 
 </blockquote>
 
-```svelte title="svelte:window && bindings svelte:window"
+```svelte
+<!-- @filename: svelte:window && bindings svelte:window -->
 <script>
 	let key;
 	let keyCode;
@@ -182,7 +188,8 @@ Tambahkan penangan mouseenter dan mouseleave ini ke tag svelte:body dan arahkan 
 	<a href="https://svelte.dev/repl/485da56a12a24d15828331875408a8fe?version=4.2.8" target="_blank">svelte:body</a>
 </blockquote>
 
-```svelte titl="App.svelte"
+```svelte
+<!-- @filename: App.svelte -->
 <script>
 	let hereKitty = false;
 </script>

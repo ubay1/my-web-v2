@@ -17,7 +17,8 @@ atau bisa kita katakan seperti sebuah helper di function.
 
 berikut ini contohnya
 
-```ts title="facade.ts"
+```ts
+// @filename: facade.ts
 export class Operations {
 	private num1: number;
 	private num2: number;

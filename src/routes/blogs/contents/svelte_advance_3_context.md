@@ -16,7 +16,9 @@ context api ini mirip sekali dengan react useContext nya. namun di svelte lebih 
 
 berikut ini contoh penggunaan Context API dengan stores.
 
-```ts title="~/stores/user.ts"
+```ts
+// @filename: ~/stores/user.ts
+// @noErrors
 import { browser, dev } from '$app/environment';
 import { writable } from 'svelte/store';
 
