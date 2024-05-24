@@ -16,7 +16,8 @@ dari kode dibawah ini, akan mencetak: <br />
 Hello <br />
 Hello there
 
-```svelte title="beforeMount, onMount, onDestroy"
+```svelte
+<!-- @filename: beforeMount, onMount, onDestroy -->
 <script>
 	import { onMount, onDestroy } from 'svelte';
 
@@ -59,7 +60,8 @@ kode dibawah ketika kita klik button, maka akan menanmpilkan log seperti ini. <b
 "the component has been updated = 2 " -> kode ini jalan setelah nilai counter update <br/>
 </blockquote>
 
-```svelte title="beforeUpdate & afterUpdate"
+```svelte
+<!-- @filename: beforeUpdate & afterUpdate -->
 <script>
 	import { beforeUpdate, afterUpdate } from 'svelte';
 
@@ -91,7 +93,8 @@ Jika satu pembaruan sedang berjalan dan belum selesai, metode <kbd>tick</kbd> me
 
 tick() ini mirip seperti <kbd> `setTimeout(() => {}, 0)` </kbd>
 
-```svelte title="tick()"
+```svelte
+<!-- @filename: tick() -->
 <script>
 	import { tick } from 'svelte';
 

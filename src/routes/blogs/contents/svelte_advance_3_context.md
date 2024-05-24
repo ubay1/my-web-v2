@@ -17,15 +17,16 @@ context api ini mirip sekali dengan react useContext nya. namun di svelte lebih 
 berikut ini contoh penggunaan Context API dengan stores.
 
 ```ts title="~/stores/user.ts"
-import { browser, dev } from '$app/environment';
-import { writable } from 'svelte/store';
+// @ noErrors
+// import { browser, dev } from '$app/environment';
+// import { writable } from 'svelte/store';
 
-const defaultValue = 'data not found';
-const initialValue = browser ? localStorage.getItem('user') ?? null : defaultValue;
+// const defaultValue = 'data not found';
+// const initialValue = browser ? localStorage.getItem('user') ?? null : defaultValue;
 
-const user = writable(initialValue);
+// const user = writable(initialValue);
 
-export default user;
+// export default user;
 ```
 
 ```svelte title="+layout.svelte"

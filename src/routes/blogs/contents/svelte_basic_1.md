@@ -14,7 +14,8 @@ tags:
 
 dynamic attribute menggunakan kurung siku `{}`
 
-```svelte title="dynamic attribute"
+```svelte
+<!--  @filename: dynamic attribute -->
 <script lang="ts">
 	let src: string = '/image.gif';
 	let name: string = 'Rick Astley';
@@ -25,7 +26,8 @@ dynamic attribute menggunakan kurung siku `{}`
 
 ## Tag @html
 
-```svelte title="tag @html"
+```svelte
+<!--  @filename: tag @html -->
 <script lang="ts">
 	let tagHtml: string | null =
 		'<div class="text-orange-5 font-bold"> menampilkan tag @html dari string </div>';
@@ -42,7 +44,8 @@ dynamic attribute menggunakan kurung siku `{}`
 
 reactivity menggunakan simbol `$`
 
-```svelte title="reactivity declarations"
+```svelte
+<!--  @filename: reactivity declarations -->
 <script lang="ts">
 	let count: number = 0;
 
@@ -61,7 +64,8 @@ reactivity menggunakan simbol `$`
 <p>{count} doubled is {doubled}</p>
 ```
 
-```svelte title="reactivity statement"
+```svelte
+<!--  @filename: reactivity statement -->
 <script lang="ts">
 	let count: number = 0;
 
@@ -87,7 +91,8 @@ reactivity menggunakan simbol `$`
 
 ## Props parent to child
 
-```svelte title="default props"
+```svelte
+<!--  @filename: default props -->
 <script lang="ts">
 	export let answer: string = 'a mystery';
 </script>
@@ -95,7 +100,8 @@ reactivity menggunakan simbol `$`
 <p>The answer is {answer}</p>
 ```
 
-```svelte title="spread props - App.svelte"
+```svelte
+<!--  @filename: spread props - App.svelte -->
 <script lang="ts">
 	import PackageInfo from './PackageInfo.svelte';
 
@@ -110,7 +116,8 @@ reactivity menggunakan simbol `$`
 <PackageInfo {...pkg} />
 ```
 
-```svelte title="spread props - PackageInfo.svelte"
+```svelte
+<!--  @filename: spread props - PackageInfo.svelte -->
 <script lang="ts">
 	export let name, version, speed, website: string;
 
@@ -125,7 +132,8 @@ reactivity menggunakan simbol `$`
 
 ## Props child to parent
 
-```svelte title="App.svelte - parent"
+```svelte
+<!--  @filename: App.svelte - parent -->
 <script lang="ts">
 	import Child from './Child.svelte';
 	let n;
@@ -136,7 +144,8 @@ reactivity menggunakan simbol `$`
 <div>Parent = {n}</div>
 ```
 
-```svelte title="PackageInfo.svelte - child"
+```svelte
+<!--  @filename: PackageInfo.svelte - child -->
 <script>
 	export let n = 1;
 	setInterval(() => n++, 1000);

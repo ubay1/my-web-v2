@@ -20,12 +20,15 @@ store hanyalah sebuah objek, ada berapa metode yang dapat digunakan store:
 note: jika menggunakan subscribe kita harus melakukan onDestroy, agar tidak membuat memory leak
 </blockquote>
 
-```ts title="stores.ts"
+```ts
+// @filename: stores.ts
+// @noErrors
 import { writable } from 'svelte/store';
 export const count = writable(0);
 ```
 
-```svelte title="App.svelte"
+```svelte
+<!-- @filename: App.svelte -->
 <script>
 	import { count } from '~/stores/store';
 
@@ -51,12 +54,15 @@ export const count = writable(0);
 
 untuk mengakali memory leak tadi kita juga bisa dapat dengan mereferensikan nilai store dengan mengawali nama store dengan <kbd>$</kbd>, dengan Auto-subscription ini kodingan kita menjadi lebih pendek.
 
-```ts title="stores.ts"
+```ts
+// @filename: stores.ts
+// @noErrors
 import { writable } from 'svelte/store';
 export const count = writable(0);
 ```
 
-```svelte title="App.svelte"
+```svelte
+<!-- @filename: App.svelte -->
 <script>
 	import { count } from '~/stores/store';
 </script>
@@ -74,12 +80,15 @@ export const count = writable(0);
 
 Readable nilainya tidak dapat ditentukan dari luar, kita hanya bisa menggunakannya. kita tidak bisa menggunakan method update atau set untuk mengubahnya.
 
-```ts title="stores.ts"
+```ts
+// @filename: stores.ts
+// @noErrors
 import { writable } from 'svelte/store';
 export const count = writable(0);
 ```
 
-```svelte title="App.svelte"
+```svelte
+<!-- @filename: App.svelte -->
 <script>
 	import { count } from '~/stores/store';
 </script>
@@ -99,7 +108,9 @@ Kapan harus menggunakan store derived ? <br/>
 
 Yaitu saat kita ingin melakukan pemfilteran di sisi klien berdasarkan input pengguna, menggunakan store derived bisa menjadi pilihan yang baik. Simpan data aktual di store lalu gunakan store derived untuk menyimpan hanya opsi yang difilter. Secara umum, jika kita ingin memperoleh data lain dari nilai penyimpanan dan ingin nilai tersebut diperbarui setiap kali penyimpanan diperbarui, kita dapat menggunakan derived store ini.
 
-```ts title="~/stores/derived.ts"
+```ts
+// @filename: ~/stores/derived.ts
+// @noErrors
 import { writable, derived } from 'svelte/store';
 import type { Writable } from 'svelte/store';
 
@@ -121,7 +132,8 @@ export const filteredPostStore = derived(
 );
 ```
 
-```svelte title="App.svelte"
+```svelte
+<!-- @filename: App.svelte -->
 <script>
 	import { allPostStore, filteredPostStore, filteredText } from '$lib/stores/derived';
 
@@ -156,7 +168,9 @@ export const filteredPostStore = derived(
 
 ## Custom Store
 
-```ts title="~/stores/custom-store.ts"
+```ts
+// @filename: ~/stores/custom-store.ts
+// @noErrors
 import { writable } from 'svelte/store';
 
 function createCount() {
@@ -173,7 +187,8 @@ function createCount() {
 export const count = createCount();
 ```
 
-```svelte title="App.svelte"
+```svelte
+<!-- @filename: App.svelte -->
 <script>
 	import { count } from '~/stores/custom-store.ts';
 </script>
