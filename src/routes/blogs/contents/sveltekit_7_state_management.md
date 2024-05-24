@@ -53,8 +53,12 @@ export const load: LayoutServerLoad = async ({ fetch }) => {
 
 ```svelte title="src/routes/(state)/+layout.svelte"
 <script lang="ts">
-	import {(setContext, getContext)} from 'svelte'; import type {LayoutData} from './$types'; import{' '}
-	{quotes} from './store'; export let data: LayoutData; $: quotes.set(data.quotes);
+	import { setContext, getContext } from 'svelte';
+	import type { LayoutData } from './$types';
+	import { quotes } from './store';
+
+	export let data: LayoutData;
+	$: quotes.set(data.quotes);
 	setContext('quotes', quotes);
 </script>
 ```
