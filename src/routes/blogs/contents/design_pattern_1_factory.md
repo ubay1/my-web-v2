@@ -17,7 +17,9 @@ kita bisa gunakan factory kalau ingin pembuatan object nya dinamis dan condition
 
 contoh dibawah ini kita bisa bayangkan sebuah perusahaan yang bergerak dibidang logistik. dimana perusahaan tersebut dapat melakukan pengiriman dengan melakukan truk dan juga dengan menggunakan kapal.
 
-```ts title="factory.ts"
+```ts
+// @noErrors
+// @filename: factory.ts
 export class Truck {
 	constructor(public qty: number) {
 		this.delivery();
@@ -37,7 +39,9 @@ export class Ship {
 }
 ```
 
-```ts title="index.ts"
+```ts
+// @noErrors
+// @filename: index.ts
 import { Truck, Ship } from '$lib/pattern/factory';
 
 const typeDelivery = 'delivery-by-land';
@@ -53,7 +57,9 @@ dari contoh diatas, misal dari perusahaan tersebut ada tambahan lagi dimana peng
 
 kita bisa merubah code diatas menjadi seperti dibawah ini.
 
-```ts title="factory.ts"
+```ts
+// @noErrors
+// @filename: factory.ts
 interface Logistic {
 	qty: number;
 	delivery(): void;
@@ -97,7 +103,9 @@ export class LogisticDelivery implements Factory {
 }
 ```
 
-```ts title="index.ts"
+```ts
+// @noErrors
+// @filename: index.ts
 import { LogisticDelivery } from '$lib/pattern/factory';
 
 const logistic = new LogisticDelivery();

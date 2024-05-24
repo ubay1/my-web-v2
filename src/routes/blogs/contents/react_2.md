@@ -10,7 +10,9 @@ tags:
 
 ## If Else Statement
 
-```tsx title="If Else Statement"
+```tsx
+// @noErrors
+// If Else Statement
 function Item(props: { name: string; isPacked: boolean }) {
 	if (props.isPacked) {
 		return <li className="item">{props.name} ✔</li>;
@@ -34,7 +36,9 @@ export default function PackageList() {
 
 dari contoh diatasa misal jika kita tidak ingin menampilkan seluruh data yang bernilai true. maka kita cukup mereturn null
 
-```tsx title="If Else Statement dengan return null"
+```tsx
+// @noErrors
+// If Else Statement dengan return null
 function Item(props: { name: string; isPacked: boolean }) {
 	if (props.isPacked) {
 		return null;
@@ -58,7 +62,9 @@ export default function PackageList() {
 
 ## Operator Ternary
 
-```tsx title="operator ternary"
+```tsx
+// @noErrors
+// operator ternary
 function Item(props: { name: string; isPacked: boolean }) {
 	return <li className="item">{props.isPacked ? props.name + ' ✔' : props.name}</li>;
 }
@@ -81,7 +87,9 @@ export default function PackageList() {
 
 Pintasan umum lainnya yang akan kita temui adalah operator logika JavaScript AND (&&). Di dalam komponen React, operator ini sering muncul ketika kita ingin me-render beberapa JSX ketika kondisinya benar. Dengan &&, kita dapat me-render tanda centang secara kondisional hanya jika isPacked bernilai benar:
 
-```tsx title="&& operator"
+```tsx
+// @noErrors
+// && operator
 function Item(props: { name: string; isPacked: boolean }) {
 	return (
 		<li className="item">

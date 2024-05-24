@@ -21,7 +21,7 @@ function escapeHtml(code) {
 
 const shikis = await shiki.getHighlighter({
 	themes: ['dark-plus', 'github-dark'],
-	langs: ['typescript', 'javascript', 'vue', 'svelte']
+	langs: ['typescript', 'javascript', 'vue', 'svelte', 'tsx']
 });
 async function highlighter(code, lang) {
 	const html = await codeToHtml(code, {

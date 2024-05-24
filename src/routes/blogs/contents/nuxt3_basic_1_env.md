@@ -25,6 +25,7 @@ bedanya runtimeConfig dan Environtment Variabel,
 contoh, kita buat runtimeConfig seperti ini.
 
 ```ts
+// @noErrors
 runtimeConfig: {
   apiSecret: "https://anonymous.id",
   public: {
@@ -36,6 +37,7 @@ runtimeConfig: {
 hasil nya akan keluar ini jika kita beri log:
 
 ```ts
+// @noErrors
 {
   app: { baseURL: '/', buildAssetsDir: '/_nuxt/', cdnURL: '' },
   nitro: {
@@ -54,6 +56,7 @@ hasil nya akan keluar ini jika kita beri log:
 misal kita ingin ubah nilai apiSecret ini melalui environtment variabel (.env), kita bisa buat seperti ini.
 
 ```ts
+// @noErrors
 NUXT_API_SECRET = anonymous;
 NUXT_PUBLIC_API_BASES = anonymous_client;
 ```
@@ -61,6 +64,7 @@ NUXT_PUBLIC_API_BASES = anonymous_client;
 maka jika kita cek log lagi, hasilnya
 
 ```ts
+// @noErrors
 {
   app: { baseURL: '/', buildAssetsDir: '/_nuxt/', cdnURL: '' },
   nitro: {

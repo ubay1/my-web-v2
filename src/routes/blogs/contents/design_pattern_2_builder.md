@@ -13,7 +13,9 @@ tags:
 kita bisa gunakan builder ketika pembuatan object (construct) parameter yang dimasukkan dirasa terlalu panjang, dan juga tidak semua parameter wajib untuk memiliki nilai.
 </blockquote>
 
-```ts title="builder.ts"
+```ts
+// @noErrors
+// @filename: builder.ts
 export class User {
 	public name: string;
 	public age: string;
@@ -27,7 +29,9 @@ export class User {
 }
 ```
 
-```ts title="index.ts"
+```ts
+// @noErrors
+// @filename: index.ts
 import { User } from '$lib/pattern/builder';
 
 const user1 = new User('khansa', 'bekasi', '19');
@@ -40,7 +44,9 @@ const user1 = new User('aisyah', '', '20');
 
 untuk dari itu pattern builder ini hadir. dari kode diatas kita bisa ubah jadi seperti dibawah ini.
 
-```ts title="builder.ts"
+```ts
+// @noErrors
+// @filename: builder.ts
 class User {
 	public name: string = '';
 	public age: string = '';
@@ -73,7 +79,9 @@ export class UserBuilder {
 }
 ```
 
-```ts title="index.ts"
+```ts
+// @noErrors
+// @filename: index.ts
 import { UserBuilder } from '$lib/pattern/builder';
 
 const user1 = new UserBuilder().setName('ubay').setAddress('di mana aja').setAge('20').build();

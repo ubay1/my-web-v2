@@ -15,7 +15,9 @@ tags:
 
 kita bisa membuat api sendiri dengan folder **api** ini. misal disini kita buat 1 buat api yang akan mengget data dari url **jsonplaceholder** :
 
-```ts title="~/server/api/hello.get.ts"
+```ts
+// @noErrors
+// @filename: ~/server/api/hello.get.ts
 export default defineEventHandler(async (event) => {
 	try {
 		const data = await $fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -30,7 +32,8 @@ export default defineEventHandler(async (event) => {
 
 kita dapat mengaksesnya seperti ini:
 
-```vue title="pages/index.vue"
+```vue
+<!-- @filename: pages/index.vue -->
 <script setup>
 const res = await $fetch('/api/hello');
 console.log(res);
@@ -44,6 +47,7 @@ handle file sesuai dengan suffix yang diberi ada **.get, .post, .put, .delete**
 contoh disini kita membuat file dengan nama **test.get.ts**.
 
 ```ts
+// @noErrors
 export default defineEventHandler(() => 'Test get handler');
 ```
 
@@ -54,6 +58,7 @@ jika kita menggunakan selain **.get**, lalu coba akses lewat tab url. maka kita 
 contoh disini kita membuat file dengan nama **submit.post.ts**.
 
 ```ts
+// @noErrors
 export default defineEventHandler(async (event) => {
 	const body = await readBody(event);
 	return { body };
@@ -76,6 +81,7 @@ async function submit() {
 contoh disini kita membuat file dengan nama **query.get.ts**.
 
 ```ts
+// @noErrors
 export default defineEventHandler((event) => {
 	const query = getQuery(event);
 	return { a: query.param1, b: query.param2 };
@@ -99,7 +105,9 @@ contoh:
 
 kita buat file **api/hello.ts**.
 
-```ts title="~/server/api/hello.ts"
+```ts
+// @noErrors
+// @filename: ~/server/api/hello.ts
 export default defineEventHandler(async (event) => {
 	try {
 		const data = await $fetch('https://jsonplaceholder.typicode.com/posts');
@@ -115,7 +123,9 @@ export default defineEventHandler(async (event) => {
 
 kita tambahkan utils dulu, dan kita buat list errornya. kita buat dengan nama **~/utils/errorMessageHandling.ts**:
 
-```ts title="~/utils/errorMessageHandling.ts"
+```ts
+// @noErrors
+// @filename: ~/utils/errorMessageHandling.ts
 export default (codeParam: number) => {
 	const listError = [
 		{ code: 404, message: 'data/page tidak dikethaui' },
@@ -151,6 +161,7 @@ masih belum tau kegunaan **server/routes** ini, yang pasti kita bisa membuat seb
 contoh disini kita buat file dengan nama **hello.ts**.
 
 ```ts
+// @noErrors
 export default defineEventHandler(() => 'Hello World!');
 ```
 

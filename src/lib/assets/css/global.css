@@ -31,11 +31,17 @@ code {
 }
 
 .twoslash-popup-container {
-	border: 1px solid lightsteelblue !important;
+	border: 1px solid #47494c !important;
 	border-radius: 0px !important;
 }
-code.twoslash-popup-code {
+code.twoslash-popup-code,
+.twoslash-popup-docs {
 	background-color: #191818 !important;
+}
+
+.twoslash-popup-docs-tags,
+.twoslash-popup-docs-tag-name {
+	margin-right: unset !important;
 }
 
 code .line::before {

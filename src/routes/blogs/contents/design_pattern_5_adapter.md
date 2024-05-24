@@ -15,7 +15,9 @@ Adapter Ini bertujuan untuk mentransform class-class yang berbeda" sesuai dengan
 
 contoh kasus dibawah ini adalah toko online, dimana kita ingin menampilkan seluruh produk yang berbeda-beda dalam 1 katalog/wishlist. dan misal yang ingin ditampilkan hanya nama produk dan author nya.
 
-```ts title="adapter.ts"
+```ts
+// @noErrors
+// @filename: adapter.ts
 export class Book {
 	constructor(public title: string, public author: string) {}
 
@@ -33,7 +35,9 @@ export class Movie {
 }
 ```
 
-```ts title="index.ts"
+```ts
+// @noErrors
+// @filename: index.ts
 import { Book, Movie } from '$lib/pattern/adapter';
 
 const listKatalog: any[] = [];
@@ -55,7 +59,9 @@ dari contoh diatas, jika tanpa menggunakan pattern adapter kita harus melakukan 
 
 contoh dengan adapter.
 
-```ts title="adapter.ts"
+```ts
+// @noErrors
+// @filename: adapter.ts
 export interface KatalogAdapter {
 	getTitleAndAuthor(): string;
 }
@@ -100,7 +106,9 @@ export class Movie {
 }
 ```
 
-```ts title="index.ts"
+```ts
+// @noErrors
+// @filename: index.ts
 import type { KatalogAdapter } from '$lib/pattern/adapter';
 import { BookKatalogAdapter, MovieKatalogAdapter, Book, Movie } from '$lib/pattern/adapter';
 

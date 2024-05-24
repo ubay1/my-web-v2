@@ -102,7 +102,8 @@ kita bisa membiuat navigasi seperti ini:
 
 kita bisa membuat child route, dengan menggunakan **NuxtPage**.
 
-```vue title="balita.vue"
+```vue
+<!-- @filename: balita.vue -->
 <template>
 	<div>
 		<h1>I am the parent view</h1>
@@ -113,7 +114,8 @@ kita bisa membuat child route, dengan menggunakan **NuxtPage**.
 <script setup></script>
 ```
 
-```vue title="balita/index.vue"
+```vue
+<!-- @filename: balita/index.vue -->
 <template>
 	<div class="mt-10">
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, sed deleniti laudantium

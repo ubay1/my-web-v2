@@ -14,7 +14,8 @@ Elemen svelte:document memungkinkan kita untuk mendengarkan event yang terjadi p
 
 Tambahkan penangan selectionchange ke tag svelte:document.
 
-```svelte title="App.svelte"
+```svelte
+<!-- @filename: App.svelte -->
 <script>
 	let selection = '';
 
@@ -32,7 +33,8 @@ Tambahkan penangan selectionchange ke tag svelte:document.
 Elemen svelte:head memungkinkan kita untuk menyisipkan elemen di dalam head dokumen kita. Hal ini berguna untuk hal-hal seperti tag title dan meta, yang sangat penting untuk SEO yang baik. <br>
 dalam contoh ini kita akan menggunakannya untuk tujuan yang berbeda yaitu memuat stylesheet.
 
-```svelte title="App.svelte"
+```svelte
+<!-- @filename: App.svelte -->
 <script>
 	const themes = ['margaritaville', 'retrowave', 'spaaaaace', 'halloween'];
 	let selected = themes[0];
@@ -62,7 +64,8 @@ Elemen svelte:fragment memungkinkan kita menempatkan konten dalam slot bernama t
 	<a href="https://svelte.dev/repl/fabe237032aa4bdb9745d7749678c2fc?version=4.2.8" target="_blank">svelte:fragment</a>
 </blockquote>
 
-```svelte title="App.svelte"
+```svelte
+<!-- @filename: App.svelte -->
 <script>
 	import Layout from './Layout.svelte';
 </script>
@@ -94,7 +97,8 @@ Elemen svelte:fragment memungkinkan kita menempatkan konten dalam slot bernama t
 </style>
 ```
 
-```svelte title="Layout.svelte"
+```svelte
+<!-- @filename: Layout.svelte -->
 <div class="header">
 	<slot name="header" />
 </div>

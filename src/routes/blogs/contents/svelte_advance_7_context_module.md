@@ -26,7 +26,8 @@ perlu diketahui, bahwa variable didalam context="module" ini tidak reactive.
 
 pada contoh kali ini, kita menampilkan 2 buah audio. dimana audio tersebut hanya bisa memutar 1 audio saja. berikut contohnya.
 
-```svelte title="App.svelte" {1,4}
+```svelte
+<!-- @filename: App.svelte -->
 <script>
 	import AudioPlayer, { stopAll } from './AudioPlayer.svelte';
 </script>
@@ -50,7 +51,8 @@ saat kita memanggil dan menampilkan komponen AudioPlayer.svelte di file App.svel
 
 lalu saat kita klik play audio kita akan melakukan pengecekan, jik element dan audio berbeda maka lakukan stop pada audio.
 
-```svelte title="AudioPlayer.svelte"
+```svelte
+<!-- @filename: AudioPlayer.svelte  -->
 <script context="module">
 	const elements = new Set();
 

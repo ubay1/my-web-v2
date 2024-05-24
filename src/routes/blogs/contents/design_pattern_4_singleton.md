@@ -15,7 +15,9 @@ contoh kasusnya yang cocok digunakan adalah koneksi ke database, mengakses profi
 
 contoh dibawah ini jika tanpa singleton.
 
-```ts title="singleton.ts"
+```ts
+// @noErrors
+// @filename: singleton.ts
 export class TanpaSingleton {
 	private firstName: string = '';
 	private age: number = 0;
@@ -31,7 +33,9 @@ export class TanpaSingleton {
 }
 ```
 
-```ts title="index.ts"
+```ts
+// @noErrors
+// @filename: index.ts
 import { TanpaSingleton } from '$lib/pattern/singleton';
 
 const a1 = new TanpaSingleton();
@@ -51,7 +55,9 @@ dari contoh diatas, jika method getFullName digunakan di 1 page saja tidak jadi 
 
 contoh dengan singleton
 
-```ts title="singleton.ts"
+```ts
+// @noErrors
+// @filename: singleton.ts
 export class Profile {
 	private static instance: Profile;
 	private firstName: string = '';
@@ -77,7 +83,9 @@ export class Profile {
 }
 ```
 
-```ts title="index.ts"
+```ts
+// @noErrors
+// @filename: index.ts
 import { TanpaSingleton } from '$lib/pattern/singleton';
 
 const s1 = Profile.getInstance();

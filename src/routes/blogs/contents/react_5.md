@@ -10,7 +10,9 @@ tags:
 
 ## Input Text & Textarea
 
-```tsx title="binding input text & textarea"
+```tsx
+// @noErrors
+// binding input text & textarea
 import { ChangeEvent, useState } from 'react';
 
 export default function App() {
@@ -39,7 +41,8 @@ export default function App() {
 
 coba hover pada event yang ada pada onChange.
 
-```tsx {12}
+```tsx
+// @noErrors
 import { ChangeEvent, useState } from 'react';
 
 export default function App() {
@@ -58,7 +61,9 @@ export default function App() {
 
 binding checkbox array
 
-```tsx title="App.tsx"
+```tsx
+// @noErrors
+// App.tsx
 export default function BindingCheckbox() {
 	const [data, setData] = useState<boolean[]>([]);
 
@@ -108,7 +113,9 @@ export default function BindingCheckbox() {
 
 karena listData statis maka kita bisa menggunakan cara ini
 
-```tsx title="contoh tanpa useEffect"
+```tsx
+// @noErrors
+// contoh tanpa useEffect
 export default function BindingCheckbox() {
 	const listData = [
 		{ label: 'a', value: true },
@@ -147,7 +154,9 @@ export default function BindingCheckbox() {
 
 ## Radio
 
-```tsx title="App.tsx"
+```tsx
+// @noErrors
+// App.tsx
 import { ChangeEvent, useState } from 'react';
 
 export default function BindingRadio() {
@@ -182,7 +191,9 @@ export default function BindingRadio() {
 
 ## Selectbox
 
-```tsx title="App.tsx"
+```tsx
+// @noErrors
+// App.tsx
 import { ChangeEvent, useState } from 'react';
 
 const colors = [

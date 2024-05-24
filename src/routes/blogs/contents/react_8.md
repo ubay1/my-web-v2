@@ -12,7 +12,9 @@ tags:
 
 useReducer digunakan untuk mengelola state yang lebih kompleks. Fungsi ini menerima reducer dan initialState, dan mengembalikan state saat ini beserta dispatch function untuk memicu perubahan pada state berdasarkan action yang didefinisikan.
 
-```tsx title="contoh useReducer pada object"
+```tsx
+// @noErrors
+// contoh useReducer pada object
 import React, { ChangeEvent, useReducer } from 'react';
 
 // Inisialisasi state awal
@@ -84,7 +86,9 @@ const UseReducer = () => {
 export default UseReducer;
 ```
 
-```tsx title="contoh useReducer pada array"
+```tsx
+// @noErrors
+// contoh useReducer pada array
 import React, { useReducer } from 'react';
 
 const initialState = {

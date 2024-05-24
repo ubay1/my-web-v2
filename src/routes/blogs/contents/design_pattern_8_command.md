@@ -13,7 +13,9 @@ command pattern adalah design pattern untuk mengelompokkan beberapa method atau 
 
 berikut ini contoh tanpa command pattern
 
-```ts title="command.ts"
+```ts
+// @noErrors
+// @filename: command.ts
 interface IUser {
 	deleteUserById(id: number): void;
 	check(userId: number): boolean;
@@ -42,7 +44,8 @@ export class ProductImpl implements IProduct {
 }
 ```
 
-```vue title="index.vue"
+```vue
+<!-- @filename: index.vue -->
 <script setup lang="ts">
 import { UserImpl, ProductImpl } from '$lib/pattern/command';
 
@@ -66,7 +69,9 @@ kita lihat object user1 dan product1 melakukan eksekusi delete data dengan cara 
 
 berikut ini kode dengan command pattern
 
-```ts title="command.ts" {9-11, 21-29, 39-47}
+```ts
+// @noErrors
+// @filename: command.ts
 interface IUser {
 	deleteUserById(id: number): void;
 	check(userId: number): boolean;
@@ -116,7 +121,8 @@ export class ProductDeleteCommand implements DeleteCommand {
 }
 ```
 
-```vue title="index.vue" {4-5, 10-11}
+```vue
+<!-- @filename: index.vue" {4-5, 10-11 -->
 <script setup lang="ts">
 import {
 	UserImpl,
