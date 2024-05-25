@@ -64,9 +64,12 @@
 		classIntersect="h-56 md:h-72"
 	/>
 	<div class="absolute top-0 flex justify-center items-center h-full w-full">
-		<h1 class="text-3xl z-40 line-clamp-2 font-bold text-center text-white">
+		<div
+			class="text-3xl z-40 line-clamp-2 font-bold text-center text-white"
+			style:--tag="h-{data.viewTransitionName ?? data.title}"
+		>
 			{data.title}
-		</h1>
+		</div>
 	</div>
 	<div class="absolute bottom-2 right-2 md:right-4">
 		<h2 class="text-xs italic text-white">

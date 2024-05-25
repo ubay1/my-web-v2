@@ -3,6 +3,7 @@ title: Svelte Basic - (Events)
 description:
 imagePath: https://miro.medium.com/v2/resize:fit:1400/1*G9fzmaoymDGy7scbkgpC7A.png
 imageAlt: svelte
+viewTransitionName: 'svelte-event'
 date: 2023-10-01 12:00
 tags:
   - svelte

@@ -17,16 +17,9 @@
 </script>
 
 {#if !width && !height}
-	<img {src} {alt} class:loaded bind:this={thisImage} class={classes} style:--tag="img" />
+	<img {src} {alt} class:loaded bind:this={thisImage} class={classes} />
+	<!-- style:--tag="img" -->
 {:else}
-	<img
-		{width}
-		{height}
-		{src}
-		{alt}
-		class:loaded
-		bind:this={thisImage}
-		class={classes}
-		style:--tag="img"
-	/>
+	<img {width} {height} {src} {alt} class:loaded bind:this={thisImage} class={classes} />
+	<!-- style:--tag="img" -->
 {/if}

@@ -2,7 +2,8 @@
 title: Python - Number & Boolean
 description:
 imagePath: https://cdn.hashnode.com/res/hashnode/image/upload/v1584284080124/WSg9hzPr-.jpeg
-imageAlt: react
+imageAlt: python
+viewTransitionName: 'python-number-boolean'
 date: 2023-12-02 11:00
 tags:
   - python

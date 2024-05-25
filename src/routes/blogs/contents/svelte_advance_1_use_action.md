@@ -3,6 +3,7 @@ title: Svelte Advance - use actions
 description:
 imagePath: https://miro.medium.com/v2/resize:fit:1400/1*G9fzmaoymDGy7scbkgpC7A.png
 imageAlt: svelte
+viewTransitionName: 'svelte-actions'
 date: 2023-10-04 09:00
 tags:
   - svelte

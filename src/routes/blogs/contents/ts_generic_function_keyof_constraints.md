@@ -2,7 +2,8 @@
 title: Generic function dengan type constraints dan keyof pada Typescript
 description: <K extends keyof T> keyof adalah operator yang menghasilkan union type dari semua kunci (keys) yang ada dalam suatu object. Ini sangat berguna ketika kita ingin membatasi nilai ke salah satu kunci objek tertentu.
 imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
-imageAlt: img-ts
+imageAlt: ts
+viewTransitionName: 'ts-generic-func-keyof'
 date: 2022-12-05 09:00
 tags:
   - typescript

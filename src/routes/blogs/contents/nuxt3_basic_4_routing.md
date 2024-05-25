@@ -3,7 +3,8 @@ title: NUXT 3 basic - routing (dynamic route, catch all route, nested route, rou
 description:
 imagePath: https://img-c.udemycdn.com/course/750x422/4395942_c476_2.jpg
 imageAlt: nuxt3
-date: 2023-05-26 08:30:00
+viewTransitionName: 'nuxt3-routing'
+date: 2023-05-26 08:30
 tags:
   - nuxt3
   - vue

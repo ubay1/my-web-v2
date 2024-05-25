@@ -2,7 +2,8 @@
 title: Sveltekit -  rerun load function dengan invalidate/invalidateAll & depends
 description:
 imagePath: https://miro.medium.com/v2/resize:fit:1400/1*G9fzmaoymDGy7scbkgpC7A.png
-imageAlt: sveltekit
+imageAlt: svelte
+viewTransitionName: 'sveltekit-invalidate'
 date: 2023-08-13 15:13
 tags:
   - sveltekit

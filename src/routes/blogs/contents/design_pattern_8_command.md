@@ -3,6 +3,7 @@ title: Design Pattern Behavioral - Command
 description: ''
 imagePath: https://refactoring.guru/images/patterns/content/command/command-en-2x.png
 imageAlt: img-design-pattern
+viewTransitionName: 'design-pattern-command'
 date: 2023-12-17
 tags:
   - design pattern

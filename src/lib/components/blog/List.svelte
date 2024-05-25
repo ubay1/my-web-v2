@@ -6,6 +6,7 @@
 	export let description: string;
 	export let date: string;
 	export let tags: string[];
+	export let viewTransitionName: string | undefined;
 </script>
 
 <div
@@ -14,7 +15,10 @@
 >
 	<a class="cursor-pointer decoration-none" href={slug}>
 		<div class="p-4 relative">
-			<div class="text-black mb-0 block text-xl leading-tight font-semibold dark:text-white">
+			<div
+				class="text-black mb-0 block text-xl leading-tight font-semibold dark:text-white"
+				style:--tag="h-{viewTransitionName ?? title}"
+			>
 				{title}
 			</div>
 			<div class="text-xs text-black mt-0 dark:text-white">{formatDate(date)}</div>
@@ -42,3 +46,6 @@
 	</a>
 	<!-- <hr class="border-b-0 border-gray-3 dark:border-gray-6 mb-0" /> -->
 </div>
+
+<style>
+</style>

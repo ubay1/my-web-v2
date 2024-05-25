@@ -3,6 +3,7 @@ title: Memperbaiki esbuild error "You installed esbuild for another platform tha
 description: Memperbaiki esbuild yang error pada kodingan kita.
 imagePath: https://user-images.githubusercontent.com/1941540/79317564-6a81a980-7f38-11ea-9817-1a668c618fce.png
 imageAlt: img-esbuild
+viewTransitionName: 'fix-esbuild'
 date: 2023-10-13
 tags:
   - fixing

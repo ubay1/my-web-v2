@@ -3,6 +3,7 @@ title: React - Binding (input text, textarea, checkbox dengan array usestate, ra
 description:
 imagePath: https://wallpapercave.com/wp/wp4924054.jpg
 imageAlt: react
+viewTransitionName: 'react-binding'
 date: 2023-11-05 09:00
 tags:
   - react

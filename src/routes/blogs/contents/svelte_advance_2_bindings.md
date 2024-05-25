@@ -3,6 +3,7 @@ title: Svelte Advance - advance bindings (Contenteditable, Dimensions, bind:this
 description:
 imagePath: https://miro.medium.com/v2/resize:fit:1400/1*G9fzmaoymDGy7scbkgpC7A.png
 imageAlt: svelte
+viewTransitionName: 'svelte-advance-bind'
 date: 2023-10-04 19:00
 tags:
   - svelte

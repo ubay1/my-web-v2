@@ -2,7 +2,8 @@
 title: Sveltekit -  routes dan Load data (+page.svelte, +page.ts, +page.server.ts, +error.svelte, +layout.svelte, +layout.ts, +layout.server.ts, +server.ts)
 description:
 imagePath: https://miro.medium.com/v2/resize:fit:1400/1*G9fzmaoymDGy7scbkgpC7A.png
-imageAlt: sveltekit
+imageAlt: svelte
+viewTransitionName: 'sveltekit-loaddata'
 date: 2023-08-13 14:00
 tags:
   - sveltekit

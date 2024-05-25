@@ -3,6 +3,7 @@ title: React - Rendering list
 description:
 imagePath: https://wallpapercave.com/wp/wp4924054.jpg
 imageAlt: react
+viewTransitionName: 'react-list'
 date: 2023-11-03 09:00
 tags:
   - react

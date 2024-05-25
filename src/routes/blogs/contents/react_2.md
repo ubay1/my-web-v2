@@ -3,6 +3,7 @@ title: React - (if else statement, operator ternary, operator &&)
 description:
 imagePath: https://wallpapercave.com/wp/wp4924054.jpg
 imageAlt: react
+viewTransitionName: 'react-condition'
 date: 2023-11-02 09:00
 tags:
   - react

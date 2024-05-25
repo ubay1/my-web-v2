@@ -2,7 +2,8 @@
 title: Python - Constants
 description: python tidak mendukung contants
 imagePath: https://cdn.hashnode.com/res/hashnode/image/upload/v1584284080124/WSg9hzPr-.jpeg
-imageAlt: react
+imageAlt: python
+viewTransitionName: 'python-constants'
 date: 2023-12-03 07:00
 tags:
   - python

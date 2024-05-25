@@ -1,5 +1,6 @@
 <script lang="ts">
-	import DefaultToast from '$lib/components/common/DefaultToast.svelte';
+	import { onMount } from 'svelte';
+	import { toast } from 'svoast';
 
 	let isLoading: boolean = false;
 	let form: { email: string; fullname: string; content: string } = {
@@ -11,7 +12,6 @@
 		status: 0,
 		message: ''
 	};
-	let showToast: boolean = false;
 
 	async function sendMail() {
 		try {
@@ -21,13 +21,13 @@
 				status: Number(res?.status),
 				message: 'Pesan terkirim'
 			};
-			showToast = true;
+			toast.success(responseFetch.message);
 		} catch (error: any) {
 			responseFetch = {
 				status: Number(error?.status),
 				message: 'Pesan gagal terkirim'
 			};
-			showToast = true;
+			toast.success(responseFetch.message);
 		} finally {
 			isLoading = false;
 			form = {
@@ -81,23 +81,12 @@
 			class="bg-orange-5 cursor-pointer border-none p-4 rounded-md text-white font-bold disabled:bg-githubDark-2 disabled:cursor-not-allowed"
 		>
 			{#if isLoading}
-				mengirim data ..
+				Mengirim pesan
 			{:else}
 				Kirim
 			{/if}
 		</button>
 	</div>
 </form>
-
-{#if showToast}
-	<DefaultToast
-		type={[200, 201].includes(responseFetch.status) ? 'success' : 'danger'}
-		title={[200, 201].includes(responseFetch.status) ? 'Sukses' : 'Gagal'}
-		message={responseFetch.message}
-		on:close={() => {
-			showToast = false;
-		}}
-	/>
-{/if}
 
 <style></style>

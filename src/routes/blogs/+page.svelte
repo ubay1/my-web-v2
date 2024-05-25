@@ -13,6 +13,7 @@
 			description={item.meta.description}
 			date={item.meta.date}
 			tags={item.meta.tags}
+			viewTransitionName={item.meta.viewTransitionName ?? undefined}
 		/>
 	{/each}
 </div>

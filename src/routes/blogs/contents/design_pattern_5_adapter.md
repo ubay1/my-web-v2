@@ -3,6 +3,7 @@ title: Design Pattern Structural - Adapter
 description: ''
 imagePath: https://refactoring.guru/images/patterns/content/adapter/adapter-en-2x.png
 imageAlt: img-design-pattern
+viewTransitionName: 'design-pattern-adapter'
 date: 2023-12-14
 tags:
   - design pattern

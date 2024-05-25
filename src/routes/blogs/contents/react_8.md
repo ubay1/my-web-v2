@@ -3,6 +3,7 @@ title: React - useReducer
 description:
 imagePath: https://wallpapercave.com/wp/wp4924054.jpg
 imageAlt: react
+viewTransitionName: 'react-reducer'
 date: 2023-11-13 09:00
 tags:
   - react

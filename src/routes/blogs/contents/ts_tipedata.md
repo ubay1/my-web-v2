@@ -2,7 +2,8 @@
 title: Tipe data pada Typescript
 description: Belajar tipe data yang ada pada typescript
 imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
-imageAlt: img-ts
+imageAlt: ts
+viewTransitionName: 'ts-tipedata'
 date: 2022-12-02 07:00
 tags:
   - typescript

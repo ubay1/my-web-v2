@@ -2,7 +2,8 @@
 title: Function pada Typescript
 description: Belajar function yang ada pada typescript
 imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
-imageAlt: img-ts
+imageAlt: ts
+viewTransitionName: 'ts-func'
 date: 2022-12-02 07:05
 tags:
   - typescript

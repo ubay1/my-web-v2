@@ -3,6 +3,7 @@ title: Design Pattern Creational - Factory Method
 description: ''
 imagePath: https://refactoring.guru/images/patterns/content/factory-method/factory-method-en-2x.png
 imageAlt: img-design-pattern
+viewTransitionName: 'design-pattern-factory'
 date: 2023-12-10
 tags:
   - design pattern

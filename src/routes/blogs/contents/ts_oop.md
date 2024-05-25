@@ -2,7 +2,8 @@
 title: OOP pada Typescript
 description: Belajar OOP yang ada pada typescript
 imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
-imageAlt: img-ts
+imageAlt: ts
+viewTransitionName: 'ts-oop'
 date: 2022-12-03 07:10
 tags:
   - typescript

@@ -2,7 +2,7 @@ import type { PageLoad } from './$types';
 
 export const load = (async ({ params }) => {
 	const post = await import(`../${params.slug}.md`);
-	const { title, description, date, tags, imagePath } = post.metadata;
+	const { title, description, date, tags, imagePath, viewTransitionName } = post.metadata;
 	const content = post.default;
 
 	return {
@@ -11,6 +11,7 @@ export const load = (async ({ params }) => {
 		description,
 		date,
 		tags,
-		imagePath
+		imagePath,
+		viewTransitionName
 	};
 }) satisfies PageLoad;

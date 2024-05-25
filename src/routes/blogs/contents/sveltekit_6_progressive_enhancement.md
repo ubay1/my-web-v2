@@ -2,7 +2,8 @@
 title: Sveltekit -  progressive enhancement (use:enhance)
 description:
 imagePath: https://miro.medium.com/v2/resize:fit:1400/1*G9fzmaoymDGy7scbkgpC7A.png
-imageAlt: sveltekit
+imageAlt: svelte
+viewTransitionName: 'sveltekit-enhancement'
 date: 2023-08-17 08:00
 tags:
   - sveltekit

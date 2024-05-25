@@ -3,6 +3,7 @@ title: Design Pattern Creational - Singleton
 description: ''
 imagePath: https://refactoring.guru/images/patterns/content/singleton/singleton-2x.png
 imageAlt: img-design-pattern
+viewTransitionName: 'design-pattern-singleton'
 date: 2023-12-13
 tags:
   - design pattern

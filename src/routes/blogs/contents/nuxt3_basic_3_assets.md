@@ -3,7 +3,8 @@ title: NUXT 3 basic - assets (public/, assets/)
 description:
 imagePath: https://img-c.udemycdn.com/course/750x422/4395942_c476_2.jpg
 imageAlt: nuxt3
-date: 2023-05-26 05:00:00
+viewTransitionName: 'nuxt3-assets'
+date: 2023-05-26 05:00
 tags:
   - nuxt3
   - vue

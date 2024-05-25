@@ -2,7 +2,8 @@
 title: Generic class pada Typescript
 description:
 imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
-imageAlt: img-ts
+imageAlt: ts
+viewTransitionName: 'ts-generic-class'
 date: 2022-12-05 10:00
 tags:
   - typescript

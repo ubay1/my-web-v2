@@ -3,7 +3,8 @@ title: NUXT 3 basic - environtment variabel
 description:
 imagePath: https://img-c.udemycdn.com/course/750x422/4395942_c476_2.jpg
 imageAlt: nuxt3
-date: 2023-05-25 09:00:00
+viewTransitionName: 'nuxt3-env'
+date: 2023-05-25 09:00
 tags:
   - nuxt3
   - vue
