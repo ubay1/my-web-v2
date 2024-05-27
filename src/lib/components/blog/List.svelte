@@ -11,13 +11,13 @@
 
 <div
 	data-sveltekit-preload-data
-	class="cursor-pointer px-0 hover:bg-gray-7 hover:bg-opacity-8 dark:hover:bg-gray-2 dark:hover:bg-opacity-8 border-b border-b-solid border-gray-3 dark:border-gray-6"
+	class="break-inside-avoid cursor-pointer relative px-0 border border-solid border-gray-3 rounded-lg hover:bg-gray-7 hover:bg-opacity-8 dark:hover:bg-gray-2 dark:hover:bg-opacity-8 dark:border-gray-6"
 >
 	<a class="cursor-pointer decoration-none" href={slug}>
 		<div class="p-4 relative">
 			<div
 				class="text-black mb-0 block text-xl leading-tight font-semibold dark:text-white"
-				style:--tag="h-{viewTransitionName ?? title}"
+				style:--tag="h-{viewTransitionName}"
 			>
 				{title}
 			</div>

@@ -23,11 +23,14 @@
 	<div class="flex items-center px-3 py-4 md:hidden">
 		<button
 			aria-label="btn-menu-sm-screen"
-			class="bg-transparent border-none cursor-pointer"
+			class="bg-transparent border-none cursor-pointer flex items-center gap-4"
 			on:click={() => (showAnotherMenu = !showAnotherMenu)}
 		>
 			<Icon icon="octicon:three-bars-16" class="text-2xl dark:text-white" />
 		</button>
+		<div class="font-bold text-white text-xl flex grow-1 justify-center items-center pr-6">
+			Ubay Dillah
+		</div>
 	</div>
 	<ul
 		data-sveltekit-preload-data
