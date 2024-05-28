@@ -3,6 +3,15 @@
 
 	const listProject = [
 		{
+			label: 'Kelola Uang',
+			vertical: true,
+			class: 'img-vertical',
+			img: '/images/kelola-uang.webp',
+			stack: ['Ionic', 'Capacitor', 'Vue 3', 'Typescript', 'Tailwind', 'Sqlite'],
+			project: 'Proyek Pribadi',
+			url: null
+		},
+		{
 			label: 'ASIK Enkrip Dekrip',
 			vertical: false,
 			class: 'img-horizontal-blibli',
