@@ -11,14 +11,29 @@
 		{
 			id: 7,
 			img: '/images/show-dashboard-generator-asik.webp',
-			title: 'Presentasi dashboard generator ASIK oleh Kementerian Kesehatan',
+			title: 'Presentasi Dashboard Generator ASIK oleh Kementerian Kesehatan',
 			desc: ''
 		},
-		{ id: 1, img: '/images/cert1.webp', title: 'Web Design', desc: '' },
-		{ id: 2, img: '/images/cert2.webp', title: 'Understanding Typescript', desc: '' },
-		{ id: 4, img: '/images/cert4.webp', title: 'Beginner Photoshop to HTML5', desc: '' },
-		{ id: 5, img: '/images/cert5.webp', title: 'Javascript Essentials', desc: '' },
-		{ id: 6, img: '/images/cert6.webp', title: 'Fullstack Javascript', desc: '' }
+		{ id: 1, img: '/images/cert1.webp', title: 'Sertifikat Udemy (Web Design)', desc: '' },
+		{
+			id: 2,
+			img: '/images/cert2.webp',
+			title: 'Sertifikat Udemy (Understanding Typescript)',
+			desc: ''
+		},
+		{
+			id: 4,
+			img: '/images/cert4.webp',
+			title: 'Sertifikat Udemy (Beginner Photoshop to HTML5)',
+			desc: ''
+		},
+		{
+			id: 5,
+			img: '/images/cert5.webp',
+			title: 'Sertifikat Udemy (Javascript Essentials)',
+			desc: ''
+		},
+		{ id: 6, img: '/images/cert6.webp', title: 'Sertifikat Udemy (Fullstack Javascript)', desc: '' }
 	];
 </script>
 
