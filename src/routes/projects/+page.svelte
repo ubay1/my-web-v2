@@ -104,9 +104,9 @@
 	];
 </script>
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 mb-4">
+<div class="gap-4 space-y-4 p-2 columns-4 lt-xl:columns-3 lt-lg:columns-2 lt-md:columns-1">
 	{#each listProject as item}
-		<div class="mb-4 bg-neutral-1 shadow-md rounded-md dark:bg-white">
+		<div class="break-inside-avoid mb-4 bg-neutral-1 shadow-md rounded-md dark:bg-white">
 			<div
 				class="rounded-t-md shadow-lg relative justify-center flex flex-row flex-wrap gap-2 overflow-hidden"
 			>
@@ -118,7 +118,7 @@
 					<ImageLoader
 						src={item.img}
 						alt="img-{item.label}"
-						classes="h-56 z-10 w-auto object-contain {item.class}"
+						classes="h-56 z-10 w-auto object-contain lt-md:w-[calc(100%)] {item.class}"
 					/>
 				</div>
 			</div>
