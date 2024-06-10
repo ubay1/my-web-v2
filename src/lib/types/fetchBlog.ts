@@ -7,6 +7,7 @@ export interface IFetchBlog {
 		imageAlt: string;
 		date: string;
 		tags: string[];
+		icon: string;
 		viewTransitionName?: string;
 	};
 }

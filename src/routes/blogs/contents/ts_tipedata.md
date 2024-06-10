@@ -5,6 +5,7 @@ imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
 imageAlt: ts
 viewTransitionName: 'ts-tipedata'
 date: 2022-12-02 07:00
+icon: 'devicon:typescript'
 tags:
   - typescript
 ---

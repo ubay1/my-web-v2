@@ -4,7 +4,8 @@ description: ''
 imagePath: https://refactoring.guru/images/patterns/content/builder/builder-en-2x.png
 imageAlt: img-design-pattern
 viewTransitionName: 'design-pattern-builder'
-date: 2023-12-11
+date: 2023-12-11 09:00
+icon: 'devicon:typescript'
 tags:
   - design pattern
   - typescript

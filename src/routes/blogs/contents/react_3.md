@@ -5,6 +5,7 @@ imagePath: https://wallpapercave.com/wp/wp4924054.jpg
 imageAlt: react
 viewTransitionName: 'react-list'
 date: 2023-11-03 09:00
+icon: 'devicon:react'
 tags:
   - react
 ---

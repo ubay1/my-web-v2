@@ -4,7 +4,8 @@ description: ''
 imagePath: https://refactoring.guru/images/patterns/content/factory-method/factory-method-en-2x.png
 imageAlt: img-design-pattern
 viewTransitionName: 'design-pattern-factory'
-date: 2023-12-10
+date: 2023-12-10 09:00
+icon: 'devicon:typescript'
 tags:
   - design pattern
   - typescript

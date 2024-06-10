@@ -5,6 +5,7 @@ imagePath: https://cdn.hashnode.com/res/hashnode/image/upload/v1584284080124/WSg
 imageAlt: python
 viewTransitionName: 'python-number-boolean'
 date: 2023-12-02 11:00
+icon: 'devicon:python'
 tags:
   - python
 ---

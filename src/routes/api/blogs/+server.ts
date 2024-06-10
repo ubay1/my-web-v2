@@ -7,6 +7,8 @@ export const GET: RequestHandler = async () => {
 	const dataPosts = await fetchAllBlog();
 
 	const sortedPosts = dataPosts.sort((a: IFetchBlog, b: IFetchBlog) => {
+		console.log('date a = ', a);
+
 		return new Date(b.meta.date).valueOf() - new Date(a.meta.date).valueOf();
 	});
 

@@ -4,7 +4,8 @@ description: Syntax javascript yang wajib digunakan ini akan mempermudah dan mem
 imagePath: https://programacion.net/files/article/20160921060930_javascript.jpg
 imageAlt: img-js
 viewTransitionName: 'js-required-syntax'
-date: 2022-12-02
+date: 2022-12-02 09:00
+icon: 'devicon:javascript'
 tags:
   - javascript
 ---

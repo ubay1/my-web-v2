@@ -4,7 +4,8 @@ description: ''
 imagePath: https://refactoring.guru/images/patterns/content/adapter/adapter-en-2x.png
 imageAlt: img-design-pattern
 viewTransitionName: 'design-pattern-adapter'
-date: 2023-12-14
+date: 2023-12-14 09:00
+icon: 'devicon:typescript'
 tags:
   - design pattern
   - typescript

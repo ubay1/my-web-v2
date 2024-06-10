@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { formatDate } from '$lib/utils/format';
+	import Icon from '@iconify/svelte';
 
 	export let slug: string;
 	export let title: string;
@@ -7,14 +8,21 @@
 	export let date: string;
 	export let tags: string[];
 	export let viewTransitionName: string | undefined;
+	export let icon: string;
 </script>
 
 <div
 	data-sveltekit-preload-data
 	class="break-inside-avoid cursor-pointer relative px-0 border border-solid border-gray-3 rounded-lg hover:bg-gray-7 hover:bg-opacity-8 dark:hover:bg-gray-2 dark:hover:bg-opacity-8 dark:border-gray-6"
 >
+	<div class="px-4 pt-2">
+		<!-- <span class="px-1 pt-1 bg-gray-900 border-1 border-solid border-gray-800 rounded-md"> -->
+		<Icon {icon} />
+		<!-- </span> -->
+	</div>
+
 	<a class="cursor-pointer decoration-none" href={slug}>
-		<div class="p-4 relative">
+		<div class="px-4 py-2 relative">
 			<div
 				class="text-black mb-0 block text-xl leading-tight font-semibold dark:text-white"
 				style:--tag="h-{viewTransitionName}"
@@ -44,6 +52,7 @@
 			</div>
 		</div>
 	</a>
+
 	<!-- <hr class="border-b-0 border-gray-3 dark:border-gray-6 mb-0" /> -->
 </div>
 

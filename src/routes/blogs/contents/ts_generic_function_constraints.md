@@ -5,6 +5,7 @@ imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
 imageAlt: ts
 viewTransitionName: 'ts-generic-func-cons'
 date: 2022-12-05 08:10
+icon: 'devicon:typescript'
 tags:
   - typescript
 ---

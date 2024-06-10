@@ -5,6 +5,7 @@ imagePath: https://miro.medium.com/v2/resize:fit:1400/1*G9fzmaoymDGy7scbkgpC7A.p
 imageAlt: svelte
 viewTransitionName: 'svelte-context'
 date: 2023-10-06 07:00
+icon: 'devicon:svelte'
 tags:
   - svelte
 ---

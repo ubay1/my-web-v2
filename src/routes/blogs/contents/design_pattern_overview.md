@@ -4,7 +4,8 @@ description: ''
 imagePath: https://img.freepik.com/free-vector/color-abstract-shape-seamless-pattern_1409-4178.jpg
 imageAlt: img-design-pattern
 viewTransitionName: 'design-pattern-overview'
-date: 2023-12-05
+date: 2023-12-05 09:00
+icon: 'devicon:typescript'
 tags:
   - design pattern
   - typescript

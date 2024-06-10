@@ -4,7 +4,8 @@ description: ''
 imagePath: https://images.techhive.com/images/article/2016/09/generic-repository-an-anti-pattern-100681507-orig.jpg?auto=webp&quality=85,70
 imageAlt: img-design-pattern
 viewTransitionName: 'design-pattern-repo'
-date: 2023-12-15
+date: 2023-12-15 09:00
+icon: 'devicon:typescript'
 tags:
   - design pattern
   - typescript
