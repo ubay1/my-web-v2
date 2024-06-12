@@ -151,7 +151,7 @@ kbd {
 	}
 }
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
 	:root::view-transition-old(root) {
 		animation: 180ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
 			600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
@@ -161,7 +161,7 @@ kbd {
 		animation: 420ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
 			600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
 	}
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
 	[style*='--tag'] {

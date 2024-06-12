@@ -13,6 +13,7 @@ import {
 
 export default defineConfig({
 	shortcuts: [
+		['w-fill', 'w-[-moz-available] w-[-webkit-fill-available]'],
 		[
 			'form-input',
 			'bg-white px-3 rounded-md h-10 w-fill text-sm border-none focus:outline-orange-5'
@@ -46,10 +47,7 @@ export default defineConfig({
 	],
 	// transformers: [transformerDirectives(), transformerVariantGroup()],
 	safelist: 'prose prose-sm m-auto text-left'.split(' '),
-	rules: [
-		['w-fill', { width: '-webkit-fill-available' }],
-		['grid-cols-2-home', { 'grid-template-columns': '20% 80%' }]
-	],
+	rules: [['grid-cols-2-home', { 'grid-template-columns': '20% 80%' }]],
 	theme: {
 		colors: {
 			githubDark: {
