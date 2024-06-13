@@ -5,7 +5,7 @@
 	export let data: PageData;
 </script>
 
-<div class="gap-4 space-y-4 p-2 columns-4 lt-xl:columns-3 lt-lg:columns-2 lt-md:columns-1">
+<div class="gap-4 space-y-4 p-2 columns-3 lt-xl:columns-3 lt-lg:columns-2 lt-md:columns-1">
 	{#each data.posts as item}
 		<List
 			slug={item?.path ?? ''}
