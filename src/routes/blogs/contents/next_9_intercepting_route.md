@@ -3,7 +3,7 @@ title: NEXT - Intercepting Route
 description: fitur ini dipakai twitter, linkedin, instagram. saat menampilkan detail data pada dialog.
 imagePath: https://wallpapercave.com/wp/wp11846968.png
 imageAlt: next
-viewTransitionName: 'next-route-group'
+viewTransitionName: 'next-intercepting-route'
 date: 2024-06-15 08:00
 icon: 'devicon:nextjs'
 tags:

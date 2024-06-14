@@ -3,7 +3,7 @@ title: NEXT - Parallel Route
 description: slot (@analytic, @other), default.tsx (untuk fallback jika file page.tsx tidak ada), loading & error UI
 imagePath: https://wallpapercave.com/wp/wp11846968.png
 imageAlt: next
-viewTransitionName: 'next-route-group'
+viewTransitionName: 'next-parallel-route'
 date: 2024-06-14 08:00
 icon: 'devicon:nextjs'
 tags:
