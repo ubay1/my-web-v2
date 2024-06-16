@@ -24,6 +24,7 @@ Fungsi ini berjalan setiap kali server SvelteKit menerima permintaan - apakah it
 hooks-handle:
 
 ```ts
+// @noErrors
 import type { Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
@@ -43,6 +44,7 @@ abaikan aja errornya, ini kena sama twoslash hehe. <br>
 hooks-sequence:
 
 ```ts
+// @noErrors
 // @errors: 2307 2304 7031
 import { sequence } from '@sveltejs/kit/hooks';
 
