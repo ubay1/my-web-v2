@@ -3,7 +3,7 @@ title: NEXT - Middleware
 description:
 imagePath: https://wallpapercave.com/wp/wp11846968.png
 imageAlt: next
-viewTransitionName: 'next-api-routes'
+viewTransitionName: 'next-middleware'
 date: 2024-06-16 09:00
 icon: 'devicon:nextjs'
 tags:
