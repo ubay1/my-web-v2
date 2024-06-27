@@ -28,7 +28,7 @@ contoh: kita buat list untuk menampilkan latihan nextjs kita.
 
 ```tsx
 // @filename: ./src/app/page.tsx
-// @noErrors
+
 import NextLink from 'next/link';
 
 const list = [{ label: 'router', path: '/router' }];
@@ -48,7 +48,7 @@ export default function Home() {
 
 ```tsx
 // @filename: ./src/app/router/page.tsx
-// @noErrors
+
 export default function RouterPage() {
 	return <div>Hello ini router page</div>;
 }

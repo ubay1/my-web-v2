@@ -54,7 +54,7 @@ isi dari **layout.tsx**
 
 ```tsx
 // @filename: app/intercepting-route/layout.tsx
-// @noErrors
+
 export default function InterceptingRouteLayout({
 	children,
 	modal
@@ -75,7 +75,7 @@ isi dari **page.tsx**, untuk menampilkan list card.
 
 ```tsx
 // @filename: app/intercepting-route/page.tsx
-// @noErrors
+
 import NextLink from 'next/link';
 
 export default function Page() {
@@ -111,7 +111,7 @@ lalu isi pada file **(.)detail/[id]/page.tsx**
 
 ```tsx
 // @filename: app/intercepting-route/@modal/(.)detail/[id]/page.tsx
-// @noErrors
+
 import Modal from '@lib/components/Modal';
 
 export default function PhotoModal({ params: { id: photoId } }: { params: { id: string } }) {

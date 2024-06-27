@@ -13,7 +13,6 @@ tags:
 ## Render list data dengan map()
 
 ```tsx
-// @noErrors
 // render list data dengan map()
 const peoples = [
 	'Creola Katherine Johnson: mathematician',
@@ -38,7 +37,6 @@ export default function App() {
 ## Filter data dengan filter()
 
 ```tsx
-// @noErrors
 // Filter data dengan filter()
 const peoples2 = [
 	{

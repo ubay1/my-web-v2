@@ -26,7 +26,7 @@ Slot diteruskan sebagai props ke parent layout. Untuk contoh di atas, komponen d
 
 ```tsx
 // @filename: app/layout.tsx
-// @noErrors
+
 export default function Layout({
 	children,
 	team,
@@ -64,7 +64,7 @@ berikut codenya:
 
 ```tsx
 // @filename: app/dashboard/@analytic/default.tsx
-// @noErrors
+
 export default function Page() {
 	return (
 		<div className="shadow-xl bg-red-400 text-black p-10 rounded-md flex items-center justify-center">
@@ -97,7 +97,7 @@ kita bisa menambahkan file **error.tsx** di dalam folder **@analytic**. yang ber
 
 ```tsx
 // @filename: app/dashboard/@analytic/error.tsx
-// @noErrors
+
 export default function Error({
 	error,
 	reset

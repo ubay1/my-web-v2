@@ -20,7 +20,7 @@ di nextjs kita cukup membuat folder **api** di dalam folder **app** dan tambahka
 
 ```tsx
 // @filename: app/api/hello/route.ts
-// @noErrors
+
 import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {
@@ -37,7 +37,7 @@ Route Handler di-cache secara default ketika menggunakan metode GET dengan objek
 
 ```tsx
 // @filename: app/api/test/route.ts
-// @noErrors
+
 export async function GET() {
 	const res = await fetch('https://data.mongodb-api.com/...', {
 		headers: {

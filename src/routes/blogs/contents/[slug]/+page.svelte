@@ -8,35 +8,36 @@
 	export let data: PageData;
 
 	afterNavigate(() => {
-		// for (let node of document.querySelectorAll('pre')) {
-		// 	const text = node.innerText;
-		// 	let divHeader = document.createElement('div');
-		// 	divHeader.className = 'bg-black h-15 absolute top-0 w-full flex items-center justify-between';
-		// 	const dataTitle = node.getAttribute('data-code-title');
-		// 	let title = document.createElement('div');
-		// 	title.innerText = dataTitle as string;
-		// 	title.className = 'ml-4 text-sm';
-		// 	let copyButton = document.createElement('button');
-		// 	copyButton.ariaLabel = 'icon-copy';
-		// 	copyButton.className = 'h-10 w-10 mr-4 flex items-center justify-center btn-copy text-white';
-		// 	copyButton.innerHTML = `<div class='i-octicon-copy-16'></div>`;
-		// 	copyButton.addEventListener('click', () => {
-		// 		navigator.clipboard.writeText(text);
-		// 		copyButton.disabled = true;
-		// 		copyButton.className =
-		// 			'h-10 w-10 mr-4 flex items-center justify-center btn-copy text-white p-1 disabled:bg-orange-5 disabled:opacity-100';
-		// 		copyButton.innerHTML = `<div class='i-octicon-check-24 p-1'></div>`;
-		// 		setTimeout(function () {
-		// 			copyButton.className =
-		// 				'h-10 w-10 mr-4 flex items-center justify-center btn-copy text-white';
-		// 			copyButton.disabled = false;
-		// 			copyButton.innerHTML = `<div class='i-octicon-copy-16'></div>`;
-		// 		}, 2000);
-		// 	});
-		// 	node.appendChild(divHeader);
-		// 	divHeader.appendChild(title);
-		// 	divHeader.appendChild(copyButton);
-		// }
+		for (let node of document.querySelectorAll('pre')) {
+			const text = node.innerText;
+			let divHeader = document.createElement('div');
+			divHeader.className =
+				'bg-transparent h-15 absolute right-0 top-0 flex items-center justify-between';
+			const dataTitle = node.getAttribute('data-code-title');
+			let title = document.createElement('div');
+			title.innerText = dataTitle as string;
+			title.className = 'ml-4 text-sm';
+			let copyButton = document.createElement('button');
+			copyButton.ariaLabel = 'icon-copy';
+			copyButton.className = 'h-10 w-14 mr-4 flex items-center justify-center btn-copy text-white';
+			copyButton.innerHTML = `<div>Copy</div>`;
+			copyButton.addEventListener('click', () => {
+				navigator.clipboard.writeText(text);
+				copyButton.disabled = true;
+				copyButton.className =
+					'h-10 w-14 mr-4 flex items-center justify-center btn-copy text-white p-1 disabled:bg-orange-5 disabled:opacity-100';
+				copyButton.innerHTML = `<div>Copied</div>`;
+				setTimeout(function () {
+					copyButton.className =
+						'h-10 w-14 mr-4 flex items-center justify-center btn-copy text-white';
+					copyButton.disabled = false;
+					copyButton.innerHTML = `<div>Copy</div>`;
+				}, 2000);
+			});
+			node.appendChild(divHeader);
+			divHeader.appendChild(title);
+			divHeader.appendChild(copyButton);
+		}
 	});
 
 	onMount(() => {

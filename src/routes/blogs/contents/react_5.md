@@ -13,7 +13,6 @@ tags:
 ## Input Text & Textarea
 
 ```tsx
-// @noErrors
 // binding input text & textarea
 import { ChangeEvent, useState } from 'react';
 
@@ -44,7 +43,6 @@ export default function App() {
 coba hover pada event yang ada pada onChange.
 
 ```tsx
-// @noErrors
 import { ChangeEvent, useState } from 'react';
 
 export default function App() {
@@ -64,7 +62,6 @@ export default function App() {
 binding checkbox array
 
 ```tsx
-// @noErrors
 // App.tsx
 export default function BindingCheckbox() {
 	const [data, setData] = useState<boolean[]>([]);
@@ -116,7 +113,6 @@ export default function BindingCheckbox() {
 karena listData statis maka kita bisa menggunakan cara ini
 
 ```tsx
-// @noErrors
 // contoh tanpa useEffect
 export default function BindingCheckbox() {
 	const listData = [
@@ -157,7 +153,6 @@ export default function BindingCheckbox() {
 ## Radio
 
 ```tsx
-// @noErrors
 // App.tsx
 import { ChangeEvent, useState } from 'react';
 
@@ -194,7 +189,6 @@ export default function BindingRadio() {
 ## Selectbox
 
 ```tsx
-// @noErrors
 // App.tsx
 import { ChangeEvent, useState } from 'react';
 

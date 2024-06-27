@@ -17,7 +17,6 @@ React.memo adalah fungsi yang disediakan oleh React untuk melakukan memoisasi pa
 Penggunaan React.memo sangat berguna untuk komponen yang menerima props statis atau jarang berubah, sehingga dapat mengurangi overhead dari proses rendering komponen yang sebenarnya tidak memerlukan perubahan yang signifikan. lihat contoh dibawah ini.
 
 ```tsx
-// @noErrors
 // contoh penggunaan react memo
 import { FC, memo, useCallback, useState } from 'react';
 
@@ -111,7 +110,6 @@ useCallback sebaiknya digunakan ketika:
 berikut ini contoh penggunaan useCallback dengan Memo.
 
 ```tsx
-// @noErrors
 import React, { useState, useCallback, FC, memo } from 'react';
 
 const ChildComponent: FC<{ onIncrement: any }> = memo(({ onIncrement }) => {
@@ -147,7 +145,6 @@ export default UseCallback;
 ```
 
 ```tsx
-// @noErrors
 // contoh lain update dari react.memo yang masih rerender
 import { FC, memo, useCallback, useState } from 'react';
 
@@ -229,7 +226,6 @@ Penggunaan utama useMemo adalah untuk menghindari perhitungan yang mahal secara 
 pada contoh dibawah kita ingin menampilkan apakah number merupakan even atau odd. ketika kita klik number maka function isNumberEven() ikut terender dan ada sedikit delay. lalu kita klik count juga sama. koq bisa ? ya karna setiap kali terjadi update baik state number atau count, maka komponen akan dirender ulang, Yang mana ini akan membuat function isNumberEven ikut di inizialisasi ulang. untuk itu kita gunakan useMemo() ini
 
 ```tsx
-// @noErrors
 // tanpa useMemo
 import { useState } from 'react';
 
@@ -266,7 +262,6 @@ export default UseMemo;
 ```
 
 ```tsx
-// @noErrors
 // dengan useMemo
 import { useEffect, useMemo, useState } from 'react';
 

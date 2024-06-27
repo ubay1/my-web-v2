@@ -25,7 +25,6 @@ React Context terdiri dari dua bagian utama:
 Berikut adalah contoh sederhana penggunaan React Context:
 
 ```tsx
-// @noErrors
 import React, { createContext, useContext, useState } from 'react';
 
 // Membuat context untuk nilai tema

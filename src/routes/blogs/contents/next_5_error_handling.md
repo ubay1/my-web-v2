@@ -24,7 +24,7 @@ Selain itu, komponen di dalam fail error.tsx juga harus merupakan client compone
 
 ```tsx
 // @filename: app/error.tsx
-// @noErrors
+
 'use client';
 
 import { useEffect } from 'react';
@@ -63,7 +63,7 @@ ini isi dari global-error.tsx
 
 ```tsx
 // @filename: app/global-error.tsx
-// @noErrors
+
 'use client';
 
 export default function GlobalError({
@@ -92,7 +92,7 @@ codenya seperti ini.
 
 ```tsx
 // @filename: app/not-found.tsx
-// @noErrors
+
 import NextLink from 'next/link';
 
 export default function NotFound() {

@@ -11,19 +11,19 @@
 	import Header from '$lib/components/common/Header.svelte';
 	import Seo from '$lib/components/common/Seo.svelte';
 
-	// NProgress.configure({
-	// 	// Full list: https://github.com/rstacruz/nprogress#configuration
-	// 	minimum: 0.16
-	// });
+	NProgress.configure({
+		// Full list: https://github.com/rstacruz/nprogress#configuration
+		minimum: 0.16
+	});
 
-	// $: {
-	// 	if ($navigating) {
-	// 		NProgress.start();
-	// 	}
-	// 	if (!$navigating) {
-	// 		NProgress.done();
-	// 	}
-	// }
+	$: {
+		if ($navigating) {
+			NProgress.start();
+		}
+		if (!$navigating) {
+			NProgress.done();
+		}
+	}
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;

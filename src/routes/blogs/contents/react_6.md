@@ -17,7 +17,7 @@ useEffect adalah salah satu dari sekian banyak hooks yang disediakan oleh React.
 useEffect dijalankan setiap kali komponen dirender (saat mounting) dan setiap kali ada perubahan pada dependency yang didefinisikan (mirip watch pada vue). Pada intinya, useEffect memungkinkan kita untuk menangani hal-hal yang tidak berhubungan langsung dengan rendering tetapi diperlukan dalam suatu komponen, seperti membersihkan sumber daya, memperbarui data, atau berlangganan ke sumber eksternal.<br/>
 
 ```tsx
-// @noErrors
+
 // struktur umum useEffect
 import { useEffect } from 'react';
 
@@ -49,7 +49,6 @@ jika ketika di development fetching data 2x, coba matikan React.StrictMode nya.
 </blockquote>
 
 ```tsx
-// @noErrors
 // contoh mounted melakukan fetching ke api
 import { useState, useEffect } from 'react';
 
@@ -112,7 +111,6 @@ berikut adalah beberapa contoh kejadian atau situasi yang mengakibatkan unmounte
 Saat suatu komponen di-unmount, ini berarti bahwa komponen tersebut tidak lagi ada dalam hierarki komponen dan tidak ada lagi di dalam DOM, sehingga efek samping yang terkait dengan komponen tersebut (seperti langganan, event listener, atau penggunaan sumber daya lainnya) harus dibersihkan atau dihapus. Oleh karena itu, cleanup function di dalam useEffect sering digunakan untuk tindakan pembersihan yang diperlukan pada saat unmounting.
 
 ```tsx
-// @noErrors
 // contoh unmount
 import React, { useState, useEffect } from 'react';
 
@@ -142,7 +140,6 @@ export default function EventListenerComponent() {
 kalau vue/svelte kan mounted ada sendiri watcher juga ada sendiri. ini kalau react mounted di useEffect, watcher di useEffect. jujur gw lebih nyaman vue/svelte hehe, gpp namanya belajar kan.
 
 ```tsx
-// @noErrors
 // watcher usestate
 import { useState, useEffect } from 'react';
 

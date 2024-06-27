@@ -26,14 +26,59 @@ pre.shiki {
 /* } */
 
 code {
-	counter-reset: step;
-	counter-increment: step 0;
+	/* counter-reset: step;
+	counter-increment: step 0; */
+}
+code {
+	display: block;
+	width: fit-content;
+	min-width: 100%;
+	line-height: 1.7;
+	transition: color 0.5s;
+}
+code .diff {
+	transition: background-color 0.5s;
+	margin: 0 -24px;
+	padding: 0 24px;
+	width: calc(100% + 48px);
+	display: inline-block;
+}
+code .diff.remove {
+	background-color: #632b2b;
+}
+code .diff.remove::before {
+	content: '-';
+	color: #e9a8a8;
+}
+code .diff.add {
+	background-color: #35563a;
+}
+code .diff.add::before {
+	content: '+';
+	color: #91cd9a;
+}
+
+pre.has-focused code .line:not(.focused) {
+	filter: blur(0.095rem);
+	opacity: 0.7;
+	transition: filter 0.35s, opacity 0.35s;
+}
+
+pre.has-focused:hover code .line:not(.focused) {
+	opacity: 1;
+	filter: none;
 }
 
 .twoslash-popup-container {
 	border: 1px solid #47494c !important;
 	border-radius: 0px !important;
+	transform: translateY(1.4em) !important;
 }
+
+.twoslash-popup-code {
+	padding: 0 !important;
+}
+
 code.twoslash-popup-code,
 .twoslash-popup-docs {
 	background-color: #191818 !important;
@@ -44,7 +89,12 @@ code.twoslash-popup-code,
 	margin-right: unset !important;
 }
 
-code .line::before {
+.prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *))::before,
+.prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *))::after {
+	content: '';
+}
+
+/* code .line::before {
 	content: counter(step);
 	counter-increment: step;
 	width: 1rem;
@@ -52,7 +102,7 @@ code .line::before {
 	display: inline-block;
 	text-align: right;
 	color: rgba(115, 138, 148, 0.4);
-}
+} */
 code .line.highlighted {
 	background-color: #65758529 !important;
 	transition: background-color 0.5s;
@@ -70,6 +120,7 @@ code .line.highlighted {
 #nprogress .bar {
 	background: #f97315 !important;
 	height: 5px !important;
+	display: none;
 }
 
 #nprogress .peg {
@@ -77,9 +128,9 @@ code .line.highlighted {
 }
 
 #nprogress > .spinner .spinner-icon {
-	/* border-top-color: #ffbb00;
-	border-left-color: #ffbb00; */
-	display: none;
+	border-top-color: #ffbb00;
+	border-left-color: #ffbb00;
+	/* display: none; */
 }
 
 textarea {

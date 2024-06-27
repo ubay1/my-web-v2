@@ -7,13 +7,22 @@ import { codeToHtml } from 'shiki';
 import {
 	transformerNotationHighlight,
 	transformerMetaHighlight,
-	transformerNotationDiff
+	transformerNotationDiff,
+	transformerNotationFocus,
+	transformerCompactLineOptions
 } from '@shikijs/transformers';
 import { rendererRich, transformerTwoslash } from 'shikiji-twoslash';
 // import { createHighlighter } from '@bitmachina/highlighter';
 
-function escapeHtml(code) {
-	return code.replace(
+const htmlEscapes = {
+	'&': '&amp;',
+	'<': '&lt;',
+	'>': '&gt;',
+	'"': '&quot;',
+	"'": '&#39;'
+};
+function escapeHtml(html) {
+	return html.replace(
 		/[{}`]/g,
 		(character) => ({ '{': '&lbrace;', '}': '&rbrace;', '`': '&grave;' }[character])
 	);
@@ -28,15 +37,18 @@ async function highlighter(code, lang) {
 		lang,
 		themes: {
 			light: 'dark-plus',
-			dark: 'github-dark'
+			dark: 'slack-dark'
 		},
 		transformers: [
 			transformerNotationDiff(),
 			transformerNotationHighlight(),
 			transformerMetaHighlight(),
+			transformerNotationFocus(),
+			transformerCompactLineOptions(),
 			transformerTwoslash({
 				renderer: rendererRich(),
-				explicitTrigger: false
+				explicitTrigger: false,
+				langs: ['ts'] // twoslash akan aktif hanya pada extension ini aja,
 			})
 		]
 	});

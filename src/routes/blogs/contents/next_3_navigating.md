@@ -41,7 +41,7 @@ Hook useRouter memungkinkan kita untuk mengubah rute secara terprogram dari Komp
 
 ```tsx
 // @filename: ./src/app/page.tsx
-// @noErrors
+
 'use client';
 
 import { useRouter } from 'next/navigation';
@@ -76,7 +76,6 @@ ada beberapa hal yang harus diketahui soal redirect ini.
 contoh penggunaan:
 
 ```tsx
-// @noErrors
 import { redirect } from 'next/navigation';
 
 async function fetchTeam(id: string) {

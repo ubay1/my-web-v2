@@ -28,7 +28,6 @@ berikut ini contoh middleware untuk authentikasi, jika kita mengakses ke halaman
 > :path\* artinya semua page yang memiliki route /middleware
 
 ```tsx
-// @noErrors
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
@@ -55,7 +54,6 @@ penggunaan nested middleware di nextjs, mirip seperti menggunakan hook di svelte
 berikut codenya:
 
 ```tsx
-// @noErrors
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';

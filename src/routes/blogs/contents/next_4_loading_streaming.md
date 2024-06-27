@@ -83,7 +83,7 @@ contoh:
 
 ```tsx
 // @filename: ./src/app/loading-streaming/page.tsx
-// @noErrors
+
 import { Suspense } from 'react';
 import Post from './Post';
 import Album from './Album';
@@ -104,7 +104,7 @@ export default async function Page() {
 
 ```tsx
 // @filename: ./src/app/loading-streaming/Post.tsx
-// @noErrors
+
 export default async function Post() {
 	return new Promise((resolve) => setTimeout(resolve, 3000)).then(async () => {
 		const res = await fetch('https://jsonplaceholder.typicode.com/posts/1', {
@@ -118,7 +118,7 @@ export default async function Post() {
 
 ```tsx
 // @filename: ./src/app/loading-streaming/Album.tsx
-// @noErrors
+
 export default async function Album() {
 	return new Promise((resolve) => setTimeout(resolve, 5000)).then(async () => {
 		const res = await fetch('https://jsonplaceholder.typicode.com/albums/1', {

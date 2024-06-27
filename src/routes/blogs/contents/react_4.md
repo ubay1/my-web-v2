@@ -13,7 +13,6 @@ tags:
 ## Event handlers
 
 ```tsx
-// @noErrors
 // event click dengan function
 export default function App() {
 	const [count, setCount] = useState(0);
@@ -32,7 +31,6 @@ export default function App() {
 ```
 
 ```tsx
-// @noErrors
 // event click inline
 function Button(props: { message: string; children: any }) {
 	return (
@@ -50,7 +48,7 @@ export default function App() {
 ## Passing event handler sebagai props
 
 ```tsx
-// @noErrors
+
 function Button(props: { onClick: any; children: any }) {
 	return <button onClick={props.onClick}>{props.children}</button>;
 }
@@ -75,7 +73,6 @@ export default App() {
 Contoh tanpa modifier, id parent akan ikut ke render.
 
 ```tsx
-// @noErrors
 // contoh tanpa modifier
 export default function EventModifier() {
 	return (
@@ -95,7 +92,6 @@ export default function EventModifier() {
 ```
 
 ```tsx
-// @noErrors
 // contoh dengan modifier stopPropagation()
 export default function EventModifier() {
 	return (
@@ -131,7 +127,6 @@ export default function EventModifier() {
 ## Emit
 
 ```tsx
-// @noErrors
 // emit to parent component
 import { FC, useState } from 'react';
 

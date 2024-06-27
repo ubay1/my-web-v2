@@ -19,7 +19,7 @@ contoh:
 
 ```tsx
 // @filename: app/blog/[slug]/page.tsx
-// @noErrors
+
 export default function Page({ params }: { params: { slug: string } }) {
 	return <div>My Post: {params.slug}</div>;
 }
@@ -35,7 +35,7 @@ contoh:
 
 ```tsx
 // @filename: app/blog/[...slug]/page.tsx
-// @noErrors
+
 export default function Page({ params }: { params: { slug: string } }) {
 	return <div>My Post: {params.slug}</div>;
 }

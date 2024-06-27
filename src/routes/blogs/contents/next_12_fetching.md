@@ -22,7 +22,6 @@ untuk memungkinkan kita mengonfigurasi perilaku caching dan validasi ulang untuk
 berikut contoh fetching via server:
 
 ```tsx
-// @noErrors
 async function getData() {
 	const res = await fetch('https://jsonplaceholder.typicode.com/albums/1');
 	console.log('response = ', res);
@@ -61,7 +60,6 @@ Data Cache dapat divalidasi ulang dengan dua cara:
 kita cukup menambahkan **next: revalidate: waktu_revalidate**. dibawah ini akan melakukan validasi ulang sekitar 1 jam kedepan.
 
 ```tsx
-// @noErrors
 fetch('https://...', { next: { revalidate: 3600 } });
 ```
 
@@ -85,7 +83,7 @@ Sebagai contoh, fetch berikut ini menambahkan koleksi tag cache:
 
 ```tsx
 // @filename app/page.tsx
-// @noErrors
+
 export default async function Page() {
 	const res = await fetch('https://...', { next: { tags: ['collection'] } });
 	const data = await res.json();
@@ -97,7 +95,7 @@ kita kemudian dapat memvalidasi ulang panggilan pengambilan yang ditandai dengan
 
 ```tsx
 // @filename app/actions.ts
-// @noErrors
+
 'use server';
 
 import { revalidateTag } from 'next/cache';
