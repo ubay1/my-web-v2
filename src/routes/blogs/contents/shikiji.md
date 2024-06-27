@@ -3,7 +3,7 @@ title: Shikiji
 description: syntax highlighter
 imagePath: https://www.markdownguide.org/assets/images/markdown-guide-og.jpg
 imageAlt: next
-viewTransitionName: 'next-server-actions'
+viewTransitionName: 'shikiji'
 date: 2024-07-01 08:00
 icon: 'skill-icons:markdown-light'
 tags:
