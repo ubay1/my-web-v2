@@ -14,7 +14,7 @@
 	},
 	"devDependencies": {
 		"@iconify/svelte": "^4.0.2",
-		"@shikijs/transformers": "^1.6.0",
+		"@shikijs/transformers": "^1.9.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.20.4",
 		"@types/nodemailer": "^6.4.11",
@@ -33,6 +33,7 @@
 		"nprogress": "^0.2.0",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",
+		"shiki": "^1.9.1",
 		"shikiji": "^0.10.2",
 		"shikiji-transformers": "^0.10.2",
 		"shikiji-twoslash": "^0.10.2",

@@ -6,10 +6,15 @@ import * as shiki from 'shikiji';
 import { codeToHtml } from 'shiki';
 import {
 	transformerNotationHighlight,
-	transformerMetaHighlight,
+	// transformerMetaHighlight,
+	// transformerMetaWordHighlight,
 	transformerNotationDiff,
 	transformerNotationFocus,
-	transformerCompactLineOptions
+	transformerCompactLineOptions,
+	transformerNotationWordHighlight,
+	transformerNotationErrorLevel,
+	transformerRenderWhitespace,
+	transformerRemoveNotationEscape
 } from '@shikijs/transformers';
 import { rendererRich, transformerTwoslash } from 'shikiji-twoslash';
 // import { createHighlighter } from '@bitmachina/highlighter';
@@ -42,9 +47,12 @@ async function highlighter(code, lang) {
 		transformers: [
 			transformerNotationDiff(),
 			transformerNotationHighlight(),
-			transformerMetaHighlight(),
+			transformerNotationWordHighlight(),
+			transformerNotationErrorLevel(),
+			transformerRenderWhitespace(),
 			transformerNotationFocus(),
 			transformerCompactLineOptions(),
+			transformerRemoveNotationEscape(),
 			transformerTwoslash({
 				renderer: rendererRich(),
 				explicitTrigger: false,

@@ -10,26 +10,167 @@ tags:
   - markdown
 ---
 
-```tsx
-// prettier-ignore
-// ---cut---
-// @filename: app/page.tsx
+kita bisa ke link berikut ini <a href="https://shiki.style" target="_blank">Shikiji</a>
 
-export default async function Page() {
-	async function actionDel(formData: FormData) {
-		'use server'; // [!code --]
-		await prisma.gathering.delete({ // [!code ++]
-			where: { // [!code highlight:3]
-				id: formData.get('meetId') as string
-			}
-		});
+> Transformers hanya menerapkan kelas dan tidak dilengkapi dengan gaya; Anda dapat memberikan aturan CSS Anda sendiri untuk menatanya dengan benar.
 
-		revalidatePath('/'); // [!code focus]
-	}
+beberapa transform yang ada di shikiji:
 
-	<form action={actionDel}>
-		<input type="hidden" name="meetId" value={meet.id} />
-		<Button>Delete</Button>
-	</form>;
+## transformerNotationDiff
+
+transformer ini seperti yang ada di github/gitlab. kita bisa gunakan **[!code ++] dan [!code --]**
+
+````md
+```ts
+console.log('hewwo'); // [\!code --]
+console.log('hello'); // [\!code ++]
+console.log('goodbye');
+```
+````
+
+hasilnya
+
+````md
+```ts
+console.log('hewwo'); // [!code --]
+console.log('hello'); // [!code ++]
+console.log('goodbye');
+```
+````
+
+## transformerNotationHighlight
+
+Gunakan **[!code highlight]** untuk membuat highlighted line
+
+````md
+```ts
+console.log('Not highlighted');
+console.log('Highlighted'); // [\!code highlight]
+console.log('Not highlighted');
+```
+````
+
+hasilnya
+
+````md
+```ts
+console.log('Not highlighted');
+console.log('Highlighted'); // [!code highlight]
+console.log('Not highlighted');
+```
+````
+
+### menghighlight beberapa baris sekaligus
+
+````md
+```ts
+console.log('Highlighted'); // [\!code highlight:2]
+console.log('Highlighted');
+console.log('Not highlighted');
+```
+````
+
+hasilnya
+
+````md
+```ts
+console.log('Highlighted'); // [!code highlight:2]
+console.log('Highlighted');
+console.log('Not highlighted');
+```
+````
+
+## transformerNotationWordHighlight
+
+````md
+```ts
+// [\!code word:Hello]
+const message = 'Hello World';
+console.log(message); // prints Hello World
+```
+````
+
+hasilnya
+
+````md
+```ts
+// [!code word:Hello]
+const message = 'Hello World';
+console.log(message); // prints Hello World
+```
+````
+
+## transformerNotationFocus
+
+````md
+```ts
+console.log('Not focused');
+console.log('Focused'); // [\!code focus]
+console.log('Not focused');
+```
+````
+
+hasilnya
+
+````md
+```ts
+console.log('Not focused');
+console.log('Focused'); // [!code focus]
+console.log('Not focused');
+```
+````
+
+## transformerNotationErrorLevel
+
+````md
+```ts
+console.log('No errors or warnings');
+console.error('Error'); // [\!code error]
+console.warn('Warning'); // [\!code warning]
+```
+````
+
+hasilnya
+
+````md
+```ts
+console.log('No errors or warnings');
+console.error('Error'); // [!code error]
+console.warn('Warning'); // [!code warning]
+```
+````
+
+## transformerRenderWhitespace
+
+<!-- prettier-ignore -->
+```js
+function block( ) {
+  space( )
+		tab( )
 }
+````
+
+Tambahkan code css berikut ini untuk melihat hasilnya
+
+```css
+code .tab,
+code .space {
+	position: relative;
+}
+
+code .tab::before {
+	content: '⇥';
+	position: absolute;
+	opacity: 0.3;
+}
+
+code .space::before {
+	content: '·';
+	position: absolute;
+	opacity: 0.3;
+}
+```
+
+```js filename="a/hello/file.js"
+console.log('hello');
 ```
