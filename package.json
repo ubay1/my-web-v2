@@ -61,7 +61,6 @@
 		"remark-toc": "^9.0.0",
 		"to-vfile": "^8.0.0",
 		"unified": "^11.0.5",
-		"unified-stream": "^3.0.0",
 		"vfile": "^6.0.1",
 		"vfile-reporter": "^8.1.1"
 	}

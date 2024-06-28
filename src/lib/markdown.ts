@@ -1,5 +1,4 @@
 import { unified } from 'unified';
-import { stream } from 'unified-stream';
 import remarkParse from 'remark-parse';
 import remarkSlug from 'remark-slug';
 import remarkRehype from 'remark-rehype';
