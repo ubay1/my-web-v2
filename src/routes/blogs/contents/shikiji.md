@@ -171,6 +171,9 @@ code .space::before {
 }
 ```
 
-```js filename="a/hello/file.js"
+```js {1,3-4}
+console.log('hello');
+console.log('hello');
+console.log('hello');
 console.log('hello');
 ```
