@@ -19,13 +19,6 @@ import {
 import { rendererRich, transformerTwoslash } from 'shikiji-twoslash';
 // import { createHighlighter } from '@bitmachina/highlighter';
 
-const htmlEscapes = {
-	'&': '&amp;',
-	'<': '&lt;',
-	'>': '&gt;',
-	'"': '&quot;',
-	"'": '&#39;'
-};
 function escapeHtml(html) {
 	return html.replace(
 		/[{}`]/g,
