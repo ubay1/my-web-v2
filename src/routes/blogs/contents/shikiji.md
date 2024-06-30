@@ -170,10 +170,3 @@ code .space::before {
 	opacity: 0.3;
 }
 ```
-
-```js {1,3-4}
-console.log('hello');
-console.log('hello');
-console.log('hello');
-console.log('hello');
-```
