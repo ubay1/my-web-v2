@@ -1,7 +1,11 @@
 ---
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import '../css/global.css';
+import { Image } from 'astro:assets';
+import Navigation from '@components/Navigation.astro';
+import Footer from '@components/Footer.astro';
+import Banner from "@images/banner.webp";
+import '@fontsource/homemade-apple';
+import '@fontsource-variable/rubik';
+// import '@css/global.css';
 
 const {pageTitle} = Astro.props
 ---
@@ -12,14 +16,23 @@ const {pageTitle} = Astro.props
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <style>
+      body {
+        font-family: 'Rubik Variable', sans-serif;
+        background-color: #1c1c1c;
+        color: #fff;
+      }
+    </style>
   </head>
   <body>
-    <Navigation />
+    <div class="relative w-full h-[300px]">
+       <Navigation />
+       <Image src={Banner} alt="A bird sitting on a nest of eggs."  class="w-full h-full object-cover object-center" fetchpriority={'high'}/>
+       <div class="absolute bottom-2 left-2 text-white font-mono">Dia yang bersamaku</div>
+     </div>
+    
     <h1>{pageTitle}</h1>
     <slot />
     <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
   </body>
 </html>

@@ -1,8 +1,14 @@
 ---
+const listMenu = [
+  {label: 'Profil', path: '/'},
+  {label: 'Blog', path: '/'},
+  {label: 'Proyek', path: '/'},
+  {label: 'Pencapaian', path: '/'},
+  {label: 'Kontak', path: '/'},
+]
 ---
-<div class="nav-links">
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/blog">Blog</a>
-  <a href="/tags/">Tags</a>
+<div class="fixed top-0 w-full flex justify-center items-center gap-4 bg-black/[0.5] backdrop-blur-sm">
+  {listMenu.map((item) => (
+    <a class="p-4 hover:bg-[#1c1c1c]" href={item.path}>{item.label}</a>
+  ))}
 </div>
