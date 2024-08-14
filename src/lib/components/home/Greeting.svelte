@@ -6,7 +6,7 @@
 	<p class="leading-6 indent-5 text-justify">
 		Saya seorang Frontend Developer yang berfokus pada menciptakan antarmuka pengguna yang menarik
 		dan responsif. Dengan keahlian dalam HTML, CSS, dan JavaScript, serta pengalaman dalam kerangka
-		kerja seperti Vue.js & Svelte.js, saya berkomitmen untuk menghadirkan pengalaman pengguna yang
+		kerja seperti React, Vue & Svelte, saya berkomitmen untuk menghadirkan pengalaman pengguna yang
 		unggul. saat ini saya bekerja sebagai frontend developer di
 		<a
 			href="https://dto.kemkes.go.id"

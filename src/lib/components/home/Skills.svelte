@@ -8,16 +8,17 @@
 	}
 
 	let oftenUsed: IListSkill[] = [
-		{ img: '/images/vue.webp', name: 'Vue', rate: '⭐⭐⭐⭐⭐' },
-		{ img: '/images/nuxt.webp', name: 'Nuxt', rate: '⭐⭐⭐⭐⭐' },
-		{ img: '/images/tailwind.webp', name: 'Tailwind', rate: '⭐⭐⭐⭐⭐' },
-		{ img: '/images/uno.webp', name: 'Uno Css', rate: '⭐⭐⭐⭐⭐' },
-		{ img: '/images/svelte.webp', name: 'Svelte & Sveltekit', rate: '⭐⭐⭐⭐' },
-		{ img: '/images/ts.webp', name: 'Typescript', rate: '⭐⭐⭐' }
+		{ img: '/images/vue.webp', name: 'Vue' },
+		{ img: '/images/nuxt.webp', name: 'Nuxt' },
+		{ img: '/images/react.webp', name: 'React/React Native' },
+		{ img: '/images/next.png', name: 'Next' },
+		{ img: '/images/tailwind.webp', name: 'Tailwind' },
+		{ img: '/images/uno.webp', name: 'Uno Css' },
+		{ img: '/images/svelte.webp', name: 'Svelte & Sveltekit' },
+		{ img: '/images/ts.webp', name: 'Typescript' }
 	];
 
 	let everUsed: IListSkill[] = [
-		{ img: '/images/react.webp', name: 'React JS/React Native' },
 		{ img: '/images/express.webp', name: 'Express JS' },
 		{ img: '/images/nest.webp', name: 'Nest JS' },
 		{ img: '/images/laravel.webp', name: 'Laravel' },
