@@ -1,20 +1,21 @@
 ---
-import { Image } from 'astro:assets';
-import Navigation from '@components/Navigation.astro';
-import Footer from '@components/Footer.astro';
-import Banner from "@images/banner.webp";
-import '@fontsource/homemade-apple';
-import '@fontsource-variable/rubik';
+import { Image } from 'astro:assets'
+import Navigation from '@components/Navigation.astro'
+import Footer from '@components/Footer.astro'
+import Banner from '@images/banner.webp'
+import '@fontsource/homemade-apple'
+import '@fontsource-variable/rubik'
 // import '@css/global.css';
 
-const {pageTitle} = Astro.props
+const { pageTitle } = Astro.props
 ---
-<html lang="en">
+
+<html lang='en'>
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
     <title>{pageTitle}</title>
     <style>
       body {
@@ -25,12 +26,18 @@ const {pageTitle} = Astro.props
     </style>
   </head>
   <body>
-    <div class="relative w-full h-[300px]">
-       <Navigation />
-       <Image src={Banner} alt="A bird sitting on a nest of eggs."  class="w-full h-full object-cover object-center" fetchpriority={'high'}/>
-       <div class="absolute bottom-2 left-2 text-white font-mono">Dia yang bersamaku</div>
-     </div>
-    
+    <div class='relative w-full h-[300px]'>
+      <Navigation />
+      <Image
+        src={Banner}
+        alt='A bird sitting on a nest of eggs.'
+        class='w-full h-full object-cover object-center'
+        loading={'eager'}
+        fetchpriority={'high'}
+      />
+      <!-- <div class="absolute bottom-2 left-2 text-white font-mono">Mereka yang bersamaku</div> -->
+    </div>
+
     <h1>{pageTitle}</h1>
     <slot />
     <Footer />

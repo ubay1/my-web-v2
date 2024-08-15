@@ -7,6 +7,9 @@
       "@images/*": [
         "src/assets/images/*"
       ],
+      "@icons/*": [
+        "src/assets/icons/*"
+      ],
       "@layouts/*": [
         "src/layouts/*"
       ],
@@ -16,7 +19,9 @@
       "@css/*": [
         "src/css/*"
       ],
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   },
   "include": [
     "src/**/*.d.ts",

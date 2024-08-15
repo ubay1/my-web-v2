@@ -1,0 +1,57 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "prettier", // must be the last
+    "plugin:astro/recommended"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.astro"
+      ],
+      // Allows Astro components to be parsed.
+      "parser": "astro-eslint-parser",
+      // Parse the script in `.astro` as TypeScript by adding the following configuration.
+      // It's the setting you need when using TypeScript.
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [
+          ".astro"
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    "astro"
+  ],
+  "rules": {
+    "consistent-return": "off",
+    "no-underscore-dangle": "off",
+    "no-nested-ternary": "off",
+    "no-console": "off",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-return-await": "off",
+    "import/extensions": "off",
+    "no-useless-catch": "off",
+    "sonarjs/no-duplicate-string": "off",
+    "no-param-reassign": 0,
+    "security-node/detect-crlf": "off",
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ]
+  }
+}
