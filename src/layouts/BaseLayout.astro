@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import Navigation from '@components/Navigation.astro'
+import Navigation from '@components/Navigation'
 import Footer from '@components/Footer.astro'
 import Banner from '@images/banner.webp'
 import '@fontsource/homemade-apple'
@@ -26,19 +26,36 @@ const { pageTitle } = Astro.props
     </style>
   </head>
   <body>
-    <div class='relative w-full h-[300px]'>
-      <Navigation />
-      <Image
-        src={Banner}
-        alt='A bird sitting on a nest of eggs.'
-        class='w-full h-full object-cover object-center'
-        loading={'eager'}
-        fetchpriority={'high'}
-      />
-      <!-- <div class="absolute bottom-2 left-2 text-white font-mono">Mereka yang bersamaku</div> -->
+    <div class='relative w-full h-[300px] bg-black'>
+      <Navigation client:load>
+        <Image
+          src={Banner}
+          alt='A bird sitting on a nest of eggs.'
+          class='w-full h-full object-cover object-center'
+          loading={'eager'}
+          fetchpriority={'high'}
+        />
+      </Navigation>
     </div>
 
     <h1>{pageTitle}</h1>
+    <h2>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur labore quia unde commodi
+      illum laudantium optio. Saepe, omnis voluptates deleniti quasi nesciunt eligendi, officia
+      vitae, eos fuga illum ipsum accusamus. Lorem, ipsum dolor sit amet consectetur adipisicing
+      elit. Amet porro voluptatibus ducimus error nemo cupiditate aspernatur labore quos culpa alias
+      tempora officiis, iusto eos, eius iure architecto, odit sapiente! Sapiente. Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Consequatur labore quia unde commodi illum laudantium
+      optio. Saepe, omnis voluptates deleniti quasi nesciunt eligendi, officia vitae, eos fuga illum
+      ipsum accusamus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet porro
+      voluptatibus ducimus error nemo cupiditate aspernatur labore quos culpa alias tempora
+      officiis, iusto eos, eius iure architecto, odit sapiente! Sapiente. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Consequatur labore quia unde commodi illum laudantium optio.
+      Saepe, omnis voluptates deleniti quasi nesciunt eligendi, officia vitae, eos fuga illum ipsum
+      accusamus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet porro voluptatibus
+      ducimus error nemo cupiditate aspernatur labore quos culpa alias tempora officiis, iusto eos,
+      eius iure architecto, odit sapiente! Sapiente.
+    </h2>
     <slot />
     <Footer />
   </body>

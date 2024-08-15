@@ -26,6 +26,7 @@
   "include": [
     "src/**/*.d.ts",
     "src/**/*.ts",
-    "src/**/*.astro"
+    "src/**/*.astro",
+    "src/components/Navigation.tsx"
   ]
 }
