@@ -1,9 +1,22 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
+import BaseLayout from '@layouts/BaseLayout.astro'
 
-const pageTitle = 'Home Page';
+const pageTitle = 'Home Page'
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-	<h3>Halo guys Astro is cool</h3>
+<BaseLayout pageTitle='Profil'>
+  <div class='flex flex-col justify-center items-center mt-4 p-4'>
+    <div class='text-4xl font-bold'>Hallo, Saya Ubay 👋</div>
+
+    <div class='mt-4'>
+      Saya seorang Frontend Developer yang berfokus pada menciptakan antarmuka pengguna yang menarik
+      dan responsif. Dengan keahlian dalam HTML, CSS, dan JavaScript, serta pengalaman dalam
+      kerangka kerja seperti React, Vue & Svelte, saya berkomitmen untuk menghadirkan pengalaman
+      pengguna yang unggul. saat ini saya bekerja sebagai frontend developer di <span
+        class='text-orange-500'
+      >
+        DTO Kemenkes
+      </span>
+    </div>
+  </div>
 </BaseLayout>

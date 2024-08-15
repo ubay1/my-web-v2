@@ -22,9 +22,9 @@ export default function Navigation({ children }: any) {
       },
       {
         label: 'Catatan',
-        path: '/catatan',
+        path: '/about',
         icon: 'ph-notebook-duotone',
-        isActive: pathName === '/catatan' ? true : false,
+        isActive: pathName === '/about' ? true : false,
       },
       {
         label: 'Proyek',
@@ -51,16 +51,25 @@ export default function Navigation({ children }: any) {
       {/* menu large screen */}
       <div className="hidden md:top-0 md:absolute md:z-[40] md:w-full bg-black/[0.5] backdrop-blur-sm md:flex md:justify-center md:items-center">
         {listMenu.map((item, idx) => (
-          <a
+          <li
             key={`icon-${idx}`}
-            className={classNames('flex items-center gap-1 p-4 hover:bg-[#1c1c1c]', {
-              'bg-[#1c1c1c]': item.isActive,
-            })}
-            href={item.path}
+            aria-current={
+              item.path.split('/')[1] === window.location.pathname.split('/')[1]
+                ? 'page'
+                : undefined
+            }
+            className={'list-none relative'}
           >
-            <Icon icon={item.icon} className={classNames('w-6 h-6')} />
-            {item.label}
-          </a>
+            <a
+              className={classNames('flex items-center gap-1 p-4 ', {
+                'hover:opacity-50': !item.isActive,
+              })}
+              href={item.path}
+            >
+              <Icon icon={item.icon} className={classNames('w-6 h-6')} />
+              {item.label}
+            </a>
+          </li>
         ))}
       </div>
       {/* menu sidebar small screen */}
