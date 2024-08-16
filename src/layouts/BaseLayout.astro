@@ -1,8 +1,7 @@
 ---
 import { Image } from 'astro:assets'
+import banner from '@images/banner.webp'
 import Navigation from '@components/Navigation'
-import Footer from '@components/Footer.astro'
-import Banner from '@images/banner.webp'
 import '@fontsource/homemade-apple'
 import '@fontsource-variable/rubik'
 import '@css/global.css'
@@ -23,8 +22,8 @@ const { pageTitle } = Astro.props
     <div class='relative w-full h-[300px] bg-black'>
       <Navigation client:load>
         <Image
-          src={Banner}
-          alt='A bird sitting on a nest of eggs.'
+          src={banner}
+          alt='banner'
           class='w-full h-full object-cover object-center'
           loading={'eager'}
           fetchpriority={'high'}
@@ -32,7 +31,10 @@ const { pageTitle } = Astro.props
       </Navigation>
     </div>
 
-    <slot />
-    <Footer />
+    <div class='flex justify-center'>
+      <div class='max-w-2xl'>
+        <slot />
+      </div>
+    </div>
   </body>
 </html>

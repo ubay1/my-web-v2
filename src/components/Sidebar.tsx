@@ -25,7 +25,7 @@ const Sidebar: React.FC<{ listMenu: { label: string; path: string; icon: string 
         )}
       >
         <button
-          className="bg-red-500 absolute right-2 top-4 p-2 rounded-full"
+          className="bg-orange-500 absolute right-2 top-4 p-2 rounded-full"
           onClick={() => setShowSidebarSmallScreen?.(!showSidebarSmallScreen)}
         >
           <Icon icon="ion-close" className="w-4 h-4 " />
@@ -33,15 +33,28 @@ const Sidebar: React.FC<{ listMenu: { label: string; path: string; icon: string 
         {/* list menu */}
         <div className="p-4 flex flex-col gap-4 mt-8 h-full pb-36 overflow-auto">
           {listMenu.map((menu, idx) => (
-            <a
-              key={`${menu.path}-${idx}`}
-              className="flex gap-2"
-              href={menu.path}
-              onClick={() => setShowSidebarSmallScreen?.(!showSidebarSmallScreen)}
+            <li
+              key={`icon-${idx}`}
+              aria-current={
+                menu.path.split('/')[1] === window.location.pathname.split('/')[1]
+                  ? 'page'
+                  : undefined
+              }
+              className={'list-none relative pb-2'}
             >
-              <Icon icon={menu.icon} className="w-[20px] h-[20px]" />
-              <div>{menu.label}</div>
-            </a>
+              <a
+                key={`${menu.path}-${idx}`}
+                href={menu.path}
+                onClick={() => setShowSidebarSmallScreen?.(!showSidebarSmallScreen)}
+                className={classNames('flex gap-2', {
+                  'hover:opacity-50':
+                    menu.path.split('/')[1] !== window.location.pathname.split('/')[1],
+                })}
+              >
+                <Icon icon={menu.icon} className="w-[20px] h-[20px]" />
+                <div>{menu.label}</div>
+              </a>
+            </li>
           ))}
         </div>
       </div>

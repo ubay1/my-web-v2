@@ -1,22 +1,43 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro'
-
-const pageTitle = 'Home Page'
+import { Image } from 'astro:assets'
+import school from '@icons/school.svg'
+import hand from '@icons/hand.svg'
 ---
 
 <BaseLayout pageTitle='Profil'>
-  <div class='flex flex-col justify-center items-center mt-4 p-4'>
-    <div class='text-4xl font-bold'>Hallo, Saya Ubay 👋</div>
+  <div class='flex flex-col mt-4 p-4'>
+    <div
+      class='text-4xl font-bold text-balance text-center flex justify-center items-center flex-wrap gap-2'
+    >
+      Hallo, Saya Ubay <Image
+        src={hand}
+        alt='hand'
+        class='w-10 h-10'
+        loading={'eager'}
+        fetchpriority={'high'}
+      />
+    </div>
 
-    <div class='mt-4'>
+    <div class='mt-4 leading-6 indent-5 text-justify'>
       Saya seorang Frontend Developer yang berfokus pada menciptakan antarmuka pengguna yang menarik
       dan responsif. Dengan keahlian dalam HTML, CSS, dan JavaScript, serta pengalaman dalam
       kerangka kerja seperti React, Vue & Svelte, saya berkomitmen untuk menghadirkan pengalaman
-      pengguna yang unggul. saat ini saya bekerja sebagai frontend developer di <span
-        class='text-orange-500'
-      >
-        DTO Kemenkes
-      </span>
+      pengguna yang unggul. saat ini saya bekerja sebagai frontend developer di
+      <span class='text-orange-500'> DTO Kemenkes </span>
+    </div>
+    <div class='mt-10'>
+      <div class='flex items-center flex-wrap gap-2'>
+        <div class='text-xl font-bold underline'>Riwayat Pendidikan</div>
+        <Image
+          src={school}
+          alt='school'
+          class='w-10 h-10'
+          loading={'eager'}
+          fetchpriority={'high'}
+        />
+      </div>
+      <div></div>
     </div>
   </div>
 </BaseLayout>

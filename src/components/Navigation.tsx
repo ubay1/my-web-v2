@@ -18,31 +18,26 @@ export default function Navigation({ children }: any) {
         label: 'Profil',
         path: '/',
         icon: 'ph-user-duotone',
-        isActive: pathName === '/' ? true : false,
       },
       {
         label: 'Catatan',
-        path: '/about',
+        path: '/catatan',
         icon: 'ph-notebook-duotone',
-        isActive: pathName === '/about' ? true : false,
       },
       {
         label: 'Proyek',
         path: '/proyek',
         icon: 'ph-confetti-duotone',
-        isActive: pathName === '/proyek' ? true : false,
       },
       {
         label: 'Pencapaian',
         path: '/pencapaian',
         icon: 'ph-medal-military-duotone',
-        isActive: pathName === '/pencapaian' ? true : false,
       },
       {
         label: 'Kontak',
         path: '/kontak',
         icon: 'ph-phone-duotone',
-        isActive: pathName === '/kontak' ? true : false,
       },
     ])
   }, [])
@@ -62,7 +57,8 @@ export default function Navigation({ children }: any) {
           >
             <a
               className={classNames('flex items-center gap-1 p-4 ', {
-                'hover:opacity-50': !item.isActive,
+                'hover:opacity-50':
+                  item.path.split('/')[1] !== window.location.pathname.split('/')[1],
               })}
               href={item.path}
             >
@@ -74,10 +70,11 @@ export default function Navigation({ children }: any) {
       </div>
       {/* menu sidebar small screen */}
       <Sidebar listMenu={listMenu} />
-      <div className="p-2 md:hidden top-0 absolute z-[40] w-full bg-black/[0.5] backdrop-blur-sm">
+      <div className="p-2 flex items-center md:hidden top-0 absolute z-[40] w-full bg-black/[0.5] backdrop-blur-sm">
         <button onClick={() => setShowSidebarSmallScreen?.(!showSidebarSmallScreen)}>
           <Icon icon="ion-menu" className="w-10 h-10 " />
         </button>
+        <div className="h-full flex-1 text-center pr-10 text-lg font-mono">Ubay Dillah</div>
       </div>
       <div className="top-0 absolute w-full h-full">{children}</div>
     </div>
