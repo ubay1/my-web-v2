@@ -3,7 +3,7 @@
     <style>
         path { fill: #000; }
         @media (prefers-color-scheme: dark) {
-            path { fill: #FFF; }
+            path { fill: #c2c2c2; }
         }
     </style>
 </svg>
