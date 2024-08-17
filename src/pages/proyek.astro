@@ -1,0 +1,182 @@
+---
+import { Image } from 'astro:assets'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import link from '@icons/link.svg'
+import asik from '@images/proyek/asik.webp'
+import blibli from '@images/proyek/blibli.webp'
+import carigawe2 from '@images/proyek/carigawe2.webp'
+import catatankajian from '@images/proyek/catatan-kajian.webp'
+import catatanuang from '@images/proyek/catatanuang2.webp'
+import myehac from '@images/proyek/myehac.webp'
+import gwc2 from '@images/proyek/gwc2.webp'
+import homi2 from '@images/proyek/homi2.webp'
+import sveltekitmovie from '@images/proyek/sveltekit-movie.webp'
+import vue3movie from '@images/proyek/vue3-movie.webp'
+import webinternalasik from '@images/proyek/web-internal-asik.webp'
+import kelolauang from '@images/proyek/kelola-uang.webp'
+
+const pageTitle = 'Proyek'
+
+const listProject = [
+  {
+    label: 'Kelola Uang',
+    vertical: true,
+    class: 'img-vertical',
+    img: kelolauang,
+    stack: ['Ionic', 'Capacitor', 'Vue 3', 'Typescript', 'Tailwind', 'Sqlite'],
+    project: 'Proyek Pribadi',
+    url: null,
+  },
+  {
+    label: 'ASIK Enkrip Dekrip',
+    vertical: false,
+    class: 'img-horizontal-blibli',
+    img: webinternalasik,
+    stack: ['SvelteKit', 'Typescript', 'Skeleton UI', 'Tailwind'],
+    project: 'Web Internal Tim ASIK',
+    url: null,
+  },
+  {
+    label: 'Movie Kit',
+    vertical: false,
+    class: 'img-horizontal-blibli',
+    img: sveltekitmovie,
+    stack: ['SvelteKit', 'Typescript', 'UnoCss'],
+    project: 'Proyek Pribadi',
+    url: 'https://movie-kit.vercel.app',
+  },
+  {
+    label: 'Dashboard Aplikasi Sehat Indinesiaku',
+    vertical: false,
+    class: 'img-horizontal-asik',
+    img: asik,
+    stack: ['Nuxt 3', 'Pinia', 'Typescript', 'UnoCss'],
+    project: 'Kementerian Kesehatan',
+    url: null,
+  },
+  {
+    label: 'eHAC Peduli Lindungi',
+    vertical: true,
+    class: 'img-vertical',
+    img: myehac,
+    stack: ['Nuxt 2', 'Vuetify'],
+    project: 'Kementerian Kesehatan',
+    url: null,
+  },
+  {
+    label: 'Vue3 Movie',
+    vertical: true,
+    class: 'img-vertical',
+    img: vue3movie,
+    stack: ['VueJS 3', 'Tailwind'],
+    project: 'Proyek Pribadi',
+    url: 'https://vue3-movie.vercel.app',
+  },
+  {
+    label: 'Catatan Kajian',
+    vertical: true,
+    class: 'img-vertical',
+    img: catatankajian,
+    stack: ['SvelteKit', 'Tailwind'],
+    project: 'Proyek Pribadi',
+    url: 'https://catatan-kajian.vercel.app',
+  },
+  {
+    label: 'BliBli Clone',
+    vertical: false,
+    class: 'img-horizontal-blibli',
+    img: blibli,
+    stack: ['SvelteKit', 'Tailwind'],
+    project: 'Proyek Pribadi',
+    url: 'https://learn-svelte-sveltekit.vercel.app/project/blibli-clone',
+  },
+  {
+    label: 'Global Wakaf Corporation',
+    vertical: true,
+    class: 'img-horizontal',
+    img: gwc2,
+    stack: ['Nuxt 2', 'Typescript', 'Vuetify', 'Google Maps'],
+    project: 'Goiot',
+    url: null,
+  },
+  {
+    label: 'Cari Gawe',
+    vertical: false,
+    class: 'img-horizontal-carigawe',
+    img: carigawe2,
+    stack: ['ReactJS', 'Typescript', 'Sequelize', 'SocketIO', 'ExpressJS', 'MaterialUI'],
+    project: 'Proyek Pribadi',
+    url: null,
+  },
+  {
+    label: 'Catatan Uangku',
+    vertical: true,
+    class: 'img-vertical',
+    img: catatanuang,
+    stack: ['React Native', 'Typescript', 'Realm'],
+    project: 'Proyek Pribadi',
+    url: null,
+  },
+  {
+    label: 'Homi Smarthome',
+    vertical: false,
+    class: 'img-horizontal-homi',
+    img: homi2,
+    stack: ['React Native ', 'Typescript', 'MQTT'],
+    project: 'Goiot',
+    url: null,
+  },
+]
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class='max-w-3xl mt-10 mb-4'>
+    <div class='gap-4 space-y-4 p-2 columns-1 sm:columns-2 lg:columns-3'>
+      {
+        listProject.map((item) => (
+          <div class='break-inside-avoid mb-4 bg-black/[0.2] border border-[#393939] rounded-md'>
+            <div class='rounded-t-md shadow-lg relative justify-center flex flex-row flex-wrap gap-2 overflow-hidden'>
+              <div class='absolute z-20 top-0 right-0 text-xs p-1 rounded-lb-md bg-orange-500'>
+                {item.project}
+              </div>
+
+              <div class='h-56 flex justify-center w-full'>
+                <Image
+                  src={item.img}
+                  alt='banner'
+                  class:list={['h-56 z-10 w-auto object-contain lt-md:w-[calc(100%)', item.class]}
+                  loading={'eager'}
+                  fetchpriority={'high'}
+                />
+              </div>
+            </div>
+            <div class='text-[#c2c2c2] flex flex-col p-4'>
+              <div class='text-center font-bold mb-2'>
+                {item.url ? (
+                  <a
+                    href={item.url}
+                    target='_blank'
+                    rel='noreferrer'
+                    class='flex items-center justify-center gap-2 decoration-none text-[#c2c2c2]'
+                  >
+                    <span>{item.label}</span>
+                    <Image
+                      src={link}
+                      alt='banner'
+                      class='h-4 w-4 '
+                      loading={'eager'}
+                      fetchpriority={'high'}
+                    />
+                  </a>
+                ) : (
+                  item.label
+                )}
+              </div>
+              <div class='text-center text-sm'>{item.stack.join(', ')}</div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

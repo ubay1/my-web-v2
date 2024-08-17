@@ -1,0 +1,78 @@
+---
+import { Image } from 'astro:assets'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import link from '@icons/link.svg'
+import cert1 from '@images/pencapaian/cert1.webp'
+import cert2 from '@images/pencapaian/cert2.webp'
+import cert3 from '@images/pencapaian/cert3.webp'
+import cert4 from '@images/pencapaian/cert4.webp'
+import cert5 from '@images/pencapaian/cert5.webp'
+import cert6 from '@images/pencapaian/cert6.webp'
+import showdashboard from '@images/pencapaian/show-dashboard-generator-asik.webp'
+
+const pageTitle = 'Pencapaian'
+
+let listPencapaian = [
+  {
+    id: 1,
+    img: cert3,
+    title: 'Sertifikat Kementerian Kesehatan (Peduli Lindungi)',
+    desc: '',
+  },
+  {
+    id: 2,
+    img: showdashboard,
+    title: 'Presentasi Dashboard Generator ASIK oleh Kementerian Kesehatan',
+    desc: '',
+  },
+  { id: 3, img: cert1, title: 'Sertifikat Udemy (Web Design)', desc: '' },
+  {
+    id: 4,
+    img: cert2,
+    title: 'Sertifikat Udemy (Understanding Typescript)',
+    desc: '',
+  },
+  {
+    id: 5,
+    img: cert4,
+    title: 'Sertifikat Udemy (Beginner Photoshop to HTML5)',
+    desc: '',
+  },
+  {
+    id: 6,
+    img: cert5,
+    title: 'Sertifikat Udemy (Javascript Essentials)',
+    desc: '',
+  },
+  { id: 7, img: cert6, title: 'Sertifikat Udemy (Fullstack Javascript)', desc: '' },
+]
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class='max-w-3xl mt-10 mb-4'>
+    <div class='gap-4 space-y-4 p-2 columns-1 sm:columns-2 lg:columns-3'>
+      {
+        listPencapaian.map((item) => (
+          <div class='break-inside-avoid mb-4 bg-black/[0.2] border border-[#393939] rounded-md'>
+            <div class='rounded-t-md shadow-lg relative justify-center flex flex-row flex-wrap gap-2 overflow-hidden'>
+              <div class='h-56 flex justify-center w-full'>
+                <Image
+                  src={item.img}
+                  alt='img'
+                  class={'h-56 z-10 w-auto object-contain lt-md:w-[calc(100%)'}
+                  loading={'eager'}
+                  fetchpriority={'high'}
+                />
+              </div>
+            </div>
+
+            <div class='text-[#c2c2c2] flex flex-col p-4'>
+              <div class='text-center text-balance font-bold mb-2'>{item.title}</div>
+              <div class='text-center'>{item.desc}</div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>
