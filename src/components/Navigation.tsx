@@ -70,7 +70,10 @@ export default function Navigation({ children }: any) {
       {/* menu sidebar small screen */}
       <Sidebar listMenu={listMenu} />
       <div className="p-2 flex items-center md:hidden top-0 absolute z-[40] w-full bg-black/[0.5] backdrop-blur-sm">
-        <button onClick={() => setShowSidebarSmallScreen?.(!showSidebarSmallScreen)}>
+        <button
+          aria-label="btn-menu"
+          onClick={() => setShowSidebarSmallScreen?.(!showSidebarSmallScreen)}
+        >
           <Icon icon="ion-menu" className="w-10 h-10 " />
         </button>
         <div className="h-full flex-1 text-center pr-10 text-lg font-mono">Ubay Dillah</div>
