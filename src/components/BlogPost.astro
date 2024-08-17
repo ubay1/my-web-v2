@@ -1,4 +1,12 @@
 ---
-const { title, url } = Astro.props
+const { url, data } = Astro.props
 ---
-<li><a href={url}>{title}</a></li>
+
+<li
+  class='bg-black/[0.7] break-inside-avoid cursor-pointer relative rounded-lg hover:bg-gray-7 hover:bg-opacity-8'
+>
+  <a href={url} class='text-[#c2c2c2] p-4 flex flex-col'>
+    <div>{data.title}</div>
+    <div class='text-[10px] mt-2'>{data.date}</div>
+  </a>
+</li>
