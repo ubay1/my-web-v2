@@ -31,5 +31,6 @@
     "src/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.astro",
+    "src/components/BlogPost.tsx",
   ]
 }

@@ -2,7 +2,6 @@ import { Icon } from '@iconify/react'
 import Sidebar from './Sidebar'
 import { usePageStore } from '../stores/page'
 import React, { useState } from 'react'
-import Banner from '@images/banner.webp'
 import classNames from 'classnames'
 
 export default function Navigation({ children }: any) {
@@ -76,7 +75,13 @@ export default function Navigation({ children }: any) {
         </button>
         <div className="h-full flex-1 text-center pr-10 text-lg font-mono">Ubay Dillah</div>
       </div>
-      <div className="top-0 absolute w-full h-full">{children}</div>
+      <div className="top-0 absolute w-full h-full">
+        {children}
+        <div className="absolute bottom-0 right-0 flex items-center gap-2 bg-black/[0.5] p-1 rounded-t-md">
+          <Icon icon="ph:info-duotone" className="hidden xs:block" />
+          <div className="text-xs">Foto hanya pemanis, emang manis sih orangnya ^_^</div>
+        </div>
+      </div>
     </div>
   )
 }

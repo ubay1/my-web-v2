@@ -1,5 +1,5 @@
 ---
-import BlogPost from '@components/BlogPost.astro'
+import BlogPost from '@components/BlogPost'
 import BaseLayout from '@layouts/BaseLayout.astro'
 import { sortByDate } from '@utils/sortByDate'
 
@@ -8,9 +8,13 @@ const pageTitle = 'Catatan'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class='max-w-3xl'>
+  <div class='max-w-3xl mt-10'>
     <ul class='gap-4 space-y-4 p-2 columns-1 lg:columns-3 md:columns-2'>
-      {allBlogs.sort(sortByDate).map((post) => <BlogPost url={post.url} data={post.frontmatter} />)}
+      {
+        allBlogs
+          .sort(sortByDate)
+          .map((post) => <BlogPost client:load url={post.url} data={post.frontmatter} />)
+      }
     </ul>
   </div>
 </BaseLayout>
