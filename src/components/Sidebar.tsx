@@ -25,6 +25,7 @@ const Sidebar: React.FC<{ listMenu: { label: string; path: string; icon: string 
         )}
       >
         <button
+          aria-label="btn-close"
           className="bg-orange-500 absolute right-2 top-4 p-2 rounded-full"
           onClick={() => setShowSidebarSmallScreen?.(!showSidebarSmallScreen)}
         >
@@ -33,7 +34,7 @@ const Sidebar: React.FC<{ listMenu: { label: string; path: string; icon: string 
         {/* list menu */}
         <div className="p-4 flex flex-col gap-4 mt-8 h-full pb-36 overflow-auto">
           {listMenu.map((menu, idx) => (
-            <li
+            <div
               key={`icon-${idx}`}
               aria-current={
                 menu.path.split('/')[1] === window.location.pathname.split('/')[1]
@@ -54,7 +55,7 @@ const Sidebar: React.FC<{ listMenu: { label: string; path: string; icon: string 
                 <Icon icon={menu.icon} className="w-[20px] h-[20px]" />
                 <div>{menu.label}</div>
               </a>
-            </li>
+            </div>
           ))}
         </div>
       </div>

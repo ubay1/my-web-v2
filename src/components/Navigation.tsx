@@ -45,7 +45,7 @@ export default function Navigation({ children }: any) {
       {/* menu large screen */}
       <div className="hidden md:top-0 md:absolute md:z-[40] md:w-full bg-black/[0.5] backdrop-blur-sm md:flex md:justify-center md:items-center">
         {listMenu.map((item, idx) => (
-          <li
+          <div
             key={`icon-${idx}`}
             aria-current={
               item.path.split('/')[1] === window.location.pathname.split('/')[1]
@@ -64,7 +64,7 @@ export default function Navigation({ children }: any) {
               <Icon icon={item.icon} className={classNames('w-6 h-6')} />
               {item.label}
             </a>
-          </li>
+          </div>
         ))}
       </div>
       {/* menu sidebar small screen */}

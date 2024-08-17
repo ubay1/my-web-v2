@@ -4,7 +4,7 @@ body {
   color: #fff;
 }
 
-li[aria-current='page']::before {
+div[aria-current='page']::before {
   content: '';
   width: calc(100% - 4px);
   height: 0;
