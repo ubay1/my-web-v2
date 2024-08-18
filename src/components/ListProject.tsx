@@ -16,13 +16,15 @@ const ListProject: React.FC<{ data: any; index: number }> = ({ data, index }) =>
           {data.project}
         </div>
 
-        <div className="h-56 flex justify-center w-full">
+        <div className="h-56 w-full bg-[#393939] flex justify-center items-center">
           <LazyLoadImage
             src={data.img}
             alt={`img-${data.label}`}
-            width={'100%'}
-            height={'224px'}
             effect="blur"
+            className={classNames(
+              'h-56 z-10 w-auto object-contain lt-md:w-[calc(100%)]',
+              data.class,
+            )}
             wrapperProps={{
               style: { transitionDelay: '1s' },
             }}
