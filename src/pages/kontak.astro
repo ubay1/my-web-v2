@@ -1,0 +1,12 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro'
+import FormContact from '@components/contact/Form'
+
+const pageTitle = 'Kontak'
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class='max-w-3xl mt-10 mb-4'>
+    <FormContact client:load />
+  </div>
+</BaseLayout>

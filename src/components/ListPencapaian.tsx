@@ -1,9 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
-import ImgLoader from './LazyImg/ImgLoader'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
-import { Icon } from '@iconify/react'
 
 const ListProject: React.FC<{ data: any; index: number }> = ({ data, index }) => {
   return (
