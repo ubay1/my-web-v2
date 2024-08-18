@@ -1,28 +1,27 @@
 ---
-import { Image } from 'astro:assets'
+import ListProject from '@components/ListProject'
 import BaseLayout from '@layouts/BaseLayout.astro'
-import link from '@icons/link.svg'
-import asik from '@images/proyek/asik.webp'
-import blibli from '@images/proyek/blibli.webp'
-import carigawe2 from '@images/proyek/carigawe2.webp'
-import catatankajian from '@images/proyek/catatan-kajian.webp'
-import catatanuang from '@images/proyek/catatanuang2.webp'
-import myehac from '@images/proyek/myehac.webp'
-import gwc2 from '@images/proyek/gwc2.webp'
-import homi2 from '@images/proyek/homi2.webp'
-import sveltekitmovie from '@images/proyek/sveltekit-movie.webp'
-import vue3movie from '@images/proyek/vue3-movie.webp'
-import webinternalasik from '@images/proyek/web-internal-asik.webp'
-import kelolauang from '@images/proyek/kelola-uang.webp'
+// import asik from '/images/proyek/asik.webp'
+// import blibli from '/images/proyek/blibli.webp'
+// import carigawe2 from '/images/proyek/carigawe.webp'
+// import catatankajian from '/images/proyek/catatankajian.webp'
+// import catatanuang from '/images/proyek/catatanuang.webp'
+// import myehac from '/images/proyek/myehac.webp'
+// import gwc2 from '/images/proyek/gwc.webp'
+// import homi2 from '/images/proyek/homi.webp'
+// import sveltekitmovie from '/images/proyek/sveltekitmovie.webp'
+// import vue3movie from '/images/proyek/vue3movie.webp'
+// import webinternalasik from '/images/proyek/internalasik.webp'
+// import kelolauang from '/images/proyek/kelolauang.webp'
 
 const pageTitle = 'Proyek'
 
-const listProject = [
+const projects = [
   {
     label: 'Kelola Uang',
     vertical: true,
     class: 'img-vertical',
-    img: kelolauang,
+    img: '/proyek/kelolauang.webp',
     stack: ['Ionic', 'Capacitor', 'Vue 3', 'Typescript', 'Tailwind', 'Sqlite'],
     project: 'Proyek Pribadi',
     url: null,
@@ -31,7 +30,7 @@ const listProject = [
     label: 'ASIK Enkrip Dekrip',
     vertical: false,
     class: 'img-horizontal-blibli',
-    img: webinternalasik,
+    img: '/proyek/internalasik.webp',
     stack: ['SvelteKit', 'Typescript', 'Skeleton UI', 'Tailwind'],
     project: 'Web Internal Tim ASIK',
     url: null,
@@ -40,7 +39,7 @@ const listProject = [
     label: 'Movie Kit',
     vertical: false,
     class: 'img-horizontal-blibli',
-    img: sveltekitmovie,
+    img: '/proyek/sveltekitmovie.webp',
     stack: ['SvelteKit', 'Typescript', 'UnoCss'],
     project: 'Proyek Pribadi',
     url: 'https://movie-kit.vercel.app',
@@ -49,7 +48,7 @@ const listProject = [
     label: 'Dashboard Aplikasi Sehat Indinesiaku',
     vertical: false,
     class: 'img-horizontal-asik',
-    img: asik,
+    img: '/proyek/asik.webp',
     stack: ['Nuxt 3', 'Pinia', 'Typescript', 'UnoCss'],
     project: 'Kementerian Kesehatan',
     url: null,
@@ -58,7 +57,7 @@ const listProject = [
     label: 'eHAC Peduli Lindungi',
     vertical: true,
     class: 'img-vertical',
-    img: myehac,
+    img: '/proyek/myehac.webp',
     stack: ['Nuxt 2', 'Vuetify'],
     project: 'Kementerian Kesehatan',
     url: null,
@@ -67,7 +66,7 @@ const listProject = [
     label: 'Vue3 Movie',
     vertical: true,
     class: 'img-vertical',
-    img: vue3movie,
+    img: '/proyek/vue3movie.webp',
     stack: ['VueJS 3', 'Tailwind'],
     project: 'Proyek Pribadi',
     url: 'https://vue3-movie.vercel.app',
@@ -76,7 +75,7 @@ const listProject = [
     label: 'Catatan Kajian',
     vertical: true,
     class: 'img-vertical',
-    img: catatankajian,
+    img: '/proyek/catatankajian.webp',
     stack: ['SvelteKit', 'Tailwind'],
     project: 'Proyek Pribadi',
     url: 'https://catatan-kajian.vercel.app',
@@ -85,7 +84,7 @@ const listProject = [
     label: 'BliBli Clone',
     vertical: false,
     class: 'img-horizontal-blibli',
-    img: blibli,
+    img: '/proyek/blibli.webp',
     stack: ['SvelteKit', 'Tailwind'],
     project: 'Proyek Pribadi',
     url: 'https://learn-svelte-sveltekit.vercel.app/project/blibli-clone',
@@ -94,7 +93,7 @@ const listProject = [
     label: 'Global Wakaf Corporation',
     vertical: true,
     class: 'img-horizontal',
-    img: gwc2,
+    img: '/proyek/gwc.webp',
     stack: ['Nuxt 2', 'Typescript', 'Vuetify', 'Google Maps'],
     project: 'Goiot',
     url: null,
@@ -103,7 +102,7 @@ const listProject = [
     label: 'Cari Gawe',
     vertical: false,
     class: 'img-horizontal-carigawe',
-    img: carigawe2,
+    img: '/proyek/carigawe.webp',
     stack: ['ReactJS', 'Typescript', 'Sequelize', 'SocketIO', 'ExpressJS', 'MaterialUI'],
     project: 'Proyek Pribadi',
     url: null,
@@ -112,7 +111,7 @@ const listProject = [
     label: 'Catatan Uangku',
     vertical: true,
     class: 'img-vertical',
-    img: catatanuang,
+    img: '/proyek/catatanuang.webp',
     stack: ['React Native', 'Typescript', 'Realm'],
     project: 'Proyek Pribadi',
     url: null,
@@ -121,7 +120,7 @@ const listProject = [
     label: 'Homi Smarthome',
     vertical: false,
     class: 'img-horizontal-homi',
-    img: homi2,
+    img: '/proyek/homi.webp',
     stack: ['React Native ', 'Typescript', 'MQTT'],
     project: 'Goiot',
     url: null,
@@ -133,47 +132,8 @@ const listProject = [
   <div class='max-w-3xl mt-10 mb-4'>
     <div class='gap-4 space-y-4 p-2 columns-1 sm:columns-2 lg:columns-3'>
       {
-        listProject.map((item) => (
-          <div class='break-inside-avoid mb-4 bg-black/[0.2] border border-[#393939] rounded-md'>
-            <div class='rounded-t-md shadow-lg relative justify-center flex flex-row flex-wrap gap-2 overflow-hidden'>
-              <div class='absolute z-20 top-0 right-0 text-xs p-1 rounded-lb-md bg-orange-500 text-black'>
-                {item.project}
-              </div>
-
-              <div class='h-56 flex justify-center w-full'>
-                <Image
-                  src={item.img}
-                  alt='banner'
-                  class:list={['h-56 z-10 w-auto object-contain lt-md:w-[calc(100%)', item.class]}
-                  loading={'lazy'}
-                />
-              </div>
-            </div>
-            <div class='text-[#c2c2c2] flex flex-col p-4'>
-              <div class='text-center font-bold mb-2'>
-                {item.url ? (
-                  <a
-                    href={item.url}
-                    target='_blank'
-                    rel='noreferrer'
-                    class='flex items-center justify-center gap-2 decoration-none text-[#c2c2c2]'
-                  >
-                    <span>{item.label}</span>
-                    <Image
-                      src={link}
-                      alt='banner'
-                      class='h-4 w-4 '
-                      loading={'eager'}
-                      fetchpriority={'high'}
-                    />
-                  </a>
-                ) : (
-                  item.label
-                )}
-              </div>
-              <div class='text-center text-sm'>{item.stack.join(', ')}</div>
-            </div>
-          </div>
+        projects.map((item: any, idx: number) => (
+          <ListProject data={item} index={idx} client:only />
         ))
       }
     </div>
