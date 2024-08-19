@@ -5,18 +5,31 @@ const FormContact = () => {
   const [name, setName] = React.useState('')
   const [email, setEmail] = React.useState('')
   const [pesan, setPesan] = React.useState('')
+  const [loading, setLoading] = React.useState(false)
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    setLoading(true)
     const formData = new FormData(e.target as HTMLFormElement)
     try {
       await fetch('/api/kontak', {
         method: 'POST',
         body: formData,
       })
-      toast.success('Pesan telah terkirim')
+      setName('')
+      setEmail('')
+      setPesan('')
+      toast.success('Pesan telah terkirim', {
+        style: {
+          borderRadius: '10px',
+          background: '#393939',
+          color: '#fff',
+        },
+      })
     } catch (error) {
       console.log('error = ', error)
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -32,7 +45,7 @@ const FormContact = () => {
           name="name"
           placeholder="Masukkan nama"
           type="text"
-          defaultValue={name}
+          value={name}
           onChange={(e) => setName(e.target.value)}
         />
       </div>
@@ -68,11 +81,12 @@ const FormContact = () => {
         <button
           className="bg-black/[0.2] border border-[#393939] hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none disabled:bg-gray-600 disabled:text-gray-300 disabled:opacity-20 disabled:cursor-not-allowed"
           type="submit"
-          disabled={[name, email, pesan].includes('')}
+          disabled={[name, email, pesan].includes('') || loading}
         >
-          Kirim
+          {loading ? 'Mengirim pesan..' : 'Kirim'}
         </button>
       </div>
+      <Toaster />
     </form>
   )
 }
