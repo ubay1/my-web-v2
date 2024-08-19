@@ -14,6 +14,7 @@
     "@astrojs/react": "^3.6.2",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^7.7.2",
     "@fontsource-variable/rubik": "^5.0.22",
     "@fontsource/homemade-apple": "^5.0.19",
     "@react-email/components": "^0.0.22",
