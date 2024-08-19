@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: Generic function dengan type constraints pada Typescript
 description: <T extends string>  Constraints (extends) digunakan untuk membatasi jenis (type) parameter generik ke subset tertentu dari tipe lain. Ini memastikan bahwa parameter tersebut memiliki bentuk tertentu atau memenuhi kriteria tertentu.
 imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg

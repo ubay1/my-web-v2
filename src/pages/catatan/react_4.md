@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: React - Events, Passing event as props,  Event modifier, Emit
 description:
 imagePath: https://wallpapercave.com/wp/wp4924054.jpg

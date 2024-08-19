@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: Apa itu Design Pattern ?
 description: ''
 imagePath: https://img.freepik.com/free-vector/color-abstract-shape-seamless-pattern_1409-4178.jpg

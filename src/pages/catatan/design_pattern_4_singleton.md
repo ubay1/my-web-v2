@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: Design Pattern Creational - Singleton
 description: ''
 imagePath: https://refactoring.guru/images/patterns/content/singleton/singleton-2x.png

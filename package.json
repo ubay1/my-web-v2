@@ -18,6 +18,7 @@
     "@fontsource-variable/rubik": "^5.0.22",
     "@fontsource/homemade-apple": "^5.0.19",
     "@react-email/components": "^0.0.22",
+    "@shikijs/transformers": "^1.14.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.13.3",

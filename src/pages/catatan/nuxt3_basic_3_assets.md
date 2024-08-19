@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: NUXT 3 basic - assets (public/, assets/)
 description:
 imagePath: https://img-c.udemycdn.com/course/750x422/4395942_c476_2.jpg

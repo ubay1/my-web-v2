@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: Design Pattern Behavioral - Command
 description: ''
 imagePath: https://refactoring.guru/images/patterns/content/command/command-en-2x.png

@@ -1,38 +1,73 @@
 ---
-import BaseLayout from './BaseLayout.astro';
+import { Image } from 'astro:assets'
+import back from '@icons/back.svg'
+import '@fontsource/homemade-apple'
+import '@fontsource-variable/rubik'
+import '@css/global.css'
 
-const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props
 ---
-<BaseLayout pageTitle={frontmatter.title}>
-  <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
-  <p><em>{frontmatter.description}</em></p>
-  <p>Written by: {frontmatter.author}</p>
-  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
 
-  <div class="tags">
-    {frontmatter.tags.map((tag: any) => (
-      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-    ))}
-  </div>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/icon' href='/favicon.ico' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='description' content='Web pribadi, buat belajar aja' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{frontmatter.title}</title>
+    <style></style>
+    <script>
+      function goBack() {
+        window.history.back()
+      }
 
-  <slot />
-</BaseLayout>
-<style>
-  a {
-    color: #00539F;
-  }
+      const btnBack = document.getElementById('btn-back')
 
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-  }
+      btnBack?.addEventListener('click', () => goBack())
+    </script>
+  </head>
+  <body class='max-w-3xl m-auto !text-[#c2c2c2]'>
+    <div class='relative w-full h-[300px]'>
+      <!-- <Navigation client:load> -->
+      <button
+        class='absolute top-4 left-4 bg-white rounded-full p-1 hover:bg-gray-200'
+        id='btn-back'
+      >
+        <Image
+          src={back}
+          alt={'back'}
+          class='w-6 h-6 object-cover object-center'
+          loading={'eager'}
+          fetchpriority={'high'}
+        />
+      </button>
+      <Image
+        src={frontmatter.imagePath}
+        alt={frontmatter.imageAlt}
+        class='w-full h-full object-cover object-center bg-white'
+        loading={'eager'}
+        fetchpriority={'high'}
+        inferSize={true}
+      />
+      <!-- </Navigation> -->
+    </div>
 
-  .tag {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: .5em;
-    padding: .5em 1em;
-    font-size: 1.15em;
-    background-color: #F8FCFD;
-  }
-</style>
+    <div class='flex flex-col justify-center mb-8'>
+      <div class='my-4'>
+        {
+          frontmatter.tags.map((tag: any) => (
+            <a
+              href={`/tags/${tag}`}
+              class='bg-black/[0.2] text-xs border border-[#393939] p-2 rounded-md hover:bg-black'
+            >
+              #{tag}
+            </a>
+          ))
+        }
+      </div>
+
+      <slot />
+    </div>
+  </body>
+</html>

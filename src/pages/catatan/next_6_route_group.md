@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: NEXT - Route Group (parentName)
 description:
 imagePath: https://wallpapercave.com/wp/wp11846968.png

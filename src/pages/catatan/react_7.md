@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: React - Context
 description:
 imagePath: https://wallpapercave.com/wp/wp4924054.jpg

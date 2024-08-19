@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: NEXT - Dynamic Route, Catch-all Segments, Optional Catch-all Segments
 description: Dynamic route, Catch-all Segments, Optional Catch-all Segments
 imagePath: https://wallpapercave.com/wp/wp11846968.png

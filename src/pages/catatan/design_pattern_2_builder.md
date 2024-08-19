@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: Design Pattern Creational - Builder
 description: ''
 imagePath: https://refactoring.guru/images/patterns/content/builder/builder-en-2x.png

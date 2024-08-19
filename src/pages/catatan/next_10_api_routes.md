@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: NEXT - Route Handler (Api Routes)
 description: Api routes, caching data
 imagePath: https://wallpapercave.com/wp/wp11846968.png

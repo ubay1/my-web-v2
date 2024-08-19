@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: Design Pattern Structural - Adapter
 description: ''
 imagePath: https://refactoring.guru/images/patterns/content/adapter/adapter-en-2x.png
