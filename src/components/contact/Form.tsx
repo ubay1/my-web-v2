@@ -1,4 +1,5 @@
 import React, { type FormEvent } from 'react'
+import toast, { Toaster } from 'react-hot-toast'
 
 const FormContact = () => {
   const [name, setName] = React.useState('')
@@ -9,12 +10,11 @@ const FormContact = () => {
     e.preventDefault()
     const formData = new FormData(e.target as HTMLFormElement)
     try {
-      const response = await fetch('/api/kontak', {
+      await fetch('/api/kontak', {
         method: 'POST',
         body: formData,
       })
-      const data = await response.json()
-      console.log('res = ', data)
+      toast.success('Pesan telah terkirim')
     } catch (error) {
       console.log('error = ', error)
     }
