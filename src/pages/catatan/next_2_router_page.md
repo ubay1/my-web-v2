@@ -17,9 +17,12 @@ tags:
 ![router-1](https://nextjs.org/_next/image?url=%2Fdocs%2Fdark%2Froute-segments-to-path-segments.png&w=3840&q=75)
 ![router-2](https://nextjs.org/_next/image?url=%2Fdocs%2Fdark%2Fdefining-routes.png&w=3840&q=75)
 
+
 - **./src/app/page.tsx**: ini adalah route ('/')
 - **./src/app/dashboard/page.tsx**: ini adalah route ('/dashboard')
 - **./src/app/dashboard/settings/page.tsx**: ini adalah route ('/dashboard/settings')
+
+<br>
 
 > Note: app router ini menerapkan filebased router seperti sveltekit.
 
@@ -44,6 +47,7 @@ export default function Home() {
 	return <ul>{listLearn}</ul>;
 }
 ```
+<br>
 
 2. pada router/page.tsx tambahkan code ini.
 
@@ -62,6 +66,8 @@ File khusus layout.js, page.js, dan template.js memungkinkan kita untuk membuat 
 ### Root Layout (wajib)
 
 > layout ini berbeda dengan sveltekit, kalau di sveltekit jika kita menambahkan layout pada tiap-tiap folder route, maka root layout tidak terpakai. itu karena layout di svelte hanya seperti komponen biasa saja, beda dengan di nextjs yang dimana root layout harus ada tag html dan body, kalau gaada akan error.
+
+<br>
 
 > hanya di root layout yang dapat menggunakan tag body & html
 

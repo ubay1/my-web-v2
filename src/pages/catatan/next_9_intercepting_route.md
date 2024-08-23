@@ -119,6 +119,7 @@ export default function PhotoModal({ params: { id: photoId } }: { params: { id: 
 	return <Modal>{photoId}</Modal>;
 }
 ```
+<br>
 
 > perlu diingat, nama dari (.)detail/[id]/page.tsx ini menyesuaikan dengan nama & structure folder **detail/[id]/page.tsx**. lihat gambar dibawah jika masih bingung.
 

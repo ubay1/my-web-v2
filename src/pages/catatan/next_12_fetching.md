@@ -14,8 +14,7 @@ tags:
 
 ## Fetching via server dengan fetch
 
-Next.js memperluas API Web fetch asli
-
+Next.js memperluas API Web fetch asli.
 untuk memungkinkan kita mengonfigurasi perilaku caching dan validasi ulang untuk setiap permintaan fetch di server. React memperluas fetch untuk secara otomatis memoisasi permintaan fetch saat merender pohon komponen React.
 
 > kita dapat menggunakan fetch dengan async/await di **Server Components, di Route Handlers, dan di Server Actions**.
@@ -40,6 +39,8 @@ export default async function Page() {
 	return <main>{JSON.stringify(data)}</main>;
 }
 ```
+
+<br>
 
 > Catatan:
 >
@@ -106,12 +107,11 @@ export default async function action() {
 }
 ```
 
-### Fetch tidak akan mencache
-
-1. **Cache: 'no-store'** ditambahkan ke fetch.
-2. Opsi **revalidate: 0** ditambahkan ke fetch individual.
-3. Fetch berada di dalam Router Handler yang menggunakan metode POST.
-4. Permintaan fetch dilakukan setelah penggunaan header atau cookie.
-5. Opsi segmen rute const **dynamic = 'force-dynamic'** digunakan.
-6. Opsi segmen rute fetchCache dikonfigurasi untuk melewatkan cache secara default.
-7. Fetch menggunakan header Otorisasi atau Cookie dan ada permintaan yang tidak di-cache di atasnya dalam pohon komponen.
+> Fetch tidak akan mencache
+> 1. **Cache: 'no-store'** ditambahkan ke fetch.
+> 2. Opsi **revalidate: 0** ditambahkan ke fetch individual.
+> 3. Fetch berada di dalam Router Handler yang menggunakan metode POST.
+> 4. Permintaan fetch dilakukan setelah penggunaan header atau cookie.
+> 5. Opsi segmen rute const **dynamic = 'force-dynamic'** digunakan.
+> 6. Opsi segmen rute fetchCache dikonfigurasi untuk melewatkan cache secara default.
+> 7. Fetch menggunakan header Otorisasi atau Cookie dan ada permintaan yang tidak di-cache di atasnya dalam pohon komponen.

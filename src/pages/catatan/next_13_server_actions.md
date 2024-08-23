@@ -13,8 +13,10 @@ tags:
 ---
 
 ## Server Actions
+<br>
 
 > Server Actions adalah kita melakukan mutasi data langsung dikomponennya. jadi kita tidak perlu membuat **endpoint api** untuk melakukan mutasi data. syarat menggunakan server actions kita harus menggunkaan form dan memberikan action di form, atau bisa juga di button dengan nama formAction.
+
 
 ### Contoh penggunaan inline dan form action
 

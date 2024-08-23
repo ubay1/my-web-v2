@@ -52,4 +52,6 @@ export async function GET() {
 }
 ```
 
+<br>
+
 > Response.json() hanya berlaku untuk **TypeScript 5.2**. Jika kita menggunakan versi TypeScript yang lebih rendah, kita bisa menggunakan **NextResponse.json()**.

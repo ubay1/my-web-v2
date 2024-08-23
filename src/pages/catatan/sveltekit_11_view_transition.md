@@ -44,6 +44,7 @@ di web ini menggunakan transition shared element di bagian menu dan blogs.
 	}
 }
 ```
+<br>
 
 2. pada komponen list blogs tambahkan kode ini
 
@@ -80,7 +81,11 @@ export const load = (async ({ fetch }) => {
 </a>
 ```
 
+<br>
+
 > lihat pada kode **style:--tag="h-test"**, kode ini yang akan diset pada root element, dan pada global.css kita cukup memanggilnya dengan **--tag**, maka otomatis **view-transition-name** yang ada pada **global.css** akan merujuk pada **style:--tag="h-test"**. <br> **Catatan:** nama view-transition tidak boleh ada spasi
+
+<br>
 
 3. pada detail blogs kita harus menyamakan nama **style tag-nya** seperti pada komponen list blogs. jika tidak maka view-transiton tidak akan jalan.
 
