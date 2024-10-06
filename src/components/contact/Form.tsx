@@ -71,7 +71,7 @@ const FormContact = () => {
           className="shadow appearance-none border border-[#393939] rounded w-full py-3 px-3 text-[#919191] leading-tight focus:outline-none bg-black/[0.2]"
           id="pesan"
           name="pesan"
-          placeholder="cth: Bang aku ada lowongan nih...."
+          placeholder="cth: Bang tolong buatin aku web"
           rows={6}
           value={pesan}
           onChange={(e) => setPesan(e.target.value)}

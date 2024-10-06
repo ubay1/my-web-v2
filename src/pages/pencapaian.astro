@@ -6,38 +6,41 @@ const pageTitle = 'Pencapaian'
 
 let listPencapaian = [
   {
-    id: 1,
+    img: '/pencapaian/identik-asik.jpg',
+    title: 'Juara 2 Kompetisi Seleksi Nasional Produk TIK (IdenTIK) tahun 2022',
+    desc: '',
+  },
+  {
+    img: '/pencapaian/identik-satusehat.jpg',
+    title: 'Juara 1 Kompetisi Seleksi Nasional Produk TIK (IdenTIK) tahun 2022',
+    desc: '',
+  },
+  {
     img: '/pencapaian/cert3.webp',
     title: 'Sertifikat Kementerian Kesehatan (Peduli Lindungi)',
     desc: '',
   },
   {
-    id: 2,
     img: '/pencapaian/show-dashboard-generator-asik.webp',
     title: 'Presentasi Dashboard Generator ASIK oleh Kementerian Kesehatan',
     desc: '',
   },
-  { id: 3, img: '/pencapaian/cert1.webp', title: 'Sertifikat Udemy (Web Design)', desc: '' },
   {
-    id: 4,
     img: '/pencapaian/cert2.webp',
     title: 'Sertifikat Udemy (Understanding Typescript)',
     desc: '',
   },
   {
-    id: 5,
     img: '/pencapaian/cert4.webp',
     title: 'Sertifikat Udemy (Beginner Photoshop to HTML5)',
     desc: '',
   },
   {
-    id: 6,
     img: '/pencapaian/cert5.webp',
     title: 'Sertifikat Udemy (Javascript Essentials)',
     desc: '',
   },
   {
-    id: 7,
     img: '/pencapaian/cert6.webp',
     title: 'Sertifikat Udemy (Fullstack Javascript)',
     desc: '',
@@ -46,8 +49,8 @@ let listPencapaian = [
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class='max-w-3xl mt-10 mb-4'>
-    <div class='gap-4 space-y-4 p-2 columns-1 sm:columns-2 lg:columns-3'>
+  <div class="max-w-3xl mt-10 mb-4">
+    <div class="gap-4 space-y-4 p-2 columns-1 sm:columns-2 lg:columns-3">
       {
         listPencapaian.map((item: any, idx: number) => (
           <ListPencapaian data={item} index={idx} client:only />
