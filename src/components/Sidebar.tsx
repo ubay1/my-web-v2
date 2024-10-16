@@ -9,10 +9,6 @@ const Sidebar: React.FC<{ listMenu: { label: string; path: string; icon: string 
   const { pageActive, showSidebarSmallScreen, setPageActive, setShowSidebarSmallScreen } =
     usePageStore()
 
-  React.useEffect(() => {
-    console.log(window.location)
-  }, [])
-
   return (
     <div className="block md:hidden">
       <div
