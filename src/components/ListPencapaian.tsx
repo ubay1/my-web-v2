@@ -3,7 +3,7 @@ import React from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 
-const ListProject: React.FC<{ data: any; index: number }> = ({ data, index }) => {
+const ListPencapaian: React.FC<{ data: any; index: number }> = ({ data, index }) => {
   return (
     <div
       key={`list-proyek-${index}`}
@@ -32,4 +32,4 @@ const ListProject: React.FC<{ data: any; index: number }> = ({ data, index }) =>
   )
 }
 
-export default ListProject
+export default ListPencapaian
