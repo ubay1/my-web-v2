@@ -32,7 +32,7 @@ export const POST: APIRoute = async ({ request }) => {
     // html: emailHtml,
   }
 
-  const send = await transporter.sendMail(options)
+  await transporter.sendMail(options)
   return new Response(
     JSON.stringify({
       message: 'Pesan terkirim!',
