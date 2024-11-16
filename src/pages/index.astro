@@ -16,6 +16,7 @@ import uno from '@icons/uno.svg'
 import svelte from '@icons/svelte.svg'
 import ts from '@icons/ts.svg'
 import js from '@icons/js.svg'
+import {testDynamicInterface} from '../utils/test'
 
 const listStack = [
   { label: 'javascript', img: js },
@@ -39,7 +40,7 @@ const listStack = [
       <div
         class='text-4xl font-bold text-balance text-center flex justify-center items-center flex-wrap gap-2 text-[#c2c2c2]'
       >
-        Hallo, Saya Ubay
+        Hallo, Saya Ubay {testDynamicInterface}
         <Image src={hand} alt='hand' class='w-10 h-10' loading={'eager'} fetchpriority={'high'} />
       </div>
 
