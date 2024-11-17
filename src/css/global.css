@@ -16,6 +16,7 @@ div[aria-current='page']::before {
 
 h1 {
   margin-top: 20px;
+  margin-bottom: 10px;
   letter-spacing: -0.02em;
   line-height: 32px;
   font-size: 32px;
@@ -59,7 +60,13 @@ ol {
   list-style: decimal;
   margin-left: 20px;
   /* margin-top: 10px; */
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
+}
+ul {
+  list-style: disc;
+  margin-left: 20px;
+  /* margin-top: 10px; */
+  /* margin-bottom: 10px; */
 }
 
 kbd {

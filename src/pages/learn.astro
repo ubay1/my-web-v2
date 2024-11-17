@@ -5,6 +5,7 @@ import { testSymbolTypes } from '../utils/learn/symbol-types'
 import { testIndexSignature } from '../utils/learn/index-signature'
 import { HttpStatus, checkHttpStatus } from '../utils/learn/enums'
 import { printLength } from '../utils/learn/type-predicate'
+import { result1, result2 } from '../utils/learn/function_overload'
 ---
 
 <BaseLayout pageTitle='Learn'>
@@ -23,6 +24,11 @@ import { printLength } from '../utils/learn/type-predicate'
       <br />
       <br />
       Type predicate = {JSON.stringify(printLength('Hello, Ubay!'))}
+      <br />
+      <br />
+      Function overload = {JSON.stringify(result1)}
+      <br />
+      <br />
     </div>
   </div>
 </BaseLayout>
