@@ -14,4 +14,8 @@ export function testDynamicInterface() {
   const b = funcDnamicInterface({ ba: 'baba' }, 12)
   console.log(a.value1)
   console.log(b.value2)
+  return {
+    a,
+    b,
+  }
 }

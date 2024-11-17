@@ -55,6 +55,13 @@ blockquote > ol {
   padding-right: 10px;
 }
 
+ol {
+  list-style: decimal;
+  margin-left: 20px;
+  /* margin-top: 10px; */
+  margin-bottom: 10px;
+}
+
 kbd {
   background-color: #f97315 !important;
   color: #000 !important;

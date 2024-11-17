@@ -48,7 +48,7 @@ tags:
 <!-- @filename: bind:value - Select -->
 <script>
 	let questions = [
-		{ id: 1, text: `kamu sekolah dimana ?` },
+		{ id: 1, text: `kita sekolah dimana ?` },
 		{ id: 2, text: `siapa nama ibumu ?` },
 		{ id: 3, text: `nama kucing peliharaanmu?` }
 	];

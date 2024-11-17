@@ -6,7 +6,7 @@ imagePath: https://img-c.udemycdn.com/course/750x422/4395942_c476_2.jpg
 imageAlt: nuxt3
 viewTransitionName: 'nuxt3-views'
 date: 2023-05-25 10:55
-icon: 'devicon:typescript'
+icon: 'vscode-icons:file-type-nuxt'
 tags:
   - nuxt3
   - vue

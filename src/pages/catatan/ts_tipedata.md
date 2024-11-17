@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownLayout.astro
 title: Tipe data pada Typescript
-description: Belajar tipe data yang ada pada typescript
+description: string, boolean, number, Symbol, Array, any, tuples, enum, union, literal, type, unknown, assertion
 imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
 imageAlt: ts
 viewTransitionName: 'ts-tipedata'
@@ -40,16 +40,37 @@ testObjectType.age = 2;
 console.log('type object = ', testObjectType);
 ```
 
+## Symbol types
+Simbol adalah pengidentifikasi unik yang dapat digunakan sebagai kunci properti dalam objek untuk mencegah konflik penamaan.
+
+```ts
+type Obj = {
+  [sym: symbol]: number
+}
+
+const a = Symbol('a')
+const b = Symbol('b')
+let obj: Obj = {}
+obj[a] = 123
+obj[b] = 456
+
+console.log(obj[a]) // 123
+console.log(obj[b]) // 456
+
+```
+
 ## array types
 
 ```ts twoslash
 const arrayType: string[] = ['a', 'b'];
+const arrayType2: Array<string> = ['a', 'b'];
+const arrayType3: Array<string | number> = ['a', 'b'];
 console.log('type array = ', arrayType);
 ```
 
 ## tuples types
 
-- tuples types mirip seperti union types namun bekerja di array.
+- tuples types mirip seperti union, literal, type, unknown, assertion types namun bekerja di array.
 - kita bisa memasukan data yang sesuai dengan type tuples yang kita berikan, namun jika kita masukan suatu nilai namun dengan tipe yang tidak ada di tuples maka akan menampilkan error.
 
 ```ts twoslash
@@ -210,8 +231,6 @@ if (typeof testUnknownType1 === 'string') {
   };
   ```
 
-````
-
 1. Fungsi yang melempar kesalahan, contohnya dibawah ini.
 
 ```ts twoslash
@@ -244,4 +263,3 @@ foo.bar = 1;
 foo.bas = 'hi';
 console.log(foo);
 ```
-````

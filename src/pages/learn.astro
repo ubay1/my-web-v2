@@ -1,0 +1,28 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro'
+import { testDynamicInterface } from '../utils/learn/generic-interface'
+import { testSymbolTypes } from '../utils/learn/symbol-types'
+import { testIndexSignature } from '../utils/learn/index-signature'
+import { HttpStatus, checkHttpStatus } from '../utils/learn/enums'
+import { printLength } from '../utils/learn/type-predicate'
+---
+
+<BaseLayout pageTitle='Learn'>
+  <div class='max-w-2xl'>
+    <div class='flex flex-col mt-4 p-4'>
+      Dinamis interface = {JSON.stringify(testDynamicInterface())}
+      <br />
+      <br />
+      Symbol types = {JSON.stringify(testSymbolTypes())}
+      <br />
+      <br />
+      Index signature = {JSON.stringify(testIndexSignature())}
+      <br />
+      <br />
+      Enum = {JSON.stringify(checkHttpStatus(HttpStatus.OK))}
+      <br />
+      <br />
+      Type predicate = {JSON.stringify(printLength('Hello, Ubay!'))}
+    </div>
+  </div>
+</BaseLayout>
