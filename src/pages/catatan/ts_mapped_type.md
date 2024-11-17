@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownLayout.astro
 title: Mapped Type
-description: membuat tipe baru berdasarkan tipe yang ada dengan memetakan properti tipe sumber, builtin (partial, required, pick, omit)
+description: membuat tipe baru berdasarkan tipe yang ada dengan memetakan properti tipe sumber, builtin (partial, required, pick, omit, record, exclude, extract)
 imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
 imageAlt: ts
 viewTransitionName: 'ts-mapped-types'
@@ -12,7 +12,7 @@ tags:
 ---
 
 # Apa itu Mapped Types di TypeScript?
-Mapped Types adalah fitur di TypeScript yang memungkinkan kamu membuat tipe baru berdasarkan properti tipe lain, dengan cara memetakan properti dari tipe sumber.
+Mapped Types adalah fitur di TypeScript yang memungkinkan kita membuat tipe baru berdasarkan properti tipe lain, dengan cara memetakan properti dari tipe sumber.
 
 Mapped types berguna untuk mengotomatisasi pembuatan tipe yang memiliki pola tertentu, seperti:
 - Membuat semua properti menjadi opsional.
@@ -152,6 +152,64 @@ type UserWithoutEmail = {
   address: string;
 };
 ```
+
+## 6. Record<K,V>
+menentukan tipe key dan value sendiri dalam sebuah object
+```ts
+type UserRoles = "admin" | "editor" | "viewer";
+
+const userPermissions: Record<UserRoles, boolean> = {
+  admin: true,
+  editor: true,
+  viewer: false,
+};
+
+// userPermissions hanya bisa memiliki key "admin", "editor", dan "viewer" dengan value boolean.
+```
+
+```ts
+// Nested Record<K,V>
+type Locale = "en" | "id";
+type Page = "home" | "about";
+
+const translations: Record<Locale, Record<Page, string>> = {
+  en: {
+    home: "Welcome",
+    about: "About Us",
+  },
+  id: {
+    home: "Selamat Datang",
+    about: "Tentang Kami",
+  },
+};
+
+console.log(translations.id.home); // "Selamat Datang"
+```
+
+## 7. Exclude<T,U>
+menghapus tipe tertentu dari sebuah union type, atau bisa dikatakan menghasilkan tipe baru yang hanya berisi elemen dari T yang tidak termasuk dalam U.
+
+```ts
+type Roles = "admin" | "editor" | "viewer";
+
+type NonAdminRoles = Exclude<Roles, "admin">;
+// type NonAdminRoles: "editor" | "viewer"
+```
+
+```ts
+interface User {
+  id: number;
+  name: string;
+  isAdmin: boolean;
+}
+
+type UserKeys = keyof User; // "id" | "name" | "isAdmin"
+type NonAdminKeys = Exclude<UserKeys, "isAdmin">;
+// NonAdminKeys: "id" | "name"
+```
+
+## 8. Extract<T,U>
+kebalikan dari exclude
 
 # Custom mapped types
 1. Mengubah Properti null Menjadi Opsional

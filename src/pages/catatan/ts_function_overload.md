@@ -12,7 +12,7 @@ tags:
 ---
 
 # Apa itu Overloads di TypeScript?
-Overloads di TypeScript memungkinkan kamu mendefinisikan beberapa signature untuk sebuah fungsi dengan cara yang berbeda, tergantung pada jenis atau jumlah parameter yang diterima.
+Overloads di TypeScript memungkinkan kita mendefinisikan beberapa signature untuk sebuah fungsi dengan cara yang berbeda, tergantung pada jenis atau jumlah parameter yang diterima.
 
 Ini sering digunakan untuk:
 - Memberikan fleksibilitas pada fungsi.
@@ -26,12 +26,12 @@ Memungkinkan sebuah fungsi menerima berbagai kombinasi parameter dengan tipe yan
 Overloads memungkinkan fungsi mengembalikan tipe yang berbeda berdasarkan inputnya.
 
 3. Peningkatan Type Safety
-Dengan overloads, kamu dapat memandu pengguna fungsi untuk memberikan input yang valid sesuai dengan kebutuhan.
+Dengan overloads, kita dapat memandu pengguna fungsi untuk memberikan input yang valid sesuai dengan kebutuhan.
 
 # Contoh penggunaan overload
 
 ## 1. Fungsi dengan Parameter Berbeda
-Misalkan kamu membuat fungsi combine yang dapat menjumlahkan angka atau menggabungkan string:
+Misalkan kita membuat fungsi combine yang dapat menjumlahkan angka atau menggabungkan string:
 
 ```ts
 function combine(a: number, b: number): number; // Overload 1
@@ -90,7 +90,7 @@ const parsedString = parseInput(42); // 42 (string)
 Ketika fungsi yang sama harus mendukung berbagai jenis parameter atau return type.
 
 2. API Serbaguna
-Jika kamu membuat library atau API yang harus menangani banyak kasus penggunaan.
+Jika kita membuat library atau API yang harus menangani banyak kasus penggunaan.
 
 3. Peningkatan Keterbacaan
 Overloads membantu pengguna fungsi memahami berbagai skenario yang didukung tanpa harus membaca logika internal.
