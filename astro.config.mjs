@@ -59,6 +59,22 @@ export default defineConfig({
         orientation: 'portrait',
         scope: '/',
         start_url: '/',
+        screenshots: [
+          {
+            src: 'icons/ss_pwa_1.png',
+            sizes: '640x320',
+            type: 'image/png',
+            form_factor: 'wide',
+            label: 'Personal website',
+          },
+          {
+            src: 'icons/ss_pwa_1.png',
+            sizes: '640x320',
+            type: 'image/png',
+            form_factor: 'narrow',
+            label: 'Personal website',
+          },
+        ],
         icons: [
           {
             src: 'icons/icon-72x72.png',
@@ -95,16 +111,15 @@ export default defineConfig({
             sizes: '384x384',
             type: 'image/png',
           },
+          // {
+          //   src: 'icons/icon-512x512.png',
+          //   sizes: '512x512',
+          //   type: 'image/png',
+          // },
           {
             src: 'icons/icon-512x512.png',
             sizes: '512x512',
             type: 'image/png',
-          },
-          {
-            src: 'icons/icon-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'any maskable',
           },
         ],
       },
