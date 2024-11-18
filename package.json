@@ -36,6 +36,7 @@
   "devDependencies": {
     "@iconify/react": "^5.0.2",
     "@types/nodemailer": "^6.4.15",
+    "@vite-pwa/astro": "^0.4.3",
     "eslint": "^8.40.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
