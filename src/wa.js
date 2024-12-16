@@ -13,7 +13,7 @@
     n.addEventListener('load', function () {
       MyAliceWebChat.init({
         selector: 'myAliceWebChat',
-        number: '6289653674186',
+        number: '+6289653674186',
         message: 'Hallo bay, berapa harga per proyeknya ?',
         color: '#25D366',
         channel: 'wa',
