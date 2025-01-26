@@ -1,61 +1,63 @@
 ---
-import ListPencapaian from '@components/ListPencapaian'
-import BaseLayout from '@layouts/BaseLayout.astro'
+import { changeLanguage } from "i18next";
+import ListPencapaian from "@components/ListPencapaian";
+import BaseLayout from "@layouts/BaseLayout.astro";
 
-const pageTitle = 'Pencapaian'
+changeLanguage("id");
 
+const pageTitle = "Pencapaian";
 let listPencapaian = [
-  {
-    img: '/pencapaian/identik-asik.jpg',
-    title: 'Juara 2 Kompetisi Seleksi Nasional Produk TIK (IdenTIK) tahun 2022',
-    desc: '',
-  },
-  {
-    img: '/pencapaian/identik-satusehat.jpg',
-    title: 'Juara 1 Kompetisi Seleksi Nasional Produk TIK (IdenTIK) tahun 2022',
-    desc: '',
-  },
-  {
-    img: '/pencapaian/peduli-lindungi.webp',
-    title: 'Sertifikat Kementerian Kesehatan (Peduli Lindungi)',
-    desc: '',
-  },
-  {
-    img: '/pencapaian/show-dashboard-generator-asik.webp',
-    title: 'Presentasi Dashboard Generator ASIK oleh Kementerian Kesehatan',
-    desc: '',
-  },
-  {
-    img: '/pencapaian/js-essentials.webp',
-    title: 'Sertifikat Udemy (Javascript Essentials)',
-    desc: '',
-  },
-  {
-    img: '/pencapaian/fullstack-js.webp',
-    title: 'Sertifikat Udemy (The Complete Full-Stack JavaScript Course)',
-    desc: '',
-  },
-  {
-    img: '/pencapaian/understand-ts.webp',
-    title: 'Sertifikat Udemy (Understanding Typescript)',
-    desc: '',
-  },
-  {
-    img: '/pencapaian/handon-react.webp',
-    title: 'Sertifikat Udemy (Hands-On React. Build advanced React JS Frontend with expert)',
-    desc: '',
-  },
-  {
-    img: '/pencapaian/nuxt3.webp',
-    title: 'Sertifikat Udemy (NUXT 3 Bootcamp: Full-Stack Guide with Real-World Projects)',
-    desc: '',
-  },
-  {
-    img: '/pencapaian/web-performance.webp',
-    title: 'Sertifikat Udemy (Web Performance Bootcamp: Mastering Speed Techniques)',
-    desc: '',
-  },
-]
+    {
+        img: "/pencapaian/identik-asik.jpg",
+        title: "Juara 2 Kompetisi Seleksi Nasional Produk TIK (IdenTIK) tahun 2022",
+        desc: "",
+    },
+    {
+        img: "/pencapaian/identik-satusehat.jpg",
+        title: "Juara 1 Kompetisi Seleksi Nasional Produk TIK (IdenTIK) tahun 2022",
+        desc: "",
+    },
+    {
+        img: "/pencapaian/peduli-lindungi.webp",
+        title: "Sertifikat Kementerian Kesehatan (Peduli Lindungi)",
+        desc: "",
+    },
+    {
+        img: "/pencapaian/show-dashboard-generator-asik.webp",
+        title: "Presentasi Dashboard Generator ASIK oleh Kementerian Kesehatan",
+        desc: "",
+    },
+    {
+        img: "/pencapaian/js-essentials.webp",
+        title: "Sertifikat Udemy (Javascript Essentials)",
+        desc: "",
+    },
+    {
+        img: "/pencapaian/fullstack-js.webp",
+        title: "Sertifikat Udemy (The Complete Full-Stack JavaScript Course)",
+        desc: "",
+    },
+    {
+        img: "/pencapaian/understand-ts.webp",
+        title: "Sertifikat Udemy (Understanding Typescript)",
+        desc: "",
+    },
+    {
+        img: "/pencapaian/handon-react.webp",
+        title: "Sertifikat Udemy (Hands-On React. Build advanced React JS Frontend with expert)",
+        desc: "",
+    },
+    {
+        img: "/pencapaian/nuxt3.webp",
+        title: "Sertifikat Udemy (NUXT 3 Bootcamp: Full-Stack Guide with Real-World Projects)",
+        desc: "",
+    },
+    {
+        img: "/pencapaian/web-performance.webp",
+        title: "Sertifikat Udemy (Web Performance Bootcamp: Mastering Speed Techniques)",
+        desc: "",
+    },
+];
 ---
 
 <BaseLayout pageTitle={pageTitle}>

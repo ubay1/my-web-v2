@@ -4,11 +4,9 @@ node_modules
 .cache
 .output
 dist
-*.md
-*.json
+*.m
 *.yml
 *.yaml
 i18n
 .eslintrc
 .npmrc
-.prettierrc

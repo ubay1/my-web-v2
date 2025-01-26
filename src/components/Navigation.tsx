@@ -3,8 +3,10 @@ import Sidebar from './Sidebar'
 import { usePageStore } from '../stores/page'
 import React, { useState } from 'react'
 import classNames from 'classnames'
+// import { useTranslation } from 'react-i18next'
 
 export default function Navigation({ children }: any) {
+  // const { t } = useTranslation()
   const { pageActive, showSidebarSmallScreen, setPageActive, setShowSidebarSmallScreen } =
     usePageStore()
 
@@ -82,7 +84,10 @@ export default function Navigation({ children }: any) {
         {children}
         <div className="absolute bottom-0 right-0 flex items-center gap-2 bg-black/[0.5] p-1 rounded-t-md">
           <Icon icon="ph:info-duotone" className="hidden xs:block" />
-          <div className="text-xs">Foto hanya pemanis, emang manis sih orangnya ^_^</div>
+          <div className="text-xs">
+            Foto hanya pemanis, emang manis sih orangnya ^_^
+            {/* {t('hello_world')} */}
+          </div>
         </div>
       </div>
     </div>

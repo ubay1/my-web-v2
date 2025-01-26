@@ -1,11 +1,14 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro'
-import { testDynamicInterface } from '../utils/learn/generic-interface'
-import { testSymbolTypes } from '../utils/learn/symbol-types'
-import { testIndexSignature } from '../utils/learn/index-signature'
-import { HttpStatus, checkHttpStatus } from '../utils/learn/enums'
-import { printLength } from '../utils/learn/type-predicate'
-import { result1, result2 } from '../utils/learn/function_overload'
+import { changeLanguage } from "i18next";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { testDynamicInterface } from "../utils/learn/generic-interface";
+import { testSymbolTypes } from "../utils/learn/symbol-types";
+import { testIndexSignature } from "../utils/learn/index-signature";
+import { HttpStatus, checkHttpStatus } from "../utils/learn/enums";
+import { printLength } from "../utils/learn/type-predicate";
+import { result1, result2 } from "../utils/learn/function_overload";
+
+changeLanguage("id");
 ---
 
 <BaseLayout pageTitle='Learn'>

@@ -1,10 +1,13 @@
 ---
-import BlogPost from '@components/BlogPost'
-import BaseLayout from '@layouts/BaseLayout.astro'
-import { sortByDate } from '@utils/sortByDate'
+import { changeLanguage } from "i18next";
+import BlogPost from "@components/BlogPost";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { sortByDate } from "@utils/sortByDate";
 
-const allBlogs = await Astro.glob('./catatan/*.md')
-const pageTitle = 'Catatan'
+changeLanguage("id");
+
+const allBlogs = await Astro.glob("./catatan/*.md");
+const pageTitle = "Catatan";
 ---
 
 <BaseLayout pageTitle={pageTitle}>

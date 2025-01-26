@@ -1,8 +1,12 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro'
-const allPosts = await Astro.glob('../catatan/*.md')
-const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())]
-const pageTitle = 'Tag Index'
+import { changeLanguage } from "i18next";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+changeLanguage("id");
+
+const allPosts = await Astro.glob("../catatan/*.md");
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+const pageTitle = "Tag Index";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
