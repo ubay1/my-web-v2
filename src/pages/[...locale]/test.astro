@@ -1,0 +1,17 @@
+---
+import i18next, { t, changeLanguage } from 'i18next'
+import { Trans, HeadHrefLangs } from 'astro-i18next/components'
+import BaseLayout from '@layouts/BaseLayout.astro'
+---
+
+<BaseLayout pageTitle="Profil">
+  <div class="max-w-2xl">
+    <div class="flex flex-col mt-4 p-4">
+      <div
+        class="text-4xl font-bold text-balance text-center flex justify-center items-center flex-wrap gap-2 text-[#c2c2c2]"
+      >
+        <Trans i18nKey="hello_world" />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

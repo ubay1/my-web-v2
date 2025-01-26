@@ -43,9 +43,9 @@ export default function Navigation({ children }: any) {
     ])
   }, [])
   return (
-    <div className="w-full h-[300px] gap-4">
+    <div className="w-full md:max-w-2xl h-[300px] gap-4">
       {/* menu large screen */}
-      <div className="hidden md:top-0 md:absolute md:z-[40] md:w-full bg-black/[0.5] backdrop-blur-sm md:flex md:justify-center md:items-center">
+      <div className="hidden md:top-0 md:absolute md:z-[40] md:w-full mx-auto bg-black/[0.5] backdrop-blur-sm md:flex md:justify-center md:items-center">
         {listMenu.map((item, idx) => (
           <div
             key={`icon-${idx}`}
@@ -80,16 +80,7 @@ export default function Navigation({ children }: any) {
         </button>
         <div className="h-full flex-1 text-center pr-10 text-lg font-mono">Ubay Dillah</div>
       </div>
-      <div className="top-0 absolute w-full h-full">
-        {children}
-        <div className="absolute bottom-0 right-0 flex items-center gap-2 bg-black/[0.5] p-1 rounded-t-md">
-          <Icon icon="ph:info-duotone" className="hidden xs:block" />
-          <div className="text-xs">
-            Foto hanya pemanis, emang manis sih orangnya ^_^
-            {/* {t('hello_world')} */}
-          </div>
-        </div>
-      </div>
+      <div className="top-0 absolute w-full h-full">{children}</div>
     </div>
   )
 }

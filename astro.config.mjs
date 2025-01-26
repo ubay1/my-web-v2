@@ -140,8 +140,8 @@ export default defineConfig({
     //   },
     // }),
     reactI18next({
-      defaultLocale: 'id-ID',
-      locales: ['id-ID', 'en-US'],
+      defaultLocale: 'id',
+      locales: ['id', 'en'],
     }),
     astroI18next(),
   ],
