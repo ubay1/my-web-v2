@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/MarkdownLayout.astro
-title: Belajar Vitest
+title: Belajar Vitest (snapshot)
 description: snapshot
 imagePath: https://miro.medium.com/v2/resize:fit:1200/1*6YEGcCs46UW8KmFs3hDWgA.png
 imageAlt: ts

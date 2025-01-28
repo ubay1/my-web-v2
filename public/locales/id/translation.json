@@ -4,8 +4,19 @@
   },
   "profil": {
     "greeting": {
+      "who": "Siapa saya ?",
+      "role": "Saya seorang Software Engineer",
+      "jobdesc": "focus pada pengembangan antarmuka",
       "title": "Hello, saya Ubay",
       "desc": "Saya adalah seorang Frontend Engineer yang berkompeten dalam merancang antarmuka pengguna yang memikat dan responsif. Dengan penguasaan HTML, CSS, dan JavaScript, serta pengalaman dalam framework seperti React, Vue, dan Svelte, saya berkomitmen untuk menghadirkan pengalaman pengguna yang optimal. Saya percaya bahwa antarmuka yang baik tidak hanya terlihat menarik, tetapi juga memberikan kemudahan dan kenyamanan bagi penggunanya. Melalui pendekatan yang detail dan inovatif, saya selalu berusaha memberikan solusi web yang modern dan berkualitas tinggi."
-    }
+    },
+    "experience": "Lebih dari 5+ tahun pengalaman"
+  },
+  "blog": {
+    "title": "10 Catatan Terakhir",
+    "all": "Lihat semua"
+  },
+  "achievment": {
+    "title": "Pencapaian terakhir"
   }
 }

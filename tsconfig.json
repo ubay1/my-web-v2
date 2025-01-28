@@ -5,32 +5,17 @@
     "baseUrl": ".",
     "allowJs": true,
     "paths": {
-      "@images/*": [
-        "src/assets/images/*"
-      ],
-      "@icons/*": [
-        "src/assets/icons/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@css/*": [
-        "src/css/*"
-      ],
+      "@images/*": ["src/assets/images/*"],
+      "@icons/*": ["src/assets/icons/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@components/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@typess/*": ["src/types/*"],
+      "@css/*": ["src/css/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   },
-  "include": [
-    "src/**/*.d.ts",
-    "src/**/*.ts",
-    "src/**/*.astro",
-    "src/components/BlogPost.tsx",
-  ]
+  "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.astro", "src/components/BlogPost.tsx"]
 }

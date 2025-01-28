@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/MarkdownLayout.astro
-title: Shikiji
+title: Shikiji Cheat Sheet
 description: syntax highlighter
 imagePath: https://www.markdownguide.org/assets/images/markdown-guide-og.jpg
 imageAlt: next

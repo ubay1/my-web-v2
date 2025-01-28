@@ -8,8 +8,10 @@ import '@fontsource/homemade-apple'
 import '@fontsource-variable/rubik'
 import '@css/global.css'
 import i18next, { t } from 'i18next'
+import { sortByDate } from '@utils/sortByDate'
 
 const { pageTitle } = Astro.props
+const allBlogs = await Astro.glob('../pages/id/catatan/*.md')
 ---
 
 <html lang={i18next.language}>
@@ -28,10 +30,12 @@ const { pageTitle } = Astro.props
     <style></style>
   </head>
   <body>
-    <Home client:load />
+    <Home
+      client:visible
+      fiveBlogLatest={allBlogs.sort(sortByDate).filter((item, index) => index < 10)}
+    />
+    <!-- <div class="flex justify-center">
+      <slot />
+    </div> -->
   </body>
-
-  <!-- <div class="flex justify-center">
-    <slot />
-  </div> -->
 </html>
