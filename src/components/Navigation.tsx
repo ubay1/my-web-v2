@@ -3,17 +3,22 @@ import Sidebar from './Sidebar'
 import { usePageStore } from '../stores/page'
 import React, { useState } from 'react'
 import classNames from 'classnames'
-// import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
 export default function Navigation({ children }: any) {
-  // const { t } = useTranslation()
+  const { t } = useTranslation()
   const { pageActive, showSidebarSmallScreen, setPageActive, setShowSidebarSmallScreen } =
     usePageStore()
 
+  const [selectLang, setSelectLang] = useState<'id' | 'en'>('id')
+
   const [listMenu, setListMenu] = useState<any[]>([])
+
+  const getPath = (path: string) => (path === '/' ? path : `/${path}`)
 
   React.useEffect(() => {
     const pathName = window.location.pathname
+    setSelectLang(pathName.split('/')[1] as 'id' | 'en')
     setListMenu([
       {
         label: 'Profil',
@@ -41,9 +46,14 @@ export default function Navigation({ children }: any) {
         icon: 'ph-phone-duotone',
       },
     ])
+
+    // console.log('pathName = ', pathName)
+    // const tagLang = document.querySelector('html')
+    // console.log('lang = ', tagLang?.getAttribute('lang'))
+    // tagLang?.getAttribute('lang') === 'id' ? setSelectLang('id') : setSelectLang('en')
   }, [])
   return (
-    <div className="w-full md:max-w-2xl h-[300px] gap-4">
+    <div className="w-full md:w-full h-[300px] gap-4">
       {/* menu large screen */}
       <div className="hidden md:top-0 md:absolute md:z-[40] md:w-full mx-auto bg-black/[0.5] backdrop-blur-sm md:flex md:justify-center md:items-center">
         {listMenu.map((item, idx) => (
@@ -61,7 +71,7 @@ export default function Navigation({ children }: any) {
                 'hover:opacity-50':
                   item.path.split('/')[1] !== window.location.pathname.split('/')[1],
               })}
-              href={item.path}
+              href={getPath(`${selectLang}${item.path}`)}
             >
               <Icon icon={item.icon} className={classNames('w-6 h-6')} />
               {item.label}

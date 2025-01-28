@@ -25,7 +25,7 @@ const ListPencapaian: React.FC<{ data: any; index: number }> = ({ data, index })
           />
         </div>
       </div>
-      <div className="text-[#c2c2c2] flex flex-col p-4">
+      <div className="text-white flex flex-col p-4">
         <div className="text-center font-bold mb-2">{data.title}</div>
       </div>
     </div>

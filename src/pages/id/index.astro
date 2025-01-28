@@ -1,0 +1,100 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro'
+import { Image } from 'astro:assets'
+import school from '@icons/school.svg'
+import hand from '@icons/hand.svg'
+import code from '@icons/code.svg'
+import vue from '@icons/vue.svg'
+import nuxt from '@icons/nuxt.svg'
+import pinia from '@icons/pinia.svg'
+import react from '@icons/react.svg'
+import next from '@icons/next.svg'
+import zustand from '@icons/zustand.svg'
+import tanstack from '@icons/tanstack.svg'
+import tailwind from '@icons/tailwind.svg'
+import uno from '@icons/uno.svg'
+import svelte from '@icons/svelte.svg'
+import ts from '@icons/ts.svg'
+import js from '@icons/js.svg'
+import i18next, { t, changeLanguage } from 'i18next'
+import { Trans, HeadHrefLangs } from 'astro-i18next/components'
+
+changeLanguage('id')
+
+const listStack = [
+  { label: 'javascript', img: js },
+  { label: 'typescript', img: ts },
+  { label: 'vue', img: vue },
+  { label: 'nuxt', img: nuxt },
+  { label: 'pinia', img: pinia },
+  { label: 'react', img: react },
+  { label: 'next', img: next },
+  { label: 'zustand', img: zustand },
+  { label: 'tanstack query', img: tanstack },
+  { label: 'tailwind css', img: tailwind },
+  { label: 'uno css', img: uno },
+  { label: 'sveltekit', img: svelte },
+]
+---
+
+<BaseLayout pageTitle="Profil">
+  <div class="w-full bg-[#141925]">
+    <div class="flex flex-col mt-4 p-4">
+      <div
+        class="text-4xl font-bold text-balance text-center flex justify-center items-center flex-wrap gap-2 text-white"
+      >
+        {t('profil.greeting.title')}
+        <Image src={hand} alt="hand" class="w-10 h-10" loading={'eager'} fetchpriority={'high'} />
+      </div>
+
+      <div class="mt-4 leading-6 indent-5 text-justify text-white">
+        {t('profil.greeting.desc')}
+      </div>
+      <div class="mt-10">
+        <div class="flex items-center flex-wrap gap-2">
+          <div class="text-xl font-bold underline text-white">Riwayat Pendidikan</div>
+          <Image
+            src={school}
+            alt="school"
+            class="w-10 h-10"
+            loading={'eager'}
+            fetchpriority={'high'}
+          />
+        </div>
+        <div class="mt-4 flex flex-col gap-4">
+          <div class="flex flex-col">
+            <div class="text-lg font-bold text-white">SMK PGRI 11 Serpong</div>
+            <div class="text-white">Animasi</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="text-lg font-bold text-white">Universitas Pamulang</div>
+            <div class="text-white">Teknik Informatika</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <div class="flex items-center flex-wrap gap-2">
+          <div class="text-xl font-bold underline text-white">Teknologi yang digunakan</div>
+          <Image src={code} alt="code" class="w-10 h-10" loading={'lazy'} fetchpriority={'high'} />
+        </div>
+        <div class="mt-4 flex flex-wrap gap-4">
+          {
+            listStack.map((item) => (
+              <div class="flex flex-col gap-1 justify-center items-center">
+                <Image
+                  src={item.img}
+                  alt="vue"
+                  class="w-10 h-10"
+                  loading={'lazy'}
+                  fetchpriority={'high'}
+                />
+                <div class="text-sm capitalize text-white">{item.label}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

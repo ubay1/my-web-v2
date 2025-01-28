@@ -9,16 +9,16 @@ import '@css/global.css'
 const { frontmatter } = Astro.props
 ---
 
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='utf-8' />
-    <link rel='icon' type='image/icon' href='/favicon.ico' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='description' content='Web pribadi, buat belajar aja' />
-    <meta name='generator' content={Astro.generator} />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Web pribadi, buat belajar aja" />
+    <meta name="generator" content={Astro.generator} />
     <title>{frontmatter.title}</title>
     <!-- <script src="/src/pwa.ts"></script> -->
-     <!-- { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> } -->
+    <!-- { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> } -->
     <style></style>
     <script>
       function goBack() {
@@ -68,17 +68,17 @@ const { frontmatter } = Astro.props
       }
     </script>
   </head>
-  <body class='max-w-3xl m-auto !text-[#c2c2c2]'>
-    <div class='relative w-full h-[300px]'>
+  <body class="max-w-3xl m-auto !text-white">
+    <div class="relative w-full h-[300px]">
       <!-- <Navigation client:load> -->
       <button
-        class='absolute top-4 left-4 bg-white rounded-full p-1 hover:bg-gray-200'
-        id='btn-back'
+        class="absolute top-4 left-4 bg-white rounded-full p-1 hover:bg-gray-200"
+        id="btn-back"
       >
         <Image
           src={back}
           alt={'back'}
-          class='w-6 h-6 object-cover object-center'
+          class="w-6 h-6 object-cover object-center"
           loading={'eager'}
           fetchpriority={'high'}
         />
@@ -86,7 +86,7 @@ const { frontmatter } = Astro.props
       <Image
         src={frontmatter.imagePath}
         alt={frontmatter.imageAlt}
-        class='w-full h-full object-cover object-center bg-white'
+        class="w-full h-full object-cover object-center bg-white"
         loading={'eager'}
         fetchpriority={'high'}
         inferSize={true}
@@ -94,13 +94,13 @@ const { frontmatter } = Astro.props
       <!-- </Navigation> -->
     </div>
 
-    <div class='flex flex-col justify-center mb-8 px-4 break-words'>
-      <div class='my-4'>
+    <div class="flex flex-col justify-center mb-8 px-4 break-words">
+      <div class="my-4">
         {
           frontmatter.tags.map((tag: any) => (
             <a
               href={`/tags/${tag}`}
-              class='bg-black/[0.2] text-xs border border-[#393939] p-2 rounded-md hover:bg-black'
+              class="bg-black/[0.2] text-xs border border-[#393939] p-2 rounded-md hover:bg-black"
             >
               #{tag}
             </a>

@@ -30,14 +30,14 @@ const ListProject: React.FC<{ data: any; index: number }> = ({ data, index }) =>
           />
         </div>
       </div>
-      <div className="text-[#c2c2c2] flex flex-col p-4">
+      <div className="text-white flex flex-col p-4">
         <div className="text-center font-bold mb-2">
           {data.url ? (
             <a
               href={data.url}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center gap-2 decoration-none text-[#c2c2c2]"
+              className="flex items-center justify-center gap-2 decoration-none text-white"
             >
               <span>{data.label}</span>
               <Icon icon="icon-park-outline:share" />

@@ -15,11 +15,14 @@ import {
   transformerRemoveNotationEscape,
 } from '@shikijs/transformers'
 // import AstroPWA from '@vite-pwa/astro'
-import reactI18next from 'astro-react-i18next'
+// import reactI18next from 'astro-react-i18next'
 import astroI18next from 'astro-i18next'
 
 // https://astro.build/config
 export default defineConfig({
+  redirects: {
+    '/': '/id',
+  },
   markdown: {
     syntaxHighlight: 'shiki',
     shikiConfig: {
@@ -139,10 +142,10 @@ export default defineConfig({
     //     directoryAndTrailingSlashHandler: true,
     //   },
     // }),
-    reactI18next({
-      defaultLocale: 'id',
-      locales: ['id', 'en'],
-    }),
+    // reactI18next({
+    //   defaultLocale: 'id',
+    //   locales: ['id', 'en'],
+    // }),
     astroI18next(),
   ],
   adapter: vercel(),

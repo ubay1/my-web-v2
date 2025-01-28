@@ -4,7 +4,7 @@ import React from 'react'
 const BlogPost: React.FC<{ url: any; data: any }> = ({ url, data }) => {
   return (
     <div className="bg-black/[0.2] border border-[#393939] rounded-md m-2 break-inside-avoid cursor-pointer relative hover:bg-gray-7 hover:bg-opacity-8">
-      <a href={url} className="text-[#c2c2c2] p-4 flex flex-col gap-4">
+      <a href={url} className="text-white p-4 flex flex-col gap-4">
         <div className="w-4 h-4 bg-[#000] rounded-full">
           <Icon icon={data.icon} className="w-4 h-4" />
         </div>
@@ -15,7 +15,7 @@ const BlogPost: React.FC<{ url: any; data: any }> = ({ url, data }) => {
 
         {data.description && data.description !== '' && (
           <>
-            <hr className="border-1 border-[#c2c2c2]" />
+            <hr className="border-1 border-[#text-white]" />
             <div className="text-xs line-clamp-3">{data.description}</div>
           </>
         )}
