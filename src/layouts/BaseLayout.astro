@@ -1,17 +1,11 @@
 ---
-// import { pwaInfo } from 'virtual:pwa-info'
-import { Image } from 'astro:assets'
-import banner from '@images/banner.webp'
-import Navigation from '@components/Navigation'
-import Home from '@components/Home'
+import Navbar from '@components/Navbar'
 import '@fontsource/homemade-apple'
 import '@fontsource-variable/rubik'
 import '@css/global.css'
 import i18next, { t } from 'i18next'
-import { sortByDate } from '@utils/sortByDate'
 
 const { pageTitle } = Astro.props
-const allBlogs = await Astro.glob('../pages/id/catatan/*.md')
 ---
 
 <html lang={i18next.language}>
@@ -30,12 +24,13 @@ const allBlogs = await Astro.glob('../pages/id/catatan/*.md')
     <style></style>
   </head>
   <body>
-    <Home
+    <!-- <Home
       client:visible
       fiveBlogLatest={allBlogs.sort(sortByDate).filter((item, index) => index < 10)}
-    />
-    <!-- <div class="flex justify-center">
-      <slot />
-    </div> -->
+    /> -->
+    <!-- <div class="flex justify-center"> -->
+    <Navbar client:load />
+    <slot />
+    <!-- </div> -->
   </body>
 </html>

@@ -2,21 +2,29 @@
   "meta": {
     "description": "A personal website showcasing information about me, my portfolio, and writings from my learning journey."
   },
-  "profil": {
-    "greeting": {
-      "who": "Who am i ?",
-      "role": "I'm a Software Engineer",
-      "jobdesc": "focus on interface development",
-      "title": "Hello, I'm Ubay",
-      "desc": "I am a Frontend Engineer competent in designing engaging and responsive user interfaces. With a mastery of HTML, CSS, and JavaScript, as well as experience in frameworks such as React, Vue, and Svelte, I am committed to delivering an optimal user experience. I believe that a good interface should not only look attractive, but also provide ase and comfort for its users. Through a detailed and innovative approach, I always strive to deliver modern and high-quality web solutions."
-    },
-    "experience": "Over 5+ years expereience"
-  },
-  "blog": {
-    "title": "10 Latest Notes",
-    "all": "View all"
-  },
-  "achievment": {
-    "title": "Latest Achievments"
+
+  "pages": {
+    "home": {
+      "profil": {
+        "greeting": {
+          "who": "Who am i ?",
+          "role": "I'm a Software Engineer",
+          "jobdesc": "focus on interface development",
+          "title": "Hello, I'm Ubay",
+          "desc": "I am a Frontend Engineer competent in designing engaging and responsive user interfaces. With a mastery of HTML, CSS, and JavaScript, as well as experience in frameworks such as React, Vue, and Svelte, I am committed to delivering an optimal user experience. I believe that a good interface should not only look attractive, but also provide ase and comfort for its users. Through a detailed and innovative approach, I always strive to deliver modern and high-quality web solutions."
+        },
+        "experience": "Over 5+ years expereience"
+      },
+      "blog": {
+        "title": "10 Latest Notes",
+        "all": "View all"
+      },
+      "achievment": {
+        "title": "Latest Achievments"
+      },
+      "tech": {
+        "title": "Technologies I use"
+      }
+    }
   }
 }
