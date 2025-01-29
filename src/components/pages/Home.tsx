@@ -93,11 +93,9 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
 
   return (
     <motion.section exit={{ opacity: 0 }}>
-      {/* <InitialTransition onTransitionDone={() => setIsTransitionDone(true)} />
-      {isTransitionDone && ( */}
       <motion.div
         ref={ref}
-        className="relative p-2 px-4 bg-[#002522] flex justify-center items-center overflow-hidden"
+        className="relative p-2 px-4 flex justify-center items-center overflow-hidden"
         initial="initial"
         variants={content}
         animate="animate"
