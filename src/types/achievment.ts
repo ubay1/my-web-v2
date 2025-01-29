@@ -1,5 +1,5 @@
 export interface IListAchievment {
   img: string
-  title: string
-  desc: string
+  title?: string
+  desc?: string
 }

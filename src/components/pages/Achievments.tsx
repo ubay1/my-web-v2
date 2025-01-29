@@ -3,11 +3,14 @@ import type { IListAchievment } from '@typess/achievment'
 import classNames from 'classnames'
 import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 // import { LazyLoadImage } from 'react-lazy-load-image-component'
 // import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const Achievments: React.FC<{ data: IListAchievment[] }> = ({ data }) => {
+  const { t } = useTranslation()
+
   useEffect(() => {
     ;(document.querySelector('body') as HTMLElement).classList.remove('overflow-hidden')
   }, [])
@@ -42,7 +45,9 @@ const Achievments: React.FC<{ data: IListAchievment[] }> = ({ data }) => {
                 </div>
               </div>
               <div className="bg-[#f8ecce] rounded-b-md text-[#023a37] flex flex-col p-4">
-                <div className="text-center font-bold mb-2">{data.title.split(',')[index]}</div>
+                <div className="text-center font-bold mb-2">
+                  {t('pages.achievment.title').split(',')[index]}
+                </div>
               </div>
             </motion.div>
           ))}
