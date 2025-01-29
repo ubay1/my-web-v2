@@ -21,9 +21,9 @@ const Notes: React.FC<{ data: IBlogDetail[] }> = ({ data }) => {
           {data.sort(sortByDate).map((item, idx) => (
             <motion.div
               key={item.url}
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2, delay: 1.2 }}
+              transition={{ duration: 1, delay: 1 }}
               className="bg-[#f8ecce] rounded-md m-2 break-inside-avoid cursor-pointer relative hover:bg-gray-7 hover:bg-opacity-8"
             >
               <a href={item.url} className="text-[#023a37] p-4 flex flex-col gap-4">

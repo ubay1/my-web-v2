@@ -20,26 +20,35 @@ const Navbar = () => {
     },
     {
       name: 'note',
-      href: `${lang}/catatan`,
+      href: '/catatan',
     },
     {
       name: 'album',
-      href: `${lang}/proyek`,
+      href: '/proyek',
     },
     {
       name: 'achievment',
-      href: `${lang}/pencapaian`,
+      href: '/pencapaian',
     },
   ]
 
+  const getPath = (path: string) => (path === '/' ? path : `/${path}`)
+
   const getActiveColor = (href: string) => {
-    // console.log(href)
-    if (pathName.split('/').length === 2 && href === '/') {
+    if (
+      href === '/' &&
+      (pathName.split('/').length === 2 ||
+        (pathName.split('/').length === 3 && !pathName.split('/')[2]))
+    ) {
       return '#ed8b28'
     }
-    if (pathName.split('/').length === 3 && href.search(pathName.split('/')[2]) !== -1) {
+
+    // Check if current path matches navigation href
+    const currentPath = pathName.split('/')[2] || ''
+    if (href.slice(1) === currentPath) {
       return '#ed8b28'
     }
+
     return '#023a37'
   }
 
@@ -51,13 +60,13 @@ const Navbar = () => {
   }, [])
   return (
     <div className="w-full flex justify-center">
-      <div className="fixed top-10 z-20 rounded-full p-2 px-4 border border-[#ed8b28] bg-[#f8ecce] flex items-center gap-4">
+      <div className="fixed top-10 z-[100] rounded-full p-2 px-4 border border-[#ed8b28] bg-[#f8ecce] flex items-center gap-4">
         {LIST.map((item, index) => {
           const Component = componentMapping[item.name]
           return (
             <a
               key={index}
-              href={item.href}
+              href={getPath(`${lang}${item.href}`)}
               className="flex items-center justify-center w-8 h-8 rounded-full  text-[#f8ecce] text-lg font-semibold"
               title={item.name}
               aria-label={item.name}
