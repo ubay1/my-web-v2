@@ -1,0 +1,20 @@
+---
+import { changeLanguage } from 'i18next'
+import FormContact from '@components/contact/Form'
+import '@fontsource/homemade-apple'
+import '@fontsource-variable/rubik'
+import '@css/global.css'
+import BaseLayout from '@layouts/BaseLayout.astro'
+
+changeLanguage('id')
+
+const pageTitle = 'Kontak'
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="flex justify-center">
+    <div class="max-w-3xl mt-10 mb-4">
+      <FormContact client:load />
+    </div>
+  </div>
+</BaseLayout>

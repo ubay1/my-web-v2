@@ -1,0 +1,69 @@
+---
+import { changeLanguage, t } from 'i18next'
+import Achievments from '@components/pages/Achievments'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import type { IListAchievment } from '@typess/achievment'
+
+changeLanguage('en')
+
+const pageTitle = 'Achievment'
+// console.log(t('pages.achievment.title'))
+const splitTeks = t('pages.achievment.title').split(',')
+
+let listPencapaian: IListAchievment[] = [
+  {
+    img: '/pencapaian/identik-asik.jpg',
+    title: splitTeks[0],
+    desc: '',
+  },
+  {
+    img: '/pencapaian/identik-satusehat.jpg',
+    title: splitTeks[1],
+    desc: '',
+  },
+  {
+    img: '/pencapaian/peduli-lindungi.webp',
+    title: splitTeks[2],
+    desc: '',
+  },
+  // {
+  //   img: '/pencapaian/show-dashboard-generator-asik.webp',
+  //   title: 'Presentasi Dashboard Generator ASIK oleh Kementerian Kesehatan',
+  //   desc: '',
+  // },
+  {
+    img: '/pencapaian/js-essentials.webp',
+    title: splitTeks[3],
+    desc: '',
+  },
+  {
+    img: '/pencapaian/fullstack-js.webp',
+    title: splitTeks[4],
+    desc: '',
+  },
+  {
+    img: '/pencapaian/understand-ts.webp',
+    title: splitTeks[5],
+    desc: '',
+  },
+  {
+    img: '/pencapaian/handon-react.webp',
+    title: splitTeks[6],
+    desc: '',
+  },
+  {
+    img: '/pencapaian/nuxt3.webp',
+    title: splitTeks[7],
+    desc: '',
+  },
+  {
+    img: '/pencapaian/web-performance.webp',
+    title: splitTeks[8],
+    desc: '',
+  },
+]
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <Achievments client:visible data={listPencapaian} />
+</BaseLayout>

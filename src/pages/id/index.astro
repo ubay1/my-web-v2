@@ -1,0 +1,17 @@
+---
+import Home from '@components/pages/Home'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import { sortByDate } from '@utils/sortByDate'
+import { changeLanguage } from 'i18next'
+
+changeLanguage('id')
+
+const allBlogs = await Astro.glob('./catatan/*.md')
+---
+
+<BaseLayout pageTitle="Profil">
+  <Home
+    client:visible
+    fiveBlogLatest={allBlogs.sort(sortByDate).filter((item, index) => index < 10)}
+  />
+</BaseLayout>
