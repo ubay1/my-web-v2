@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import type { IBlogDetail } from '../../types/blog'
 import WithInitialTransition from '@components/HOC/WithInitialTransition'
 import { motion } from 'framer-motion'
+import { sortByDate } from '@utils/sortByDate'
 
 const Notes: React.FC<{ data: IBlogDetail[] }> = ({ data }) => {
   useEffect(() => {
@@ -17,7 +18,7 @@ const Notes: React.FC<{ data: IBlogDetail[] }> = ({ data }) => {
         className="mt-28 mb-4"
       >
         <motion.div className="gap-4 space-y-4 p-2 columns-1 md:columns-2 lg:columns-4">
-          {data.map((item, idx) => (
+          {data.sort(sortByDate).map((item, idx) => (
             <motion.div
               key={item.url}
               initial={{ opacity: 0, y: -20 }}
