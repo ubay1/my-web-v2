@@ -1,13 +1,16 @@
 import WithInitialTransition from '@components/HOC/WithInitialTransition'
 import type { IListAchievment } from '@typess/achievment'
 import classNames from 'classnames'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 // import { LazyLoadImage } from 'react-lazy-load-image-component'
 // import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const Achievments: React.FC<{ data: IListAchievment[] }> = ({ data }) => {
+  useEffect(() => {
+    ;(document.querySelector('body') as HTMLElement).classList.remove('overflow-hidden')
+  }, [])
   return (
     <motion.section exit={{ opacity: 0 }}>
       <motion.div
