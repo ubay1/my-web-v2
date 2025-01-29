@@ -23,12 +23,6 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
 
   const getPath = (path: string) => (path === '/' ? path : `/${path}`)
 
-  const content = {
-    animate: {
-      transition: { staggerChildren: 0.1, delayChildren: 2.8 },
-    },
-  }
-
   useEffect(() => {
     if (width > 0 && width < 768) {
       ;(document.querySelector('body') as HTMLElement).classList.remove('overflow-hidden')
@@ -97,14 +91,15 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
         ref={ref}
         className="relative p-2 px-4 flex justify-center items-center overflow-hidden"
         initial="initial"
-        variants={content}
-        animate="animate"
+        animate={{
+          transition: { staggerChildren: 0.1, delayChildren: 2.8 },
+        }}
       >
         <div className="flex flex-col mt-28 my-10 md:mt-0 md:grid md:grid-cols-6 md:grid-rows-7 gap-6 w-full h-full min-h-screen overflow-hidden">
           <motion.div
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1 }}
+            initial={{ opacity: 0, y: -40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1 }}
             className="relative px-4 h-40 flex flex-col justify-center items-center md:h-full md:col-span-2 md:row-start-2 md:row-span-2 bg-[#023a37] text-white rounded-xl text-center overflow-hidden"
           >
             <div className="absolute top-[-10px] left-[-10px] z-10 h-10 w-10 rounded-full border-8 border-[#ed8b28]"></div>
@@ -190,7 +185,7 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
               </a>
             </div>
           </motion.div>
-          {/* latest project & achievment */}
+          {/* latest achievment */}
           <motion.div
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -205,7 +200,7 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
                 <img
                   src="/pencapaian/identik-asik.jpg"
                   alt="dispora"
-                  className="w-[300px] md:w-[250px] md:h-[200px]"
+                  className="w-[300px] md:w-[270px] md:h-[200px] object-contain"
                 />
                 <div className="text-xs text-center text-[#023a37]">
                   {t('pages.home.achievment.desc')}

@@ -61,13 +61,17 @@ const InitialTransition: React.FC<InitialTransitionProps> = ({ onTransitionDone 
   return (
     <div className="absolute inset-0 flex items-center justify-center">
       <motion.div
+        id="comp-transition"
         className="absolute z-[150] flex items-center justify-center w-full bg-[#f8ecce]"
         initial="initial"
         animate="animate"
         variants={blackBox}
         onAnimationStart={() => document.body.classList.add('overflow-hidden')}
+        onAnimationComplete={() =>
+          (document.querySelector('#comp-transition') as HTMLElement).classList.add('hidden')
+        }
       >
-        <motion.svg variants={textContainer} className="absolute z-50 flex">
+        <motion.svg variants={textContainer} className="absolute z-40 flex">
           <pattern
             id="pattern"
             patternUnits="userSpaceOnUse"

@@ -1,0 +1,150 @@
+---
+import { changeLanguage } from 'i18next'
+import Projects from '@components/pages/Projects'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import type { IListProject } from '@typess/project'
+
+changeLanguage('en')
+
+const pageTitle = 'Projects'
+const projects: IListProject[] = [
+  {
+    label: 'Dispora (Dinas pemuda dan olahraga)',
+    vertical: false,
+    class: 'img-vertical',
+    img: '/proyek/dispora.webp',
+    stack: ['Nuxt 3', 'Typescript', 'Bootstrap 5', 'Pinia'],
+    project: 'Dispora',
+    url: null,
+  },
+  {
+    label: 'Polri Connect',
+    vertical: false,
+    class: 'img-horizontal-blibli',
+    img: '/proyek/polri-connect.webp',
+    stack: ['Next', 'Zustand', 'TrueConf SDK', 'Typescript', 'Tailwind', 'Radix UI'],
+    project: 'Polri',
+    url: null,
+  },
+  {
+    label: 'Kelola Uang',
+    vertical: true,
+    class: 'img-vertical',
+    img: '/proyek/kelolauang.webp',
+    stack: ['Ionic', 'Capacitor', 'Vue 3', 'Typescript', 'Tailwind', 'Sqlite'],
+    project: 'Proyek Pribadi',
+    url: null,
+  },
+  {
+    label: 'ASIK Enkrip Dekrip',
+    vertical: false,
+    class: 'img-horizontal-blibli',
+    img: '/proyek/internalasik.webp',
+    stack: ['SvelteKit', 'Typescript', 'Skeleton UI', 'Tailwind'],
+    project: 'Web Internal Tim ASIK',
+    url: null,
+  },
+  {
+    label: 'Movie Kit',
+    vertical: false,
+    class: 'img-horizontal-blibli',
+    img: '/proyek/sveltekitmovie.webp',
+    stack: ['SvelteKit', 'Typescript', 'UnoCss'],
+    project: 'Proyek Pribadi',
+    url: 'https://movie-kit.vercel.app',
+  },
+  {
+    label: 'Dashboard Aplikasi Sehat Indinesiaku',
+    vertical: false,
+    class: 'img-horizontal-asik',
+    img: '/proyek/asik.webp',
+    stack: ['Nuxt 3', 'Pinia', 'Typescript', 'UnoCss'],
+    project: 'Kementerian Kesehatan',
+    url: null,
+  },
+  {
+    label: 'eHAC Peduli Lindungi',
+    vertical: true,
+    class: 'img-vertical',
+    img: '/proyek/myehac.webp',
+    stack: ['Nuxt 2', 'Vuetify'],
+    project: 'Kementerian Kesehatan',
+    url: null,
+  },
+  {
+    label: 'Vue Movie',
+    vertical: true,
+    class: 'img-vertical',
+    img: '/proyek/vue3movie.webp',
+    stack: ['Vue 3', 'Tailwind', 'TMDB Api'],
+    project: 'Proyek Pribadi',
+    url: 'https://vue3-movie.vercel.app',
+  },
+  {
+    label: 'Catatan Kajian',
+    vertical: true,
+    class: 'img-vertical',
+    img: '/proyek/catatankajian.webp',
+    stack: ['SvelteKit', 'Tailwind', 'MdSvex'],
+    project: 'Proyek Pribadi',
+    url: 'https://catatan-kajian.vercel.app',
+  },
+  // {
+  //   label: 'BliBli Clone',
+  //   vertical: false,
+  //   class: 'img-horizontal-blibli',
+  //   img: '/proyek/blibli.webp',
+  //   stack: ['SvelteKit', 'Tailwind'],
+  //   project: 'Proyek Pribadi',
+  //   url: 'https://learn-svelte-sveltekit.vercel.app/project/blibli-clone',
+  // },
+  {
+    label: 'Global Wakaf Corporation',
+    vertical: true,
+    class: 'img-horizontal',
+    img: '/proyek/gwc.webp',
+    stack: ['Nuxt 2', 'Typescript', 'Vuex', 'Vuetify', 'Google Maps'],
+    project: 'Goiot',
+    url: null,
+  },
+  {
+    label: 'Cari Gawe',
+    vertical: false,
+    class: 'img-horizontal-carigawe',
+    img: '/proyek/carigawe.webp',
+    stack: [
+      'ReactJS',
+      'MaterialUI',
+      'Typescript',
+      'Sequelize',
+      'SocketIO',
+      'ExpressJS',
+      'PostgresSQL',
+    ],
+    project: 'Proyek Pribadi',
+    url: null,
+  },
+  {
+    label: 'Catatan Uangku',
+    vertical: true,
+    class: 'img-vertical',
+    img: '/proyek/catatanuang.webp',
+    stack: ['React Native', 'Typescript', 'Realm'],
+    project: 'Proyek Pribadi',
+    url: null,
+  },
+  {
+    label: 'Homi Smarthome',
+    vertical: false,
+    class: 'img-horizontal-homi',
+    img: '/proyek/homi.webp',
+    stack: ['React Native ', 'Typescript', 'MQTT'],
+    project: 'Goiot',
+    url: null,
+  },
+]
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <Projects client:visible data={projects} />
+</BaseLayout>

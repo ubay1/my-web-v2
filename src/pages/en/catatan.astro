@@ -1,0 +1,14 @@
+---
+import { changeLanguage } from 'i18next'
+import Notes from '@components/pages/Notes'
+import BaseLayout from '@layouts/BaseLayout.astro'
+
+changeLanguage('en')
+
+const allBlogs = await Astro.glob('../id/catatan/*.md')
+const pageTitle = 'Notes'
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <Notes client:visible data={allBlogs} />
+</BaseLayout>
