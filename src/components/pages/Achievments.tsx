@@ -42,7 +42,7 @@ const Achievments: React.FC<{ data: IListAchievment[] }> = ({ data }) => {
                 </div>
               </div>
               <div className="bg-[#f8ecce] rounded-b-md text-[#023a37] flex flex-col p-4">
-                <div className="text-center font-bold mb-2">{data.title}</div>
+                <div className="text-center font-bold mb-2">{data.title.split(',')[index]}</div>
               </div>
             </motion.div>
           ))}
