@@ -5,7 +5,7 @@ const config: AstroI18nextConfig = {
   locales: ['id', 'en'],
   load: ['server', 'client'],
   i18nextServer: {
-    debug: true,
+    debug: false,
   },
   i18nextClient: {
     debug: true,
