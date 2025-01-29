@@ -51,7 +51,7 @@ const Navbar = () => {
   }, [])
   return (
     <div className="w-full flex justify-center">
-      <div className="fixed top-10 z-20 rounded-full p-2 px-4 bg-[#f8ecce] flex items-center gap-4">
+      <div className="fixed top-10 z-20 rounded-full p-2 px-4 border border-[#ed8b28] bg-[#f8ecce] flex items-center gap-4">
         {LIST.map((item, index) => {
           const Component = componentMapping[item.name]
           return (

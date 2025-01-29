@@ -109,102 +109,47 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
             transition={{ duration: 0.5, delay: 1 }}
             className="relative px-4 h-40 flex flex-col justify-center items-center md:h-full md:col-span-2 md:row-start-2 md:row-span-2 bg-[#023a37] text-white rounded-xl text-center overflow-hidden"
           >
-            <div
-              // initial={{ x: -20, opacity: 0 }}
-              // animate={{ x: 0, opacity: 1 }}
-              // transition={{ duration: 0.4, ease: 'backOut' }}
-              className="absolute top-[-10px] left-[-10px] z-10 h-10 w-10 rounded-full border-8 border-[#ed8b28]"
-            ></div>
-            <div
-              // initial={{ x: 20, opacity: 0 }}
-              // animate={{ x: 0, opacity: 1 }}
-              // transition={{ duration: 0.4, ease: 'backOut' }}
-              className="absolute bottom-[-10px] right-[-10px] z-10 h-10 w-10 rounded-full border-8 border-[#ed8b28]"
-            ></div>
-            <div
-              // initial={{ x: 20, opacity: 0 }}
-              // animate={{ x: 0, opacity: 1 }}
-              // transition={{ duration: 0.4, ease: 'backIn' }}
-              className="absolute top-[-10px] right-[-10px] z-10 h-8 w-8 border-8 border-[#ed8b28]"
-            ></div>
+            <div className="absolute top-[-10px] left-[-10px] z-10 h-10 w-10 rounded-full border-8 border-[#ed8b28]"></div>
+            <div className="absolute bottom-[-10px] right-[-10px] z-10 h-10 w-10 rounded-full border-8 border-[#ed8b28]"></div>
+            <div className="absolute top-[-10px] right-[-10px] z-10 h-8 w-8 border-8 border-[#ed8b28]"></div>
             <img
               src="/waveline2.png"
-              alt=""
-              // initial={{ x: -20, opacity: 0 }}
-              // animate={{ x: 0, opacity: 1 }}
-              // transition={{ duration: 0.4, ease: 'backIn' }}
+              alt="icon-waveline"
               className="absolute h-7 bottom-[0px] left-[-10px] z-0"
             />
-            <div
-              // initial={{ x: -40, opacity: 0 }}
-              // animate={{ x: 0, opacity: 1 }}
-              // transition={{ duration: 0.4, ease: 'backIn' }}
-              className="text-[#f8ecce] text-xs"
-            >
-              {t('pages.home.profil.greeting.who')}
-            </div>
-            <div
-              // initial={{ x: -40, opacity: 0 }}
-              // animate={{ x: 0, opacity: 1 }}
-              // transition={{ duration: 1, ease: 'backIn' }}
-              className="flex justify-center items-center text-[#f8ecce] text-base font-bold relative z-10"
-            >
+            <div className="text-[#f8ecce] text-xs">{t('pages.home.profil.greeting.who')}</div>
+            <div className="flex justify-center items-center text-[#f8ecce] text-base font-bold relative z-10">
               {t('pages.home.profil.greeting.role')}
             </div>
-            <div
-              // initial={{ y: 20, opacity: 0 }}
-              // animate={{ y: 0, opacity: 1 }}
-              // transition={{ duration: 1.6, ease: 'backIn' }}
-              className="text-[#f8ecce] text-[14px] relative z-10"
-            >
+            <div className="text-[#f8ecce] text-[14px] relative z-10">
               {t('pages.home.profil.greeting.jobdesc')}
             </div>
           </motion.div>
+          {/* profil */}
           <motion.div
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 1.2 }}
             className="relative overflow-hidden h-56 flex flex-col justify-start items-center md:h-full md:col-span-2 md:row-span-3 md:col-start-1 md:row-start-4 bg-[#F8ECCE] text-black rounded-xl"
           >
-            <div className="flex flex-wrap items-center justify-center gap-2 p-4">
-              <div
-                //   initial={{ x: 40, opacity: 0 }}
-                //   animate={{ x: 0, opacity: 1 }}
-                //   transition={{ duration: 1.6, ease: 'backIn' }}
-                className="bg-[#023a37] text-[#fff] p-1 px-2 rounded-full  text-xs"
-              >
+            <div className="p-4">
+              <div className="bg-[#023a37] text-[#fff] p-1 px-2 rounded-full  text-xs">
                 Professional Frontend Engineer
               </div>
             </div>
             <div className="px-4 flex flex-row justify-center md:flex-col md:justify-center items-center mt-4 gap-4">
               <div className="flex flex-col items-center">
-                <div
-                  // initial={{ y: 20, opacity: 0 }}
-                  // animate={{ y: 0, opacity: 1 }}
-                  // transition={{ duration: 1, ease: 'backIn' }}
-                  className="text-[#023a37] font-bold text-center text-2xl md:text-3xl"
-                >
+                <div className="text-[#023a37] font-bold text-center text-2xl md:text-3xl">
                   Ubay Dillah
                 </div>
-                <div
-                  // initial={{ y: 20, opacity: 0 }}
-                  // animate={{ y: 0, opacity: 1 }}
-                  // transition={{ duration: 1.6, ease: 'backIn' }}
-                  className="text-[#023a37] text-[14px] text-center"
-                >
+                <div className="text-[#023a37] text-[14px] text-center">
                   {t('pages.home.profil.experience')}
                 </div>
               </div>
-              <img
-                src="/people.webp"
-                alt=""
-                //   initial={{ y: 40, opacity: 0 }}
-                //   animate={{ y: 0, opacity: 1 }}
-                //   transition={{ duration: 1, delay: 1, ease: 'backIn' }}
-                className="w-24 md:w-28 z-0"
-              />
+              <img src="/people.webp" alt="" className="w-24 md:w-28 z-0" />
             </div>
           </motion.div>
+          {/* 10 latest notes */}
           <motion.div
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -247,12 +192,30 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
               </a>
             </div>
           </motion.div>
+          {/* latest project & achievment */}
           <motion.div
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 1.8 }}
-            className="h-52 md:h-full md:col-span-2 md:row-span-3 md:col-start-5 md:row-start-2 bg-[#F8ECCE] text-black rounded-xl"
-          ></motion.div>
+            className="relative overflow-hidden h-80 md:h-full md:col-span-2 md:row-span-3 md:col-start-5 md:row-start-2 bg-[#F8ECCE] text-black rounded-xl"
+          >
+            <div className="p-4 flex flex-col items-center justify-start gap-4">
+              <div className="bg-[#023a37] max-w-[200px] text-center text-[#fff] p-1 px-2 rounded-full  text-xs">
+                {t('pages.home.achievment.title')}
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <img
+                  src="/pencapaian/identik-asik.jpg"
+                  alt="dispora"
+                  className="w-[300px] md:w-[250px] md:h-[200px]"
+                />
+                <div className="text-xs text-center text-[#023a37]">
+                  {t('pages.home.achievment.desc')}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+          {/* tech */}
           <motion.div
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

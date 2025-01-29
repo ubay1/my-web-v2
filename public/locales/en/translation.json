@@ -20,7 +20,8 @@
         "all": "View all"
       },
       "achievment": {
-        "title": "Latest Achievments"
+        "title": "Latest Achievment",
+        "desc": "2nd Place Kompetisi Seleksi Nasional Produk TIK in 2023"
       },
       "tech": {
         "title": "Technologies I use"

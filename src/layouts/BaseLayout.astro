@@ -24,13 +24,7 @@ const { pageTitle } = Astro.props
     <style></style>
   </head>
   <body>
-    <!-- <Home
-      client:visible
-      fiveBlogLatest={allBlogs.sort(sortByDate).filter((item, index) => index < 10)}
-    /> -->
-    <!-- <div class="flex justify-center"> -->
     <Navbar client:load />
     <slot />
-    <!-- </div> -->
   </body>
 </html>
