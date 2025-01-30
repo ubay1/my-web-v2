@@ -1,41 +1,30 @@
 ---
-import { changeLanguage } from "i18next";
-import BaseLayout from "@layouts/BaseLayout.astro";
+import { changeLanguage } from 'i18next'
+import BaseLayout from '@layouts/BaseLayout.astro'
 
-changeLanguage("id");
+changeLanguage('id')
 
-const allPosts = await Astro.glob("../catatan/*.md");
-const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
-const pageTitle = "Tag Index";
+const allPosts = await Astro.glob('../catatan/*.md')
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())]
+const pageTitle = 'Tag'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class='tags'>
-    {
-      tags.map((tag) => (
-        <p class='tag'>
-          <a href={`/tags/${tag}`}>{tag}</a>
-        </p>
-      ))
-    }
+  <div class="mt-28 px-8">
+    <span class="text-2xl font-bold relative text-[#f8ecce] border-b-[#ed8b28] border-b-2"
+      >List Tag</span
+    >
+    <div class="flex justify-start items-center gap-4 flex-wrap mt-4">
+      {
+        tags.map((tag) => (
+          <a
+            href={`/id/tags/${tag}`}
+            class="p-2 px-4 rounded-lg bg-[#f8ecce] border border-[#ed8b28] text-[#023a37] hover:bg-[#dbceab]"
+          >
+            {tag}
+          </a>
+        ))
+      }
+    </div>
   </div>
 </BaseLayout>
-<style>
-  a {
-    color: #00539f;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: 0.5em;
-    padding: 0.5em 1em;
-    font-size: 1.15em;
-    background-color: #f8fcfd;
-  }
-</style>

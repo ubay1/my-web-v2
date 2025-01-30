@@ -26,7 +26,7 @@ const Projects: React.FC<{ data: IListProject[] }> = ({ data }) => {
               key={`list-proyek-${index}`}
               initial={{ opacity: 0, y: -40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1 }}
+              transition={{ duration: 0.4, delay: 1 }}
               className="break-inside-avoid mb-4 bg-[#023a37] rounded-md"
             >
               <div className="rounded-t-md relative justify-center flex flex-row flex-wrap gap-2 overflow-hidden">

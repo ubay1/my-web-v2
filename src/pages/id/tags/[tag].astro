@@ -1,7 +1,11 @@
 ---
 import { changeLanguage } from 'i18next'
 import BaseLayout from '@layouts/BaseLayout.astro'
+import Notes from '@components/pages/Notes'
+import type { IBlogDetail } from '@typess/blog'
 // import BlogPost from '@components/BlogPost'
+
+export const prerender = true
 
 changeLanguage('id')
 
@@ -28,6 +32,7 @@ export async function getStaticPaths() {
         }
       }) => post.frontmatter.tags.includes(tag),
     )
+
     return {
       params: { tag },
       props: { posts: filteredPosts },
@@ -39,12 +44,5 @@ const { posts } = Astro.props
 ---
 
 <BaseLayout pageTitle={tag}>
-  <p>Posts tagged with {tag}</p>
-  <ul>
-    {
-      // posts.map((post: { url: any; frontmatter: any }) => (
-      //   <BlogPost url={post.url} data={post.frontmatter} />
-      // ))
-    }
-  </ul>
+  <Notes client:visible data={posts} withBtnBack={true} />
 </BaseLayout>
