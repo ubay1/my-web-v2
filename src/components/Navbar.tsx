@@ -21,22 +21,32 @@ const Navbar = () => {
     {
       name: 'home',
       href: `/`,
+      width: 24,
+      height: 24,
     },
     {
       name: 'note',
       href: '/catatan',
+      width: 28,
+      height: 28,
     },
     {
       name: 'album',
       href: '/proyek',
+      width: 24,
+      height: 24,
     },
     {
       name: 'achievment',
       href: '/pencapaian',
+      width: 24,
+      height: 24,
     },
     {
       name: 'lang',
       href: 'none',
+      width: 24,
+      height: 24,
     },
   ]
 
@@ -99,7 +109,11 @@ const Navbar = () => {
                 className="flex items-center justify-center w-8 h-8 rounded-full"
                 onClick={() => setIsShowListLang(!isShowListLang)}
               >
-                <Component color={getActiveColor(item.href)} width="24" height="24" />
+                <Component
+                  color={getActiveColor(item.href)}
+                  width={item.width}
+                  height={item.height}
+                />
               </button>
             ) : (
               <a
@@ -109,7 +123,11 @@ const Navbar = () => {
                 title={item.name}
                 aria-label={item.name}
               >
-                <Component color={getActiveColor(item.href)} width="24" height="24" />
+                <Component
+                  color={getActiveColor(item.href)}
+                  width={item.width}
+                  height={item.height}
+                />
               </a>
             )
           })}
