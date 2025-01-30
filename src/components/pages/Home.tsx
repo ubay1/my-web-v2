@@ -108,6 +108,8 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
             <img
               src="/waveline2.png"
               alt="icon-waveline"
+              width={100}
+              height={100}
               className="absolute h-7 bottom-[0px] left-[-10px] z-0"
             />
             <div className="text-[#f8ecce] text-xs">{t('pages.home.profil.greeting.who')}</div>
@@ -139,7 +141,13 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
                   {t('pages.home.profil.experience')}
                 </div>
               </div>
-              <img src="/people.webp" alt="" className="w-24 md:w-28 z-0" />
+              <img
+                src="/people.webp"
+                alt="img-people"
+                width={0}
+                height={0}
+                className="w-24 md:w-28 z-0"
+              />
             </div>
           </motion.div>
           {/* 10 latest notes */}
@@ -198,8 +206,10 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
               </div>
               <div className="flex flex-col items-center gap-1">
                 <img
-                  src="/pencapaian/identik-asik.jpg"
-                  alt="dispora"
+                  src="/pencapaian/identik-asik.webp"
+                  alt="identik-asik"
+                  width={0}
+                  height={0}
                   className="w-[300px] md:w-[270px] md:h-[200px] object-contain"
                 />
                 <div className="text-xs text-center text-[#023a37]">

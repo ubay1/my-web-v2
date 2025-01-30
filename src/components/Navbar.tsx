@@ -106,6 +106,8 @@ const Navbar = () => {
             return isLastItem ? (
               <button
                 key={index}
+                aria-label="lang"
+                aria-labelledby="lang"
                 className="flex items-center justify-center w-8 h-8 rounded-full"
                 onClick={() => setIsShowListLang(!isShowListLang)}
               >
