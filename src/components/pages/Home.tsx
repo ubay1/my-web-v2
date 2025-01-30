@@ -108,9 +108,9 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
             <img
               src="/waveline2.png"
               alt="icon-waveline"
-              width={100}
-              height={100}
-              className="absolute h-7 bottom-[0px] left-[-10px] z-0"
+              width={96}
+              height={28}
+              className="absolute bottom-[0px] left-[-10px] z-0"
             />
             <div className="text-[#f8ecce] text-xs">{t('pages.home.profil.greeting.who')}</div>
             <div className="flex justify-center items-center text-[#f8ecce] text-base font-bold relative z-10">
