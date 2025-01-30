@@ -16,6 +16,8 @@ tags:
 kita bisa gunakan builder ketika pembuatan object (construct) parameter yang dimasukkan dirasa terlalu panjang, dan juga tidak semua parameter wajib untuk memiliki nilai.
 </blockquote>
 
+<br />
+
 ```ts
 // @noErrors
 // @filename: builder.ts
@@ -32,6 +34,8 @@ export class User {
 }
 ```
 
+<br />
+
 ```ts
 // @noErrors
 // @filename: index.ts
@@ -46,6 +50,8 @@ const user1 = new User('aisyah', '', '20')
 - dan jika kita hapus optional parameternya jika kita mengirim string kosong itu tidak bagus juga.
 
 untuk dari itu pattern builder ini hadir. dari kode diatas kita bisa ubah jadi seperti dibawah ini.
+
+<br />
 
 ```ts
 // @noErrors
@@ -81,6 +87,8 @@ export class UserBuilder {
   }
 }
 ```
+
+<br />
 
 ```ts
 // @noErrors

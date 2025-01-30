@@ -39,8 +39,8 @@ p {
   margin: 16px 0;
 }
 blockquote {
-  border-left: 6px solid #393939 !important;
-  border: 1px solid #393939;
+  border-left: 6px solid #f8ecce !important;
+  border: 1px solid #f8ecce;
   font-style: normal !important;
   line-height: 1.6;
   padding: 10px;
@@ -83,8 +83,8 @@ pre {
   margin: 0;
   padding-top: 30px;
   padding-bottom: 20px;
-  background-color: #00000033 !important;
-  border: 1px solid #393939;
+  background-color: #021c19 !important;
+  border: 1px solid #f8ecce;
   overflow-x: auto;
   border-radius: 0.375rem;
 }
@@ -222,8 +222,8 @@ code.twoslash-popup-code,
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #f97315;
-  color: #000;
+  background-color: #f8ecce;
+  color: #023a37;
   padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -231,5 +231,5 @@ code.twoslash-popup-code,
 }
 
 .copy-code:hover {
-  background-color: #cf5b07;
+  background-color: #dbceab;
 }

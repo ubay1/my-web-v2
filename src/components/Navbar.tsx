@@ -3,7 +3,10 @@ import Home from './elements/icons/Home'
 import Note from './elements/icons/Note'
 import Album from './elements/icons/Album'
 import Achievment from './elements/icons/Achievment'
+import Lang from './elements/icons/Lang'
 import { usePageStore } from '@stores/page'
+import { AnimatePresence, motion } from 'framer-motion'
+import WithInitialTransition from './HOC/WithInitialTransition'
 
 const Navbar = () => {
   const { lang, pathName, setPathName, setLang } = usePageStore()
@@ -12,6 +15,7 @@ const Navbar = () => {
     note: Note,
     album: Album,
     achievment: Achievment,
+    lang: Lang,
   }
   const LIST = [
     {
@@ -30,7 +34,13 @@ const Navbar = () => {
       name: 'achievment',
       href: '/pencapaian',
     },
+    {
+      name: 'lang',
+      href: 'none',
+    },
   ]
+
+  const [isShowListLang, setIsShowListLang] = React.useState(false)
 
   const getPath = (path: string) => (path === '/' ? path : `/${path}`)
 
@@ -59,25 +69,79 @@ const Navbar = () => {
     setLang?.(pathName.split('/')[1] as 'id' | 'en')
   }, [])
   return (
-    <div className="w-full flex justify-center">
-      <div className="fixed top-10 z-[100] rounded-full p-2 px-4 border border-[#ed8b28] bg-[#f8ecce] flex items-center gap-4">
-        {LIST.map((item, index) => {
-          const Component = componentMapping[item.name]
-          return (
-            <a
-              key={index}
-              href={getPath(`${lang}${item.href}`)}
-              className="flex items-center justify-center w-8 h-8 rounded-full  text-[#f8ecce] text-lg font-semibold"
-              title={item.name}
-              aria-label={item.name}
-            >
-              <Component color={getActiveColor(item.href)} width="24" height="24" />
-            </a>
-          )
-        })}
-      </div>
-    </div>
+    <motion.section exit={{ opacity: 0 }}>
+      <motion.div
+        animate={{
+          transition: { staggerChildren: 0.1, delayChildren: 2.8 },
+        }}
+        className="w-full flex justify-center"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1.2,
+            delay: 1,
+            type: 'spring',
+            stiffness: 100,
+            damping: 10,
+            bounce: 0.5,
+          }}
+          className="fixed top-10 z-[100] rounded-full p-2 px-4 border border-[#ed8b28] bg-[#f8ecce] flex items-center gap-4"
+        >
+          {LIST.map((item, index) => {
+            const Component = componentMapping[item.name]
+            const isLastItem = item.name === 'lang'
+
+            return isLastItem ? (
+              <button
+                key={index}
+                className="flex items-center justify-center w-8 h-8 rounded-full"
+                onClick={() => setIsShowListLang(!isShowListLang)}
+              >
+                <Component color={getActiveColor(item.href)} width="24" height="24" />
+              </button>
+            ) : (
+              <a
+                key={index}
+                href={getPath(`${lang}${item.href}`)}
+                className="flex items-center justify-center w-8 h-8 rounded-full text-[#f8ecce] text-lg font-semibold"
+                title={item.name}
+                aria-label={item.name}
+              >
+                <Component color={getActiveColor(item.href)} width="24" height="24" />
+              </a>
+            )
+          })}
+
+          <AnimatePresence>
+            {isShowListLang && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.2 }}
+                className="absolute top-12 right-2 bg-[#f8ecce] border border-[#ed8b28] rounded-md shadow-md p-2 w-[100px]"
+              >
+                <ul className="flex flex-col items-center gap-2 ml-0 list-none">
+                  <li>
+                    <a href="/id" className="text-[#023a37] text-[14px]" title="id" aria-label="id">
+                      Indonesia
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/en" className="text-[#023a37] text-[14px]" title="en" aria-label="en">
+                      English
+                    </a>
+                  </li>
+                </ul>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+      </motion.div>
+    </motion.section>
   )
 }
 
-export default Navbar
+export default WithInitialTransition(Navbar)
