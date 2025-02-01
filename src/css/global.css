@@ -70,11 +70,17 @@ ul {
 }
 
 kbd {
-  background-color: #f97315 !important;
-  color: #000 !important;
+  background-color: #ed8b28 !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  padding: 4px;
+  border-radius: 10px;
+  color: #023a37 !important;
+  font-weight: 600;
+  font-family: 'Rubik Variable', sans-serif !important;
   /* box-shadow: 0px 2px 5px black; */
-  font-size: medium !important;
-  /* border: unset !important; */
+  font-size: 13px !important;
+  border: 1px solid #f8ecce !important;
 }
 
 pre {
