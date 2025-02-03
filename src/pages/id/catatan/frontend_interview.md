@@ -420,4 +420,189 @@ console.log('Akhirnya dapat angka 6!')
 
 11. Apa itu closure ?
 
-    - closure adalah Fungsi dalam fungsi yang mengakses variabel luar.
+    - closure adalah fungsi dalam fungsi yang masih bisa mengakses variabel dari parent function meskipun parent-nya sudah selesai dieksekusi.
+
+    contoh:
+
+    ```js
+    function counter() {
+      let count = 0 // Variabel di luar inner function
+
+      return function () {
+        count++ // Bisa akses count meskipun di luar scope-nya
+        console.log(count)
+      }
+    }
+
+    const increment = counter() // Simpan closure di variabel
+    increment() // 1
+    increment() // 2
+    increment() // 3
+    ```
+
+    ```js
+    function multiplier(factor) {
+      return function (number) {
+        return number * factor
+      }
+    }
+
+    const double = multiplier(2)
+    const triple = multiplier(3)
+
+    console.log(double(5)) // 10
+    console.log(triple(5)) // 15
+    ```
+
+12. Apakah setTimeout async atau sync ?
+
+    - Async, karena berjalan di Web API.
+
+13. Apa itu Higher-order Function ?
+
+    - High-order function adalah function yang menerima function sebagai parameter atau mengembalikan function sebagai hasil.
+
+    contoh:
+
+    ```js
+    // fn disini sebagai parameter.
+    // dan fungsi operasi menjadikan fungsi fn sebagai hasil.
+    function operasi(angka, fn) {
+      return fn(angka)
+    }
+    console.log(operasi(5, (n) => n * 2)) // 10
+    ```
+
+14. Apa itu Hoisting ?
+
+    - Hoisting adalah variabel atau fungsi dipindahkan ke atas sebelum eksekusi.
+
+15. Apa itu Callback?
+
+    - Callback adalah fungsi yang dipanggil setelah fungsi lain selesai.
+
+16. Apa itu Promise?
+
+    - Promise adalah Objek untuk menangani operasi async.
+
+17. Ketika membuat sebuah Promise, apa yang akan terjadi jika catch tidak dijalankan?
+
+    - Error tidak ditangani, bisa menyebabkan crash.
+
+18. Apa itu concurrency dan parallelism?
+
+    - concurrency: proses yang dapat dijalankan secara bersamaan, tapi tetap berjalan satu per satu dalam event loop. dan perlu diingat concurrency beda dengan blocking.
+    - parallelism: proses yang dapat dijalankan secara bersamaan. Parallelism di JavaScript hanya bisa dilakukan dengan Web Workers (browser) atau worker_threads (Node.js), yang memungkinkan eksekusi di thread berbeda dan Tidak semua kasus butuh parallelism seperti untuk operasi I/O async (HTTP, Database, File System), cukup pakai async/await.
+
+    contoh concurrency:
+
+    ```js
+    console.log('Mulai')
+
+    setTimeout(() => {
+      console.log('Tugas Async 1 (2 detik)')
+    }, 2000)
+
+    setTimeout(() => {
+      console.log('Tugas Async 2 (1 detik)')
+    }, 1000)
+
+    console.log('Selesai')
+
+    ----------------------------------------------
+    // hasilnya:
+    // 1. Mulai  🟢
+    // 2. setTimeout(2s)  ⚫ (menunggu)
+    // 3. setTimeout(1s)  ⚫ (menunggu)
+    // 4. Selesai  🟢
+    // 5. 1 detik berlalu → Tugas Async 2 selesai  🟢
+    // 6. 2 detik berlalu → Tugas Async 1 selesai  🟢
+
+    ```
+
+    ini adalah gambaran bagaimana cara kerja concurrency. <img src="https://miro.medium.com/v2/resize:fit:1200/format:webp/1*1Pgg5uOrBZ8y6n8JMwNyYw.gif" />
+
+    lalu kapan menggunakan paralellism ?
+
+    - ✅ Perhitungan berat (data processing, AI, enkripsi, manipulasi gambar).
+    - ✅ Butuh benar-benar menggunakan multi-core CPU.
+    - ✅ Tidak ingin UI freeze dalam aplikasi web interaktif.
+
+    Jangan gunakan Parallelism jika:
+
+    - ❌ Hanya ingin fetch API atau database query → Pakai async/await saja.
+    - ❌ Tugasnya ringan → Overhead Web Worker malah bikin lambat.
+    - ❌ Butuh akses DOM → Web Worker tidak bisa akses DOM langsung.
+
+19. Bagaimana Javascript (yang notabene nya single-threaded) menangani proses asynchronous?
+
+    - JS menggunakan Event Loop untuk menangani tugas async, seperti:
+      - setTimeout, setInterval (Timer API)
+      - Fetch API / AJAX
+      - Promises
+      - WebSockets
+      - Worker Threads
+
+20. Implementasi Oberserver Pattern dengan dengan menampilkan inputan user dari field <kbd>input</kbd>
+
+    - Observer Pattern adalah pola desain di mana satu objek (Subject) dapat memiliki banyak Subscriber (Observer) yang akan menerima update ketika ada perubahan.
+
+    📌 Cocok untuk:
+
+    - ✅ Event Handling (misalnya event listener di JavaScript).
+    - ✅ State Management (seperti Redux, Vuex, atau Zustand).
+    - ✅ Realtime Data Update (misalnya notifikasi, chat, atau perubahan UI otomatis).
+
+    contoh dari pertanyaan:
+
+    ```js
+    // Class Subject (Publisher)
+    class InputSubject {
+      constructor() {
+        this.observers = []
+      }
+
+      subscribe(observer) {
+        this.observers.push(observer)
+      }
+
+      notify(value) {
+        this.observers.forEach((observer) => observer(value))
+      }
+    }
+
+    // Buat Subject
+    const inputSubject = new InputSubject()
+
+    // Observer 1 (Menampilkan teks di div)
+    const displayText = (text) => {
+      document.getElementById('output1').innerText = text
+    }
+
+    // Observer 2 (Menampilkan teks di console)
+    const logText = (text) => {
+      console.log('User mengetik:', text)
+    }
+
+    // Subscribe kedua observer
+    inputSubject.subscribe(displayText)
+    inputSubject.subscribe(logText)
+
+    // Event Listener pada input field
+    document.getElementById('userInput').addEventListener('input', (e) => {
+      inputSubject.notify(e.target.value)
+    })
+    ```
+
+    ```html
+    <input type="text" id="userInput" placeholder="Ketik sesuatu..." />
+    <p>Output: <span id="output1"></span></p>
+    ```
+
+    <br />
+
+    > penjelasan:
+    >
+    > Saat user mengetik di form input, event notify(value) akan dijalankan.
+    >
+    > Semua observer yang terdaftar (console log dan span output) akan menerima perubahan input.
