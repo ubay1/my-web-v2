@@ -84,7 +84,8 @@ tags:
    - Urutan prioritas dalam menerapkan aturan CSS (inline style > ID selector > class selector > tag selector).
 
    <br />
-   <table class="border p-2">
+   <div class="overflow-x-auto">
+   <table class="border p-2 min-w-[500px]">
       <thead>
          <tr>
             <th class="border p-2"> Selector </th>
@@ -98,6 +99,7 @@ tags:
          <tr> <td class="border p-2"> Inline styles (style="") </td> <td class="border p-2"> 1000 </td> </tr>
       </tbody>
    </table>
+   </div>
 
    <br/>
 
