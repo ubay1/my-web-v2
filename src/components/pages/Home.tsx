@@ -28,7 +28,8 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
       ;(document.querySelector('body') as HTMLElement).classList.remove('overflow-hidden')
     } else {
       window.scrollTo({ top: 0 })
-      ;(document.querySelector('body') as HTMLElement).classList.add('overflow-hidden')
+      // remove karena ada bug di windows
+      ;(document.querySelector('body') as HTMLElement).classList.remove('overflow-hidden')
     }
   }, [width])
 
