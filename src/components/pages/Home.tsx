@@ -34,20 +34,20 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
   }, [width])
 
   const images = [
-    '/tech/js.svg',
-    '/tech/ts.svg',
-    '/tech/next.svg',
-    '/tech/react.svg',
-    '/tech/zustand.svg',
-    '/tech/nuxt.svg',
-    '/tech/vue.svg',
-    '/tech/pinia.svg',
-    '/tech/tailwind.svg',
-    '/tech/uno.svg',
-    '/tech/tanstack.svg',
-    '/tech/svelte.svg',
-    '/tech/astro.svg',
-    '/tech/express.svg',
+    { img: '/tech/js.svg', text: 'JavaScript' },
+    { img: '/tech/ts.svg', text: 'TypeScript' },
+    { img: '/tech/next.svg', text: 'Next Js' },
+    { img: '/tech/react.svg', text: 'React Js' },
+    { img: '/tech/zustand.svg', text: 'Zustand' },
+    { img: '/tech/tanstack.svg', text: 'Tanstack Query' },
+    { img: '/tech/nuxt.svg', text: 'Nuxt Js' },
+    { img: '/tech/vue.svg', text: 'Vue Js' },
+    { img: '/tech/pinia.svg', text: 'Pinia' },
+    { img: '/tech/svelte.svg', text: 'Svelte' },
+    { img: '/tech/astro.svg', text: 'Astro' },
+    { img: '/tech/tailwind.svg', text: 'Tailwind Css' },
+    { img: '/tech/uno.svg', text: 'Uno Css' },
+    { img: '/tech/express.svg', text: 'Express' },
   ]
   const FAST_DURATION = 25
   const SLOW_DURATION = 75
@@ -251,7 +251,7 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
               }}
             >
               {[...images, ...images].map((item, idx) => (
-                <Card image={`${item}`} key={idx} />
+                <Card image={`${item?.img}`} label={item?.text} key={idx} />
               ))}
             </motion.div>
           </motion.div>
