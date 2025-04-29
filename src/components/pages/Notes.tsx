@@ -49,7 +49,7 @@ const Notes: React.FC<{ data: IBlogDetail[]; withBtnBack?: boolean }> = ({ data,
                 {item.frontmatter.description && item.frontmatter.description !== '' && (
                   <>
                     <hr className="border-[1px] border-[#023a37]" />
-                    <div className="text-xs line-clamp-3">{item.frontmatter.description}</div>
+                    <div className="text-xs">{item.frontmatter.description}</div>
                   </>
                 )}
               </a>
