@@ -4,8 +4,12 @@ import type { IBlogDetail } from '../../types/blog'
 import WithInitialTransition from '@components/HOC/WithInitialTransition'
 import { motion } from 'framer-motion'
 import { sortByDate } from '@utils/sortByDate'
+import type { MarkdownInstance } from 'astro'
 
-const Notes: React.FC<{ data: IBlogDetail[]; withBtnBack?: boolean }> = ({ data, withBtnBack }) => {
+const Notes: React.FC<{
+  data: MarkdownInstance<Record<string, any>>[]
+  withBtnBack?: boolean
+}> = ({ data, withBtnBack }) => {
   useEffect(() => {
     ;(document.querySelector('body') as HTMLElement).classList.remove('overflow-hidden')
   }, [])
