@@ -82,7 +82,7 @@ const Navbar = () => {
     <motion.section exit={{ opacity: 0 }}>
       <motion.div
         animate={{
-          transition: { staggerChildren: 0.1, delayChildren: 2.8 },
+          transition: { staggerChildren: 0.1, delayChildren: 1 },
         }}
         className="w-full flex justify-center"
       >
@@ -90,8 +90,8 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            duration: 1.2,
-            delay: 1,
+            duration: 0.4,
+            delay: 0,
             type: 'spring',
             stiffness: 100,
             damping: 10,
@@ -164,4 +164,4 @@ const Navbar = () => {
   )
 }
 
-export default WithInitialTransition(Navbar)
+export default Navbar

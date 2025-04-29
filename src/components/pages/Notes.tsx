@@ -15,7 +15,7 @@ const Notes: React.FC<{ data: IBlogDetail[]; withBtnBack?: boolean }> = ({ data,
         <motion.button
           initial={{ x: -40, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.2, delay: 1 }}
+          transition={{ duration: 0.2, delay: 0.2 }}
           className="absolute top-28 left-4 z-50 flex items-center gap-1 bg-[#f8ecce] rounded-full p-2 border border-[#ed8b28]"
           onClick={() => window.history.back()}
         >
@@ -24,7 +24,7 @@ const Notes: React.FC<{ data: IBlogDetail[]; withBtnBack?: boolean }> = ({ data,
       )}
       <motion.div
         animate={{
-          transition: { staggerChildren: 0.1, delayChildren: 2.8 },
+          transition: { staggerChildren: 0.1, delayChildren: 0.2 },
         }}
         className={`${withBtnBack ? 'mt-40' : 'mt-28'} mb-4`}
       >
@@ -32,9 +32,9 @@ const Notes: React.FC<{ data: IBlogDetail[]; withBtnBack?: boolean }> = ({ data,
           {data.sort(sortByDate).map((item, idx) => (
             <motion.div
               key={item.url}
-              initial={{ opacity: 0, y: -40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2, delay: 1 }}
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.2, ease: 'easeInOut' }}
               className="bg-[#f8ecce] rounded-md m-2 break-inside-avoid cursor-pointer relative hover:bg-gray-7 hover:bg-opacity-8"
             >
               <a href={item.url} className="text-[#023a37] p-4 flex flex-col gap-4">
@@ -60,4 +60,4 @@ const Notes: React.FC<{ data: IBlogDetail[]; withBtnBack?: boolean }> = ({ data,
     </motion.section>
   )
 }
-export default WithInitialTransition(Notes)
+export default Notes

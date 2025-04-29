@@ -62,7 +62,7 @@ const InitialTransition: React.FC<InitialTransitionProps> = ({ onTransitionDone 
     <div className="absolute inset-0 flex items-center justify-center">
       <motion.div
         id="comp-transition"
-        className="absolute z-[150] flex items-center justify-center w-full bg-[#f8ecce]"
+        className="absolute z-[80] flex items-center justify-center w-full bg-[#f8ecce]"
         initial="initial"
         animate="animate"
         variants={blackBox}

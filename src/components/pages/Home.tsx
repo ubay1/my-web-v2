@@ -100,7 +100,7 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
           <motion.div
             initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 1 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
             className="relative px-4 h-40 flex flex-col justify-center items-center md:h-full md:col-span-2 md:row-start-2 md:row-span-2 bg-[#023a37] text-white rounded-xl text-center overflow-hidden"
           >
             <div className="absolute top-[-10px] left-[-10px] z-10 h-10 w-10 rounded-full border-8 border-[#ed8b28]"></div>
@@ -125,7 +125,7 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
           <motion.div
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.2 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="relative overflow-hidden h-56 flex flex-col justify-start items-center md:h-full md:col-span-2 md:row-span-3 md:col-start-1 md:row-start-4 bg-[#F8ECCE] text-black rounded-xl"
           >
             <div className="p-4">
@@ -155,8 +155,8 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
           <motion.div
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.6 }}
-            className="relative overflow-hidden h-auto p-4 md:h-full md:row-start-2 md:col-span-2 md:row-span-5 md:col-start-3 bg-[#ed8b28] text-white rounded-xl"
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="relative z-[99] overflow-hidden h-auto p-4 md:h-full md:row-start-2 md:col-span-2 md:row-span-5 md:col-start-3 bg-[#ed8b28] text-white rounded-xl"
           >
             <motion.div
               initial={{ x: 20, opacity: 0 }}
@@ -198,7 +198,7 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
           <motion.div
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.8 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
             className="relative overflow-hidden h-80 md:h-full md:col-span-2 md:row-span-3 md:col-start-5 md:row-start-2 bg-[#F8ECCE] text-black rounded-xl"
           >
             <div className="p-4 flex flex-col items-center justify-start gap-4">
@@ -223,7 +223,7 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
           <motion.div
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 2 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
             className="relative overflow-hidden p-4 h-52 md:h-full md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-5 lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-5 bg-[#023a37] text-white rounded-xl"
           >
             <div className="absolute top-[-10px] left-[-10px] z-10 h-10 w-10 rounded-full border-8 border-[#ed8b28]"></div>
@@ -262,4 +262,4 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
   )
 }
 
-export default WithInitialTransition(Home)
+export default Home

@@ -18,7 +18,7 @@ const Achievments: React.FC<{ data: IListAchievment[] }> = ({ data }) => {
     <motion.section exit={{ opacity: 0 }}>
       <motion.div
         animate={{
-          transition: { staggerChildren: 0.1, delayChildren: 2.8 },
+          transition: { staggerChildren: 0.1, delayChildren: 0.2 },
         }}
         className="mt-28 mb-4"
       >
@@ -26,9 +26,10 @@ const Achievments: React.FC<{ data: IListAchievment[] }> = ({ data }) => {
           {data.map((data, index) => (
             <motion.div
               key={`list-achievment-${index}`}
-              initial={{ opacity: 0, y: -40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 1 }}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
               className="break-inside-avoid mb-4 bg-[#023a37] rounded-md"
             >
               <div className="rounded-t-md relative justify-center flex flex-row flex-wrap gap-2 overflow-hidden">
@@ -57,4 +58,4 @@ const Achievments: React.FC<{ data: IListAchievment[] }> = ({ data }) => {
   )
 }
 
-export default WithInitialTransition(Achievments)
+export default Achievments

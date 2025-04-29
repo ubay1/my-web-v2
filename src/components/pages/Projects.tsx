@@ -16,17 +16,18 @@ const Projects: React.FC<{ data: IListProject[] }> = ({ data }) => {
     <motion.section exit={{ opacity: 0 }}>
       <motion.div
         animate={{
-          transition: { staggerChildren: 0.1, delayChildren: 2.8 },
+          transition: { staggerChildren: 0.1, delayChildren: 0.2 },
         }}
-        className="mt-28 mb-4"
+        className="relative z-[99] mt-28 mb-4"
       >
         <motion.div className="gap-4 space-y-4 p-4 columns-1 sm:columns-2 lg:columns-3">
           {data.map((data, index) => (
             <motion.div
               key={`list-proyek-${index}`}
-              initial={{ opacity: 0, y: -40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 1 }}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
               className="break-inside-avoid mb-4 bg-[#023a37] rounded-md"
             >
               <div className="rounded-t-md relative justify-center flex flex-row flex-wrap gap-2 overflow-hidden">
@@ -41,9 +42,9 @@ const Projects: React.FC<{ data: IListProject[] }> = ({ data }) => {
                     className={classNames('h-56 z-10 w-full p-4 object-contain', data.class)}
                   />
                   {/* effect="blur"
-                  wrapperProps={{
-                    style: { transitionDelay: '1s' },
-                  }} */}
+                wrapperProps={{
+                style: { transitionDelay: '1s' },
+                }} */}
                 </div>
               </div>
               <div className="bg-[#f8ecce] rounded-b-md text-[#023a37] flex flex-col p-4">
@@ -72,4 +73,4 @@ const Projects: React.FC<{ data: IListProject[] }> = ({ data }) => {
   )
 }
 
-export default WithInitialTransition(Projects)
+export default Projects
