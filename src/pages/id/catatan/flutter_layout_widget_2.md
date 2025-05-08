@@ -27,9 +27,63 @@ widget yang menampilkan koleksi widget dalam tata letak grid (berbaris dan berko
 Jenis GridView di Flutter
 
 - GridView.count = Membuat grid dengan jumlah kolom tetap
+
+```dart
+GridView.count(
+  crossAxisCount: 2, // Jumlah kolom
+  children: List.generate(10, (index) {
+    return Container(
+      margin: EdgeInsets.all(8),
+      color: Colors.blue[100],
+      child: Center(child: Text('Item $index')),
+    );
+  }),
+)
+```
+
 - GridView.extent = Membuat grid dengan lebar maksimum item
+
+```dart
+GridView.extent(
+maxCrossAxisExtent: 150, // Lebar maksimum item
+children: List.generate(10, (index) {
+  return Container(
+    margin: EdgeInsets.all(8),
+    color: Colors.green[100],
+    child: Center(child: Text('Item $index')),
+  );
+}),
+)
+```
+
 - GridView.builder = Optimal untuk grid dengan banyak item (lazy loading)
+
+```dart
+GridView.builder(
+  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: 3, // 3 kolom
+  ),
+  itemCount: 50, // Jumlah total item
+  itemBuilder: (context, index) {
+    return Card(
+      child: Image.network('https://picsum.photos/250?image=$index'),
+    );
+  },
+)
+```
+
 - GridView.custom = Grid dengan custom delegate untuk kontrol penuh
+
+```dart
+GridView.custom(
+  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: 2,
+  ),
+  childrenDelegate: SliverChildListDelegate(
+    List.generate(10, (index) => Text('Item $index')),
+  ),
+)
+```
 
 Tips Penggunaan GridView:
 
@@ -160,7 +214,7 @@ Tips Penggunaan
 - ✅ Gunakan Positioned untuk kontrol presisi
 - ✅ Atur clipBehavior ke Clip.none jika perlu overflow
 - ✅ Hindari nested Stack yang berlebihan
-- ✅ Untuk z-index, urutan child menentukan tumpukan (child/widget paling bawah di atas)
+- ✅ Untuk z-index, urutan child menentukan tumpukan (child/widget paling bawah berarti ada di paling atas)
 
 ### 8. Table
 
