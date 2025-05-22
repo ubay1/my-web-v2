@@ -26,49 +26,88 @@ React Context terdiri dari dua bagian utama:
 Berikut adalah contoh sederhana penggunaan React Context:
 
 ```tsx
-import React, { createContext, useContext, useState } from 'react'
+// context/profile.tsx
+import { createContext, useState, type ReactNode } from 'react'
 
-// Membuat context untuk nilai tema
-const ThemeContext = createContext<string | any>('')
+const initialState = {
+  name: '',
+  age: 0,
+  address: '',
+}
 
-// Komponen Provider yang menyediakan nilai tema
-function ThemeProvider({ children }: any) {
-  const [theme, setTheme] = useState('light')
+type StateType = keyof typeof initialState
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'))
+type ProfilType = typeof initialState
+
+type ProfilContextType = [
+  ProfilType,
+  (field: StateType, value: string) => void,
+  (value: ProfilType) => void,
+]
+
+export const ProfilContext = createContext<ProfilContextType>([initialState, () => {}, () => {}])
+
+export function ProfilProvider({ children }: { children: ReactNode }) {
+  const [profil, setProfil] = useState(initialState)
+
+  const setData = (field: StateType, value: string) => {
+    setProfil((data) => ({
+      ...data,
+      [field]: field === 'age' ? Number(value) : value,
+    }))
+  }
+  const setFullData = (value: ProfilType) => {
+    setProfil(() => ({
+      ...value,
+    }))
   }
 
-  return <ThemeContext.Provider value={{ theme, toggleTheme }}> {children} </ThemeContext.Provider>
-}
-
-// Komponen Consumer yang mengonsumsi nilai tema dari context
-function ThemeConsumer() {
-  const { theme, toggleTheme } = useContext(ThemeContext)
-
   return (
-    <div>
-      <h3>Current Theme: {theme}</h3>
-      <button onClick={toggleTheme}>Toggle Theme</button>
-    </div>
+    <ProfilContext.Provider value={[profil, setData, setFullData]}>
+      {children}
+    </ProfilContext.Provider>
   )
 }
+```
 
-// Komponen utama menggunakan ThemeProvider sebagai Provider
+```tsx
+// import ProfilProvider agar bisa digunakan di seluruh page/komponen yang membutuhkan informasi dari context
+// ./App.tsx
+import { ProfilProvider } from './context/profile'
+
 function App() {
   return (
-    <ThemeProvider>
+    <ProfilProvider>
       <div>
         <h1>Theme Example</h1>
-        <ThemeConsumer />
       </div>
-    </ThemeProvider>
+    </ProfilProvider>
   )
 }
 
 export default App
 ```
 
-Pada contoh di atas, ThemeProvider menyediakan toggleTheme sebagai nilai ke dalam Context. Kemudian, ThemeConsumer menggunakan useContext untuk mengakses fungsi toggleTheme yang disediakan oleh Provider.
+```tsx
+// ./pages/index.tsx
+import { useContext } from 'react'
+import { ProfilContext } from './context/profile'
 
-Perlu diingat bahwa dalam contoh ini, toggleTheme hanyalah sebuah fungsi sederhana yang diimplementasikan sebagai contoh.
+export default function Home() {
+  const [profil, setData, setFullData] = useContext(ProfilContext)
+
+  return (
+    <div>
+      <div style={styleSpace}>
+        <h1>Context</h1>
+        <div>{profil.age}</div>
+        <button onClick={() => setData('age', '20')}> set profil age </button>
+        <button onClick={() => setFullData({ name: 'ubay', address: 'aa', age: 22 })}>
+          set full data
+        </button>
+        <div>fulldata = {JSON.stringify(profil)}</div>
+      </div>
+    </div>
+  )
+}
+```
