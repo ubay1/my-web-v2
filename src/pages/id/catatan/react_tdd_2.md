@@ -40,3 +40,52 @@ untuk menyeleksi element mana yang ingin kita test, di React testing library ada
 <img alt="rtl-3" src="/rtl-3.png" width="300"/>
 <img alt="rtl-4" src="/rtl-4.png" width="300"/>
 <img alt="rtl-5" src="/rtl-5.png" width="300"/>
+
+<br />
+
+## Mengakses DOM komponen
+
+kita juga bisa mengakses dom komponen yang akan kita tes. <br/>
+
+```tsx
+// components/Testing.tsx
+import { useState } from 'react'
+
+export const TestingCount = () => {
+  const [count, setCount] = useState(0)
+  return (
+    <div>
+      <p data-testid="count">{count}</p>
+      <button data-testid="btn-count" onClick={() => setCount(count + 1)}>
+        Tambah
+      </button>
+    </div>
+  )
+}
+```
+
+```tsx
+// components/Testing.test.tsx
+import { describe, expect, it } from 'vitest'
+import { fireEvent, render, screen } from '@testing-library/react'
+import { TestingCount } from './Testing'
+
+describe('Testing Component Counter', () => {
+  it('menampilkan nilai default', () => {
+    render(<TestingCount />)
+    expect(screen.getByTestId('count')).toHaveTextContent('0')
+  })
+
+  it('menambah count saat button di klik', () => {
+    render(<TestingCount />)
+    const button = screen.getByTestId('btn-count')
+    fireEvent.click(button)
+    expect(screen.getByTestId('count')).toHaveTextContent('1')
+  })
+})
+```
+
+- fireEvent berfungsi untuk mengirimkan event pada element. <br/>
+- screen berfungsi untuk mengakses dom komponen. <br/>
+- expect berfungsi untuk membandingkan nilai yang diharapkan dengan nilai yang dihasilkan. <br/>
+- toHaveTextContent milik jestDom, kita bisa cek listnya disini https://github.com/testing-library/jest-dom <br/>
