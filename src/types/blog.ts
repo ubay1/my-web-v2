@@ -7,7 +7,7 @@ export interface IBlogDetail {
     imageAlt: string
     viewTransitionName: string
     date: string
-    icon: string
+    icon: string | string[]
     tags: string[]
   }
   file: string

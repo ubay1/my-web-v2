@@ -45,7 +45,10 @@ const Notes: React.FC<{
                 {typeof item.frontmatter.icon !== 'string' ? (
                   <div className="flex gap-1 items-center">
                     {item.frontmatter.icon.map((icon: string) => (
-                      <div className="w-5 h-5 bg-[#fff] rounded-full flex justify-center items-center">
+                      <div
+                        key={icon}
+                        className="w-5 h-5 bg-[#fff] rounded-full flex justify-center items-center"
+                      >
                         <Icon icon={icon} className="w-4 h-4 rounded-full" />
                       </div>
                     ))}

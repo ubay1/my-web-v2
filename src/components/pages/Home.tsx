@@ -181,7 +181,12 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
                   <div className="font-semibold text-[#023a37] text-sm truncate">
                     {post.frontmatter.title}
                   </div>
-                  <Icon icon={post.frontmatter.icon} className="w-4 h-4" />
+                  {/* <Icon icon={post.frontmatter.icon} className="w-4 h-4" /> */}
+                  {typeof post.frontmatter.icon !== 'string' ? (
+                    <Icon icon={post.frontmatter.icon[0]} className="w-4 h-4" />
+                  ) : (
+                    <Icon icon={post.frontmatter.icon} className="w-4 h-4" />
+                  )}
                 </a>
               ))}
             </div>
