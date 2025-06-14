@@ -42,9 +42,19 @@ const Notes: React.FC<{
               className="bg-[#f8ecce] rounded-md m-2 break-inside-avoid cursor-pointer relative hover:bg-gray-7 hover:bg-opacity-8"
             >
               <a href={item.url} className="text-[#023a37] p-4 flex flex-col gap-4">
-                <div className="w-5 h-5 bg-[#fff] rounded-full flex justify-center items-center">
-                  <Icon icon={item.frontmatter.icon} className="w-4 h-4 rounded-full" />
-                </div>
+                {typeof item.frontmatter.icon !== 'string' ? (
+                  <div className="flex gap-1 items-center">
+                    {item.frontmatter.icon.map((icon: string) => (
+                      <div className="w-5 h-5 bg-[#fff] rounded-full flex justify-center items-center">
+                        <Icon icon={icon} className="w-4 h-4 rounded-full" />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="w-5 h-5 bg-[#fff] rounded-full flex justify-center items-center">
+                    <Icon icon={item.frontmatter.icon} className="w-4 h-4 rounded-full" />
+                  </div>
+                )}
                 <div>
                   <div className="break-words">{item.frontmatter.title}</div>
                   <div className="text-[10px]">{item.frontmatter.date}</div>
