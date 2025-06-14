@@ -471,3 +471,25 @@ export async function POST(request: Request) {
 // Jika Anda juga ingin mengizinkan metode lain, definisikan di sini:
 // export async function GET(request: Request) { ... }
 ```
+
+<br/>
+
+## 5. Jika notif tidak muncul
+
+### 1. Notifikasi diblokir oleh Sistem Operasi (OS):
+
+Penyebab: Sistem operasi Anda (Windows, macOS, Linux) memiliki pengaturannya sendiri untuk notifikasi. Mode "Do Not Disturb" (Jangan Ganggu) atau pengaturan privasi/notifikasi spesifik dapat memblokir notifikasi dari browser. Solusi:
+
+- Windows: Buka "Settings" (Pengaturan) -> "System" -> "Notifications & actions" (Notifikasi & tindakan). Pastikan "Get notifications from apps and other senders" aktif, dan gulir ke bawah untuk memeriksa apakah browser yang Anda gunakan (Chrome, Edge, Firefox) diizinkan mengirim notifikasi.
+
+- macOS: Buka "System Settings" (Pengaturan Sistem) -> "Notifications" (Notifikasi). Cari browser Anda dan pastikan notifikasi diizinkan dan gaya notifikasinya (Banners/Alerts) dipilih. Pastikan "Do Not Disturb" tidak aktif.
+
+- Linux: Tergantung pada desktop environment Anda (GNOME, KDE, dll.), cari pengaturan notifikasi dan pastikan browser Anda diizinkan.
+
+### 2. Pengaturan Notifikasi Browser yang Memblokir:
+
+Penyebab: Selain pengaturan OS, browser Anda sendiri mungkin memiliki pengaturan yang memblokir notifikasi dari situs tertentu. Solusi:
+
+- Chrome/Edge: Buka chrome://settings/content/notifications (atau edge://settings/content/notifications). Pastikan situs Anda (localhost:PORT) ada di bagian "Allowed to send notifications" (Diizinkan mengirim notifikasi). Jika tidak, tambahkan secara manual atau pastikan Anda mengklik "Allow" saat diminta izin. Periksa juga bagian "Blocked from sending notifications" (Diblokir dari mengirim notifikasi) jika situs Anda ada di sana.
+
+- Firefox: Buka about:preferences#privacy -> gulir ke bawah ke bagian "Permissions" -> "Notifications" -> "Settings...". Pastikan situs Anda terdaftar sebagai "Allow" (Izinkan).
