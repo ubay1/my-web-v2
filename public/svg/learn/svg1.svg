@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 300 100" style="background-color: #f87171;">
+    <circle cx="25" cy="50" r="25" fill="yellow"></circle>
+    <circle cx="75" cy="50" r="25" fill="yellow"></circle>
+    <circle cx="125" cy="50" r="25" fill="yellow"></circle>
+    <circle cx="175" cy="50" r="25" fill="yellow"></circle>
+    <circle cx="225" cy="50" r="25" fill="yellow"></circle>
+    <circle cx="275" cy="50" r="25" fill="yellow"></circle>
+</svg>
