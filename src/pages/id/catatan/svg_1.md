@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts/MarkdownLayout.astro
 title: Belajar SVG
-description: apa itu svg, atribut svg, apa itu viewbox, atribut rect, atribut polygon,
+description: apa itu svg, atribut svg, apa itu viewbox, atribut rect, atribut polygon, bermain dengan rect, polygon, circle
 imagePath: https://www.riffamedia.com/storage/image/1/svg.png
 imageAlt: img-svg
 viewTransitionName: 'svg-1'
