@@ -81,3 +81,43 @@ export const buttonVariant = tv({
   <div className={base({ class: 'bg-purple-100 dark:bg-purple-800' })}></div>
  **/
 ```
+
+cara menggunakan
+
+```tsx
+const { base: baseSuccessVariant } = buttonVariant({
+  color: 'success',
+  size: 'lg',
+})
+const { base: baseBooleanVariant } = buttonVariant({
+  color: 'secondary',
+  disabled: true,
+  size: 'lg',
+})
+const { base: baseCompoundVariant } = buttonVariant({
+  color: 'success',
+  disabled: true,
+  size: 'lg',
+})
+const { base: baseCompount2Color } = buttonVariant({
+  color: 'primary',
+  disabled: true,
+  size: 'lg',
+})
+
+export default function Home() {
+  return (
+    <div className={cn(flexCol.center, 'h-screen')}>
+      <p className="text-4xl font-bold font-manrope mb-8">Hallo developer</p>
+      <div className={cn(flex.center, 'gap-2')}>
+        <button className={baseSuccessVariant()} onClick={() => toast.success('Hallo')}>
+          Success variant
+        </button>
+        <button className={baseBooleanVariant()}>Boolean variant</button>
+        <button className={baseCompoundVariant()}>Compound variant</button>
+        <button className={baseCompount2Color()}>Compound variant with 2 color</button>
+      </div>
+    </div>
+  )
+}
+```
