@@ -1,14 +1,13 @@
 ---
 layout: ../../../layouts/MarkdownLayout.astro
-title: E2E Testing dengan Playwright
+title: E2E Testing Next.js dengan Playwright
 description:
 imagePath: https://wallpapercave.com/wp/wp4924054.jpg
 imageAlt: img-playwright
-viewTransitionName: 'react-tdd-1'
+viewTransitionName: 'playwright-1'
 date: 2025-07-14 10:00
 icon: 'devicon:playwright'
 tags:
-  - react
   - testing
   - vitest
   - react-testing-library
