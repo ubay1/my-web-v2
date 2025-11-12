@@ -1,3 +1,15 @@
 [build]
   command = "npm run build"
   publish = "dist"
+
+# Tambahkan headers untuk izinkan domain eksternal di CSP
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "img-src * data: blob:;"
+
+# Opsional: caching untuk gambar
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
