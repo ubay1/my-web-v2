@@ -150,14 +150,24 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
                 className="w-24 md:w-28 z-0"
               />
 
-              <a
-                href={t('pages.home.profil.link_portfolio')}
-                className="text-center text-sm font-bold text-[#023a37]"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t('pages.home.profil.download_portfolio')}
-              </a>
+              <div className="flex flex-col gap-2 mb-4">
+                <a
+                  href={t('pages.home.profil.link_portfolio')}
+                  className="text-center text-sm font-bold text-[#023a37]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t('pages.home.profil.download_portfolio')}
+                </a>
+                <a
+                  href={t('pages.home.profil.link_cv')}
+                  className="text-center text-sm font-bold text-[#023a37]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t('pages.home.profil.download_cv')}
+                </a>
+              </div>
             </div>
           </motion.div>
           {/* 10 latest notes */}
