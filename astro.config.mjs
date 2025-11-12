@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import react from '@astrojs/react'
-import netlify from '@astrojs/netlify'
+import vercel from '@astrojs/vercel/serverless'
+// import netlify from '@astrojs/netlify';
 import {
   transformerNotationHighlight,
   transformerMetaHighlight,
@@ -148,5 +149,6 @@ export default defineConfig({
     // }),
     astroI18next(),
   ],
-  adapter: netlify(),
+  adapter: vercel(),
+  // adapter: netlify(),
 })
