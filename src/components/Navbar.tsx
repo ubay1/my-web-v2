@@ -30,18 +30,18 @@ const Navbar = () => {
       width: 28,
       height: 28,
     },
-    {
-      name: 'album',
-      href: '/proyek',
-      width: 24,
-      height: 24,
-    },
-    {
-      name: 'achievment',
-      href: '/pencapaian',
-      width: 24,
-      height: 24,
-    },
+    // {
+    //   name: 'album',
+    //   href: '/proyek',
+    //   width: 24,
+    //   height: 24,
+    // },
+    // {
+    //   name: 'achievment',
+    //   href: '/pencapaian',
+    //   width: 24,
+    //   height: 24,
+    // },
     {
       name: 'lang',
       href: 'none',

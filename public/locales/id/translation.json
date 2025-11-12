@@ -12,7 +12,10 @@
           "title": "Hello, saya Ubay",
           "desc": "Saya adalah seorang Frontend Engineer yang berkompeten dalam merancang antarmuka pengguna yang memikat dan responsif. Dengan penguasaan HTML, CSS, dan JavaScript, serta pengalaman dalam framework seperti React, Vue, dan Svelte, saya berkomitmen untuk menghadirkan pengalaman pengguna yang optimal. Saya percaya bahwa antarmuka yang baik tidak hanya terlihat menarik, tetapi juga memberikan kemudahan dan kenyamanan bagi penggunanya. Melalui pendekatan yang detail dan inovatif, saya selalu berusaha memberikan solusi web yang modern dan berkualitas tinggi."
         },
-        "experience": "Lebih dari 5+ tahun pengalaman"
+        "experience": "Lebih dari 5+ tahun pengalaman",
+        "download_portfolio": "Lihat Portofolio Saya Disini",
+        "link_portfolio": "https://www.canva.com/design/DAGoCRh0r84/PbWoEZ1BqakeZjRhyijboQ/edit?utm_content=DAGoCRh0r84&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+        "download_cv": "Download CV Saya Disini"
       },
       "blog": {
         "title": "10 Catatan Terakhir",

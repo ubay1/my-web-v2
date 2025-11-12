@@ -36,17 +36,17 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
   const images = [
     { img: '/tech/js.svg', text: 'JavaScript' },
     { img: '/tech/ts.svg', text: 'TypeScript' },
-    { img: '/tech/next.svg', text: 'Next Js' },
-    { img: '/tech/react.svg', text: 'React Js' },
+    { img: '/tech/next.svg', text: 'Next' },
+    { img: '/tech/react.svg', text: 'React' },
     { img: '/tech/zustand.svg', text: 'Zustand' },
-    { img: '/tech/tanstack.svg', text: 'Tanstack Query' },
-    { img: '/tech/nuxt.svg', text: 'Nuxt Js' },
-    { img: '/tech/vue.svg', text: 'Vue Js' },
+    { img: '/tech/tanstack.svg', text: 'Tanstack' },
+    { img: '/tech/nuxt.svg', text: 'Nuxt' },
+    { img: '/tech/vue.svg', text: 'Vue' },
     { img: '/tech/pinia.svg', text: 'Pinia' },
     { img: '/tech/svelte.svg', text: 'Svelte' },
     { img: '/tech/astro.svg', text: 'Astro' },
-    { img: '/tech/tailwind.svg', text: 'Tailwind Css' },
-    { img: '/tech/uno.svg', text: 'Uno Css' },
+    { img: '/tech/tailwind.svg', text: 'Tailwind' },
+    { img: '/tech/uno.svg', text: 'Uno' },
     { img: '/tech/express.svg', text: 'Express' },
   ]
   const FAST_DURATION = 25
@@ -149,6 +149,15 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
                 height={0}
                 className="w-24 md:w-28 z-0"
               />
+
+              <a
+                href={t('pages.home.profil.link_portfolio')}
+                className="text-center text-sm font-bold text-[#023a37]"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('pages.home.profil.download_portfolio')}
+              </a>
             </div>
           </motion.div>
           {/* 10 latest notes */}
@@ -243,7 +252,7 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
               {t('pages.home.tech.title')}
             </div>
             <motion.div
-              className="absolute left-4 top-[40%] flex gap-4"
+              className="absolute left-4 top-[40%] flex gap-10"
               style={{ x: xTranslation }}
               ref={refMeasure}
               onHoverStart={() => {
@@ -256,7 +265,10 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
               }}
             >
               {[...images, ...images].map((item, idx) => (
-                <Card image={`${item?.img}`} label={item?.text} key={idx} />
+                <div key={idx} className="flex flex-col items-center justify-center">
+                  <Card image={`${item?.img}`} label={item?.text} />
+                  <div className="text-white text-sm">{item?.text}</div>
+                </div>
               ))}
             </motion.div>
           </motion.div>
