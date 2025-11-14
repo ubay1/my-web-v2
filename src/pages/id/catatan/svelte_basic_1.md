@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Svelte Basic - (dynamic attr, tag @html, reactivity, props)
 description:
-imagePath: https://miro.medium.com/v2/resize:fit:1400/1*G9fzmaoymDGy7scbkgpC7A.png
+imagePath: /blog/svelte.webp
 imageAlt: svelte
 viewTransitionName: 'svelte-dyn-attr'
 date: 2023-10-01 09:00

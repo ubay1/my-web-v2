@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Dart - Exception Handling
 description: jenis-jenis exception built-in, try catch finally, menangkap exception spesifik, stack trace, melempar exception (throw), custom exception
-imagePath: https://swansoftwaresolutions.com/wp-content/uploads/2020/02/08.20.20-What-is-Dart-and-how-is-it-used-1.jpg
+imagePath: /blog/dart.webp
 imageAlt: img-dart
 viewTransitionName: 'dart'
 date: 2025-04-30 09:00

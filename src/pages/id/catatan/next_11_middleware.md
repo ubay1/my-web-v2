@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: NEXT - Middleware
 description:
-imagePath: https://wallpapercave.com/wp/wp11846968.png
+imagePath: /blog/next.webp
 imageAlt: next
 viewTransitionName: 'next-middleware'
 date: 2024-06-16 09:00

@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Frontend interview
 description: List pertanyaan dan jawaban interview frontend.
-imagePath: https://coderpad.io/wp-content/uploads/2022/06/Big-front-end-guide-to-interviewing-Blog-1024-x-683.png
+imagePath: /blog/js.webp
 imageAlt: img-fe-interview
 viewTransitionName: 'fe-interview'
 date: 2025-01-31 05:00
@@ -15,17 +15,14 @@ tags:
 # HTML
 
 1. Jelaskan perbedaan <kbd>div</kbd> dan <kbd>span</kbd>
-
    - div adalah elemen block-level, artinya elemen ini akan otomatis memenuhi lebar dari parent-nya dan menyebabkan elemen lain turun ke baris berikutnya.
    - span adalah elemen inline, artinya hanya akan mengambil ruang sesuai dengan kontennya dan tidak menyebabkan elemen lain turun ke baris berikutnya.
 
 2. Jelaskan perbedaan <kbd>HTML</kbd> vs <kbd>XHTML</kbd>
-
    - HTML lebih fleksibel, tidak wajib menutup tag, case-insensitive.
    - XHTML lebih ketat, wajib menutup semua tag, harus case-sensitive (harus lowercase).
 
 3. Jelaskan perbedaan Element dan Tag HTML
-
    - Tag adalah bagian dari elemen, misalnya <kbd>p</kbd> atau <kbd>div</kbd>.
    - Element adalah keseluruhan struktur dari tag pembuka, isi, dan tag penutup.
 
@@ -39,7 +36,6 @@ tags:
    - Elemen adalah keseluruhan code diatas
 
 4. Apa yang dimaksud dengan Semantic HTML
-
    - Penggunaan elemen HTML sesuai dengan maknanya, misalnya <kbd>header</kbd> kita buat khusus untuk header, <kbd>article</kbd>, <kbd>section</kbd> daripada hanya <kbd>div</kbd>.
 
    berikut ini gambaran penggunaan semantic HTML: <img src="/semantic-html.webp" width="600" height="300" class="object-contain" />
@@ -54,18 +50,15 @@ tags:
 # CSS
 
 1. Bisakah CSS menggunakan @import?
-
    - Ya, digunakan untuk mengimpor file CSS lain ke dalam satu file CSS utama.
 
    > 👉 Kelebihan: Bisa memisahkan file CSS. 👉 Kekurangan: Meningkatkan waktu load karena CSS dimuat secara async.
 
 2. Perbedaan CSS padding vs margin
-
    - padding: Elemen akan memiliki ruang di dalam elemen (antara konten dan border).
    - margin: Elemen akan memiliki ruang di luar elemen (antara border dan elemen lain).
 
 3. Apa saja Unit baru pada CSS3
-
    - <kbd>rem</kbd>: Berdasarkan root font-size.
    - <kbd>svh</kbd>, <kbd>lvh</kbd>, <kbd>dvh</kbd>, <kbd>vw</kbd>, dll: Berdasarkan tinggi/lebar viewport.
    - <kbd>fr</kbd>: Unit khusus untuk CSS Grid.
@@ -73,14 +66,12 @@ tags:
    contoh svh,lvh,&dvh: <img src="https://www.terluinwebdesign.nl/en/wp-content/uploads/2022/03/incoming-20-new-css-viewport-units-svh-lvh-dvh-svw-lvw-dvw.png" width="600" height="300" class="object-contain" />
 
 4. Unit mana yang membantu desain web responsif?
-
    - <kbd>%</kbd>: Menyesuaikan dengan parent.
    - <kbd>rem</kbd>: Lebih stabil karena berdasarkan root.
    - <kbd>vh/vw</kbd>: Menyesuaikan dengan viewport.
    - <kbd>fr</kbd>: Untuk tata letak Grid yang fleksibel.
 
 5. Apa yang dimaksud dengan CSS Specificity?
-
    - Urutan prioritas dalam menerapkan aturan CSS (inline style > ID selector > class selector > tag selector).
 
    <br />
@@ -117,13 +108,11 @@ div {
 ```
 
 7.  Jelaskan perbedaan dari inline, block, dan inline-block
-
     - inline: hanya sebesar kontennya, tidak bisa set width dan height.
     - block: memenuhi lebar parent dan bisa diatur ukuran.
     - inline-block: kombinasi inline dan block, bisa diatur width dan height tanpa pindah ke baris baru.
 
 8.  Apa itu Pseudo-Class dalam CSS?
-
     - Pseudo-Class adalah Selector khusus untuk kondisi tertentu, misalnya <kbd>:hover</kbd>, <kbd>:active</kbd>, <kbd>:visited</kbd>, dll.
 
     ```css
@@ -153,11 +142,9 @@ div {
     ```
 
 10. Apa itu Grid System di CSS?
-
     - Sistem tata letak berbasis grid yang memudahkan pengaturan layout.
 
 11. Sebutkan apa saja aturan pada CSS Ruleset
-
     - Selector { property: value; } (contoh: p { color: red; }).
 
 <br />
@@ -166,24 +153,20 @@ div {
 # Javascript
 
 1. Apakah Javascript Async atau sync?
-
    - Secara default sync, tapi bisa async dengan setTimeout, Promise, async/await.
 
      > - Async: Kode bisa berjalan di latar belakang tanpa menghentikan eksekusi kode lainnya. JavaScript menggunakan callback, promises, dan async/await untuk menangani proses async.
      > - Sync: Kode dieksekusi secara berurutan, satu per satu. Jika satu operasi memakan waktu lama, maka kode di bawahnya akan menunggu.
 
 2. Apa perbedaan var, const dan let?
-
    - Var: dapat diubah nilai setelah dideklarasikan. Bisa diubah nilai setelah dideklarasikan.
    - Const: dapat diubah nilai setelah dideklarasikan. Tidak boleh diubah nilai setelah dideklarasikan.
    - Let: dapat diubah nilai setelah dideklarasikan. Bisa diubah nilai setelah dideklarasikan.
 
 3. Tipe data pada Js
-
    - string, number, boolean, null, undefined, symbol, bigint, object.
 
 4. Apa itu DOM?
-
    - Document Object Model adalah representasi objek-objek HTML, CSS, dan JavaScript dalam sebuah dokumen HTML.
 
    contoh manipulasi DOM:
@@ -193,12 +176,10 @@ div {
    ```
 
 5. Apa perbedaan antara Array & Object ?
-
    - Array: koleksi berurutan, indeks numerik.
    - Object: koleksi key-value.
 
 6. Perbedaan == dan === ?
-
    - <kbd>==</kbd> : mengecek nilai.
    - <kbd>===</kbd> : mengecek nilai dan tipe data. contoh:
 
@@ -211,7 +192,6 @@ div {
    ```
 
 7. Apa itu this?
-
    - Dalam object, this merujuk ke object itu sendiri.
    - Dalam function biasa, this merujuk ke global (window).
 
@@ -232,7 +212,6 @@ div {
    ```
 
 8. Apa perbedaan dari arrow function dan regular function?
-
    - Arrow function:
      1. sintaks lebih ringkas
      2. tidak memiliki this, mengikuti this dari parent
@@ -345,7 +324,6 @@ div {
    > - Gunakan Regular Function jika butuh hoisting, arguments object, atau menggunakan this dengan cara tradisional.
 
 9. Apa itu undefined dan null?
-
    - <kbd>undefined</kbd>: variabel yang belum diinisialisasi.
    - <kbd>null</kbd>: nilai kosong yang diatur secara eksplisit.
 
@@ -421,7 +399,6 @@ console.log('Akhirnya dapat angka 6!')
 > ```
 
 11. Apa itu closure ?
-
     - closure adalah fungsi dalam fungsi yang masih bisa mengakses variabel dari parent function meskipun parent-nya sudah selesai dieksekusi.
 
     contoh:
@@ -457,11 +434,9 @@ console.log('Akhirnya dapat angka 6!')
     ```
 
 12. Apakah setTimeout async atau sync ?
-
     - Async, karena berjalan di Web API.
 
 13. Apa itu Higher-order Function ?
-
     - High-order function adalah function yang menerima function sebagai parameter atau mengembalikan function sebagai hasil.
 
     contoh:
@@ -476,23 +451,18 @@ console.log('Akhirnya dapat angka 6!')
     ```
 
 14. Apa itu Hoisting ?
-
     - Hoisting adalah variabel atau fungsi dipindahkan ke atas sebelum eksekusi.
 
 15. Apa itu Callback?
-
     - Callback adalah fungsi yang dipanggil setelah fungsi lain selesai.
 
 16. Apa itu Promise?
-
     - Promise adalah Objek untuk menangani operasi async.
 
 17. Ketika membuat sebuah Promise, apa yang akan terjadi jika catch tidak dijalankan?
-
     - Error tidak ditangani, bisa menyebabkan crash.
 
 18. Apa itu concurrency dan parallelism?
-
     - concurrency: proses yang dapat dijalankan secara bersamaan, tapi tetap berjalan satu per satu dalam event loop. dan perlu diingat concurrency beda dengan blocking.
     - parallelism: proses yang dapat dijalankan secara bersamaan. Parallelism di JavaScript hanya bisa dilakukan dengan Web Workers (browser) atau worker_threads (Node.js), yang memungkinkan eksekusi di thread berbeda dan Tidak semua kasus butuh parallelism seperti untuk operasi I/O async (HTTP, Database, File System), cukup pakai async/await.
 
@@ -525,19 +495,16 @@ console.log('Akhirnya dapat angka 6!')
     ini adalah gambaran bagaimana cara kerja concurrency. <img src="https://miro.medium.com/v2/resize:fit:1200/format:webp/1*1Pgg5uOrBZ8y6n8JMwNyYw.gif" />
 
     lalu kapan menggunakan paralellism ?
-
     - ✅ Perhitungan berat (data processing, AI, enkripsi, manipulasi gambar).
     - ✅ Butuh benar-benar menggunakan multi-core CPU.
     - ✅ Tidak ingin UI freeze dalam aplikasi web interaktif.
 
     Jangan gunakan Parallelism jika:
-
     - ❌ Hanya ingin fetch API atau database query → Pakai async/await saja.
     - ❌ Tugasnya ringan → Overhead Web Worker malah bikin lambat.
     - ❌ Butuh akses DOM → Web Worker tidak bisa akses DOM langsung.
 
 19. Bagaimana Javascript (yang notabene nya single-threaded) menangani proses asynchronous?
-
     - JS menggunakan Event Loop untuk menangani tugas async, seperti:
       - setTimeout, setInterval (Timer API)
       - Fetch API / AJAX
@@ -546,11 +513,9 @@ console.log('Akhirnya dapat angka 6!')
       - Worker Threads
 
 20. Implementasi Oberserver Pattern dengan dengan menampilkan inputan user dari field <kbd>input</kbd>
-
     - Observer Pattern adalah pola desain di mana satu objek (Subject) dapat memiliki banyak Subscriber (Observer) yang akan menerima update ketika ada perubahan.
 
     📌 Cocok untuk:
-
     - ✅ Event Handling (misalnya event listener di JavaScript).
     - ✅ State Management (seperti Redux, Vuex, atau Zustand).
     - ✅ Realtime Data Update (misalnya notifikasi, chat, atau perubahan UI otomatis).

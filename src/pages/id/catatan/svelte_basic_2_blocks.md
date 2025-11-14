@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Svelte Basic - (If, Each, Await)
 description:
-imagePath: https://miro.medium.com/v2/resize:fit:1400/1*G9fzmaoymDGy7scbkgpC7A.png
+imagePath: /blog/svelte.webp
 imageAlt: svelte
 viewTransitionName: 'svelte-condition'
 date: 2023-10-01 11:00

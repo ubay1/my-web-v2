@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Flutter - Layout Widget (part 1)
 description: Align, Aspect Ratio, Baseline, Center, Constrained Box, Container, Expanded, FittedBox, FractionallySizedBox, IntrinsictHeight & IntrinsictWidth, LimitedBox, Offstage, OverflowBox, Padding, SizedBox, SizedOverflowBox
-imagePath: https://amirhosseintorabi.github.io/images/flutter.png
+imagePath: /blog/flutter.webp
 imageAlt: img-dart
 viewTransitionName: 'dart'
 date: 2025-05-01 09:00

@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: NEXT - Loading UI & Streaming
 description: loading.tsx, pengertian streaming, streaming dengan <Suspense />
-imagePath: https://wallpapercave.com/wp/wp11846968.png
+imagePath: /blog/next.webp
 imageAlt: next
 viewTransitionName: 'next-loading-ui'
 date: 2024-06-12 07:00

@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: NEXT - Intercepting Route
 description: fitur ini dipakai twitter, linkedin, instagram. saat menampilkan detail data pada dialog.
-imagePath: https://wallpapercave.com/wp/wp11846968.png
+imagePath: /blog/next.webp
 imageAlt: next
 viewTransitionName: 'next-intercepting-route'
 date: 2024-06-15 08:00

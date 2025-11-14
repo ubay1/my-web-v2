@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Function overload
 description: mendukung fungsi dengan berbagai skenario input dan output.
-imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
+imagePath: /blog/ts.webp
 imageAlt: ts
 viewTransitionName: 'ts-func-overload'
 date: 2022-12-02 07:05

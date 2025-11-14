@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Sveltekit -  routing lanjutan (rest parameter, advance layout (group, +page@.svelte, +page@{nama_group}.svelte, +layout@.svelte))
 description:
-imagePath: https://miro.medium.com/v2/resize:fit:1400/1*G9fzmaoymDGy7scbkgpC7A.png
+imagePath: /blog/svelte.webp
 imageAlt: svelte
 viewTransitionName: 'sveltekit-routing-advance'
 date: 2023-08-20 08:00

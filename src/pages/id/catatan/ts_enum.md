@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Enum
 description: enum adalah fitur TypeScript untuk mendefinisikan sekumpulan nilai konstan dengan nama yang lebih deskriptif. enum berguna untuk membuat kode lebih terbaca, terorganisir, dan mudah dikelola.
-imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
+imagePath: /blog/ts.webp
 imageAlt: ts
 viewTransitionName: 'ts-enum'
 date: 2022-12-02 07:00

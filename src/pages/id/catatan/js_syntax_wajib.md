@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Syntax javascript yang wajib digunakan
 description: Syntax javascript yang wajib digunakan ini akan mempermudah dan mempercepat proses koding kita.
-imagePath: https://programacion.net/files/article/20160921060930_javascript.jpg
+imagePath: /blog/js.webp
 imageAlt: img-js
 viewTransitionName: 'js-required-syntax'
 date: 2022-12-01 09:00

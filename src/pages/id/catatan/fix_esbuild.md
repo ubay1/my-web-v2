@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Memperbaiki esbuild error "You installed esbuild for another platform than the one you're currently using.This won't work because esbuild is written with native code and needs toinstall ..."
 description: Memperbaiki esbuild yang error pada kodingan kita.
-imagePath: https://user-images.githubusercontent.com/1941540/79317564-6a81a980-7f38-11ea-9817-1a668c618fce.png
+imagePath: /blog/esbuild.webp
 imageAlt: img-esbuild
 viewTransitionName: 'fix-esbuild'
 date: 2023-10-13 09:00

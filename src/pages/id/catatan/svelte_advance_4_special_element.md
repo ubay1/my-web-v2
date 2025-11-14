@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Svelte Advance - Special element (svelte:self)
 description:
-imagePath: https://miro.medium.com/v2/resize:fit:1400/1*G9fzmaoymDGy7scbkgpC7A.png
+imagePath: /blog/svelte.webp
 imageAlt: svelte
 viewTransitionName: 'svelte-self'
 date: 2023-10-06 09:00

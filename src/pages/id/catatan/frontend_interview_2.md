@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Frontend interview bagian 2 - react.js
 description: List pertanyaan dan jawaban interview frontend bagian 2.
-imagePath: https://coderpad.io/wp-content/uploads/2022/06/Big-front-end-guide-to-interviewing-Blog-1024-x-683.png
+imagePath: /blog/js.webp
 imageAlt: img-fe-interview
 viewTransitionName: 'fe-interview'
 date: 2025-02-03 08:00
@@ -15,7 +15,6 @@ tags:
 # React.js
 
 1. Apa itu JSX ? dan bagaimana bisa dirender di HTML ?
-
    - JSX (JavaScript XML) adalah sintaks yang memungkinkan kita menulis HTML di dalam JavaScript.
    - JSX tidak bisa langsung dipahami oleh browser, jadi React menggunakan Babel untuk mengonversi JSX menjadi kode JavaScript biasa, misalnya:
 
@@ -24,7 +23,6 @@ tags:
    ```
 
 2. Jelaskan lifecycle dari ReactJS?
-
    - Lifecycle adalah serangkaian metode yang dipanggil selama siklus hidup suatu komponen.
    - <kbd>Mounting:</kbd> constructor(), render(), componentDidMount()
    - <kbd>Updating:</kbd> shouldComponentUpdate(), render(), componentDidUpdate()
@@ -39,16 +37,13 @@ tags:
    </div>
 
 4. Mengapa ReactJS menggunakan virtual DOM dan bukan real DOM?
-
    - Virtual DOM mempercepat proses rendering dengan cara membandingkan perubahan sebelum mengupdate DOM asli. Ini disebut dengan <kbd>Reconciliation</kbd>.
 
 5. Apa kegunaan prop key, dan apa yang terjadi jika tidak menggunakannya?
-
    - Key digunakan dalam list untuk memberikan identitas unik pada setiap elemen.
    - Jika tidak ada key, React harus mengecek ulang semua elemen dalam list, yang bisa memperlambat kinerja.
 
 6. Kapan dan Mengapa menggunakan State Management dan tidak?
-
    - Gunakan state management jika state dipakai di banyak komponen.
    - Jika hanya beberapa komponen, cukup gunakan <kbd>useState()</kbd> atau <kbd>useContext()</kbd>
 
@@ -59,14 +54,12 @@ tags:
    </div>
 
 8. Mengapa Hooks harus selalu dipanggil di top-level sebuah component?
-
    - Karena React menggunakan rules of hooks, yaitu:
      - Hooks harus dipanggil dalam urutan yang sama di setiap render.
      - Tidak boleh dipanggil dalam loop, kondisi, atau nested function.
    - Jika dilanggar, bisa menyebabkan bug yang sulit dideteksi.
 
 9. Apa itu high order component?
-
    - HOC adalah fungsi yang menerima komponen dan mengembalikan komponen baru dengan tambahan props atau behavior.
 
    ```js
@@ -91,7 +84,6 @@ tags:
     </div>
 
 11. Apa bedanya pure component sama functional component?
-
     - Pure Component: Hanya re-render jika state atau props berubah (digunakan pada React.PureComponent).
     - Functional Component: Re-render setiap kali parent-nya re-render.
 
@@ -106,9 +98,7 @@ tags:
     > React lebih merekomendasikan Functional Component karena lebih ringan dan mudah dibaca.
 
 13. Apa itu SSR dan CSR, kapan kita harus make CSR atau SSR?
-
     - SSR dan CSR adalah dua teknik dalam rendering halaman web. Masing-masing punya kelebihan dan kekurangan tergantung pada kebutuhan aplikasi.
-
       - ✅ SSR adalah proses rendering halaman web di server sebelum dikirim ke browser.
       - 📌 Cara Kerja SSR:
         - Browser mengirim request ke server.
@@ -124,7 +114,6 @@ tags:
 
       <br />
       <br />
-
       - ✅ CSR adalah proses rendering halaman web di browser menggunakan JavaScript setelah menerima halaman kosong dari server.
         - 📌 Cara Kerja CSR:
           - Browser meminta halaman ke server.
@@ -140,36 +129,30 @@ tags:
 
       <br />
       <br />
-
       - 📌 4. Kapan Menggunakan SSR atau CSR?
 
       <br />
-
       - ✅ Gunakan SSR jika:
         - Website membutuhkan SEO yang kuat (misalnya blog, berita, e-commerce).
         - Halaman harus muncul secepat mungkin saat pertama kali diakses.
         - Konten berubah sering, tapi tetap butuh indeksasi oleh Google.
 
       <br />
-
       - ✅ Gunakan CSR jika:
         - Aplikasi bersifat interaktif seperti dashboard, chat, atau media sosial.
         - Navigasi antar halaman harus cepat tanpa reload.
         - Tidak terlalu peduli dengan SEO atau hanya menargetkan pengguna login.
 
 14. Perbedaan Controlled vs uncontrolled components di React?
-
     - <kbd>Controlled</kbd>: State dikontrol oleh React (useState).
     - <kbd>Uncontrolled</kbd>: Menggunakan ref untuk mendapatkan nilai input.
 
 15. Bagaimana cara agar browser dan server dapat berkomunikasi tanpa reload halaman?
-
     - AJAX (fetch, axios)
     - WebSocket (untuk real-time)
     - Server-Sent Events (SSE)
 
 16. Apa itu memoization? Apa manfaatnya dalam aplikasi React?
-
     - Memoization adalah teknik caching untuk mencegah perhitungan ulang yang tidak perlu.
     - React Hooks yang mendukung memoization:
       - <kbd>useMemo()</kbd>: Mencegah perhitungan ulang nilai.
@@ -178,7 +161,6 @@ tags:
     > Manfaat: Meningkatkan performa dengan menghindari render ulang yang tidak perlu.
 
 17. Bagaimana perbedaan pengunaan useMemo dan useCallback?
-
     - ✔ useMemo → Cache hasil perhitungan, menghindari perhitungan ulang yang mahal.
     - ✔ useCallback → Cache fungsi, mencegah pembuatan fungsi baru di setiap render.
     - ⚡ Gunakan useMemo untuk perhitungan berat, dan useCallback untuk optimasi fungsi agar tidak menyebabkan re-render!
@@ -186,12 +168,10 @@ tags:
     <br />
 
     ## 📌 1. useMemo → Mem-Cache Nilai Hasil Perhitungan
-
     - ✅ Gunakan useMemo saat ada perhitungan berat yang tidak ingin dieksekusi berulang kali setiap re-render.
     - ✅ Mengembalikan nilai yang telah dihitung dan hanya dihitung ulang jika dependensinya berubah.
 
     <br />
-
     - ❌ Tanpa useMemo (Setiap Render Hitung Ulang)
 
     ```jsx
@@ -224,7 +204,6 @@ tags:
     > - Ini memperlambat UI karena perhitungan yang berat selalu dilakukan ulang.
 
     <br />
-
     - ✅ Dengan useMemo()
 
     ```jsx
@@ -262,12 +241,10 @@ tags:
     <br/>
 
     ## 📌 2. useCallback → Mem-Cache Fungsi
-
     - ✅ Gunakan useCallback saat sebuah fungsi sering dibuat ulang tanpa perlu.
     - ✅ Mencegah re-render komponen anak yang menerima fungsi sebagai prop (karena setiap render, fungsi dianggap berbeda).
 
     <br />
-
     - ❌ Tanpa useCallback (Fungsi Dibuat Ulang Terus)
 
     ```jsx
@@ -302,7 +279,6 @@ tags:
     > - Child selalu re-render meskipun onClick tidak berubah (karena dianggap sebagai fungsi baru).
 
     <br />
-
     - ✅ dengan useCallback()
 
     ```jsx
@@ -338,5 +314,4 @@ tags:
     > - Menghemat performa pada komponen yang sering menerima fungsi sebagai prop.
 
 18. Apa itu React Router?
-
     - React Router adalah library yang memungkinkan navigasi antar halaman dalam aplikasi React.

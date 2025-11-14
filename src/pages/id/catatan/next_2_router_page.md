@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: NEXT - Basic router, page, layout, template, metadata
 description: Memahami router, page, layout, template, metadata
-imagePath: https://wallpapercave.com/wp/wp11846968.png
+imagePath: /blog/next.webp
 imageAlt: next
 viewTransitionName: 'next-router'
 date: 2024-06-11 10:00

@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Design Pattern Structural - Adapter
 description: ''
-imagePath: https://refactoring.guru/images/patterns/content/adapter/adapter-en-2x.png
+imagePath: /blog/typescript.webp
 imageAlt: img-design-pattern
 viewTransitionName: 'design-pattern-adapter'
 date: 2023-12-14 09:00

@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: NEXT - Server Actions
 description:
-imagePath: https://wallpapercave.com/wp/wp11846968.png
+imagePath: /blog/next.webp
 imageAlt: next
 viewTransitionName: 'next-server-actions'
 date: 2024-06-17 08:00

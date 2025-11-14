@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Integrasi NEXT.js Versi 15 Dengan Firebase Cloud Message
 description:
-imagePath: https://wallpapercave.com/wp/wp11846968.png
+imagePath: /blog/next.webp
 imageAlt: next
 viewTransitionName: 'next-fcm'
 date: 2025-06-14 08:00

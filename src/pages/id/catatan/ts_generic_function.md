@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Generic function pada Typescript
 description: Belajar generic function typescript
-imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
+imagePath: /blog/ts.webp
 imageAlt: ts
 viewTransitionName: 'ts-generic-func'
 date: 2022-12-05 08:00

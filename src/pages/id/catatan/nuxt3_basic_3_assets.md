@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: NUXT 3 basic - assets (public/, assets/)
 description:
-imagePath: https://img-c.udemycdn.com/course/750x422/4395942_c476_2.jpg
+imagePath: /blog/nuxt.webp
 imageAlt: nuxt3
 viewTransitionName: 'nuxt3-assets'
 date: 2023-05-26 05:00

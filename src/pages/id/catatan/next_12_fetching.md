@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: NEXT - Fetching
 description: Fetching via server dengan fetch, Fetch tidak akan mencache, revalidate berdasarkan waktu, revalidate berdasarkan tag
-imagePath: https://wallpapercave.com/wp/wp11846968.png
+imagePath: /blog/next.webp
 imageAlt: next
 viewTransitionName: 'next-fetching'
 date: 2024-06-16 12:00

@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Dart - Function
 description: void function, return function, arrow function, anonym function, first class function, positional parameter, optional parameter, named parameter, lexical closure, tipe function, high order function.
-imagePath: https://swansoftwaresolutions.com/wp-content/uploads/2020/02/08.20.20-What-is-Dart-and-how-is-it-used-1.jpg
+imagePath: /blog/dart.webp
 imageAlt: img-dart
 viewTransitionName: 'dart'
 date: 2025-04-28 11:00

@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Generic interface
 description: contoh generic function dengan generic interface untuk types dinamis.
-imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
+imagePath: /blog/ts.webp
 imageAlt: ts
 viewTransitionName: 'ts-generic-interface'
 date: 2022-12-08 09:00

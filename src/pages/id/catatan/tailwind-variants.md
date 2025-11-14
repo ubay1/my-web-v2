@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Mengenal tailwind variants
 description: mengenal tailwind variant, agar lebih rapih dalam membuat komponen
-imagePath: https://ded9.com/wp-content/uploads/2023/08/c21c1baf-7863-41a1-961e-6959a29d4f84.webp
+imagePath: /blog/tailwind.webp
 imageAlt: img-tw
 viewTransitionName: 'tw-1'
 date: 2025-07-11 09:00

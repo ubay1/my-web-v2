@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: React - React.memo, useCallback, useMemo
 description:
-imagePath: https://wallpapercave.com/wp/wp4924054.jpg
+imagePath: /blog/react.webp
 imageAlt: react
 viewTransitionName: 'react-memo'
 date: 2023-11-14 09:00

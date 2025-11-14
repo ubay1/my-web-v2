@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Index signature
 description: Index signature di TypeScript digunakan untuk membuat tipe yang fleksibel ketika kita tidak tahu nama properti dari suatu objek, tapi tahu tipe dari key dan value-nya. Ini berguna untuk objek dengan properti dinamis atau jumlah properti yang tidak tetap.
-imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
+imagePath: /blog/ts.webp
 imageAlt: ts
 viewTransitionName: 'ts-index-signature'
 date: 2022-12-02 07:00

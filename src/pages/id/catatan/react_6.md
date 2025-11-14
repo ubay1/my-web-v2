@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: React - useEffect (Mounted, Unmounted, watcher usestate)
 description:
-imagePath: https://wallpapercave.com/wp/wp4924054.jpg
+imagePath: /blog/react.webp
 imageAlt: react
 viewTransitionName: 'react-effect'
 date: 2023-11-07 09:00

@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: NEXT - Linking & Navigating
 description: next/link, active link with usePathname(), useRouter(), redirect()
-imagePath: https://wallpapercave.com/wp/wp11846968.png
+imagePath: /blog/next.webp
 imageAlt: next
 viewTransitionName: 'next-navigating'
 date: 2024-06-11 13:00

@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: NUXT 3 advance - middleware
 description:
-imagePath: https://img-c.udemycdn.com/course/750x422/4395942_c476_2.jpg
+imagePath: /blog/nuxt.webp
 imageAlt: nuxt3
 viewTransitionName: 'nuxt3-middleware'
 date: 2023-06-01 09:00

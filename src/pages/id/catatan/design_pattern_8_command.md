@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Design Pattern Behavioral - Command
 description: ''
-imagePath: https://refactoring.guru/images/patterns/content/command/command-en-2x.png
+imagePath: /blog/typescript.webp
 imageAlt: img-design-pattern
 viewTransitionName: 'design-pattern-command'
 date: 2023-12-17 09:00

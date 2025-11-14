@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Dart - Instalasi & Tipe data
 description: int, double, num, String, bool, List<T>, Set<T>, Map<key, value>, var, final, const, Object, Null Safety (?), is, as, runtimeType
-imagePath: https://swansoftwaresolutions.com/wp-content/uploads/2020/02/08.20.20-What-is-Dart-and-how-is-it-used-1.jpg
+imagePath: /blog/dart.webp
 imageAlt: img-dart
 viewTransitionName: 'dart'
 date: 2025-04-28 09:00

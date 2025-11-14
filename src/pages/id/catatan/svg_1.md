@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Belajar SVG
 description: apa itu svg, atribut svg, apa itu viewbox, atribut rect, atribut polygon, bermain dengan rect, polygon, circle
-imagePath: https://www.riffamedia.com/storage/image/1/svg.png
+imagePath: /blog/svg.webp
 imageAlt: img-svg
 viewTransitionName: 'svg-1'
 date: 2025-06-28 09:00
@@ -124,17 +124,14 @@ cara memahami penggunaan svg polygon:
 1. Titik pertama adalah (50, -90), artinya koordinat x = 50 dan y = -90.
 
 2. Dari (50, -90) ke (50, -50):
-
    - Nilai x tetap 50, jadi tidak ada pergerakan horizontal.
    - Nilai y berubah dari -90 ke -50, artinya garis bergerak vertikal ke bawah.
 
 3. Dari (50, -50) ke (90, -50):
-
    - Nilai y tetap -50, jadi tidak ada pergerakan vertikal.
    - Nilai x berubah dari 50 ke 90, artinya garis bergerak horizontal ke kanan.
 
 4. Dari (90, -50) ke (90, -90):
-
    - Nilai x tetap 90, jadi tidak ada pergerakan horizontal.
    - Nilai y berubah dari -50 ke -90, artinya garis bergerak vertikal ke atas.
 

@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Tipe data pada Typescript
 description: string, boolean, number, Symbol, Array, any, tuples, enum, union, literal, type, unknown, assertion
-imagePath: https://miro.medium.com/max/1400/1*kIccf4SUwLmavuqDgjYlZA.jpeg
+imagePath: /blog/ts.webp
 imageAlt: ts
 viewTransitionName: 'ts-tipedata'
 date: 2022-12-02 07:00
@@ -215,7 +215,6 @@ if (typeof testUnknownType1 === 'string') {
 
 - tipe never dimasukan jika kita tahu bahwa nilai tidak akan dikembalikan, contohnya dibawah ini.
 - ada 2 kasus yang bisa kita berikan type never:
-
   1. loop tanpa akhir, contohnya dibawah ini:
 
   ```ts twoslash

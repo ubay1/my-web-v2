@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Python - Variabel
 description:
-imagePath: https://cdn.hashnode.com/res/hashnode/image/upload/v1584284080124/WSg9hzPr-.jpeg
+imagePath: /blog/python.webp
 imageAlt: python
 viewTransitionName: 'python-variabel'
 date: 2023-12-01 11:00

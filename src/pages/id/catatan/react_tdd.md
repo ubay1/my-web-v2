@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: React Testing - Setup
 description: vitest, @testing-library/react, @testing-library/jest-dom, jsdom
-imagePath: https://wallpapercave.com/wp/wp4924054.jpg
+imagePath: /blog/react.webp
 imageAlt: img-react-test
 viewTransitionName: 'react-tdd-1'
 date: 2025-05-11 09:00

@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: NEXT - Parallel Route
 description: slot (@analytic, @other), default.tsx (untuk fallback jika file page.tsx tidak ada), loading & error UI
-imagePath: https://wallpapercave.com/wp/wp11846968.png
+imagePath: /blog/next.webp
 imageAlt: next
 viewTransitionName: 'next-parallel-route'
 date: 2024-06-14 08:00

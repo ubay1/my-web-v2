@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: React - Rendering list
 description:
-imagePath: https://wallpapercave.com/wp/wp4924054.jpg
+imagePath: /blog/react.webp
 imageAlt: react
 viewTransitionName: 'react-list'
 date: 2023-11-03 09:00

@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Design Pattern Structural - Facade
 description: ''
-imagePath: https://refactoring.guru/images/patterns/content/facade/facade-2x.png
+imagePath: /blog/typescript.webp
 imageAlt: img-design-pattern
 viewTransitionName: 'design-pattern-facade'
 date: 2023-12-16 09:00

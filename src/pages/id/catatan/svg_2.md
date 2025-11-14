@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Belajar SVG - part 2
 description: atribut line, bermain dengan line
-imagePath: https://www.riffamedia.com/storage/image/1/svg.png
+imagePath: /blog/svg.webp
 imageAlt: img-svg
 viewTransitionName: 'svg-1'
 date: 2025-06-29 09:00

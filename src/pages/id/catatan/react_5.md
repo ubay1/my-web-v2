@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: React - Binding (input text, textarea, checkbox dengan array usestate, radio, selectbox)
 description:
-imagePath: https://wallpapercave.com/wp/wp4924054.jpg
+imagePath: /blog/react.webp
 imageAlt: react
 viewTransitionName: 'react-binding'
 date: 2023-11-05 09:00

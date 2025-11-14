@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Design Pattern Creational - Factory Method
 description: ''
-imagePath: https://refactoring.guru/images/patterns/content/factory-method/factory-method-en-2x.png
+imagePath: /blog/typescript.webp
 imageAlt: img-design-pattern
 viewTransitionName: 'design-pattern-factory'
 date: 2023-12-10 09:00

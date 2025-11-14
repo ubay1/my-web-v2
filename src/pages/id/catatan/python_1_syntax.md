@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Python - Syntax
 description:
-imagePath: https://cdn.hashnode.com/res/hashnode/image/upload/v1584284080124/WSg9hzPr-.jpeg
+imagePath: /blog/python.webp
 imageAlt: python
 viewTransitionName: 'python-syntax'
 date: 2023-12-01 09:00

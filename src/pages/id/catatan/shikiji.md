@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Shikiji Cheat Sheet
 description: syntax highlighter
-imagePath: https://www.markdownguide.org/assets/images/markdown-guide-og.jpg
+imagePath: /blog/markdown.webp
 imageAlt: next
 viewTransitionName: 'shikiji'
 date: 2024-07-01 08:00

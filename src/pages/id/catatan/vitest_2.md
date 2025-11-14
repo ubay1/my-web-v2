@@ -2,7 +2,7 @@
 layout: ../../../layouts/MarkdownLayout.astro
 title: Belajar Vitest (snapshot)
 description: snapshot
-imagePath: https://miro.medium.com/v2/resize:fit:1200/1*6YEGcCs46UW8KmFs3hDWgA.png
+imagePath: /blog/vitest.webp
 imageAlt: ts
 viewTransitionName: 'vitest-2'
 date: 2024-10-12 10:00
