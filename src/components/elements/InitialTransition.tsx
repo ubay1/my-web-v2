@@ -62,7 +62,7 @@ const InitialTransition: React.FC<InitialTransitionProps> = ({ onTransitionDone 
     <div className="absolute inset-0 flex items-center justify-center">
       <motion.div
         id="comp-transition"
-        className="absolute z-[80] flex items-center justify-center w-full bg-[#f8ecce]"
+        className="absolute z-[80] flex items-center justify-center w-full bg-[#fff]"
         initial="initial"
         animate="animate"
         variants={blackBox}
@@ -80,7 +80,7 @@ const InitialTransition: React.FC<InitialTransitionProps> = ({ onTransitionDone 
             className="text-[#ed8b28]"
           >
             <rect className="w-full h-full fill-current" />
-            <motion.rect variants={text} className="w-full h-full text-[#023a37] fill-current" />
+            <motion.rect variants={text} className="w-full h-full text-[#232325] fill-current" />
           </pattern>
           <text
             className="text-4xl font-bold"

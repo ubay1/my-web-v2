@@ -20,10 +20,10 @@ const Notes: React.FC<{
           initial={{ x: -40, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.2, delay: 0.2 }}
-          className="absolute top-28 left-4 z-50 flex items-center gap-1 bg-[#f8ecce] rounded-full p-2 border border-[#ed8b28]"
+          className="absolute top-28 left-4 z-50 flex items-center gap-1 bg-[#fff] rounded-full p-2 border border-[#ed8b28]"
           onClick={() => window.history.back()}
         >
-          <Icon icon="mdi:arrow-left" color="#023a37" className="w-8 h-8 " />
+          <Icon icon="mdi:arrow-left" color="#232325" className="w-8 h-8 " />
         </motion.button>
       )}
       <motion.div
@@ -39,22 +39,22 @@ const Notes: React.FC<{
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: 0.2, ease: 'easeInOut' }}
-              className="bg-[#f8ecce] rounded-md m-2 break-inside-avoid cursor-pointer relative hover:bg-gray-7 hover:bg-opacity-8"
+              className="bg-[#fff] rounded-md m-2 break-inside-avoid cursor-pointer relative hover:bg-gray-7 hover:bg-opacity-8"
             >
-              <a href={item.url} className="text-[#023a37] p-4 flex flex-col gap-4">
+              <a href={item.url} className="text-[#232325] p-4 flex flex-col gap-4">
                 {typeof item.frontmatter.icon !== 'string' ? (
                   <div className="flex gap-1 items-center">
                     {item.frontmatter.icon.map((icon: string) => (
                       <div
                         key={icon}
-                        className="w-5 h-5 bg-[#fff] rounded-full flex justify-center items-center"
+                        className="w-5 h-5 bg-[#191919] rounded-full flex justify-center items-center"
                       >
                         <Icon icon={icon} className="w-4 h-4 rounded-full" />
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <div className="w-5 h-5 bg-[#fff] rounded-full flex justify-center items-center">
+                  <div className="w-5 h-5 bg-[#191919] rounded-full flex justify-center items-center">
                     <Icon icon={item.frontmatter.icon} className="w-4 h-4 rounded-full" />
                   </div>
                 )}
@@ -65,7 +65,7 @@ const Notes: React.FC<{
 
                 {item.frontmatter.description && item.frontmatter.description !== '' && (
                   <>
-                    <hr className="border-[1px] border-[#023a37]" />
+                    <hr className="border-[1px] border-[#232325]" />
                     <div className="text-xs">{item.frontmatter.description}</div>
                   </>
                 )}

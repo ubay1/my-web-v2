@@ -30,10 +30,10 @@ const Achievments: React.FC<{ data: IListAchievment[] }> = ({ data }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
-              className="break-inside-avoid mb-4 bg-[#023a37] rounded-md"
+              className="break-inside-avoid mb-4 bg-[#232325] rounded-md"
             >
               <div className="rounded-t-md relative justify-center flex flex-row flex-wrap gap-2 overflow-hidden">
-                <div className="h-56 pt-8 w-full bg-[#f8ecce] flex justify-center items-center">
+                <div className="h-56 pt-8 w-full bg-[#fff] flex justify-center items-center">
                   <img
                     src={data.img}
                     alt={`img-${data.img}`}
@@ -45,7 +45,7 @@ const Achievments: React.FC<{ data: IListAchievment[] }> = ({ data }) => {
                 }} */}
                 </div>
               </div>
-              <div className="bg-[#f8ecce] rounded-b-md text-[#023a37] flex flex-col p-4">
+              <div className="bg-[#fff] rounded-b-md text-[#232325] flex flex-col p-4">
                 <div className="text-center font-bold mb-2">
                   {t('pages.achievment.title').split(',')[index]}
                 </div>

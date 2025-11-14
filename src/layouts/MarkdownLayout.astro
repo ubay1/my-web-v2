@@ -68,7 +68,7 @@ const { frontmatter } = Astro.props
       }
     </script>
   </head>
-  <body class="m-auto !text-[#f8ecce]">
+  <body class="m-auto bg-[#232325] !text-[#fff]">
     <div class="relative w-full h-[300px]">
       <!-- <Navigation client:load> -->
       <button
@@ -99,7 +99,7 @@ const { frontmatter } = Astro.props
           frontmatter.tags.map((tag: any) => (
             <a
               href={`/id/tags/${tag}`}
-              class="bg-[#00000033] text-[#f8ecce] text-xs border border-[#f8ecce] p-2 rounded-md hover:bg-[#023a37]"
+              class="bg-[#00000033] text-[#fff] text-xs border border-[#fff] p-2 rounded-md hover:bg-[#232325]"
             >
               #{tag}
             </a>

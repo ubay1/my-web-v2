@@ -101,7 +101,7 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
             initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="relative px-4 h-40 flex flex-col justify-center items-center md:h-full md:col-span-2 md:row-start-2 md:row-span-2 bg-[#023a37] text-white rounded-xl text-center overflow-hidden"
+            className="relative px-4 h-40 flex flex-col justify-center items-center md:h-full md:col-span-2 md:row-start-2 md:row-span-2 bg-[#232325] text-white rounded-xl text-center overflow-hidden"
           >
             <div className="absolute top-[-10px] left-[-10px] z-10 h-10 w-10 rounded-full border-8 border-[#ed8b28]"></div>
             <div className="absolute bottom-[-10px] right-[-10px] z-10 h-10 w-10 rounded-full border-8 border-[#ed8b28]"></div>
@@ -113,11 +113,11 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
               height={28}
               className="absolute bottom-[0px] left-[-10px] z-0"
             />
-            <div className="text-[#f8ecce] text-xs">{t('pages.home.profil.greeting.who')}</div>
-            <div className="flex justify-center items-center text-[#f8ecce] text-base font-bold relative z-10">
+            <div className="text-[#fff] text-xs">{t('pages.home.profil.greeting.who')}</div>
+            <div className="flex justify-center items-center text-[#fff] text-base font-bold relative z-10">
               {t('pages.home.profil.greeting.role')}
             </div>
-            <div className="text-[#f8ecce] text-[14px] relative z-10">
+            <div className="text-[#fff] text-[14px] relative z-10">
               {t('pages.home.profil.greeting.jobdesc')}
             </div>
           </motion.div>
@@ -126,19 +126,19 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="relative overflow-hidden h-56 flex flex-col justify-start items-center md:h-full md:col-span-2 md:row-span-3 md:col-start-1 md:row-start-4 bg-[#F8ECCE] text-black rounded-xl"
+            className="relative overflow-hidden h-56 flex flex-col justify-start items-center md:h-full md:col-span-2 md:row-span-3 md:col-start-1 md:row-start-4 bg-[#fff] text-black rounded-xl"
           >
             <div className="p-4">
-              <div className="bg-[#023a37] text-[#fff] p-1 px-2 rounded-full  text-xs">
+              <div className="bg-[#232325] text-[#fff] p-1 px-2 rounded-full  text-xs">
                 Professional Frontend Engineer
               </div>
             </div>
             <div className="px-4 flex flex-row justify-center md:flex-col md:justify-center items-center mt-4 gap-4">
               <div className="flex flex-col items-center">
-                <div className="text-[#023a37] font-bold text-center text-2xl md:text-3xl">
+                <div className="text-[#232325] font-bold text-center text-2xl md:text-3xl">
                   Ubay Dillah
                 </div>
-                <div className="text-[#023a37] text-[14px] text-center">
+                <div className="text-[#232325] text-[14px] text-center">
                   {t('pages.home.profil.experience')}
                 </div>
               </div>
@@ -155,7 +155,7 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
               <div className="flex flex-col gap-2 mb-4">
                 <a
                   href={t('pages.home.profil.link_portfolio')}
-                  className="text-center text-sm font-bold text-[#023a37]"
+                  className="text-center text-sm font-bold text-[#232325]"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -163,7 +163,7 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
                 </a>
                 <a
                   href={t('pages.home.profil.link_cv')}
-                  className="text-center text-sm font-bold text-[#023a37]"
+                  className="text-center text-sm font-bold text-[#232325]"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -183,23 +183,23 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
               initial={{ x: 20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.4, ease: 'backOut' }}
-              className="absolute bottom-[-10px] right-[-10px] z-10 h-10 w-10 rounded-full border-8 border-[#F8ECCE]"
+              className="absolute bottom-[-10px] right-[-10px] z-10 h-10 w-10 rounded-full border-8 border-[#fff]"
             ></motion.div>
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.4, ease: 'backOut' }}
-              className="absolute bottom-[-10px] left-[-10px] z-10 h-10 w-10 rounded-full border-8 border-[#F8ECCE]"
+              className="absolute bottom-[-10px] left-[-10px] z-10 h-10 w-10 rounded-full border-8 border-[#fff]"
             ></motion.div>
-            <div className="text-xl font-bold text-[#023a37]">{t('pages.home.blog.title')}</div>
+            <div className="text-xl font-bold text-[#232325]">{t('pages.home.blog.title')}</div>
             <div className="flex flex-col gap-2 mt-4">
               {fiveBlogLatest.sort(sortByDate).map((post: IBlogDetail) => (
                 <a
                   key={`${post.frontmatter.title}`}
                   href={post.url}
-                  className="bg-[#F8ECCE] p-2 rounded-lg grid grid-cols-[auto_16px] gap-2"
+                  className="bg-[#fff] p-2 rounded-lg grid grid-cols-[auto_16px] gap-2"
                 >
-                  <div className="font-semibold text-[#023a37] text-sm truncate">
+                  <div className="font-semibold text-[#232325] text-sm truncate">
                     {post.frontmatter.title}
                   </div>
                   {/* <Icon icon={post.frontmatter.icon} className="w-4 h-4" /> */}
@@ -213,7 +213,7 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
             </div>
             <div className="mt-4 relative z-10 text-right">
               <a
-                className="font-bold text-[#023a37] border-b-2 border-dotted border-[#023a37]"
+                className="font-bold text-[#232325] border-b-2 border-dotted border-[#232325]"
                 href={getPath(`${lang}/catatan`)}
               >
                 {t('pages.home.blog.all')}
@@ -225,10 +225,10 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="relative overflow-hidden h-80 md:h-full md:col-span-2 md:row-span-3 md:col-start-5 md:row-start-2 bg-[#F8ECCE] text-black rounded-xl"
+            className="relative overflow-hidden h-80 md:h-full md:col-span-2 md:row-span-3 md:col-start-5 md:row-start-2 bg-[#fff] text-black rounded-xl"
           >
             <div className="p-4 flex flex-col items-center justify-start gap-4">
-              <div className="bg-[#023a37] max-w-[200px] text-center text-[#fff] p-1 px-2 rounded-full  text-xs">
+              <div className="bg-[#232325] max-w-[200px] text-center text-[#fff] p-1 px-2 rounded-full  text-xs">
                 {t('pages.home.achievment.title')}
               </div>
               <div className="flex flex-col items-center gap-1">
@@ -241,7 +241,7 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
                   height={0}
                   className="w-[300px] md:w-[270px] md:h-[200px] object-contain"
                 />
-                <div className="text-xs text-center text-[#023a37]">
+                <div className="text-xs text-center text-[#232325]">
                   {t('pages.home.achievment.desc')}
                 </div>
               </div>
@@ -252,7 +252,7 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="relative overflow-hidden p-4 h-52 md:h-full md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-5 lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-5 bg-[#023a37] text-white rounded-xl"
+            className="relative overflow-hidden p-4 h-52 md:h-full md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-5 lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-5 bg-[#232325] text-white rounded-xl"
           >
             <div className="absolute top-[-10px] left-[-10px] z-10 h-10 w-10 rounded-full border-8 border-[#ed8b28]"></div>
             <div className="absolute bottom-[-10px] right-[-10px] z-10 h-10 w-10 rounded-full border-8 border-[#ed8b28]"></div>
@@ -264,7 +264,7 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
               loading="lazy"
               className="absolute h-7 bottom-[0px] left-[-10px] z-0"
             />
-            <div className=" text-center mt-2 mb-8 font-bold text-[#F8ECCE]">
+            <div className=" text-center mt-2 mb-8 font-bold text-[#fff]">
               {t('pages.home.tech.title')}
             </div>
             <motion.div

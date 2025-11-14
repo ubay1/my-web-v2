@@ -69,7 +69,7 @@ const Navbar = () => {
       return '#ed8b28'
     }
 
-    return '#023a37'
+    return '#232325'
   }
 
   useEffect(() => {
@@ -97,7 +97,7 @@ const Navbar = () => {
             damping: 10,
             bounce: 0.5,
           }}
-          className="fixed top-10 z-[100] rounded-full p-2 px-4 border border-[#ed8b28] bg-[#f8ecce] flex items-center gap-4"
+          className="fixed top-10 z-[100] rounded-full p-2 px-4 border border-[#ed8b28] bg-[#fff] flex items-center gap-4"
         >
           {LIST.map((item, index) => {
             const Component = componentMapping[item.name]
@@ -121,7 +121,7 @@ const Navbar = () => {
               <a
                 key={index}
                 href={getPath(`${lang}${item.href}`)}
-                className="flex items-center justify-center w-8 h-8 rounded-full text-[#f8ecce] text-lg font-semibold"
+                className="flex items-center justify-center w-8 h-8 rounded-full text-[#fff] text-lg font-semibold"
                 title={item.name}
                 aria-label={item.name}
               >
@@ -141,16 +141,16 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="absolute top-12 right-2 bg-[#f8ecce] border border-[#ed8b28] rounded-md shadow-md p-2 w-[100px]"
+                className="absolute top-12 right-2 bg-[#fff] border border-[#ed8b28] rounded-md shadow-md p-2 w-[100px]"
               >
                 <ul className="flex flex-col items-center gap-2 ml-0 list-none">
                   <li>
-                    <a href="/id" className="text-[#023a37] text-[14px]" title="id" aria-label="id">
+                    <a href="/id" className="text-[#232325] text-[14px]" title="id" aria-label="id">
                       Indonesia
                     </a>
                   </li>
                   <li>
-                    <a href="/en" className="text-[#023a37] text-[14px]" title="en" aria-label="en">
+                    <a href="/en" className="text-[#232325] text-[14px]" title="en" aria-label="en">
                       English
                     </a>
                   </li>
