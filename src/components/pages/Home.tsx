@@ -233,6 +233,8 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
                 <img
                   src="/pencapaian/identik-asik.webp"
                   alt="identik-asik"
+                  fetchPriority="high"
+                  loading="lazy"
                   width={0}
                   height={0}
                   className="w-[300px] md:w-[270px] md:h-[200px] object-contain"
@@ -256,6 +258,8 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
             <img
               src="/waveline2.png"
               alt=""
+              fetchPriority="high"
+              loading="lazy"
               className="absolute h-7 bottom-[0px] left-[-10px] z-0"
             />
             <div className=" text-center mt-2 mb-8 font-bold text-[#F8ECCE]">
