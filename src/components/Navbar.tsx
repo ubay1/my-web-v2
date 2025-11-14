@@ -98,6 +98,9 @@ const Navbar = () => {
             bounce: 0.5,
           }}
           className="fixed top-10 z-[100] rounded-full p-2 px-4 border border-[#ed8b28] bg-[#fff] flex items-center gap-4"
+          style={{
+            boxShadow: '0px 0px 30px 3px #ed8b2880',
+          }}
         >
           {LIST.map((item, index) => {
             const Component = componentMapping[item.name]
