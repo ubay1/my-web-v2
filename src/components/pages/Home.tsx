@@ -147,6 +147,8 @@ const Home: React.FC<IProps> = ({ fiveBlogLatest }) => {
                 alt="img-people"
                 width={0}
                 height={0}
+                fetchPriority="high"
+                loading="lazy"
                 className="w-24 md:w-28 z-0"
               />
 
