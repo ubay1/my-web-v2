@@ -242,3 +242,25 @@ code.twoslash-popup-code,
 /* .copy-code:hover {
   background-color: #dbceab;
 } */
+
+table {
+  border: 1px solid #fff !important;
+}
+
+th,
+tr,
+td {
+  border-width: 1px !important;
+}
+
+th {
+  background-color: #307a5b;
+  font-weight: normal;
+}
+
+td {
+  text-align: center;
+  background-color: #353839;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
