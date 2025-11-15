@@ -5,7 +5,7 @@ description:
 imagePath: /blog/adonis.webp
 imageAlt: img-adonis
 viewTransitionName: 'adonis-1'
-date: 2025-11-15 15:00
+date: 2025-11-15 09:00
 icon: 'skill-icons:adonis'
 tags:
   - fullstack

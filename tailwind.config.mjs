@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Rubik Variable', ...defaultTheme.fontFamily.sans],
+        sans: ['Plus Jakarta Sans Variable', ...defaultTheme.fontFamily.sans],
         mono: ['Homemade Apple', ...defaultTheme.fontFamily.mono],
       },
     },
