@@ -13,9 +13,9 @@ tags:
 
 # Middleware
 
-Middleware adalah fungsi/class yang nge-intercept request sebelum masuk controller.
+Middleware adalah kode yang dijalankan sebelum (atau sesudah) request masuk ke controller.
 
-cara bikin middleware:
+cara membuat middleware:
 
 ```shell
 node ace make:middleware Auth
@@ -35,7 +35,7 @@ Dipakai buat:
 1. Server middleware
    - Jalan di semua HTTP request, bahkan jika URL tidak punya route.
    - Contoh: static assets middleware.
-   - Register lewat:
+   - Registernya ada disini:
 
    ```ts
    import server from '@adonisjs/core/services/server'
@@ -47,7 +47,7 @@ Dipakai buat:
 2. Router middleware (global middleware)
    - Middleware yang jalan di semua request yang memiliki route yang match.
    - Contoh: body parser, session, auth.
-   - Register lewat:
+   - Registernya ada disini:
 
    ```ts
    import router from '@adonisjs/core/services/router'
@@ -58,7 +58,7 @@ Dipakai buat:
 
 3. Named middleware
    - Middleware yang tidak otomatis dijalankan kecuali di-assign di route atau group.
-   - Register lewat:
+   - Registernya ada disini:
 
    ```ts
    import router from '@adonisjs/core/services/router'
@@ -73,4 +73,46 @@ Dipakai buat:
    Route.get('/xxx', '…').middleware('auth')
    ```
 
-## Membuat middleware
+## Format middleware
+
+```ts
+import { HttpContext } from '@adonisjs/core/http'
+import { NextFn } from '@adonisjs/core/types/http'
+
+export default class UserLocationMiddleware {
+  async handle(ctx: HttpContext, next: NextFn) {
+    // …
+    await next()
+    // …
+  }
+}
+```
+
+Dalam method handle, kita bisa:
+
+- <kbd>Abort request</kbd>: dengan throw error → tidak lanjut middleware + route handler.
+- <kbd>Continue request</kbd>: dengan await next() → lanjut ke middleware selanjutnya/route handler.
+- <kbd>Send response segera </kbd>: tidak perlu next(), langsung kirim response.
+
+## Assign middleware ke routes & groups
+
+- Untuk named middleware: assign ke route atau kelompok route.
+
+```ts
+import { middleware } from '#start/kernel'
+
+router.get('posts', () => {}).use(middleware.userLocation())
+// atau
+router.get('payments', () => {}).use([middleware.auth(), middleware.userLocation()])
+```
+
+- Untuk route group:
+
+```ts
+router
+  .group(() => {
+    router.get('posts', () => {})
+    router.get('users', () => {})
+  })
+  .use(middleware.userLocation())
+```

@@ -72,15 +72,13 @@ ul {
 
 kbd {
   background-color: #ed8b28 !important;
-  padding-top: 4px !important;
-  padding-bottom: 4px !important;
-  padding: 4px;
-  border-radius: 10px;
+  padding: 2px;
+  border-radius: 4px;
   color: #232325 !important;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 12px !important;
   font-family: 'Plus Jakarta Sans Variable', sans-serif !important;
   /* box-shadow: 0px 2px 5px black; */
-  font-size: 13px !important;
   /* border: 1px solid #fff !important; */
   line-height: 1.6;
 }
