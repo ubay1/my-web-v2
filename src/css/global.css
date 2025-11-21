@@ -39,6 +39,11 @@ p {
   line-height: 28px;
   margin: 4px 0;
 }
+
+li {
+  line-height: 1.8;
+}
+
 blockquote {
   border-left: 6px solid #fff !important;
   border: 1px solid #fff;
@@ -160,7 +165,7 @@ pre.has-focused:hover code .line:not(.focused) {
 }
 
 code .line.highlighted {
-  background-color: #65758529 !important;
+  background-color: #538d5b38 !important;
   transition: background-color 0.5s;
   margin: 0 -24px;
   padding: 0 24px;
