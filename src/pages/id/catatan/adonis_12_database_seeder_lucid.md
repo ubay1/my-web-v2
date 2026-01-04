@@ -85,6 +85,8 @@ export default class extends BaseSchema {
 
 Setelah itu, jalankan migrasi: <kbd>node ace migration:run</kbd>
 
+Rollback migrasi: <kbd>node ace migration:rollback</kbd>
+
 ## seeders
 
 buat seeder
