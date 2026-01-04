@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts/MarkdownLayout.astro
 title: Adonis - Database Dengan Lucid
-description: apa itu db transaction, contoh sederhana, konsep utama: ACID, membuat transaction, Query dalam Transaksi, Commit atau Rollback, Managed Transactions, Savepoints, Pakai Transaksi dengan Query Builder / Model
+description: apa itu db transaction, contoh sederhana, konsep utama (ACID), membuat transaction, Query dalam Transaksi, Commit atau Rollback, Managed Transactions, Savepoints, Pakai Transaksi dengan Query Builder / Model
 imagePath: /blog/adonis.webp
 imageAlt: img-adonis
 viewTransitionName: 'adonis-1'
