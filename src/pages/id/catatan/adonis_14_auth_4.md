@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts/MarkdownLayout.astro
 title: Adonis - Authentication (Access Tokens Guard)
-description: apa itu access tokens guard
+description: apa itu access tokens guard, setup model user, table database access_token, mengeluarkan access token, konfigurasi access tokens guard, authenticate requests dengan auth middleware, cek jika request terautentikasi, menampilkan authenticated user atau fail, menampilkan token yang sedang digunakan, daftar list token, hapus token, login & logout dengan access token
 imagePath: /blog/adonis.webp
 imageAlt: img-adonis
 viewTransitionName: 'adonis-1'
@@ -213,7 +213,7 @@ class PostsController {
 }
 ```
 
-4. Menampilkan token yang sedang digunakan
+4. Menampilkan token yang sedang digunakan daftar list token, hapus token, login & logout dengan access token
 
 tambahkan properti ini di model:
 
