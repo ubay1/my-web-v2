@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts/MarkdownLayout.astro
 title: Adonis - Database Dengan Lucid
-description: apa itu lucid, model, migrations, seeder, environment specific seeders
+description: apa itu lucid, ganti schema database, model, migrations, migration rollback, seeder, environment specific seeders
 imagePath: /blog/adonis.webp
 imageAlt: img-adonis
 viewTransitionName: 'adonis-1'
@@ -50,6 +50,38 @@ export default class User extends BaseModel {
   @column()
   declare email: string
 }
+```
+
+## Ganti Schema Database
+
+default schema database adalah <kbd>mysql</kbd>, jika ingin mengganti schema database, ubah di file <kbd>config/database.ts</kbd>
+
+```ts
+import env from '#start/env'
+import { defineConfig } from '@adonisjs/lucid'
+
+const dbConfig = defineConfig({
+  connection: 'postgres',
+  connections: {
+    postgres: {
+      client: 'pg',
+      connection: {
+        host: env.get('DB_HOST'),
+        port: env.get('DB_PORT'),
+        user: env.get('DB_USER'),
+        password: env.get('DB_PASSWORD'),
+        database: env.get('DB_DATABASE'),
+      },
+      migrations: {
+        naturalSort: true,
+        paths: ['database/migrations'],
+      },
+      searchPath: ['bengkelon'], // diarahkan ke schema bengkelon saat migration/seeder
+    },
+  },
+})
+
+export default dbConfig
 ```
 
 ## migrations
