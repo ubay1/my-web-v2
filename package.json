@@ -51,7 +51,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"js-cookie": "^3.0.5",
+		"js-cookie": "^3.0.7",
 		"nodemailer": "^6.9.5"
 	}
 }
